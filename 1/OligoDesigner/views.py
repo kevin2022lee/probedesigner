@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 #from django.http import HttpResponse,HttpResponseRedirect
 
-local='http:http://1.pdv1.applinzi.com'
+local='http://1.pdv1.applinzi.com'
 
 def index(request):
     return render_to_response('bootstrap.html',{'local':local,},context_instance=RequestContext(request))
