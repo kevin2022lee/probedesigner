@@ -165,7 +165,7 @@ theString = theString.toUpperCase()
 
 for ( var i = 0; i < theString.length; i++) {
 
-if ((theString.charAt(i) == "A") || (theString.charAt(i) == "G") || (theString.charAt(i) == "C") || (theString.charAt(i) == "T")|| (theString.charAt(i) == "J")|| (theString.charAt(i) == "F")) {
+if ((theString.charAt(i) == "A") || (theString.charAt(i) == "G") || (theString.charAt(i) == "C") || (theString.charAt(i) == "T")) {
 
 returnString += theString.charAt(i)
 
