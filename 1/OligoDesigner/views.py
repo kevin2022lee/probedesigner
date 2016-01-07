@@ -84,6 +84,7 @@ def subseq(request):
             Tm=oligoTm(oligoseq)
             OD=oligoOD(oligoseq)
             reverse=reverseOligo(oligoseq)
+            pl=probeList(reverse)
         else:
             acount=0
             ccount=0
@@ -94,34 +95,35 @@ def subseq(request):
             Tm=0
             OD=0
             reverse=''
-    return render_to_response('showprobe.html',{'local':local,'oligoseq':oligoseq,'seqlen':seqlen,'acount':acount,'ccount':ccount,'gcount':gcount,'tcount':tcount,'GC':GC,'MW':MW,'Tm':Tm,'OD':OD,'reverse':reverse,},context_instance=RequestContext(request))             
+            pl=''
+    return render_to_response('showprobe.html',{'local':local,'oligoseq':oligoseq,'seqlen':seqlen,'acount':acount,'ccount':ccount,'gcount':gcount,'tcount':tcount,'GC':GC,'MW':MW,'Tm':Tm,'OD':OD,'reverse':reverse,'pl':pl,},context_instance=RequestContext(request))             
 def probeList(s):
-    count=0
+    count=1
     x=25
+    y=1
+    z=1
+    global m
     strs=str(s)
-    ProbeList=strs.split('')[0:x] 
-    while(count < len(s)/x):
-        m=25
-        if count==0:
-            ProbeList=strs.split('')[0:x]
+    ProbeList=strs[0:x] 
+    while(count < 30):
+        if count==1:
+            ProbeList=strs[0:x]
         else:
-            ProbeList=strs.split('')[m:m+x] 
+            ProbeList=strs[m:m+x]
         probedict={}
         if 55 < oligoTm(ProbeList) < 60:
-            probedict['probe'+count]=ProbeList
+            probedict['Probe'+str(count)]=ProbeList
         elif  oligoTm(ProbeList) <  55:
-            y=1
-            ProbeList=strs.split('',25+y) 
+            ProbeList=strs[m:m+y]
             while(55 < oligoTm(ProbeList) < 60):
                 y+=1
-                probedict['probe'+count]=ProbeList
+                probedict['Probe'+str(count)]=ProbeList
             break
         elif oligoTm(ProbeList) >  60:
-            z=1
-            ProbeList=strs.split('',25-z)
+            ProbeList=strs[m:m-z]
             while(55 < oligoTm(ProbeList) < 60):
                 z+=1
-                probedict['probe'+count]=ProbeList
+                probedict['Probe'+str(count)]=ProbeList
             break
         m=x+y-z#左右位移值
         x=m#校正x的正确值
