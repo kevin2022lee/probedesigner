@@ -95,7 +95,7 @@ def subseq(request):
             Tm=0
             OD=0
             reverse=''
-            pl=''
+           # pl=''
     return render_to_response('showprobe.html',{'local':local,'oligoseq':oligoseq,'seqlen':seqlen,'acount':acount,'ccount':ccount,'gcount':gcount,'tcount':tcount,'GC':GC,'MW':MW,'Tm':Tm,'OD':OD,'reverse':reverse,'pl':pl,},context_instance=RequestContext(request))             
 def probeList(s):
     count=1
