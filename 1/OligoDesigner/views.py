@@ -84,7 +84,7 @@ def subseq(request):
             Tm=oligoTm(oligoseq)
             OD=oligoOD(oligoseq)
             reverse=reverseOligo(oligoseq)
-            pl=probeList(reverse)
+           # pl=probeList(reverse)
         else:
             acount=0
             ccount=0
