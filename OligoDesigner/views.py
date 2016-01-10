@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 #from django.http import HttpResponse,HttpResponseRedirect
 
-local='http://1.pdv1.applinzi.com'
+local='http://127.0.0.1:8000'
 
 def index(request):
     return render_to_response('bootstrap.html',{'local':local,},context_instance=RequestContext(request))
@@ -68,7 +68,6 @@ def reverseOligo(ss):
                 re_seq=re_seq+re_s
     return re_seq[::-1]
 ##############################################################功能实现代码区############################################
-global reverse
 @csrf_protect
 def subseq(request):
     if request.method=='POST':
@@ -84,7 +83,7 @@ def subseq(request):
             Tm=oligoTm(oligoseq)
             OD=oligoOD(oligoseq)
             reverse=reverseOligo(oligoseq)
-           # pl=probeList(reverse)
+            pl=probeList(reverse)
         else:
             acount=0
             ccount=0
@@ -95,40 +94,19 @@ def subseq(request):
             Tm=0
             OD=0
             reverse=''
-           # pl=''
-    return render_to_response('showprobe.html',{'local':local,'oligoseq':oligoseq,'seqlen':seqlen,'acount':acount,'ccount':ccount,'gcount':gcount,'tcount':tcount,'GC':GC,'MW':MW,'Tm':Tm,'OD':OD,'reverse':reverse,},context_instance=RequestContext(request))             
+            pl=''
+    return render_to_response('showprobe.html',{'local':local,'oligoseq':oligoseq,'seqlen':seqlen,'acount':acount,'ccount':ccount,'gcount':gcount,'tcount':tcount,'GC':GC,'MW':MW,'Tm':Tm,'OD':OD,'reverse':reverse,'pl':pl,},context_instance=RequestContext(request))             
 def probeList(s):
+    probedict={}
     count=1
-    x=25
-    y=1
-    z=1
-    global m
-    strs=str(s)
-    ProbeList=strs[0:x] 
-    while(count < 30):
-        if count==1:
-            ProbeList=strs[0:x]
-        else:
-            ProbeList=strs[m:m+x]
-        probedict={}
-        if 55 < oligoTm(ProbeList) < 60:
-            probedict['Probe'+str(count)]=ProbeList
-        elif  oligoTm(ProbeList) <  55:
-            ProbeList=strs[m:m+y]
-            while(55 < oligoTm(ProbeList) < 60):
-                y+=1
-                probedict['Probe'+str(count)]=ProbeList
-            break
-        elif oligoTm(ProbeList) >  60:
-            ProbeList=strs[m:m-z]
-            while(55 < oligoTm(ProbeList) < 60):
-                z+=1
-                probedict['Probe'+str(count)]=ProbeList
-            break
-        m=x+y-z#左右位移值
-        x=m#校正x的正确值
-        m+=m#m的值做累加
-        count+=1#计数加1
-        break    
+    while(count<=len(s)/25):
+        begin=25*count-25
+        end=25*count
+        probedict.setdefault('probe'+str(count),s[begin:end])
+        count=count+1
+        if count>=len(s)/25:
+            probedict.setdefault('probe'+str(count+1),s[25*count:len(s)])
+            break        
     return probedict
+       
                 
