@@ -1,15 +1,18 @@
 #coding:utf-8
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 #from django.http import HttpResponse,HttpResponseRedirect
 
-local='http://127.0.0.1:8000'
+local='127.0.0.1:8000'
 
 def index(request):
     return render_to_response('bootstrap.html',{'local':local,},context_instance=RequestContext(request))
 def probedesign(request):
     return render_to_response('probedesign.html',{'local':local,},context_instance=RequestContext(request))
+def entrez(request):
+    return render_to_response('entrez.html',{'local':local,},context_instance=RequestContext(request))
 def oligoGC(s):
     if len(s)!= 0:
         acount=s.count('A')
@@ -108,5 +111,44 @@ def probeList(s):
             probedict.setdefault('probe'+str(count+1),s[25*count:len(s)])
             break        
     return probedict
-       
+ ###############################################################################################################
+def downloadentrez(request):
+    if request.method=='POST':
+        gid=request.POST['filename']
+        from Bio import Entrez
+        Entrez.email="kkds@slyyc.asia"
+        handle=Entrez.efetch(db="nucleotide",id=str(gid),rettype="gb",retmode="xml")
+        record=Entrez.read(handle, validate=False)
+        request.session['sequence']=record[0]['GBSeq_sequence']
+        if record[0].has_key('GBSeq_accession-version'):
+            aversion=record[0]['GBSeq_accession-version']
+        else:
+            aversion="N/A"
+        if record[0].has_key('GBSeq_update-date'):
+            udate=record[0]['GBSeq_update-date']
+        else:
+            udate="N/A" 
+        if record[0]['GBSeq_feature-table'][3]['GBFeature_quals'][7]['GBQualifier_value']:
+            protein_seq=record[0]['GBSeq_feature-table'][3]['GBFeature_quals'][7]['GBQualifier_value']
+        else:
+            protein_seq="N/A"
+        return render_to_response('showentrez.html',{
+                                                     'local':local,
+                                                     'oligoseq':record[0]['GBSeq_sequence'],
+                                                     'seqlen':record[0]['GBSeq_length'],
+                                                     'cdate':record[0]['GBSeq_create-date'],
+                                                     'taxonomy':record[0]['GBSeq_taxonomy'],
+                                                     'organism':record[0]['GBSeq_organism'],
+                                                     'locus':record[0]['GBSeq_locus'],
+                                                     'source':record[0]['GBSeq_source'],
+                                                     'topology':record[0]['GBSeq_topology'],
+                                                     'division':record[0]['GBSeq_division'],
+                                                     'accession_version': aversion,
+                                                     'update_date':udate ,
+                                                     'strandedness':record[0]['GBSeq_strandedness'],
+                                                     'definition':record[0]['GBSeq_definition'],
+                                                     'protein_seq':protein_seq,
+                                                     },context_instance=RequestContext(request))
+    else:
+        return HttpResponse("<script>alert(‘非法参数的进入！’)</script>")
                 
