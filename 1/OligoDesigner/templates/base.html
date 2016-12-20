@@ -9,7 +9,7 @@
 <div class="container">
 <nav class="navbar navbar-inverse" role="navigation">
    <div class="navbar-header">
-      <a class="navbar-brand" href="http://{{ local }}/">OligoDesigner V1.0</a>
+      <a class="navbar-brand" href="{{ local }}/">OligoDesigner V1.0</a>
    </div>
    <div>
       <ul class="nav navbar-nav">
@@ -20,8 +20,8 @@
                OEM <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-               <li><a href="http://{{ local }}/probedesign/">探针设计</a></li>
-               <li><a href="http://{{ local }}/entrez/">ENTREZ数据库服务</a></li>
+               <li><a href="{{ local }}/probedesign/">探针设计</a></li>
+               <li><a href="#">科研服务</a></li>
                <li><a href="#">系统开发</a></li>
                <li class="divider"></li>
                <li><a href="#">AP探针设计</a></li>
@@ -35,7 +35,7 @@
  {% block content %}
  <!-- 此处为模板引用位置 -->
  {% endblock %}
-<div id="footer" style="clear:both;">
+<div id="footer">
 <p align="center">版权所有，侵权必究@2015 郑州艾斯亚生物科技有限公司</p>
 </div>
 </div>
