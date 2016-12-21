@@ -3,13 +3,14 @@
  <title>从GenBank文件中解析</title>
 
 <div style="margin-top:20px;height:400px;">
-<form action="http://{{ local }}/entreztoxml/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
+<form action="http://{{ local }}/xmltoentrez/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
 <div class="col-sm-8">
-            <input class="form-control" type="file" name="filename" id="filename" accept=".gb,.fasta">
+            <input class="form-control" type="file" name="file" accept=".gb,.fasta" onchange="document.getElementById('textfield').value=this.value" >
              </div>
 <div class="col-sm-2">
              <button class="btn-primary btn" type="submit">解析</button>
-</div>        
+</div>
+<input type='text' name='textfield' id='textfield' class='txt' />        
 </form>
 </div>
 <!-- /#mainWrap -->

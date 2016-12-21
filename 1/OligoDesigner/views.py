@@ -5,7 +5,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 #from django.http import HttpResponse,HttpResponseRedirect
 
-local='127.0.0.1:8000'
+local='pdv1.applinzi.com'
 
 def index(request):
     global local
@@ -19,6 +19,9 @@ def entrez(request):
 def fromfile(request):
     global local
     return render_to_response('fromfile.html',{'local':local,},context_instance=RequestContext(request))
+def test(request):
+    global local
+    return render_to_response('test.html',{'local':local,},context_instance=RequestContext(request))
 def oligoGC(s):
     if len(s)!= 0:
         acount=s.count('A')
@@ -126,17 +129,8 @@ def downloadentrez(request):
         handle=Entrez.efetch(db="nucleotide",id=str(gid),rettype="gb",retmode="xml")
         record=Entrez.read(handle, validate=False)
         request.session['sequence']=record[0]['GBSeq_sequence']
-        #if record[0].has_key('GBSeq_accession-version'):
-            #aversion=record[0]['GBSeq_accession-version']
-        #else:
         aversion="N/A"
-        #if record[0].has_key('GBSeq_update-date'):
-            #udate=record[0]['GBSeq_update-date']
-        #else:
         udate="N/A" 
-        #if record[0]['GBSeq_feature-table'][3]['GBFeature_quals'][7]['GBQualifier_value']:
-            #protein_seq=record[0]['GBSeq_feature-table'][3]['GBFeature_quals'][7]['GBQualifier_value']
-        #else:
         protein_seq="N/A"
         return render_to_response('showentrez.html',{
                                                      'local':local,
@@ -159,11 +153,10 @@ def downloadentrez(request):
         return HttpResponse("<script>alert(‘非法参数的进入！’)</script>")
 def entreztoxml(request):
     if request.method=='POST':
-        content = request.FILES['filename']
-        content1 = request.FILES.get('filename')
-        return render_to_response('test.html',{
-                                               'local':local,
-                                               'content':content,
-                                               'content1':content1,
-                                               },context_instance=RequestContext(request))
-                
+        content = request.FILES['file']
+        name=content.name
+        import os
+        filepath=os.path.abspath(name)
+        
+    return render_to_response('test.html',{'local':local,'content':name,'filepath':filepath,},context_instance=RequestContext(request))
+    
