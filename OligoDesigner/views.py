@@ -5,14 +5,20 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 #from django.http import HttpResponse,HttpResponseRedirect
 
-local='pdv1.applinzi.com'
+local='127.0.0.1:8000'
 
 def index(request):
+    global local
     return render_to_response('bootstrap.html',{'local':local,},context_instance=RequestContext(request))
 def probedesign(request):
+    global local
     return render_to_response('probedesign.html',{'local':local,},context_instance=RequestContext(request))
 def entrez(request):
+    global local
     return render_to_response('entrez.html',{'local':local,},context_instance=RequestContext(request))
+def fromfile(request):
+    global local
+    return render_to_response('fromfile.html',{'local':local,},context_instance=RequestContext(request))
 def oligoGC(s):
     if len(s)!= 0:
         acount=s.count('A')
@@ -151,4 +157,13 @@ def downloadentrez(request):
                                                      },context_instance=RequestContext(request))
     else:
         return HttpResponse("<script>alert(‘非法参数的进入！’)</script>")
+def entreztoxml(request):
+    if request.method=='POST':
+        content = request.FILES['filename']
+        content1 = request.FILES.get('filename')
+        return render_to_response('test.html',{
+                                               'local':local,
+                                               'content':content,
+                                               'content1':content1,
+                                               },context_instance=RequestContext(request))
                 
