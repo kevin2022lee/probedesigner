@@ -5,7 +5,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 #from django.http import HttpResponse,HttpResponseRedirect
 
-local='127.0.0.1:8000'
+local='pdv1.applinzi.com'
 
 def index(request):
     return render_to_response('bootstrap.html',{'local':local,},context_instance=RequestContext(request))
@@ -120,18 +120,18 @@ def downloadentrez(request):
         handle=Entrez.efetch(db="nucleotide",id=str(gid),rettype="gb",retmode="xml")
         record=Entrez.read(handle, validate=False)
         request.session['sequence']=record[0]['GBSeq_sequence']
-        if record[0].has_key('GBSeq_accession-version'):
-            aversion=record[0]['GBSeq_accession-version']
-        else:
-            aversion="N/A"
-        if record[0].has_key('GBSeq_update-date'):
-            udate=record[0]['GBSeq_update-date']
-        else:
-            udate="N/A" 
-        if record[0]['GBSeq_feature-table'][3]['GBFeature_quals'][7]['GBQualifier_value']:
-            protein_seq=record[0]['GBSeq_feature-table'][3]['GBFeature_quals'][7]['GBQualifier_value']
-        else:
-            protein_seq="N/A"
+        #if record[0].has_key('GBSeq_accession-version'):
+            #aversion=record[0]['GBSeq_accession-version']
+        #else:
+        aversion="N/A"
+        #if record[0].has_key('GBSeq_update-date'):
+            #udate=record[0]['GBSeq_update-date']
+        #else:
+        udate="N/A" 
+        #if record[0]['GBSeq_feature-table'][3]['GBFeature_quals'][7]['GBQualifier_value']:
+            #protein_seq=record[0]['GBSeq_feature-table'][3]['GBFeature_quals'][7]['GBQualifier_value']
+        #else:
+        protein_seq="N/A"
         return render_to_response('showentrez.html',{
                                                      'local':local,
                                                      'oligoseq':record[0]['GBSeq_sequence'],
