@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>显示genbank文件</title>
+
+<div style="margin-top:20px;height:400px;">
+<table class="table"  style="word-break:break-all; word-wrap:break-all;"> 
+  <caption><h3><b>显示genbank文件</b></h3></caption>
+  <thead>
+    <tr>
+      <th width="15%" text-align="center">项目</th>
+      <th width="35%" text-align="center">数据</th>
+      <th width="15%" text-align="center">项目</th>
+      <th width="35%" text-align="center">数据</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr class="active">
+      <td width="15%">definition：</td>
+      <td width="35%" style="word-break:break-all; word-wrap:break-all;">{{content}}</td>
+      <td width="15%">accession_version：</td>
+      <td width="35%">{{content1}}</td></tr>
+  </tbody>
+</table>
+
+</div>
+<!-- /#mainWrap -->
+{% endblock %}

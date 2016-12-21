@@ -15,5 +15,7 @@ urlpatterns = patterns('',
     url(r'^probedesign', probedesign),
     url(r'^subseq', subseq),
     url(r'^entrez', entrez),
+    url(r'^fromfile', fromfile),
     url(r'^downloadentrez', downloadentrez),
+    url(r'^entreztoxml', entreztoxml),
 )
