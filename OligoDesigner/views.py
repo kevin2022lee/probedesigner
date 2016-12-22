@@ -5,7 +5,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 #from django.http import HttpResponse,HttpResponseRedirect
 
-local='127.0.0.1:8000'
+local='pdv1.applinzi.com'
 
 def index(request):
     global local
@@ -155,8 +155,24 @@ def entreztoxml(request):
     if request.method=='POST':
         content = request.FILES['file']
         name=content.name
-        import os
-        filepath=os.path.abspath(name)
-        
-    return render_to_response('test.html',{'local':local,'content':name,'filepath':filepath,},context_instance=RequestContext(request))
+        from os import environ  
+        online = environ.get("APP_NAME", "")   
+   
+    if online:  
+        import sae.const  
+        access_key = sae.const.ACCESS_KEY  
+        secret_key = sae.const.SECRET_KEY  
+        appname = sae.const.APP_NAME  
+        domain_name = "seq"  #刚申请的domain         
+           
+        import sae.storage
+        s = sae.storage.Client()  
+        ob = sae.storage.Object(content.read())
+        cname=content.name
+        #cname_rb=base64.encodestring(datetime.now().strftime("%Y%m%d%H%M%S%f")+'_'+str(len(cname)))[:-3]+'.'+cname.split('.')[-1]
+        fileurl = s.put(domain_name, cname, ob)
+        from Bio import Entrez,SeqIO
+        record=SeqIO.read(fileurl,"gb")
+
+    return render_to_response('test.html',{'local':local,'content':record.id,'filepath':record.seq,},context_instance=RequestContext(request))
     
