@@ -4,6 +4,9 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 #from django.http import HttpResponse,HttpResponseRedirect
+import time
+from datetime import datetime
+import sys,urllib
 
 local='pdv1.applinzi.com'
 
@@ -169,10 +172,12 @@ def entreztoxml(request):
         s = sae.storage.Client()  
         ob = sae.storage.Object(content.read())
         cname=content.name
-        #cname_rb=base64.encodestring(datetime.now().strftime("%Y%m%d%H%M%S%f")+'_'+str(len(cname)))[:-3]+'.'+cname.split('.')[-1]
-        fileurl = s.put(domain_name, cname, ob)
+        cname_rb=base64.encodestring(datetime.now().strftime("%Y%m%d%H%M%S%f")+'_'+str(len(cname)))[:-3]+'.'+cname.split('.')[-1]
+        fileurl = s.put(domain_name, cname_rb, ob)
         from Bio import Entrez,SeqIO
-        record=SeqIO.read(fileurl,"gb")
+        import urllib
+        urllib.urlretrieve(fileurl, "C:\\"+cname_rb) 
+        record=SeqIO.read("C:\\"+cname_rb,"gb")
 
     return render_to_response('test.html',{'local':local,'content':record.id,'filepath':record.seq,},context_instance=RequestContext(request))
     
