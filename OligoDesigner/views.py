@@ -191,7 +191,7 @@ def entreztoxml(request):
                                                              'filetype':filetype[0],
                                                              'local':local,
                                                              'accessid':nr.id,
-                                                             'sequence':nr.seq.tostring(),
+                                                             'sequence':str(nr.seq),
                                                              'description':nr.description,
                                                              'name':nr.name,
                                                              'dbxrefs':nr.dbxrefs[0],
