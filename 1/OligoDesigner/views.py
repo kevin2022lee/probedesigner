@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_protect,csrf_exempt
 import time
 from datetime import datetime
 import sys,urllib
-
+import base64
 local='pdv1.applinzi.com'
 
 def index(request):
