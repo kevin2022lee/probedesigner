@@ -5,7 +5,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 #from django.http import HttpResponse,HttpResponseRedirect
 
-local='pdv1.applinzi.com'
+local='127.0.0.1:8000'
 
 def index(request):
     global local
