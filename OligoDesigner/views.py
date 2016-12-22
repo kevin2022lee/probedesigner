@@ -177,7 +177,26 @@ def entreztoxml(request):
         from Bio import Entrez,SeqIO
         import urllib
         from urllib import urlopen
-        record=SeqIO.read(urlopen(fileurl),"gb")
+        import re
+        filetype=re.findall(r'\.[^.\\/:*?"<>|\r\n]+$',fileurl)
+        if filetype==".gb" :
+            record=SeqIO.parse(urlopen(fileurl),"genbank")
+        elif filetype==".fasta":
+            record=SeqIO.parse(urlopen(fileurl),"fasta")
+        nr=record.next()
+################模板开始渲染######################################        
 
-    return render_to_response('test.html',{'local':local,'content':record.id,'filepath':record.seq,},context_instance=RequestContext(request))
+        return render_to_response('parselocalfile.html',{
+                                                         'filetype':filetype,
+                                                         'local':local,
+                                                         'accessid':nr.id,
+                                                         'sequence':nr.seq,
+                                                         'description':nr.decription,
+                                                         'name':nr.name,
+                                                         'dbxrefs':nr.dbxrefs[0],
+                                                         'source':nr.annotations['source'],
+                                                         'organism':nr.annotations['organism'],
+                                                         'taxonomy':nr.annotations['taxonomy'],
+                                                         'topology':nr.annotations['topology'],
+                                                         },context_instance=RequestContext(request))
     
