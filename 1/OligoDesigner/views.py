@@ -176,8 +176,8 @@ def entreztoxml(request):
         fileurl = s.put(domain_name, cname_rb, ob)
         from Bio import Entrez,SeqIO
         import urllib
-        urllib.urlretrieve(fileurl, "C:\\"+cname_rb) 
-        record=SeqIO.read("C:\\"+cname_rb,"gb")
+        urllib.urlretrieve(fileurl, "C:\\fakepath\\"+cname_rb) 
+        record=SeqIO.read("C:\\fakepath\\"+cname_rb,"gb")
 
     return render_to_response('test.html',{'local':local,'content':record.id,'filepath':record.seq,},context_instance=RequestContext(request))
     
