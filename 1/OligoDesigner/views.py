@@ -186,7 +186,7 @@ def entreztoxml(request):
             nr=record.next()
 ################模板开始渲染######################################        
 
-            return render_to_response('parselocalfile.html',{
+        return render_to_response('parselocalfile.html',{
                                                              'filetype':filetype,
                                                              'local':local,
                                                              'accessid':nr.id,
