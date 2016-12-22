@@ -188,7 +188,7 @@ def entreztoxml(request):
 ################模板开始渲染######################################        
 
     return render_to_response('parselocalfile.html',{
-                                                             'filetype':filetype,
+                                                             'filetype':filetype[0],
                                                              'local':local,
                                                              'accessid':nr.id,
                                                              'sequence':nr.seq,
