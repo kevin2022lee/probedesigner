@@ -186,17 +186,17 @@ def entreztoxml(request):
             nr=record.next()
 ################模板开始渲染######################################        
 
-        return render_to_response('parselocalfile.html',{
-                                                         'filetype':filetype,
-                                                         'local':local,
-                                                         'accessid':nr.id,
-                                                         'sequence':nr.seq,
-                                                         'description':nr.decription,
-                                                         'name':nr.name,
-                                                         'dbxrefs':nr.dbxrefs[0],
-                                                         'source':nr.annotations['source'],
-                                                         'organism':nr.annotations['organism'],
-                                                         'taxonomy':nr.annotations['taxonomy'],
-                                                         'topology':nr.annotations['topology'],
-                                                         },context_instance=RequestContext(request))
+            return render_to_response('parselocalfile.html',{
+                                                             'filetype':filetype,
+                                                             'local':local,
+                                                             'accessid':nr.id,
+                                                             'sequence':nr.seq,
+                                                             'description':nr.decription,
+                                                             'name':nr.name,
+                                                             'dbxrefs':nr.dbxrefs[0],
+                                                             'source':nr.annotations['source'],
+                                                             'organism':nr.annotations['organism'],
+                                                             'taxonomy':nr.annotations['taxonomy'],
+                                                             'topology':nr.annotations['topology'],
+                                                             },context_instance=RequestContext(request))
     
