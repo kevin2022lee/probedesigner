@@ -192,7 +192,7 @@ def entreztoxml(request):
                                                              'local':local,
                                                              'accessid':nr.id,
                                                              'sequence':nr.seq,
-                                                             'description':nr.decription,
+                                                             'description':nr.description,
                                                              'name':nr.name,
                                                              'dbxrefs':nr.dbxrefs[0],
                                                              'source':nr.annotations['source'],
