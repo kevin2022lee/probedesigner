@@ -179,11 +179,12 @@ def entreztoxml(request):
         from urllib import urlopen
         import re
         filetype=re.findall(r'\.[^.\\/:*?"<>|\r\n]+$',fileurl)
+        global record
         if filetype==".gb" :
             record=SeqIO.parse(urlopen(fileurl),"genbank")
         elif filetype==".fasta":
             record=SeqIO.parse(urlopen(fileurl),"fasta")
-            nr=record.next()
+        nr=record.next()
 ################模板开始渲染######################################        
 
         return render_to_response('parselocalfile.html',{
