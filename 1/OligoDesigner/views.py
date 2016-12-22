@@ -194,7 +194,7 @@ def entreztoxml(request):
                                                              'sequence':str(nr.seq),
                                                              'description':nr.description,
                                                              'name':nr.name,
-                                                             'dbxrefs':nr.dbxrefs[0],
+                                                             #'dbxrefs':nr.dbxrefs[0],
                                                              'source':nr.annotations['source'],
                                                              'organism':nr.annotations['organism'],
                                                              'taxonomy':nr.annotations['taxonomy'],
