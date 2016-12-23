@@ -284,7 +284,7 @@ def x4merCalc(request):
             WF_CEtoAMParms=20
             WF_CEtoAP=1
             WF_LEtoPSCP=6
-            NSH_Score=sum(score_x4mer1+score_x4mer2)*WF_CEtoLeaders
+            NSH_Score=sum(score_x4mer1,score_x4mer2)*WF_CEtoLeaders
         return render_to_response('showcalcresult.html',{
                                                      'local':local,
                                                      'x4merlcs':x4merlcs,
