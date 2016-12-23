@@ -292,7 +292,7 @@ def x4merCalc(request):
                                                      'score_x4mer1':score_x4mer1,
                                                      'score_x4mer2':score_x4mer2,
                                                      },context_instance=RequestContext(request))
-def x4merScore(request,seq,len):
+def x4merScore(seq,len):
     SumAT=seq.count("A")+seq.count("T")
     SumGC=seq.count("G")+seq.count("C")
     Score=(0.5*SumAT+1.0*SumGC)/len
