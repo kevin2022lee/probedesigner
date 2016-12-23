@@ -274,10 +274,13 @@ def x4merCalc(request):
         arith = arithmetic()
         x4merlcs=arith.lcs(str(uni_seq),str(calc_seq))
         x4merlcslen=arith.levenshtein(str(uni_seq),str(calc_seq))
-    return render_to_response('showcalcresult.html',{
+        if len(x4merlcs) >=4:
+            x4mers=x4merlcs+"-"+Seq(x4merlcs,IUPAC.unambiguous_dna).reverse_complement().tostring()
+        return render_to_response('showcalcresult.html',{
                                                      'local':local,
                                                      'x4merlcs':x4merlcs,
                                                      'x4merlcslen':x4merlcslen,
                                                      'uni_seq':uni_seq,
                                                      'calc_seq':calc_seq,
+                                                     'x4mers':x4mers,
                                                      },context_instance=RequestContext(request))
