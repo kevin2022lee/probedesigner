@@ -295,5 +295,5 @@ def x4merCalc(request):
 def x4merScore(seq,len):
     SumAT=seq.count("A")+seq.count("T")
     SumGC=seq.count("G")+seq.count("C")
-    Score=round((0.5*SumAT+1.0*SumGC)/len,3)
+    Score=round((0.5*SumAT+1.0*SumGC)/4,3)
     return Score
