@@ -8,7 +8,7 @@ import time
 from datetime import datetime
 import sys,urllib
 import base64
-local='127.0.0.1'
+local='pdv1.applinzi.com'
 
 #######################实现最长公共字符查找##################################
 class arithmetic():  
