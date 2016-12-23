@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from OligoDesigner.views import index,probedesign,subseq,entrez,fromfile,downloadentrez,entreztoxml,test
+from OligoDesigner.views import index,probedesign,subseq,entrez,fromfile,downloadentrez,entreztoxml,test,x4merCalc
 from django.contrib import admin
 import settings
 admin.autodiscover()
@@ -15,4 +15,5 @@ urlpatterns = patterns('',
     url(r'^downloadentrez', downloadentrez),
     url(r'^xmltoentrez', entreztoxml),
     url(r'^test', test),
+    url(r'^x4merCalc', x4merCalc),
 )
