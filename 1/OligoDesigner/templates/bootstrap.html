@@ -1,10 +1,12 @@
 <html>
 <!-- 新 Bootstrap 核心 CSS 文件 -->
 <link href="//cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css"><!-- p{ text-indent: 2em; /*em是相对单位，2em即现在一个字大小的两倍*/}--></style>
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="//cdn.bootcss.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
 <body>
 <div class="container">
 <nav class="navbar navbar-inverse" role="navigation">
@@ -33,44 +35,116 @@
    </div>
 </nav>
 <div class="row">
+        <div class="col-md-4" >
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <b><em>OligoDesigner</em>简介</b>
+    </div>
+    <div class="panel-body">
+        <p>随着分子生物、生物信息学的发展，越来越迫切需要一种新的平台来完成一站式的分析、检索、设计、合成需求的瓶体</p>
+        <p>OligoDesigner正是基于这种背景下诞生，不需要太深厚的专业背景知识，你就可以完成非常专业的引物和探针设计工作</p>
+        <p>目前软件更新版本为V1.0，后续将会推出更多功能</P>
+        <p>作者联系方式：lxk#yhkodia.com</p>
+        
+    </div>
+</div>
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <b><em>OligoDesigner</em>软件能完成的工作</b>
+    </div>
+    <div class="panel-body">
+        <p><b>OligoDesigner</b>软件依赖于Python语言的强大生物信息库BioPython可以轻松实现常规的序列读入、写出、Blast比对，同源性分析、以及与Entrez数据库的交互沟通，
+        SwissPort处理、Medline数据库、图形模型、遗传分析、蛋白质序列预测等功能.</br></p>
+        <p><b>QuantiMAT</b>技术是一种基于分支链信号扩增技术开发的国产化第二代信号放大技术，<b>OligoDesigner</b>可以根据所选靶标的序列信息，生成各种QuantiMAT实验所需
+        的各种功能性探针组CE（capture probes）、LE（Label Extender）、BL（Blocker）。这些探针组通过了严苛的NSH（非特异性杂交分析），使得探针和通用2.0序列产生最小的NSH
+        确保实验的高特异性、高灵敏度。</p>
+    </div>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <b><em>filter</em>说明</b>
+    </div>
+    <div class="panel-body">
+        <p><b>Filtering</b> is a powerful tool for changing the allowable service of probes. Using the filter criteria, you can either decrease or increase the number of probes which are available for use as CEs or LEs in the assay. </p>
+        <p>The details of filtering are discussed in the section on Filtering  in the chapter on “Probeset Design using OligoDesigner” . It should be noted that the primary reason for changing the filter criteria is to increase the number of CEs and LEs that are available for use in the assay. Although the default thresholds are excellent guidelines, they are….just that, guidelines. In many cases, you may have probes that are only slightly above or below the allowable thresholds.</p>
+<p>You, as the probeset designer (I’ll bet you’ve never been called that before), will need to review the properties of each of the probes in your probeset to determine which, if any, can be relaxed without negatively affecting assay performance. </p>
+    <p>Remember, the action of “filtering” (i.e., relaxing the filter criteria) relaxes the filters for all the probes in the tree. You cannot relax filters for individual probes. When you relax a filter for one probe you may change the status of other probes in a favorable manner.</p>
+    </div>
+</div>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <b><em>CE-LE interactions</em>说明</b>
+    </div>
+    <div class="panel-body">
+        <p><b>CE-LE interactions</b> are the final source of assay background considered by OligoDesigner. In fact, these interactions are used to establish the final assignment of the probes in the assay. Complementary CEs and LEs could interact via the mechanism shown below. This may be prevented by excluding one of the probes from service in the probeset or by assigning the same service to both probes. The process of assigning probes, calculating CE-LE interactions, and reassigning as necessary is, as you can imagine, an iterative process. This process is enabled using the Assignment View.</p>
+        <p>Similar to CE and LE NSH calculations, the CE-LE interaction is evaluated using the x-mer algorithm. PD searches all possible x-mers that could form between the extenders (CEs vs. LEs), estimates their stability, and sums them. Similarly to the NSH calculations, it applies a weight to the x-mer results to estimate the contribution of the CE-LE hybrid to background. All CE-LE interactions are given a weight of 6 similar to LE-AMP leader interactions for the system 1 assays. </p>
+   <p><img class="img" width="300px;" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjQyNTk3MjY3MDFfNg.png" /></p>
+    </div>
+</div>
+        </div>
+        <div class="col-md-8" >
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <b><em>NSH </em>算法</b>
+    </div>
+    <div class="panel-body">
+        <p>At the heart of OligoDesigner is the x-mer algorithm. This algorithm estimates the stability of any extender-universal hybrid. </p>
+        <p>The term “x-mer” refers to the length of the smallest perfect hybrid to be considered by the algorithm. Although the default value for the program is a 4-mer, you can adjust this parameter. When the x-mer algorithm is initiated: the algorithm identifies all possible perfect x-mer hybrids between the probe and each universal, a simple weighting scheme is used to predict the stability of each perfect x-mer hybrid, and the results for all hybrids are summed for each probe-universal interaction. An example follows: </p>
+    <p>1. All possible 4-mers are identified:</p>
+    <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjAxNTY2MTgyNTZfMj.png" /></p>
+    <p>There are two 4-mers: TTTC-GAAA and TTCG-CGAA</p>
+    <p>2. Each x-mer (a 4-mer for this example) is scored using a simple weighting scheme</p>
+    <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjAzMzAwMzUyOTVfMj.png" /></p>
+    <p>and 3. All the x-mer scores are summed for the probe-universal interaction</p>
+    <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjA0MTAxMzcyODFfMj.png" /></p>
+    <P>Once the x-mer algorithm has produced results for all possible probe-universal interactions, the NSH algorithm is invoked. </p>
+    <p>1. Each x-mer score is multiplied by the appropriate weighting factor (1X for CE with AP, 6X for CE with AMP leader, 15X for CE with AMP arm) to determine the NSH score for that probe. There is one result for each probe-universal interaction. This process is performed once assuming the probe is a CE and once assuming it is an LE. For this example, assuming we are looking at a CE-AMP interaction…</p>
+    <p align="center"><b>NSH score = x-mer score * weighting factor = 1.375 * 6 =8.25</b></p>
+    <p>2. The x-mer scores are calculated for the other NSH interactions (this means that the x-mer algorithm is also revisited for each of the interactions). </p>
+     <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjE5MzA3ODIxNjFfNQ.png" /></p>
+    </div>
+</div>
+ 
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <b><em>NSH</em>的定义</b>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <p><b>NSH interactions are interactions involving capture and label extenders and universals which lead to elevated leve
+        ls of background in bDNA assays</b>. Minimizing NSH is an essential part of designing a successful probeset. As such, 
+        OligoDesigner screens probes against the universals to exclude those that could lead to elevated background through
+         NSH interactions. (For a published example of NSH interactions, see M. Collins et. al., NAR Vol 25, no. 15, Aug 
+                            1997). </p>
+        <p>Before proceeding, it is important that we define “universal” sequences. These are the molecules, common to all bDNA
+         assays (of the same universal chemistry type), that mediate the capture of the target and the signal amplification. 
+         For SYSTEM 1 assays (open kits), they include the branched DNA molecule, the AP probe and the capture probe (PSCP) 
+         on the plate. For the SYSTEM 8 assays, they include the branched DNA molecule (with iso-C, iso-G), the pre-amplifier
+          molecule and the capture probe on the plate. The CE and LE tails (also called overhangs) are also considered 
+          “universal”; after concatenation with the specific extender sequence via a spacer, they enable the hybridization 
+          of the probes to the universals and subsequent signal amplification. For each chemistry, the universal sequences
+           are grouped in a file and imported into OligoDesigner as a set. </p>
+        <ul>
+        The screening of probes from a probeset that could lead to higher background involves the following: 
+        <li>identifying the extender-universal interactions that could interact non-specifically </li>
+        <li>estimating the stability of the hybrids that form between the extenders and the universals</li>
+        <li>estimating the contribution of any potentially stable interaction to background</li>
+        </ul>
+        <p>The NSH interactions for System 1 chemistry are depicted below. The interactions differ depending on whether the probe is a CE or an LE. Early in the design process we haven’t specified probe service; any probe can be either a CE or an LE. Hence, the analysis is performed twice for all probes: once assuming service as a CE and once assuming service as an LE. </p>
+<p>OligoDesigner estimates the stability of hybrids and their contribution to background. For each interaction the hybrid stability is evaluated using the x-mer algorithm (discussed below), and the contribution of the hybrid to background is calculated by multiplying this predicted stability by a weighting factor specific to the interaction. The score associated with each interaction for the system 1 universals is shown below. Although the default settings are recommended, the hybrid parameters and the NSH weighting factors can be changed within the program using the NSH Dialog.</p>    
 
-      <div class="col-md-2" style="background-color: #dedef8;box-shadow: 
-         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
-         <h4>第一列</h4>
-         <p>左侧页面.</p>
-      </div>
+<p>As an example, note that the CE-AMP arm interaction has a weight of 15X. If the stability of the hybrid is calculated from the x-mer algorithm to be, say, “1”, the CE NSH score for this interactions would be 15 (the x-mer result times 15). Now, if you are paying attention, you are wondering why the CE-“AMP arm” interaction given more weight than the CE-“AMP leader” and CE-“AP probe” interaction. For the 15X3 molecule, each of the AMP arms has three binding sites for the AP probe. This yields 45 binding sites for both the AP and the CE probe should there be non-specific pairing. Conceptually you can envision why this is an NSH interaction we wish to avoid. </p>
+<p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNTUwNTgxOTk2OTFfMj.png" /></p>
+<p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNTUyMzMwMzU1NTNfMj.png" /></p>
+<p align="center"><b>NSH Interactions for System 1 Chemistry</b></p>
+    </div>
+    
+</div>
 
-      <div class="col-md-10" style="background-color: #dedef8;box-shadow: 
-         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
-         <h4>第二列 - 分为四个盒子</h4>
-         <div class="row">
-            <div class="col-md-6" style="background-color: #B18904;
-               box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
-               <p>右侧栏目导航
-               </p>
-            </div>
-            <div class="col-md-6" style="background-color: #B18904;
-               box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
-               <p> 右侧更右
-               </p>
-            </div>
-         </div>
+        </div>
+    </div>
 
-         <div class="row">
-            <div class="col-md-6" style="background-color: #B18904;
-               box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
-               <p>右侧更左
-               </p>
-            </div>   
-            <div class="col-md-6" style="background-color: #B18904;
-               box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
-               <p>下右更右</p>
-            </div>
-         </div>
-
-      </div>
-
-   </div>
 <div id="footer">
 <p align="center">版权所有，侵权必究@2015 郑州艾斯亚生物科技有限公司</p>
 </div>
