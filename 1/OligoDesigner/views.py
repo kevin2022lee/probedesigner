@@ -8,7 +8,7 @@ import time
 from datetime import datetime
 import sys,urllib
 import base64
-local='pdv1.applinzi.com'
+local='127.0.0.1:8000'
 
 #######################实现最长公共字符查找##################################
 class arithmetic():  
@@ -267,11 +267,17 @@ def entreztoxml(request):
                                                              },context_instance=RequestContext(request))
 def x4merCalc(request):
     if request.method=="POST":
-        from Bio import Seq
+        from Bio.Seq import Seq
         from Bio.Alphabet import IUPAC
         uni_seq=Seq("CCGCCAGCAAAGCTTTGGA", IUPAC.unambiguous_dna)
+        calc_seq=Seq(request.POST['pseq'], IUPAC.unambiguous_dna).upper()
         arith = arithmetic()
-        x4merlcs=arith.lcs(str(uni_seq), request.POST['pseq'])
-        x4merlcslen=arith.levenshtein(str(uni_seq), request.POST['pseq'])
-        
-    
+        x4merlcs=arith.lcs(str(uni_seq),str(calc_seq))
+        x4merlcslen=arith.levenshtein(str(uni_seq),str(calc_seq))
+    return render_to_response('showcalcresult.html',{
+                                                     'local':local,
+                                                     'x4merlcs':x4merlcs,
+                                                     'x4merlcslen':x4merlcslen,
+                                                     'uni_seq':uni_seq,
+                                                     'calc_seq':calc_seq,
+                                                     },context_instance=RequestContext(request))
