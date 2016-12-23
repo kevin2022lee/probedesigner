@@ -276,6 +276,8 @@ def x4merCalc(request):
         x4merlcslen=arith.levenshtein(str(uni_seq),str(calc_seq))
         if len(x4merlcs) >=4:
             x4mers=x4merlcs+"-"+Seq(x4merlcs,IUPAC.unambiguous_dna).reverse_complement().tostring()
+            x4mer1=x4merlcs[0:3]+"-"+Seq(x4merlcs[0:3],IUPAC.unambiguous_dna).reverse_complement().tostring()
+            x4mer2=x4merlcs[1:4]+"-"+Seq(x4merlcs[1:4],IUPAC.unambiguous_dna).reverse_complement().tostring()
         return render_to_response('showcalcresult.html',{
                                                      'local':local,
                                                      'x4merlcs':x4merlcs,
@@ -283,4 +285,6 @@ def x4merCalc(request):
                                                      'uni_seq':uni_seq,
                                                      'calc_seq':calc_seq,
                                                      'x4mers':x4mers,
+                                                     'x4mer1':x4mer1,
+                                                     'x4mer2':x4mer2,
                                                      },context_instance=RequestContext(request))
