@@ -303,4 +303,3 @@ def x4merScore(seq,len):
     SumGC=seq.count("G")+seq.count("C")
     Score=round((0.5*SumAT+1.0*SumGC)/4,3)
     return Score
-def
