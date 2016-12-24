@@ -293,7 +293,7 @@ def x4merCalc(request):
             NSH_Score=sum(data['score_x4mer'])*WF_CEtoLeaders
         else:
             x4mers=0
-            data=0
+            data={'x4mer':0,'score_x4mer':0}
             NSH_Score=0
         return render_to_response('showcalcresult.html',{
                                                      'local':local,
