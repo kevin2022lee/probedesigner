@@ -272,7 +272,7 @@ def x4merCalc(request):
         from Bio.Seq import Seq
         from Bio.Alphabet import IUPAC
         
-        uni_Aleader_seq=Seq("CCGCCAGCAAAGCTTTGGA", IUPAC.unambiguous_dna)
+        uni_Aleader_seq=Seq("AAAACGGTAACTTCTTTATGCTTTGACTCAG", IUPAC.unambiguous_dna)
         uni_Aarms_seq=Seq("ATCTCAGTCTCGTTAATGGATTCCT", IUPAC.unambiguous_dna)
         uni_AP_seq=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
         uni_PSCP_seq=Seq("CTCTTGGAAAGAAAGT", IUPAC.unambiguous_dna)
