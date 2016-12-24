@@ -265,6 +265,7 @@ def entreztoxml(request):
                                                              'taxonomy':taxonomy,
                                                              'topology':topology,
                                                                                 },context_instance=RequestContext(request))
+##############X-mer数值计算函数################
 @csrf_protect                                                             
 def x4merCalc(request):
     if request.method=="POST":
@@ -291,6 +292,7 @@ def x4merCalc(request):
         if len(x4merlcs_Aleader) >=4:
             x4mer_Aleaders=x4merlcs_Aleader+"-"+Seq(x4merlcs_Aleader,IUPAC.unambiguous_dna).reverse_complement().tostring()
             i=0
+            data={}
             x4mer_Aleader=[]
             score_x4mer_Aleader=[]
             while(i<len(x4merlcs_Aleader)-3):
