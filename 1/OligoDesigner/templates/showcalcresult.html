@@ -24,21 +24,26 @@
       <td style="word-break:break-all; word-wrap:break-all;">{{uni_seq}}</td>
       <td>探针序列信息：</td>
       <td>{{calc_seq}}</td></tr>
-      <tr class="active">
+      <tr class="active" >
       <td width="15%">Xmer结算结果:</td>
       <td width="35%" style="word-break:break-all; word-wrap:break-all;">{{x4mers}}</td>
       <td width="15%">x-mer：</td>
-      <td width="35%">
+      <td width="35%" colspan="2">
+      <tr>
+      <td>
       <ul>
       {%for x in x4mer%}
       <li>Xmer:{{x}}</li>
       {%endfor%}
       </ul>
+      </td>
+      <td>
       <ul>
       {%for y in score_x4mer%}
       <li>Score:{{y}}</li>
       {%endfor%}
       </ul>
+      </td>
       </td></tr>
     <tr class="success">
       <td>x-mer2：</td>
