@@ -324,6 +324,44 @@ def x4merCalc(request):
             x4mer_Aarmss=""
             data_Aarms={'x4mer_Aarms':"",'score_x4mer_Aarms':""}
             NSH_Score_Aarms=0
+         #####################与AP探针计算x-mer的值########
+        if len(x4merlcs_AP) >=4:
+            x4mer_APs=x4merlcs_AP+"-"+Seq(x4merlcs_AP,IUPAC.unambiguous_dna).reverse_complement().tostring()
+            i=0
+            x4mer_AP=[]
+            score_x4mer_AP=[]
+            data_AP={}
+            while(i<len(x4merlcs_AP)-3):
+                x4mer_AP.append(x4merlcs_AP[i:i+4]+"-"+Seq(x4merlcs_AP[i:i+4],IUPAC.unambiguous_dna).reverse_complement().tostring())
+                score_x4mer_AP.append(x4merScore(x4merlcs_AP[i:i+4]))
+                i=i+1
+            data_AP['x4mer_AP']=x4mer_AP
+            data_AP['score_x4mer_AP']=score_x4mer_AP
+            NSH_Score_AP=sum(data_AP['score_x4mer_AP'])*WF_CEtoAP
+        else:
+            x4mer_APs=""
+            data_AP={'x4mer_AP':"",'score_x4mer_AP':""}
+            NSH_Score_AP=0
+        ##############与PSCP探针计算x-mer的值###############################
+        if len(x4merlcs_PSCP) >=4:
+            x4mer_PSCPs=x4merlcs_PSCP+"-"+Seq(x4merlcs_PSCP,IUPAC.unambiguous_dna).reverse_complement().tostring()
+            i=0
+            x4mer_PSCP=[]
+            score_x4mer_PSCP=[]
+            data_PSCP={}
+            while(i<len(x4merlcs_PSCP)-3):
+                x4mer_PSCP.append(x4merlcs_PSCP[i:i+4]+"-"+Seq(x4merlcs_PSCP[i:i+4],IUPAC.unambiguous_dna).reverse_complement().tostring())
+                score_x4mer_PSCP.append(x4merScore(x4merlcs_PSCP[i:i+4]))
+                i=i+1
+            data_PSCP['x4mer_PSCP']=x4mer_PSCP
+            data_PSCP['score_x4mer_PSCP']=score_x4mer_PSCP
+            NSH_Score_PSCP=sum(data_PSCP['score_x4mer_PSCP'])*WF_LEtoPSCP
+        else:
+            x4mer_PSCPs=""
+            data_PSCP={'x4mer_PSCP':"",'score_x4mer_PSCP':""}
+            NSH_Score_PSCP=0
+            #######END############
+        total_NSH= NSH_Score_Aleader+NSH_Score_Aarms+NSH_Score_AP+NSH_Score_PSCP
         return render_to_response('showcalcresult.html',{
                                                      'local':local,
                                                      'x4merlcs_Aleader':x4merlcs_Aleader,
@@ -338,6 +376,15 @@ def x4merCalc(request):
                                                      'x4mer_Aarms':data_Aarms['x4mer_Aarms'],
                                                      'score_x4mer_Aarms':data_Aarms['score_x4mer_Aarms'],
                                                      'NSH_Score_Aarms':NSH_Score_Aarms,
+                                                     'x4mer_APs':x4mer_APs,
+                                                     'x4mer_AP':data_AP['x4mer_AP'],
+                                                     'score_x4mer_AP':data_AP['score_x4mer_AP'],
+                                                     'NSH_Score_AP':NSH_Score_AP,
+                                                     'x4mer_PSCPs':x4mer_PSCPs,
+                                                     'x4mer_PSCP':data_PSCP['x4mer_PSCP'],
+                                                     'score_x4mer_PSCP':data_PSCP['score_x4mer_PSCP'],
+                                                     'NSH_Score_PSCP':NSH_Score_PSCP,
+                                                     'Total_NSH':total_NSH,
                                                      },context_instance=RequestContext(request))
 def x4merScore(seq):
     SumAT=seq.count("A")+seq.count("T")
