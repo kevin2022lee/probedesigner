@@ -367,7 +367,7 @@ def x4merCalc(request):
                                                      'x4merlcs_Aleader':x4merlcs_Aleader,
                                                      'x4merlcslen_Aleader':x4merlcslen_Aleader,
                                                      'uni_Aleader_seq':uni_Aleader_seq,
-                                                     'uni_Alarms_seq':uni_Aarms_seq,
+                                                     'uni_Aarms_seq':uni_Aarms_seq,
                                                      'uni_AP_seq':uni_AP_seq,
                                                      'uni_PSCP_seq':uni_PSCP_seq,
                                                      'calc_seq':calc_seq,
