@@ -304,7 +304,7 @@ def x4merCalc(request):
             NSH_Score_Aleader=sum(data_Aleader['score_x4mer_Aleader'])*WF_CEtoLeaders
         else:
             x4mer_Aleaders=""
-            data_Aleader={'x4mer_Aleader','score_x4mer_Aleader'}
+            data_Aleader={'x4mer_Aleader':'-','score_x4mer_Aleader':'-'}
             NSH_Score_Aleader=0
 ########与Aarms计算X-mer值############
         if len(x4merlcs_Aarms) >=4:
@@ -322,7 +322,7 @@ def x4merCalc(request):
             NSH_Score_Aarms=sum(data_Aarms['score_x4mer_Aarms'])*WF_CEtoAMParms
         else:
             x4mer_Aarmss=""
-            data_Aarms={'x4mer_Aarms','score_x4mer_Aarms'}
+            data_Aarms={'x4mer_Aarms':'-','score_x4mer_Aarms':'-'}
             NSH_Score_Aarms=0
 #####################与AP探针计算x-mer的值########
         if len(x4merlcs_AP) >=4:
@@ -340,7 +340,7 @@ def x4merCalc(request):
             NSH_Score_AP=sum(data_AP['score_x4mer_AP'])*WF_CEtoAP
         else:
             x4mer_APs=""
-            data_AP={'x4mer_AP','score_x4mer_AP'}
+            data_AP={'x4mer_AP':'-','score_x4mer_AP':'-'}
             NSH_Score_AP=0
 ##############与PSCP探针计算x-mer的值###############################
         if len(x4merlcs_PSCP) >=4:
@@ -358,7 +358,7 @@ def x4merCalc(request):
             NSH_Score_PSCP=sum(data_PSCP['score_x4mer_PSCP'])*WF_LEtoPSCP
         else:
             x4mer_PSCPs=""
-            data_PSCP={'x4mer_PSCP','score_x4mer_PSCP'}
+            data_PSCP={'x4mer_PSCP':'-','score_x4mer_PSCP':'-'}
             NSH_Score_PSCP=0
 #######END############
         total_NSH= NSH_Score_Aleader+NSH_Score_Aarms+NSH_Score_AP+NSH_Score_PSCP
