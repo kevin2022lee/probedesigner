@@ -282,7 +282,7 @@ def x4merCalc(request):
             data={}
             while(i<len(x4merlcs)-3):
                 x4mer.append(x4merlcs[i:i+4]+"-"+Seq(x4merlcs[i:i+4],IUPAC.unambiguous_dna).reverse_complement().tostring())
-                score_x4mer.append(x4merScore(x4merlcs[i:i+4],len(x4merlcs)))
+                score_x4mer.append(x4merScore(x4merlcs[i:i+4]))
                 i=i+1
             data['x4mer']=x4mer
             data['score_x4mer']=score_x4mer
@@ -292,6 +292,8 @@ def x4merCalc(request):
             WF_LEtoPSCP=6
             NSH_Score=sum(data['score_x4mer'])*WF_CEtoLeaders
         else:
+            x4mers=0
+            data=0
             NSH_Score=0
         return render_to_response('showcalcresult.html',{
                                                      'local':local,
@@ -304,7 +306,7 @@ def x4merCalc(request):
                                                      'score_x4mer':data['score_x4mer'],
                                                      'NSH_Score':NSH_Score,
                                                      },context_instance=RequestContext(request))
-def x4merScore(seq,len):
+def x4merScore(seq):
     SumAT=seq.count("A")+seq.count("T")
     SumGC=seq.count("G")+seq.count("C")
     Score=round((0.5*SumAT+1.0*SumGC)/4,3)
