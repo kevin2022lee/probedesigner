@@ -374,8 +374,8 @@ def x4merCalc(request):
             data_PSCP={'x4mer_PSCP':'-','score_x4mer_PSCP':'-'}
             NSH_Score_PSCP_SACE=0
 #######END############
-        total_NSH_SACE= NSH_Score_Aleader_SACE+NSH_Score_Aarms_SACE+NSH_Score_AP_SACE+NSH_Score_PSCP_SACE
-        total_NSH_SALE= NSH_Score_Aleader_SALE+NSH_Score_Aarms_SALE+NSH_Score_AP_SALE+NSH_Score_PSCP_SALE
+        Total_NSH_SACE= NSH_Score_Aleader_SACE+NSH_Score_Aarms_SACE+NSH_Score_AP_SACE+NSH_Score_PSCP_SACE
+        Total_NSH_SALE= NSH_Score_Aleader_SALE+NSH_Score_Aarms_SALE+NSH_Score_AP_SALE+NSH_Score_PSCP_SALE
         
 #############模板渲染开始##########################
         return render_to_response('showcalcresult.html',{
@@ -407,8 +407,8 @@ def x4merCalc(request):
                                                      'score_x4mer_PSCP':data_PSCP['score_x4mer_PSCP'],
                                                      'NSH_Score_PSCP_SACE':NSH_Score_PSCP_SACE,
                                                      'NSH_Score_PSCP_SACLE':NSH_Score_PSCP_SALE,
-                                                     'Total_NSH_SACE':total_NSH_SACE,
-                                                     'Total_NSH_SALE':total_NSH_SALE,
+                                                     'Total_NSH_SACE':Total_NSH_SACE,
+                                                     'Total_NSH_SALE':Total_NSH_SALE,
                                                      },context_instance=RequestContext(request))
 def x4merScore(seq):
     SumAT=seq.count("A")+seq.count("T")
