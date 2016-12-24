@@ -67,11 +67,17 @@ li{list-style-type:none;}
       <td width="15%"><div class="list-group"> {%for x in x4mer_PSCP%}<div class="list-group"><li class="list-group-item-text">{{x}}</li>{%endfor%}</div></td>
       <td width="20%"><div class="list-group">{%for y in score_x4mer_PSCP%}<div class="list-group"><li class="list-group-item-text">{{y}}</li>{%endfor%}</div></td></tr>
       <tr class="active">
-      <td width="20%">AMPleader(6X)：{{NSH_Score_Aleader}}</td>
-      <td width="20%">AMParms(20X)：{{NSH_Score_Aarms}}</td>
-      <td width="20%">AP Probes(1X)：{{NSH_Score_AP}}</td>
-      <td width="15%">LE&CP(6X)：{{NSH_Score_PSCP}}</td>
-      <td width="25%"><font color=red><em><b>NSH:</b></em></font><b>{{Total_NSH}}</b></td></tr>
+      <td width="20%">AMPleader(3X)：{{NSH_Score_Aleader_SACE}}</td>
+      <td width="20%">AMParms(20X)：{{NSH_Score_Aarms_SACE}}</td>
+      <td width="20%">AP Probes(20X)：{{NSH_Score_AP_SACE}}</td>
+      <td width="15%">LE&CP(0X)：{{NSH_Score_PSCP_SACE}}</td>
+      <td width="25%"><font color=red><em><b>NSH_CE:</b></em></font><b>{{Total_NSH_SACE}}</b></td></tr>
+      <tr class="active">
+      <td width="20%">AMPleader(0X)：{{NSH_Score_Aleader_SALE}}</td>
+      <td width="20%">AMParms(0X)：{{NSH_Score_Aarms_SALE}}</td>
+      <td width="20%">AP Probes(0X)：{{NSH_Score_AP_SALE}}</td>
+      <td width="15%">LE&CP(12X)：{{NSH_Score_PSCP_SALE}}</td>
+      <td width="25%"><font color=red><em><b>NSH_LE:</b></em></font><b>{{Total_NSH_SALE}}</b></td></tr>
   </tbody>
 </table>
 
