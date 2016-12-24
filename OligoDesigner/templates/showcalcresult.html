@@ -10,7 +10,7 @@
       <th width="15%" text-align="center">项目</th>
       <th width="35%" text-align="center">数据</th>
       <th width="15%" text-align="center">项目</th>
-      <th width="35%" text-align="center">数据</th>
+      <th width="35%" text-align="center" colspan="2">数据</th>
       </tr>
   </thead>
   <tbody>
@@ -18,12 +18,12 @@
       <td width="15%">最长连续公共序列结果:</td>
       <td width="35%" style="word-break:break-all; word-wrap:break-all;">{{x4merlcs}}</td>
       <td width="15%">间距算法序列长度：</td>
-      <td width="35%">{{x4merlcslen}}</td></tr>
+      <td width="35%" colspan="2">{{x4merlcslen}}</td></tr>
     <tr class="success">
       <td>通用序列信息：</td>
       <td style="word-break:break-all; word-wrap:break-all;">{{uni_seq}}</td>
       <td>探针序列信息：</td>
-      <td>{{calc_seq}}</td></tr>
+      <td colspan="2">{{calc_seq}}</td></tr>
       <tr class="active" >
       <td width="15%">Xmer结算结果:</td>
       <td width="35%" style="word-break:break-all; word-wrap:break-all;">{{x4mers}}</td>
@@ -51,7 +51,7 @@
       <td>
       x-mer2：
       </td>
-      <td>Xmer的NSH值：</td>
+      <td colspan="2" >Xmer的NSH值：</td>
       <td>{{NSH_Score}}</td></tr>
   </tbody>
 </table>
