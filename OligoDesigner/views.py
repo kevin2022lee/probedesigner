@@ -264,16 +264,19 @@ def entreztoxml(request):
                                                              'organism':organism,
                                                              'taxonomy':taxonomy,
                                                              'topology':topology,
-                                                             },context_instance=RequestContext(request))
+                                                                                },context_instance=RequestContext(request))
+@csrf_protect                                                             
 def x4merCalc(request):
     if request.method=="POST":
         from Bio.Seq import Seq
         from Bio.Alphabet import IUPAC
-        uni_seq=Seq("CCGCCAGCAAAGCTTTGGA", IUPAC.unambiguous_dna)
+        uni_Aleader_seq=Seq("CCGCCAGCAAAGCTTTGGA", IUPAC.unambiguous_dna)
+        uni_Aarems_seq=Seq()
+        
         calc_seq=Seq(request.POST['pseq'], IUPAC.unambiguous_dna).upper()
         arith = arithmetic()
-        x4merlcs=arith.lcs(str(uni_seq),str(calc_seq))
-        x4merlcslen=arith.levenshtein(str(uni_seq),str(calc_seq))
+        x4merlcs=arith.lcs(str(uni_Aleader_seq),str(calc_seq))
+        x4merlcslen=arith.levenshtein(str(uni_Aleader_seq),str(calc_seq))
         if len(x4merlcs) >=4:
             x4mers=x4merlcs+"-"+Seq(x4merlcs,IUPAC.unambiguous_dna).reverse_complement().tostring()
             i=0
