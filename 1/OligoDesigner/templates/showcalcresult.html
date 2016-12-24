@@ -7,7 +7,7 @@ li{list-style-type:none;}
 </style>
 <div style="margin-top:20px;">
 <table class="table"  style="word-break:break-all; word-wrap:break-all;"> 
-  <caption><h3><b>作为<em>CE</em>探针的NSH计算结果</b></h3></caption>
+  <caption><h3><b>Service as CE/LE探针的NSH计算结果</b></h3></caption>
   <thead>
     <tr>
       <th width="15%" text-align="center">项目</th>
@@ -37,7 +37,7 @@ li{list-style-type:none;}
       <td>AMParms通用序列信息：</td>
       <td style="word-break:break-all; word-wrap:break-all;">{{uni_Aarms_seq}}</td>
       <td>探针序列信息：</td>
-      <td colspan="2">{{calc_seq}}</td></tr>
+      <td colspan="2">{{x4mer_Aarmss}}</td></tr>
       <tr class="success">
       <td width="15%">Aarms的4-mers:</td>
       <td width="35%">{{x4mer_Aarmss}}</td>
@@ -48,7 +48,7 @@ li{list-style-type:none;}
       <td>AP Probes通用序列信息：</td>
       <td style="word-break:break-all; word-wrap:break-all;">{{uni_AP_seq}}</td>
       <td>探针序列信息：</td>
-      <td colspan="2">{{calc_seq}}</td></tr>
+      <td colspan="2">{{x4mer_APs}}</td></tr>
       <tr class="info">
       <td width="15%">APs的4-mers:</td>
       <td width="35%">{{x4mer_APs}}</td>
@@ -59,7 +59,7 @@ li{list-style-type:none;}
       <td>PSCP通用序列信息：</td>
       <td style="word-break:break-all; word-wrap:break-all;">{{uni_PSCP_seq}}</td>
       <td>探针序列信息：</td>
-      <td colspan="2">{{calc_seq}}</td></tr>
+      <td colspan="2">{{x4mer_PSCPs}}</td></tr>
       <tr class="danger">
       <td width="15%">PSCPs的4-mers:</td>
       <td width="35%">{{x4mer_PSCPs}}</td>
@@ -72,7 +72,7 @@ li{list-style-type:none;}
       <td width="20%">AP Probes(20X)：{{NSH_Score_AP_SACE}}</td>
       <td width="15%">LE&CP(0X)：{{NSH_Score_PSCP_SACE}}</td>
       <td width="25%"><font color=red><em><b>NSH_CE:</b></em></font><b>{{Total_NSH_SACE}}</b></td></tr>
-      <tr class="active">
+      <tr class="warning">
       <td width="20%">AMPleader(0X)：{{NSH_Score_Aleader_SALE}}</td>
       <td width="20%">AMParms(0X)：{{NSH_Score_Aarms_SALE}}</td>
       <td width="20%">AP Probes(0X)：{{NSH_Score_AP_SALE}}</td>
