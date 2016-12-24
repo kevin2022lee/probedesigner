@@ -288,7 +288,7 @@ def x4merCalc(request):
         x4merlcs_Aarms=arith.lcs(str(uni_Aarms_seq),str(calc_seq))
         x4merlcs_AP=arith.lcs(str(uni_AP_seq),str(calc_seq))
         x4merlcs_PSCP=arith.lcs(str(uni_PSCP_seq),str(calc_seq))
-        ########与Aleader计算X-mer值############
+########与Aleader计算X-mer值############
         if len(x4merlcs_Aleader) >=4:
             x4mer_Aleaders=x4merlcs_Aleader+"-"+Seq(x4merlcs_Aleader,IUPAC.unambiguous_dna).reverse_complement().tostring()
             i=0
@@ -304,9 +304,9 @@ def x4merCalc(request):
             NSH_Score_Aleader=sum(data_Aleader['score_x4mer_Aleader'])*WF_CEtoLeaders
         else:
             x4mer_Aleaders=""
-            data_Aleader={'x4mer_Aleader':"",'score_x4mer_Aleader':""}
+            data_Aleader={'x4mer_Aleader':"无",'score_x4mer_Aleader':"无"}
             NSH_Score_Aleader=0
-       ########与Aarms计算X-mer值############
+########与Aarms计算X-mer值############
         if len(x4merlcs_Aarms) >=4:
             x4mer_Aarmss=x4merlcs_Aarms+"-"+Seq(x4merlcs_Aarms,IUPAC.unambiguous_dna).reverse_complement().tostring()
             i=0
@@ -322,9 +322,9 @@ def x4merCalc(request):
             NSH_Score_Aarms=sum(data_Aarms['score_x4mer_Aarms'])*WF_CEtoAMParms
         else:
             x4mer_Aarmss=""
-            data_Aarms={'x4mer_Aarms':"",'score_x4mer_Aarms':""}
+            data_Aarms={'x4mer_Aarms':"无",'score_x4mer_Aarms':"无"}
             NSH_Score_Aarms=0
-         #####################与AP探针计算x-mer的值########
+#####################与AP探针计算x-mer的值########
         if len(x4merlcs_AP) >=4:
             x4mer_APs=x4merlcs_AP+"-"+Seq(x4merlcs_AP,IUPAC.unambiguous_dna).reverse_complement().tostring()
             i=0
@@ -340,9 +340,9 @@ def x4merCalc(request):
             NSH_Score_AP=sum(data_AP['score_x4mer_AP'])*WF_CEtoAP
         else:
             x4mer_APs=""
-            data_AP={'x4mer_AP':"",'score_x4mer_AP':""}
+            data_AP={'x4mer_AP':"无",'score_x4mer_AP':"无"}
             NSH_Score_AP=0
-        ##############与PSCP探针计算x-mer的值###############################
+##############与PSCP探针计算x-mer的值###############################
         if len(x4merlcs_PSCP) >=4:
             x4mer_PSCPs=x4merlcs_PSCP+"-"+Seq(x4merlcs_PSCP,IUPAC.unambiguous_dna).reverse_complement().tostring()
             i=0
@@ -358,10 +358,11 @@ def x4merCalc(request):
             NSH_Score_PSCP=sum(data_PSCP['score_x4mer_PSCP'])*WF_LEtoPSCP
         else:
             x4mer_PSCPs=""
-            data_PSCP={'x4mer_PSCP':"",'score_x4mer_PSCP':""}
+            data_PSCP={'x4mer_PSCP':"无",'score_x4mer_PSCP':"无"}
             NSH_Score_PSCP=0
-            #######END############
+#######END############
         total_NSH= NSH_Score_Aleader+NSH_Score_Aarms+NSH_Score_AP+NSH_Score_PSCP
+#############模板渲染开始##########################
         return render_to_response('showcalcresult.html',{
                                                      'local':local,
                                                      'x4merlcs_Aleader':x4merlcs_Aleader,
