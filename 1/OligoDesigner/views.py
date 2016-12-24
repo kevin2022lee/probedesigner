@@ -288,23 +288,23 @@ def x4merCalc(request):
         x4merlcs_Aarms=arith.lcs(str(uni_Aarms_seq),str(calc_seq))
         x4merlcs_AP=arith.lcs(str(uni_AP_seq),str(calc_seq))
         x4merlcs_PSCP=arith.lcs(str(uni_PSCP_seq),str(calc_seq))
-        data={}
         ########与Aleader计算X-mer值############
         if len(x4merlcs_Aleader) >=4:
             x4mer_Aleaders=x4merlcs_Aleader+"-"+Seq(x4merlcs_Aleader,IUPAC.unambiguous_dna).reverse_complement().tostring()
             i=0
             x4mer_Aleader=[]
             score_x4mer_Aleader=[]
+            data_Aleader={}
             while(i<len(x4merlcs_Aleader)-3):
                 x4mer_Aleader.append(x4merlcs_Aleader[i:i+4]+"-"+Seq(x4merlcs_Aleader[i:i+4],IUPAC.unambiguous_dna).reverse_complement().tostring())
                 score_x4mer_Aleader.append(x4merScore(x4merlcs_Aleader[i:i+4]))
                 i=i+1
-            data['x4mer_Aleader']=x4mer_Aleader
-            data['score_x4mer_Aleader']=score_x4mer_Aleader
-            NSH_Score_Aleader=sum(data['score_x4mer_Aleader'])*WF_CEtoLeaders
+            data_Aleader['x4mer_Aleader']=x4mer_Aleader
+            data_Aleader['score_x4mer_Aleader']=score_x4mer_Aleader
+            NSH_Score_Aleader=sum(data_Aleader['score_x4mer_Aleader'])*WF_CEtoLeaders
         else:
             x4mer_Aleaders=""
-            data={'x4mer_Aleader':"",'score_x4mer_Aleader':""}
+            data_Aleader={'x4mer_Aleader':"",'score_x4mer_Aleader':""}
             NSH_Score_Aleader=0
        ########与Aarms计算X-mer值############
         if len(x4merlcs_Aarms) >=4:
@@ -312,16 +312,17 @@ def x4merCalc(request):
             i=0
             x4mer_Aarms=[]
             score_x4mer_Aarms=[]
+            data_Aarms={}
             while(i<len(x4merlcs_Aarms)-3):
                 x4mer_Aarms.append(x4merlcs_Aarms[i:i+4]+"-"+Seq(x4merlcs_Aarms[i:i+4],IUPAC.unambiguous_dna).reverse_complement().tostring())
                 score_x4mer_Aarms.append(x4merScore(x4merlcs_Aarms[i:i+4]))
                 i=i+1
-            data['x4mer_Aarms']=x4mer_Aarms
-            data['score_x4mer_Aarms']=score_x4mer_Aarms
-            NSH_Score_Aarms=sum(data['score_x4mer_Aarms'])*WF_CEtoAMParms
+            data_Aarms['x4mer_Aarms']=x4mer_Aarms
+            data_Aarms['score_x4mer_Aarms']=score_x4mer_Aarms
+            NSH_Score_Aarms=sum(data_Aarms['score_x4mer_Aarms'])*WF_CEtoAMParms
         else:
             x4mer_Aarmss=""
-            data={'x4mer_Aarms':"",'score_x4mer_Aarms':""}
+            data_Aarms={'x4mer_Aarms':"",'score_x4mer_Aarms':""}
             NSH_Score_Aarms=0
         return render_to_response('showcalcresult.html',{
                                                      'local':local,
@@ -330,12 +331,12 @@ def x4merCalc(request):
                                                      'uni_Aleader_seq':uni_Aleader_seq,
                                                      'calc_seq':calc_seq,
                                                      'x4mer_Aleaders':x4mer_Aleaders,
-                                                     'x4mer_Aleader':data['x4mer_Aleader'],
-                                                     'score_x4mer_Aleader':data['score_x4mer_Aleader'],
+                                                     'x4mer_Aleader':data_Aleader['x4mer_Aleader'],
+                                                     'score_x4mer_Aleader':data_Aleader['score_x4mer_Aleader'],
                                                      'NSH_Score_Aleader':NSH_Score_Aleader,
                                                      'x4mer_Aarmss':x4mer_Aarmss,
-                                                     'x4mer_Aarms':data['x4mer_Aarms'],
-                                                     'score_x4mer_Aarms':data['score_x4mer_Aarms'],
+                                                     'x4mer_Aarms':data_Aarms['x4mer_Aarms'],
+                                                     'score_x4mer_Aarms':data_Aarms['score_x4mer_Aarms'],
                                                      'NSH_Score_Aarms':NSH_Score_Aarms,
                                                      },context_instance=RequestContext(request))
 def x4merScore(seq):
