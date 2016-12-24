@@ -408,6 +408,7 @@ def x4merCalc(request):
                                                      'NSH_Score_PSCP_SACE':NSH_Score_PSCP_SACE,
                                                      'NSH_Score_PSCP_SACLE':NSH_Score_PSCP_SALE,
                                                      'Total_NSH_SACE':total_NSH_SACE,
+                                                     'Total_NSH_SALE':total_NSH_SALE,
                                                      },context_instance=RequestContext(request))
 def x4merScore(seq):
     SumAT=seq.count("A")+seq.count("T")
