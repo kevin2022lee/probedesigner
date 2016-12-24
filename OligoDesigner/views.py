@@ -373,6 +373,7 @@ def x4merCalc(request):
             x4mer_PSCPs=""
             data_PSCP={'x4mer_PSCP':'-','score_x4mer_PSCP':'-'}
             NSH_Score_PSCP_SACE=0
+            NSH_Score_PSCP_SALE=0
 #######END############
         Total_NSH_SACE= NSH_Score_Aleader_SACE+NSH_Score_Aarms_SACE+NSH_Score_AP_SACE+NSH_Score_PSCP_SACE
         Total_NSH_SALE= NSH_Score_Aleader_SALE+NSH_Score_Aarms_SALE+NSH_Score_AP_SALE+NSH_Score_PSCP_SALE
