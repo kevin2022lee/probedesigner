@@ -28,20 +28,21 @@
       <td width="15%">Xmer结算结果:</td>
       <td width="35%" style="word-break:break-all; word-wrap:break-all;">{{x4mers}}</td>
       <td width="5%">x-mer：</td>
-      <td width="20%" colspan="2" rowspan="1">
+      <tr>
+      <td colspan="2" rowspan="1">
       <ul>
       {%for x in x4mer%}
       <li>Xmer:{{x}}</li>
       {%endfor%}
       </ul>
       </td>
-      <td width="15%">
+      <td>
       <ul>
       {%for y in score_x4mer%}
       <li>Score:{{y}}</li>
       {%endfor%}
       </ul>
-      </td></tr>
+      </td></tr></tr>
     <tr class="success">
       <td>x-mer2：</td>
       <td>
