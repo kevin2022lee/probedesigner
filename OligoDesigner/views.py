@@ -271,7 +271,7 @@ def x4merCalc(request):
         from Bio.Seq import Seq
         from Bio.Alphabet import IUPAC
         uni_Aleader_seq=Seq("CCGCCAGCAAAGCTTTGGA", IUPAC.unambiguous_dna)
-        uni_Aarems_seq=Seq()
+        #uni_Aarems_seq=Seq()
         
         calc_seq=Seq(request.POST['pseq'], IUPAC.unambiguous_dna).upper()
         arith = arithmetic()
