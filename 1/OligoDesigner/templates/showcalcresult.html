@@ -38,6 +38,11 @@
       <li>{{y}}</li>
       {%endfor%}
       </td></tr>
+      <tr class="danger">
+      <td>AMParms通用序列信息：</td>
+      <td style="word-break:break-all; word-wrap:break-all;">{{uni_Aarms_seq}}</td>
+      <td>探针序列信息：</td>
+      <td colspan="2">{{calc_seq}}</td></tr>
       <tr class="success">
       <td width="15%">Aarms的X-mer序列:</td>
       <td width="35%">{{x4mer_Aarmss}}</td>
@@ -52,6 +57,11 @@
       <li>{{y}}</li>
       {%endfor%}
       </td></tr>
+      <tr class="danger">
+      <td>AP Probes通用序列信息：</td>
+      <td style="word-break:break-all; word-wrap:break-all;">{{uni_AP_seq}}</td>
+      <td>探针序列信息：</td>
+      <td colspan="2">{{calc_seq}}</td></tr>
       <tr class="info">
       <td width="15%">APs的X-mer序列:</td>
       <td width="35%">{{x4mer_APs}}</td>
@@ -66,6 +76,11 @@
       <li>{{y}}</li>
       {%endfor%}
       </td></tr>
+      <tr class="info">
+      <td>PSCP通用序列信息：</td>
+      <td style="word-break:break-all; word-wrap:break-all;">{{uni_PSCP_seq}}</td>
+      <td>探针序列信息：</td>
+      <td colspan="2">{{calc_seq}}</td></tr>
       <tr class="danger">
       <td width="15%">PSCPs的X-mer序列:</td>
       <td width="35%">{{x4mer_PSCPs}}</td>
@@ -81,13 +96,13 @@
       {%endfor%}
       </td></tr>
       <tr class="info">
-      <td width="15%">AMPleader(6X)：{{NSH_Score_Aleader}}</td>
-      <td width="35%">AMParms(20X)：{{NSH_Score_Aarms}}</td>
-      <td width="15%">AP Probes(1X)：{{NSH_Score_AP}}</td>
+      <td width="20%">AMPleader(6X)：{{NSH_Score_Aleader}}</td>
+      <td width="30%">AMParms(20X)：{{NSH_Score_Aarms}}</td>
+      <td width="20%">AP Probes(1X)：{{NSH_Score_AP}}</td>
       <td width="15%">
       LE&PSCP(6X)：{{NSH_Score_PSCP}}
       </td>
-      <td width="20%">
+      <td width="15%">
       总的NSH：{{Total_NSH}}
       </td></tr>
   </tbody>
