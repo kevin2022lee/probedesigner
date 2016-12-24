@@ -28,8 +28,8 @@
       <td width="15%">AMPLeader的4-mers:</td>
       <td width="35%" style="word-break:break-all; word-wrap:break-all;">{{x4mer_Aleaders}}</td>
       <td width="15%">AMPLeader的x-mer Score：</td>
-      <td width="15%">{%for x in x4mer_Aleader%}<li class="list-group-item-text"><h6>{{x}}</h6></li>{%endfor%} </td>
-      <td width="20%">{%for y in score_x4mer_Aleader%}<li class="list-group-item-text"><h6>{{y}}</h6></li>{%endfor%} </td></tr>
+      <td width="15%"><ul class="list-group-item">{%for x in x4mer_Aleader%}<li class="list-group-item-text"><h6>{{x}}</h6></li>{%endfor%}</ul> </td>
+      <td width="20%"><ul class="list-group-item">{%for y in score_x4mer_Aleader%}<li class="list-group-item-text"><h6>{{y}}</h6></li>{%endfor%}</ul> </td></tr>
       <tr class="danger">
       <td>AMParms通用序列信息：</td>
       <td style="word-break:break-all; word-wrap:break-all;">{{uni_Aarms_seq}}</td>
