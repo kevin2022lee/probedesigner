@@ -8,7 +8,7 @@ import time
 from datetime import datetime
 import sys,urllib
 import base64
-local='pdv1.applinzi.com'
+local='127.0.0.1:8000'
 
 #######################实现最长公共字符查找##################################
 class arithmetic():  
@@ -302,7 +302,7 @@ def x4merCalc(request):
                                                      'local':local,
                                                      'x4merlcs':x4merlcs,
                                                      'x4merlcslen':x4merlcslen,
-                                                     'uni_seq':uni_seq,
+                                                     'uni_seq':uni_Aleader_seq,
                                                      'calc_seq':calc_seq,
                                                      'x4mers':x4mers,
                                                      'x4mer':data['x4mer'],
