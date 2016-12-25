@@ -38,7 +38,7 @@ class CalcNSH:
         uni_AP_seq=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
         uni_PSCP_seq=Seq("CTCTTGGAAAGAAAGT", IUPAC.unambiguous_dna)
         
-        ########实例化LCS函数#############
+        ########LCS#############
         Calc_Seq=Seq(Calc_Seq, IUPAC.unambiguous_dna).upper()
         x4merlcs_Aleader=self.lcs(str(uni_Aleader_seq),str(Calc_Seq))
         x4merlcs_Aarms=self.lcs(str(uni_Aarms_seq),str(Calc_Seq))
@@ -68,7 +68,7 @@ class CalcNSH:
         else:
             NSH_Score_Aleader_SACE=0
             NSH_Score_Aleader_SALE=0
-###############计算Aarms的xmer Score############################################
+###############Aarms xmer Score############################################
         if len(x4merlcs_Aarms) >=4:
             i=0
             score_x4mer_Aarms=[]
@@ -82,7 +82,7 @@ class CalcNSH:
         else:
             NSH_Score_Aarms_SACE=0
             NSH_Score_Aarms_SALE=0
-###############计算APs的xmer Score##############################################
+###############APs xmer Score##############################################
         if len(x4merlcs_AP) >=4:
             i=0
             score_x4mer_AP=[]
@@ -96,7 +96,7 @@ class CalcNSH:
         else:
             NSH_Score_AP_SACE=0
             NSH_Score_AP_SALE=0
-##############与PSCP的x-mer Score###############################
+##############PSCP x-mer Score###############################
         if len(x4merlcs_PSCP) >=4:
             i=0
             score_x4mer_PSCP=[]
