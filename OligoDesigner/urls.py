@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from views import *
+from views import index,probedesign,subseq,entrez,fromfile,downloadentrez,entreztoxml,test,x4merCalc
 from django.contrib import admin
 import settings
 admin.autodiscover()
