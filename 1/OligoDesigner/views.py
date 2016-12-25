@@ -9,7 +9,6 @@ from datetime import datetime
 from models import *
 import sys,urllib
 import base64
-from views import *
 from xmerCalcNSH import *
 from arithMetic import *
 local='pdv1.applinzi.com'
