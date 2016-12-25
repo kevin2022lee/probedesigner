@@ -32,7 +32,7 @@ class CalcNSH:
     def xmerCalc(self,Calc_Seq):
         from Bio.Seq import Seq
         from Bio.Alphabet import IUPAC
-#########################导入QuantiMAT2.0的universal序列文件#####################################################        
+#########################QuantiMAT2.0 universal file#####################################################        
         uni_Aleader_seq=Seq("AAAACGGTAACTTCTTTATGCTTTGACTCAG", IUPAC.unambiguous_dna)
         uni_Aarms_seq=Seq("ATCTCAGTCTCGTTAATGGATTCCT", IUPAC.unambiguous_dna)
         uni_AP_seq=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
