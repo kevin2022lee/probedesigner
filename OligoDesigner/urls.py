@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from OligoDesigner.views import *
+from views import *
 from django.contrib import admin
 import settings
 admin.autodiscover()
