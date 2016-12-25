@@ -1,7 +1,7 @@
 class CalcNSH:
     def __init__(self):
         pass
-    '''计算序列的【X-merScore】和计算【NSH】类函数'''
+    '''This a Class that can calculate the NSH and LCS'''
     def lcs(self,first,second):  
         first_length = len(first)  
         second_length = len(second)  
