@@ -376,15 +376,4 @@ def x4merScore(seq):
     SumAT=seq.count("A")+seq.count("T")
     SumGC=seq.count("G")+seq.count("C")
     Score=round((0.5*SumAT+1.0*SumGC)/4,3)
-    return Score
-#def filterSeq(Seq_String):
-
-def TmSearch(arg,tm):  
-    tm=55
-    low=0
-    height = len(arg)-1   
-    while low<height :
-        mid=(low+height)/2
-        if self.oligoTm(arg[:mid])=55
-        
-            
+    return Score     
