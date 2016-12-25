@@ -6,66 +6,16 @@ from django.views.decorators.csrf import csrf_protect,csrf_exempt
 #from django.http import HttpResponse,HttpResponseRedirect
 import time
 from datetime import datetime
+from models import *
 import sys,urllib
 import base64
+from views import *
+from xmerCalcNSH import *
+from arithMetic import *
 local='pdv1.applinzi.com'
 
 #######################实现最长公共字符查找##################################
-class arithmetic():  
-      
-    def __init__(self):  
-        pass  
-    ''' 【编辑距离算法】 【levenshtein distance】 【字符串相似度算法】 '''
-    
-    def levenshtein(self,first,second):  
-        if len(first) > len(second):  
-            first,second = second,first  
-        if len(first) == 0:  
-            return len(second)  
-        if len(second) == 0:  
-            return len(first)  
-        first_length = len(first) + 1  
-        second_length = len(second) + 1  
-        distance_matrix = [range(second_length) for x in range(first_length)]   
-        #print distance_matrix  
-        for i in range(1,first_length):  
-            for j in range(1,second_length):  
-                deletion = distance_matrix[i-1][j] + 1  
-                insertion = distance_matrix[i][j-1] + 1  
-                substitution = distance_matrix[i-1][j-1]  
-                if first[i-1] != second[j-1]:  
-                    substitution += 1  
-                distance_matrix[i][j] = min(insertion,deletion,substitution)  
-        #print distance_matrix  
-        return distance_matrix[first_length-1][second_length-1]
-    
-    def lcs(self,first,second):  
-        first_length = len(first)  
-        second_length = len(second)  
-        size = 0  
-        x = 0  
-        y = 0  
-        matrix = [range(second_length) for x in range(first_length)]  
-        #print matrix  
-        for i in range(first_length):  
-            for j in range(second_length):  
-                #print i,j  
-                if first[i] == second[j]:  
-                    if i - 1 >= 0 and j - 1 >=0:  
-                        matrix[i][j] = matrix[i-1][j-1] + 1  
-                    else:  
-                        matrix[i][j] = 1  
-                    if matrix[i][j] > size:  
-                        size = matrix[i][j]  
-                        x = j  
-                        y = i  
-                else:  
-                    matrix[i][j] = 0  
-        #print matrix  
-        #print size,x,y   
-  
-        return second[x-size+1:x+1]  
-#######################################################################
+
 def index(request):
     global local
     return render_to_response('bootstrap.html',{'local':local,},context_instance=RequestContext(request))
@@ -108,6 +58,15 @@ def oligoTm(s):
     else:
         TmValue=0
     return TmValue
+def oligoTd(s):
+    if len(s)!= 0:
+        acount=s.count('A')
+        ccount=s.count('C')
+        gcount=s.count('G')
+        tcount=s.count('T') 
+        TdValue=2*(acount+tcount)+4(gcount+ccount)
+    return TdValue
+
 def oligoOD(s):
     if len(s)!= 0:
         acount=s.count('A')
@@ -419,3 +378,14 @@ def x4merScore(seq):
     SumGC=seq.count("G")+seq.count("C")
     Score=round((0.5*SumAT+1.0*SumGC)/4,3)
     return Score
+#def filterSeq(Seq_String):
+
+def TmSearch(arg,tm):  
+    tm=55
+    low=0
+    height = len(arg)-1   
+    while low<height :
+        mid=(low+height)/2
+        if self.oligoTm(arg[:mid])=55
+        
+            
