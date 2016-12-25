@@ -2,7 +2,7 @@ class arithmetic():
       
     def __init__(self):  
         pass  
-    ''' 【编辑距离算法】 【levenshtein distance】 【字符串相似度算法】 '''
+    ''' levenshtein distance '''
     
     def levenshtein(self,first,second):  
         if len(first) > len(second):  
