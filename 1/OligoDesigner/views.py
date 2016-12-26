@@ -210,6 +210,7 @@ def entreztoxml(request):
             organism="N/A"
             taxonomy="N/A"
             topology="N/A"
+        request.session['sequence']=str(nr.seq)
     return render_to_response('parselocalfile.html',{
                                                              'filetype':filetype[0],
                                                              'local':local,
@@ -358,7 +359,7 @@ def x4merCalc(request):
                                                      'x4mer_Aarms':data_Aarms['x4mer_Aarms'],
                                                      'score_x4mer_Aarms':data_Aarms['score_x4mer_Aarms'],
                                                      'NSH_Score_Aarms_SACE':NSH_Score_Aarms_SACE,
-                                                     'NSH_Score_Aarms_SACE':NSH_Score_Aarms_SACE,
+                                                     'NSH_Score_Aarms_SALE':NSH_Score_Aarms_SALE,
                                                      'x4mer_APs':x4mer_APs,
                                                      'x4mer_AP':data_AP['x4mer_AP'],
                                                      'score_x4mer_AP':data_AP['score_x4mer_AP'],
@@ -368,7 +369,7 @@ def x4merCalc(request):
                                                      'x4mer_PSCP':data_PSCP['x4mer_PSCP'],
                                                      'score_x4mer_PSCP':data_PSCP['score_x4mer_PSCP'],
                                                      'NSH_Score_PSCP_SACE':NSH_Score_PSCP_SACE,
-                                                     'NSH_Score_PSCP_SACLE':NSH_Score_PSCP_SALE,
+                                                     'NSH_Score_PSCP_SALE':NSH_Score_PSCP_SALE,
                                                      'Total_NSH_SACE':Total_NSH_SACE,
                                                      'Total_NSH_SALE':Total_NSH_SALE,
                                                      },context_instance=RequestContext(request))
@@ -377,3 +378,4 @@ def x4merScore(seq):
     SumGC=seq.count("G")+seq.count("C")
     Score=round((0.5*SumAT+1.0*SumGC)/4,3)
     return Score     
+            
