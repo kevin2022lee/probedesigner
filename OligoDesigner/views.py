@@ -407,9 +407,13 @@ def NonNshFilter(req):
     if req.method=='POST':
         nonnshfilter=NonNSHFilter()
         probedict={}
-        probedict['id']=nonnshfilter.filterSequence(req.POST['seqtxt'])
+        probelist=nonnshfilter.filterSequence(req.POST['seqtxt'])
+        s=req.POST['seqtxt'].upper()
+        probelist.append(len(s))
+        for i in range(len(probelist)):
+            probedict.setdefault('p'+probelist[i],s[probelist[i]:probelist[i+1]])
         return render_to_response('showfilterprobe.html',{
                                                      'local':local,
                                                      'probedict':probedict,
-                                                     's':req.POST['seqtxt'].upper(),
+                                                     's':s,
                                                      },context_instance=RequestContext(req))   
