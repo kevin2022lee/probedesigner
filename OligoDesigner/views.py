@@ -11,7 +11,7 @@ import sys,urllib
 import base64
 from xmerCalcNSH import *
 from arithMetic import *
-local='127.0.0.1:8000'
+local='pdv1.applinzi.com'
 
 #######################实现最长公共字符查找##################################
 
