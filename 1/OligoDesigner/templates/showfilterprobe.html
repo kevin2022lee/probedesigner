@@ -8,15 +8,14 @@
             引物索引
         </h4>
     </a> 
+ {% for key,value in probelist.items %}
     <a href="#" class="list-group-item" style="word-break:break-all;word-wrap:break-word;overflow:hidden;text-align:left;">
-        <h4 class="list-group-item-heading">
-            {{s}}
-        </h4>
-        <p class="list-group-item-text">
+        <span class="badge">
+            {{key}}
+        </span>
             {{probedict}}
-        </p>
     </a>
-
+{% endfor %}
 </div></div>
  <!-- /#mainWrap -->
 {% endblock %}
