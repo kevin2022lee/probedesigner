@@ -221,8 +221,8 @@ def entreztoxml(request):
             organism="N/A"
             taxonomy="N/A"
             topology="N/A"
-        #request.session['description']=str(nr.description)
-        #request.session['sequence']=str(nr.seq)
+        request.session['description']=nr.description
+        request.session['sequence']=nr.seq
     return render_to_response('parselocalfile.html',{
                                                      'filetype':filetype[0],
                                                      'local':local,
