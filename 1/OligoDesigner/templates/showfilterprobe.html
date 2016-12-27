@@ -13,11 +13,14 @@
         </h4>
     </a> 
  {% for key,value in probedict.items %}
-    <a href="#" class="list-group-item" style="word-break:break-all;word-wrap:break-word;overflow:hidden;text-align:left;">
-        <span class="badge">
+    <a href="#" class="list-group-item">
+    <div class="form-group">
+    <label for="inputPassword" class="col-sm-2 control-label"><span class="badge">
             {{key}}
-        </span>
-            <input class="form-control" type="text" value="{{value}}" name="{{key}}"/>
+        </span></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword" value="{{value}}" name="{{key}}">
+    </div>
     </a>
 {% endfor %}
 </div>
