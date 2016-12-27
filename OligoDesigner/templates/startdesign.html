@@ -5,7 +5,7 @@
 div{table-layout:fixed;}
 div{word-break:break-all;word-wrap:break-word;overflow:hidden;text-align:left;}
 </style>
-<form action="" method="POST">
+<form action="" method="POST" role="form">
 <div class="list-group">
  <a href="#" class="list-group-item active">
         <h4 class="list-group-item-heading">
@@ -21,7 +21,7 @@ div{word-break:break-all;word-wrap:break-word;overflow:hidden;text-align:left;}
   待设计序列全部基因序列
  </h4></a>
 <div class="well well-lg">
-{{sequence}}
+<textarea class="form-control">{{sequence}}</textarea>
 </div></div>
 <button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-user"></span>开始设计</button>
 </form>
