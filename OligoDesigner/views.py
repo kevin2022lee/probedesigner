@@ -411,7 +411,7 @@ def NonNshFilter(req):
         s=req.POST['seqtxt'].upper()
         probelist.append(len(s))
         for i in range(len(probelist)):
-            probedict.setdefault('p'+probelist[i],s[probelist[i]:probelist[i+1]])
+            probedict.setdefault('p'+str(probelist[i]),s[probelist[i]:probelist[i+1]])
         return render_to_response('showfilterprobe.html',{
                                                      'local':local,
                                                      'probedict':probedict,
