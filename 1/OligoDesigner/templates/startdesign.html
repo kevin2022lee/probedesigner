@@ -6,13 +6,15 @@ div{table-layout:fixed;}
 div{word-break:break-all;word-wrap:break-word;overflow:hidden;text-align:left;}
 </style>
 <form action="" method="POST">
+<div class="list-group">
 <div class="well well-sm">
 {{description}}
-</div>
+</div></div>
+<div class="list-group">
 <div class="well well-lg">
 {{sequence}}
-</div>
-<button type="submit" class="btn-primary">开始设计</button>
+</div></div>
+<button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-user"></span>开始设计</button>
 </form>
 <!-- /#mainWrap -->
 {% endblock %}
