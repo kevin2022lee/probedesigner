@@ -226,12 +226,9 @@ def entreztoxml(request):
         cookie=Cookie.SimpleCookie()
         #cookie['sequence']=nr.seq
         #cookie['descri']=nr.description
-        cookie.set_cookie("seq",nr.seq)
-        cookie.set_cookie("des",nr.description)
-        
         #request.session['description']=nr.description
         #request.session['sequence']=nr.seq
-    return render_to_response('parselocalfile.html',{
+    response=render_to_response('parselocalfile.html',{
                                                      'filetype':filetype[0],
                                                      'local':local,
                                                      'accessid':nr.id,
@@ -244,6 +241,9 @@ def entreztoxml(request):
                                                      'taxonomy':taxonomy,
                                                      'topology':topology,
                                                      },context_instance=RequestContext(request))
+    response.set_cookie("seq",nr.seq)
+    response.set_cookie("des",nr.description)
+    return response
 ##############X-mer数值计算函数################
 
 @csrf_protect                                                             
