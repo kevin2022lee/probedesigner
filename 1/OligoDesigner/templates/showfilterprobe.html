@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>NonNSHFilter结果</title>
+ <div class="list-group">
+    <a href="#" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            入门网站包
+        </h4>
+    </a>
+{% for  p in probedict %}  
+    <a href="#" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            免费域名注册
+        </h4>
+        <p class="list-group-item-text">
+            您将通过网页进行免费域名注册。
+        </p>
+    </a>
+ {% endfor %}
+</div>
+ <!-- /#mainWrap -->
+{% endblock %}

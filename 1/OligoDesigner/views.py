@@ -11,6 +11,8 @@ import base64
 import Cookie
 from xmerCalcNSH import *
 from arithMetic import *
+from searchProbe import *
+
 local='pdv1.applinzi.com'
 
 #######################实现最长公共字符查找##################################
@@ -399,4 +401,13 @@ def x4merScore(seq):
     SumGC=seq.count("G")+seq.count("C")
     Score=round((0.5*SumAT+1.0*SumGC)/4,3)
     return Score     
-            
+def NonNshFilter(req):
+    if req.method=='POST':
+        nonnshfilter=NonNSHFilter()
+        probedict={}
+        probedict['id']=nonnshfilter.filterSequence(req.POST['seqtxt'])
+        return render_to_response('showfilterprobe.html',{
+                                                     'local':local,
+                                                     'probedict':probedict,
+                                                     's':req.POST['seqtxt'].upper(),
+                                                     },context_instance=RequestContext(req))   

@@ -7,13 +7,12 @@ div{word-break:break-all;word-wrap:break-word;overflow:hidden;text-align:left;}
 textarea{overflow-y:visible;}
 h5{font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;}
 </style>
-<form action="" method="POST" role="form">
+<form action="http://{{local}}/NshFilter/" method="POST" role="form">
 <div class="list-group">
  <a href="#" class="list-group-item active">
-        <h5 class="list-group-item-heading">
-            待设计序列描述
-        </h5>
-    </a>
+ <h5 class="list-group-item-heading">
+ 待设计序列描述
+ </h5></a>
 <div class="well well-sm">
 {{description}}
 </div></div>
@@ -23,7 +22,7 @@ h5{font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;}
   待设计序列全部基因序列
  </h5></a>
 <div class="well well-lg">
-<textarea class="form-control" style="overflow-y:hidden;height:80px;" onpropertychange="this.style.height=this.scrollHeight+'px';" oninput="this.style.height=this.scrollHeight+'px';">{{sequence}}</textarea>
+<textarea name="seqtxt" class="form-control" style="overflow-y:hidden;height:80px;" onpropertychange="this.style.height=this.scrollHeight+'px';" oninput="this.style.height=this.scrollHeight+'px';">{{sequence}}</textarea>
 </div></div>
 <button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-user"></span>开始设计</button>
 </form>
