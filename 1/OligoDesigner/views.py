@@ -35,7 +35,7 @@ def startdesign(request):
     return render_to_response('startdesign.html',{
                                                   'local':local,
                                                   'sequence':request.COOKIES.get('seq',''),
-                                                  'description':request.COOKIES.get('descri',''),
+                                                  'description':request.COOKIES.get('des',''),
                                                   },context_instance=RequestContext(request))
 def oligoGC(s):
     if len(s)!= 0:
@@ -226,7 +226,8 @@ def entreztoxml(request):
         #cookie=Cookie.SimpleCookie()
         #cookie['sequence']=nr.seq
         #cookie['descri']=nr.description
-        response.set_cookies("seq",nr.seq)
+        response.set_cookie("seq",nr.seq)
+        response.set_cookie("des",nr.description)
         
         #request.session['description']=nr.description
         #request.session['sequence']=nr.seq
