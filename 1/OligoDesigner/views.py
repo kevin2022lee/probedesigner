@@ -223,11 +223,11 @@ def entreztoxml(request):
             taxonomy="N/A"
             topology="N/A"
             
-        #cookie=Cookie.SimpleCookie()
+        cookie=Cookie.SimpleCookie()
         #cookie['sequence']=nr.seq
         #cookie['descri']=nr.description
-        response.set_cookie("seq",nr.seq)
-        response.set_cookie("des",nr.description)
+        cookie.set_cookie("seq",nr.seq)
+        cookie.set_cookie("des",nr.description)
         
         #request.session['description']=nr.description
         #request.session['sequence']=nr.seq
