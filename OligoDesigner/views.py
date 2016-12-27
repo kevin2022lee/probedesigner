@@ -30,8 +30,16 @@ def fromfile(request):
 def test(request):
     global local
     return render_to_response('test.html',{'local':local,},context_instance=RequestContext(request))
+def startdesign(request):
+    global local
+    return render_to_response('startdesign.html',{
+                                                  'local':local,
+                                                  'sequence':request.GET.session['sequence'],
+                                                  'description':request.GET.session['description'],
+                                                  },context_instance=RequestContext(request))
 def oligoGC(s):
     if len(s)!= 0:
+        s=s.upper()
         acount=s.count('A')
         ccount=s.count('C')
         gcount=s.count('G')
@@ -39,6 +47,7 @@ def oligoGC(s):
     return round(100*(gcount+ccount)/(gcount+ccount+acount+tcount))
 def oligoMW(s):
     if len(s)!=0:
+        s=s.upper()
         acount=s.count('A')
         ccount=s.count('C')
         gcount=s.count('G')
@@ -46,6 +55,7 @@ def oligoMW(s):
     return round(313.21 * acount + 329.21 * gcount + 289.18 * ccount + 304.19 * tcount  - 60.96)
 def oligoTm(s):
     if len(s)!= 0:
+        s=s.upper()
         acount=s.count('A')
         ccount=s.count('C')
         gcount=s.count('G')
@@ -59,15 +69,17 @@ def oligoTm(s):
     return TmValue
 def oligoTd(s):
     if len(s)!= 0:
+        s=s.upper()
         acount=s.count('A')
         ccount=s.count('C')
         gcount=s.count('G')
         tcount=s.count('T') 
-        TdValue=2*(acount+tcount)+4(gcount+ccount)
+        TdValue=round(2*(acount+tcount)+4(gcount+ccount))
     return TdValue
 
 def oligoOD(s):
     if len(s)!= 0:
+        s=s.upper()
         acount=s.count('A')
         ccount=s.count('C')
         gcount=s.count('G')
@@ -210,6 +222,7 @@ def entreztoxml(request):
             organism="N/A"
             taxonomy="N/A"
             topology="N/A"
+        request.session['description']=str(nr.description)
         request.session['sequence']=str(nr.seq)
     return render_to_response('parselocalfile.html',{
                                                              'filetype':filetype[0],
@@ -225,6 +238,7 @@ def entreztoxml(request):
                                                              'topology':topology,
                                                                                 },context_instance=RequestContext(request))
 ##############X-mer数值计算函数################
+
 @csrf_protect                                                             
 def x4merCalc(request):
     if request.method=="POST":

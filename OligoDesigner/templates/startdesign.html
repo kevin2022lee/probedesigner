@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>从这里开始设计</title>
+<style>
+table{table-layout:fixed;}
+td{word-break:break-all;word-wrap:break-word;overflow:hidden;text-align:left;}
+</style>
+<form action="" method="POST">
+<div class="well well-sm">
+{{description}}
+</div>
+<div class="well well-lg">
+{{sequence}}
+</div>
+<button type="submi" class="btn-active">开始设计</button>
+</form>
+<!-- /#mainWrap -->
+{% endblock %}
