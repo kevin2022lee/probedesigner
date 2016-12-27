@@ -34,8 +34,8 @@ def startdesign(request):
     global local
     return render_to_response('startdesign.html',{
                                                   'local':local,
-                                                  'sequence':request.session.get('sequence'),
-                                                  'description':request.session.get('description'),
+                                                  'sequence':request.COOKIES.get('sequence',''),
+                                                  'description':request.COOKIES.get('descri',''),
                                                   },context_instance=RequestContext(request))
 def oligoGC(s):
     if len(s)!= 0:
@@ -222,6 +222,7 @@ def entreztoxml(request):
             organism="N/A"
             taxonomy="N/A"
             topology="N/A"
+            
         cookie=Cookie.SimpleCookie()
         cookie['sequence']=nr.seq
         cookie['descri']=nr.description
