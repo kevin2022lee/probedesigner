@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from views import index,probedesign,subseq,entrez,fromfile,downloadentrez,entreztoxml,test,x4merCalc
+from views import index,probedesign,subseq,entrez,fromfile,downloadentrez,entreztoxml,test,x4merCalc,startdesign
 from django.contrib import admin
 import settings
 admin.autodiscover()
@@ -16,4 +16,5 @@ urlpatterns = patterns('',
     url(r'^xmltoentrez', entreztoxml),
     url(r'^test', test),
     url(r'^x4merCalc', x4merCalc),
+    url(r'^startdesign', startdesign),
 )
