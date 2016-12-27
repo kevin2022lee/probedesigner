@@ -11,7 +11,7 @@ import sys,urllib
 import base64
 from xmerCalcNSH import *
 from arithMetic import *
-local='pdv1.applinzi.com'
+local='127.0.0.1:8000'
 
 #######################实现最长公共字符查找##################################
 
@@ -204,8 +204,7 @@ def entreztoxml(request):
         import urllib
         from urllib import urlopen
         import re
-        filetype=re.findall(r'\.[^.\\/:*?"<>|\r\n]+$',fileurl)
-        global record
+        filetype=".gb"
         if filetype[0]==".gb" :
             record=SeqIO.parse(urlopen(fileurl),"genbank")
         elif filetype[0]==".fasta":
@@ -225,18 +224,18 @@ def entreztoxml(request):
         request.session['description']=str(nr.description)
         request.session['sequence']=str(nr.seq)
     return render_to_response('parselocalfile.html',{
-                                                             'filetype':filetype[0],
-                                                             'local':local,
-                                                             'accessid':nr.id,
-                                                             'sequence':str(nr.seq),
-                                                             'description':nr.description,
-                                                             'name':nr.name,
-                                                             #'dbxrefs':nr.dbxrefs[0],
-                                                             'source':source,
-                                                             'organism':organism,
-                                                             'taxonomy':taxonomy,
-                                                             'topology':topology,
-                                                                                },context_instance=RequestContext(request))
+                                                     'filetype':filetype,
+                                                     'local':local,
+                                                     'accessid':nr.id,
+                                                     'sequence':str(nr.seq),
+                                                     'description':nr.description,
+                                                     'name':nr.name,
+                                                     #'dbxrefs':nr.dbxrefs[0],
+                                                     'source':source,
+                                                     'organism':organism,
+                                                     'taxonomy':taxonomy,
+                                                     'topology':topology,
+                                                     },context_instance=RequestContext(request))
 ##############X-mer数值计算函数################
 
 @csrf_protect                                                             
