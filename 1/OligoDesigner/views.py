@@ -8,6 +8,7 @@ from datetime import datetime
 from models import *
 import sys,urllib
 import base64
+import Cookie
 from xmerCalcNSH import *
 from arithMetic import *
 local='pdv1.applinzi.com'
@@ -221,8 +222,11 @@ def entreztoxml(request):
             organism="N/A"
             taxonomy="N/A"
             topology="N/A"
-        request.session['description']=nr.description
-        request.session['sequence']=nr.seq
+        cookie=Cookie.SimpleCookie()
+        cookie['sequence']=nr.seq
+        cookie['descri']=nr.description
+        #request.session['description']=nr.description
+        #request.session['sequence']=nr.seq
     return render_to_response('parselocalfile.html',{
                                                      'filetype':filetype[0],
                                                      'local':local,
