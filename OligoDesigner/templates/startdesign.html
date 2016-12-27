@@ -9,7 +9,7 @@ textarea{overflow-y:visible;}
 h5{font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;}
 </style>
 <div class="container">
-<form action="http://{{local}}/NonNshFilter/" method="POST" role="form">
+<form action="http://{{local}}/NonNshFilter/" method="POST" role="form">{% csrf_token %}
 <div class="list-group">
  <a href="#" class="list-group-item active">
  <h5 class="list-group-item-heading">
