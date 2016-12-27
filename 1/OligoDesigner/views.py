@@ -3,7 +3,6 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
-from settings import *
 import time
 from datetime import datetime
 from models import *
@@ -204,7 +203,8 @@ def entreztoxml(request):
         import urllib
         from urllib import urlopen
         import re
-        filetype=".gb"
+        filetype=re.findall(r'\.[^.\\/:*?"<>|\r\n]+$',fileurl)
+        global record
         if filetype[0]==".gb" :
             record=SeqIO.parse(urlopen(fileurl),"genbank")
         elif filetype[0]==".fasta":
@@ -224,7 +224,7 @@ def entreztoxml(request):
         request.session['description']=str(nr.description)
         request.session['sequence']=str(nr.seq)
     return render_to_response('parselocalfile.html',{
-                                                     'filetype':filetype,
+                                                     'filetype':filetype[0],
                                                      'local':local,
                                                      'accessid':nr.id,
                                                      'sequence':str(nr.seq),
