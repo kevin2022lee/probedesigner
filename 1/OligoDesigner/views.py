@@ -33,8 +33,8 @@ def startdesign(request):
     global local
     return render_to_response('startdesign.html',{
                                                   'local':local,
-                                                  'sequence':request.GET.session['sequence'],
-                                                  'description':request.GET.session['description'],
+                                                  'sequence':request.session.get('sequence'),
+                                                  'description':request.session.get('description'),
                                                   },context_instance=RequestContext(request))
 def oligoGC(s):
     if len(s)!= 0:
