@@ -1,7 +1,7 @@
 #coding:utf-8
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse,HttpResponseRedirect,response
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 import time
 from datetime import datetime
@@ -34,7 +34,7 @@ def startdesign(request):
     global local
     return render_to_response('startdesign.html',{
                                                   'local':local,
-                                                  'sequence':request.COOKIES.get('sequence',''),
+                                                  'sequence':request.COOKIES.get('seq',''),
                                                   'description':request.COOKIES.get('descri',''),
                                                   },context_instance=RequestContext(request))
 def oligoGC(s):
@@ -223,9 +223,11 @@ def entreztoxml(request):
             taxonomy="N/A"
             topology="N/A"
             
-        cookie=Cookie.SimpleCookie()
-        cookie['sequence']=nr.seq
-        cookie['descri']=nr.description
+        #cookie=Cookie.SimpleCookie()
+        #cookie['sequence']=nr.seq
+        #cookie['descri']=nr.description
+        response.set_cookies("seq",nr.seq)
+        
         #request.session['description']=nr.description
         #request.session['sequence']=nr.seq
     return render_to_response('parselocalfile.html',{
