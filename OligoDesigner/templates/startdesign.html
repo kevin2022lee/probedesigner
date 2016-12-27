@@ -22,7 +22,7 @@ textarea{overflow-y:visible;}
   待设计序列全部基因序列
  </h4></a>
 <div class="well well-lg">
-<textarea class="form-control" style="height:auto">{{sequence}}</textarea>
+<textarea class="form-control" style="overflow-y:hidden;height:80px;" onpropertychange="this.style.height=this.scrollHeight+'px';" oninput="this.style.height=this.scrollHeight+'px';">{{sequence}}</textarea>
 </div></div>
 <button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-user"></span>开始设计</button>
 </form>
