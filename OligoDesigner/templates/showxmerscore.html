@@ -5,7 +5,7 @@
  <div class="container">
  <div class="well">
 <form>
-{{probe_xmer_list}}
+
 <table class="table table-condensed">
   <caption><b><h5>探针X4mer计算结果</h5></b></caption>
   <thead>
@@ -18,11 +18,11 @@
       <th>BL单选框</th></tr>
   </thead>
   <tbody>
-  {% for key,value in probe_xmer_dict.items %}
+  {% for i in range(probe_xmer_list) %}
     <tr>
-      <td>{{key}}</td>
-      <td>{{value.0.0}}</td>
-      <td>{{value.0.1}}</td>
+      <td>{{probe_xmer_list.i.0}}</td>
+      <td>{{probe_xmer_list.i.1.0.0}}</td>
+      <td>{{probe_xmer_list.i.1.0.1}}</td>
       <td><label class="checkbox-inline">
     <input type="checkbox" id="inlineCheckbox1" value="CE">CE
           </label>
