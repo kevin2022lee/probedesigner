@@ -420,7 +420,7 @@ def NonNshFilter(req):
         return render_to_response('showfilterprobe.html',{
                                                      'local':local,
                                                      'probedict':probedict,
-                                                     's':s,
+                                                     'iddict':iddict,
                                                      },context_instance=RequestContext(req))   
 def PostCalcXmer(req):
     if req.method=='POST':
