@@ -428,7 +428,7 @@ def PostCalcXmer(req):
         for i in range(len(dict_value)):
             dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]))
         for v in range(len(dict_xmervalue)):
-            probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],dict_length[v]])
+            probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v])])
         return render_to_response('showxmerscore.html',{
                                                                               'local':local,
                                                                               'probe_xmer_dict':probe_xmer_dict,
