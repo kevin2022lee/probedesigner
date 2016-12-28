@@ -3,15 +3,6 @@
  <title>X4merCalculate结果</title>
  <div class="container">
  <div class="well">
- {{dict_key}}
- </div>
- <div class="well">
- {{dict_vlaue}}
- </div>
-  <div class="well">
- {{dict_xmervalue}}
- </div>
-  <div class="well">
 <form>
 <table class="table table-condensed">
   <caption>探针X4mer计算结果</caption>
@@ -22,7 +13,7 @@
       <th>作为LE的x4mer值</th></tr>
   </thead>
   <tbody>
-  {% for key,vlaue in probe_xmer_dict.items %}
+  {% for key,value in probe_xmer_dict.items %}
     <tr>
       <td>{{key}}</td>
       <td>{{value.0}}</td>
