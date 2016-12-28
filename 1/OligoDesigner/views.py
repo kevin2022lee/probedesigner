@@ -407,19 +407,15 @@ def NonNshFilter(req):
     if req.method=='POST':
         nonnshfilter=NonNSHFilter()
         probedict={}
-        iddict={}
         probelist=nonnshfilter.filterSequence(req.POST['seqtxt'])
         s=req.POST['seqtxt'].upper()
         probelist.append(len(s))
         for i in range(len(probelist)):
             if probelist[i]<len(s)-20:
-                probedict.setdefault('p'+str(probelist[i]),s[probelist[i]:probelist[i+1]])
-                iddict.setdefault('id',probelist[i])
-                probedict.update(iddict)
+                probedict.setdefault('p'+str(probelist[i]),[s[probelist[i]:probelist[i+1]],probelist[i]])
         return render_to_response('showfilterprobe.html',{
                                                      'local':local,
                                                      'probedict':probedict,
-                                                     'iddict':iddict,
                                                      },context_instance=RequestContext(req))   
 def PostCalcXmer(req):
     if req.method=='POST':
