@@ -423,13 +423,12 @@ def PostCalcXmer(req):
         probe_xmer_dict={}
         dict_value=req.POST.getlist('probedictvalue','')
         dict_key=req.POST.getlist('probedictkey','')
+        dict_length=req.POST.getlist('probelength','')
         xmerclac=CalcNSH()
         for i in range(len(dict_value)):
             dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]))
-        #probe_xmer_dict=zip(dict_key,dict_xmervalue)
-        #for k in range(len(dict_key)):
         for v in range(len(dict_xmervalue)):
-            probe_xmer_dict.setdefault(dict_key[v],dict_xmervalue[v])
+            probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],dict_length[v]])
         return render_to_response('showxmerscore.html',{
                                                                               'local':local,
                                                                               'probe_xmer_dict':probe_xmer_dict,
