@@ -21,7 +21,7 @@
   <tbody>
   {% for pxl in probe_xmer_list %}
     <tr>
-      <td><input type="text" style="width:15%" class="form control" name="pkey" value="{{pxl.0}}" readonly="readonly"/></td>
+      <td><input type="hidden" style="width:25%" class="form control" name="pkey" value="{{pxl.0}}" readonly="readonly"/></td>
       {% if pxl.1.0.0 > 26 %}
       <td><font color="red"><b>{{pxl.1.0.0}}</b></font></td>
       {% else %}
@@ -50,7 +50,7 @@
       <td><label class="checkbox-inline">
     <input type="checkbox" name="BLcheck" value="BL">BL
           </label></td>
-          <td><input type="text" style="width:15%" class="form control" name="pindex" value="{{pxl.1.1}}" readonly="readonly"/></td>
+          <td><input type="hidden" style="width:25%" class="form control" name="pindex" value="{{pxl.1.1}}" readonly="readonly"/></td>
     <tr>
    {%endfor%}
   </tbody>
