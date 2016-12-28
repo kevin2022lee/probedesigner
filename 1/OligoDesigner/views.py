@@ -425,8 +425,8 @@ def PostCalcXmer(req):
         dict_key=[]
         dict_xmervalue=[]
         probe_xmer_dict={}
-        dict_vlaue=req.POST.get('probedictvalue','')
-        dict_key=req.POST.get('probedictkey','')
+        dict_vlaue=req.POST.getlist('probedictvalue','')
+        dict_key=req.POST.getlist('probedictkey','')
         for i in range(len(dict_value)):
             xmerclac=CalcNSH()
             dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]))
