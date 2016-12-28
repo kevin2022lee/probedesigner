@@ -12,13 +12,13 @@
             可用的引物索引列表
         </h4>
     </a> 
- {% for key,value in probedict.items %}
+ {% for probe in probedict %}
     <a class="list-group-item">
     <span class="badge pull-right">
     {{key}}
     </span>
-      <input type="text" readonly="readonly" style="width:50%" class="form control" value="{{value}}" name="probedictvalue">
-      <input type="hidden" readonly="readonly" style="width:30%" class="form control" value="{{key}}" name="probedictkey">
+      <input type="text" readonly="readonly" style="width:50%" class="form control" value="{{probe.probeseq}}" name="probedictvalue">
+      <input type="hidden" readonly="readonly" style="width:30%" class="form control" value="{{probe.id}}" name="probedictkey">
     </a>
 {% endfor %}
 </div>
