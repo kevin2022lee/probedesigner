@@ -420,6 +420,7 @@ def NonNshFilter(req):
 def PostCalcXmer(req):
     if req.method=='POST':
         dict_xmervalue=[]
+        probe_xmer_list=[]
         probe_xmer_dict={}
         dict_value=req.POST.getlist('probedictvalue','')
         dict_key=req.POST.getlist('probedictkey','')
@@ -429,9 +430,10 @@ def PostCalcXmer(req):
             dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]))
         for v in range(len(dict_xmervalue)):
             probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v])])
-            probe_xmer_dict=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
+        probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
         return render_to_response('showxmerscore.html',{
                                                                               'local':local,
                                                                               'probe_xmer_dict':probe_xmer_dict,
+                                                                              'probe_xmer_list':probe_xmer_list,
                                                                               },context_instance=RequestContext(req))
             
