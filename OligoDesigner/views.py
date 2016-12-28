@@ -413,7 +413,7 @@ def NonNshFilter(req):
         probelist.append(len(s))
         for i in range(len(probelist)):
             if probelist[i]<len(s)-20:
-                probedict.setdefault('probeseq',s[probelist[i]:probelist[i+1]])
+                probedict.setdefault('p'+str(probelist[i]),s[probelist[i]:probelist[i+1]])
                 iddict.setdefault('id',probelist[i])
                 probedict.update(iddict)
         return render_to_response('showfilterprobe.html',{
