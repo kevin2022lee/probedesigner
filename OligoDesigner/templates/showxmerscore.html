@@ -4,10 +4,10 @@
 <style></style>
  <div class="container">
  <div class="well">
-<form>
+<form role="form" class="form-horizontal" >
 
 <table class="table table-condensed">
-  <b><h5><caption>探针X4mer计算结果</caption></h5></b>
+  <b><h5><caption>探针X4mer与通用序列的比对计算结果</caption></h5></b>
   <thead>
     <tr>
       <th>探针编号</th>
@@ -15,12 +15,13 @@
       <th>作为LE的x4mer值</th>
       <th>CE单选框</th>
       <th>LE单选框</th>
-      <th>BL单选框</th></tr>
+      <th>BL单选框</th>
+      <th>备注</th></tr>
   </thead>
   <tbody>
   {% for pxl in probe_xmer_list %}
     <tr>
-      <td>{{pxl.0}}</td>
+      <td><input type="text" style="width:15%" class="form control" name="pkey" value="{{pxl.0}}" readonly="readonly"/></td>
       {% if pxl.1.0.0 > 26 %}
       <td><font color="red"><b>{{pxl.1.0.0}}</b></font></td>
       {% else %}
@@ -47,8 +48,9 @@
           </label></td>
       {% endif %}  
       <td><label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox3" value="BL">BL
+    <input type="checkbox" name="BLcheck" value="BL">BL
           </label></td>
+          <td><input type="text" style="width:15%" class="form control" name="pindex" value="{{pxl.1.1}}" readonly="readonly"/></td>
     <tr>
    {%endfor%}
   </tbody>
