@@ -435,4 +435,12 @@ def PostCalcXmer(req):
                                                                               'local':local,
                                                                               'probe_xmer_list':probe_xmer_list,
                                                                               },context_instance=RequestContext(req))
-            
+def ProbeSetsXmer(req):
+    if req.method=="POST":
+        list_pkey=req.POST.getlist('pkey','')
+        list_pindex=req.POST.getlist('pindex','')
+        list_CE=req.POST.getlist('CE','')
+        list_LE=req.POST.getlist('LE','')
+        list_BL=req.POST.getlist('BL','')
+        probesets={}
+           
