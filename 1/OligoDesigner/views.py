@@ -433,7 +433,6 @@ def PostCalcXmer(req):
         probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
         return render_to_response('showxmerscore.html',{
                                                                               'local':local,
-                                                                              'probe_xmer_dict':probe_xmer_dict,
                                                                               'probe_xmer_list':probe_xmer_list,
                                                                               },context_instance=RequestContext(req))
             
