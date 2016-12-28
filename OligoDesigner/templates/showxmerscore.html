@@ -25,8 +25,8 @@
   {% for key,vlaue in probe_xmer_dict.items %}
     <tr>
       <td>{{key}}</td>
-      <td>{{value[0]}}</td>
-      <td>{{value[1]}}</td></tr>
+      <td>{{value.0}}</td>
+      <td>{{value.1}}</td></tr>
     <tr>
    {%endfor%}
   </tbody>
