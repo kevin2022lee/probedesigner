@@ -431,7 +431,7 @@ def PostCalcXmer(req):
             xmerclac=CalcNSH()
             dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]))
         probe_xmer_dict=zip(dict_key,dict_xmervalue)
-        return render_to_response('showxmerscore.html',locals(),{
+        return render_to_response('showxmerscore.html',{
                                                                               'local':local,
                                                                               'dict_key':dict_key,
                                                                               'dict_vlaue':dict_vlaue,
