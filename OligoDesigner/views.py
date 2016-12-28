@@ -429,6 +429,7 @@ def PostCalcXmer(req):
             dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]))
         for v in range(len(dict_xmervalue)):
             probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v])])
+            probe_xmer_dict=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
         return render_to_response('showxmerscore.html',{
                                                                               'local':local,
                                                                               'probe_xmer_dict':probe_xmer_dict,
