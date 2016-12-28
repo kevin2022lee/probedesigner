@@ -18,11 +18,11 @@
       <th>BL单选框</th></tr>
   </thead>
   <tbody>
-  {% for i in range(probe_xmer_list) %}
+  {% for pxl in probe_xmer_list %}
     <tr>
-      <td>{{probe_xmer_list.i.0}}</td>
-      <td>{{probe_xmer_list.i.1.0.0}}</td>
-      <td>{{probe_xmer_list.i.1.0.1}}</td>
+      <td>{{pxl.0}}</td>
+      <td>{{pxl.1.0.0}}</td>
+      <td>{{pxl.1.0.1}}</td>
       <td><label class="checkbox-inline">
     <input type="checkbox" id="inlineCheckbox1" value="CE">CE
           </label>
