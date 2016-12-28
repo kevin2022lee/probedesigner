@@ -31,14 +31,21 @@
       {% else %}
       <td>{{pxl.1.0.1}}</td>
       {% endif %}
-      
+      {% if pxl.1.0.0 > 26 %}
+      <td></td>
+      {% else %}
       <td><label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="CE">CE
+    <input type="checkbox" name="CEcheck" value="CE">CE
           </label>
      </td>
+     {% endif %}
+     {% if pxl.1.0.1 > 16 %}
+      <td></td>
+      {% else %}
       <td><label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" value="LE">LE
+    <input type="checkbox" name="LEcheck" value="LE">LE
           </label></td>
+      {% endif %}  
       <td><label class="checkbox-inline">
     <input type="checkbox" id="inlineCheckbox3" value="BL">BL
           </label></td>
