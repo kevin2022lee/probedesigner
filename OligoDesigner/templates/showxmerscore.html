@@ -21,8 +21,17 @@
   {% for pxl in probe_xmer_list %}
     <tr>
       <td>{{pxl.0}}</td>
+      {% if pxl.1.0.0 > 26 %}
+      <td><font color="red"><b>{{pxl.1.0.0}}</b></font></td>
+      {% else %}
       <td>{{pxl.1.0.0}}</td>
+      {% end if %}
+       {% if pxl.1.0.0 > 26 %}
+      <td><font color="red"><b>{{pxl.1.0.1}}</b></font></td>
+      {% else %}
       <td>{{pxl.1.0.1}}</td>
+      {% end if %}
+      
       <td><label class="checkbox-inline">
     <input type="checkbox" id="inlineCheckbox1" value="CE">CE
           </label>
