@@ -14,10 +14,10 @@
     </a> 
  {% for key,value in probedict.items %}
     <a href="#" class="list-group-item">
-    <span class="badge">
+    <span class="badge pull-right">
     {{key}}
     </span>
-      <input type="text" style="width:50%" class="form control" id="inputPassword" value="{{value}}" name="{{key}}">
+      <input type="text" readonly="readonly" style="width:50%" class="form control" id="{{key}}" value="{{value}}" name="probedict">
     </a>
 {% endfor %}
 </div>
