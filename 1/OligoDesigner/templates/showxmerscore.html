@@ -1,6 +1,15 @@
 {% extends "base.html" %} 
  {% block content %}
  <title>X4merCalculate结果</title>
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
+
+<!-- Latest compiled and minified Locales -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/locale/bootstrap-table-zh-CN.min.js"></script>
+<style></style>
  <div class="container">
  <div class="well">
  {{probe_xmer_dict}}
@@ -36,7 +45,40 @@
    {%endfor%}
   </tbody>
 </table>
-
+<table data-toggle="table" data-url="data1.json" data-height="246" data-sort-name="id" data-sort-order="desc">
+    <thead>
+        <tr>
+            <th data-field="id" data-align="right" data-sortable="true">Item ID</th>
+            <th data-field="name" data-align="center" data-sortable="true">Item Name</th>
+            <th data-field="price" data-sortable="true">Item Price</th>
+        </tr>
+        <tr>
+        <td>1</td>
+        <td>g</td>
+        <td>h</td>
+        </tr>
+                <tr>
+        <td>2</td>
+        <td>g</td>
+        <td>h</td>
+        </tr>
+                <tr>
+        <td>3</td>
+        <td>g</td>
+        <td>h</td>
+        </tr>
+                <tr>
+        <td>4</td>
+        <td>g</td>
+        <td>h</td>
+        </tr>
+                <tr>
+        <td>5</td>
+        <td>g</td>
+        <td>h</td>
+        </tr>
+    </thead>
+</table>
 </form>
  </div>
  </div>
