@@ -113,7 +113,7 @@ class CalcNSH:
 #######END############
         Total_NSH_SACE= NSH_Score_Aleader_SACE+NSH_Score_Aarms_SACE+NSH_Score_AP_SACE+NSH_Score_PSCP_SACE
         Total_NSH_SALE= NSH_Score_Aleader_SALE+NSH_Score_Aarms_SALE+NSH_Score_AP_SALE+NSH_Score_PSCP_SALE
-        return Total_NSH_SACE,Total_NSH_SALE
+        return [Total_NSH_SACE,Total_NSH_SALE]
         
     def x4merScore(self,seq):
         SumAT=seq.count("A")+seq.count("T")
