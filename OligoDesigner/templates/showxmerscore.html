@@ -22,8 +22,12 @@
   {% for pxl in probe_xmer_list %}
     <tr>
       <td>
-      <label for="pkey" class="control-label">{{pxl.0}}</label>
-      <input type="hidden" style="width:25%" class="form control" name="pkey" value="{{pxl.0}}" readonly="readonly"/></td>
+      <div class="form-group">
+      <label for="pkey" class="col-sm-2 control-label">{{pxl.0}}</label>
+      <div class="col-sm-10">
+      <input type="hidden" style="width:25%" class="form control" name="pkey" value="{{pxl.0}}" readonly="readonly"/>
+      </div></div>
+      </td>
       {% if pxl.1.0.0 > 26 %}
       <td><font color="red"><b>{{pxl.1.0.0}}</b></font></td>
       {% else %}
