@@ -419,3 +419,23 @@ def NonNshFilter(req):
                                                      'probedict':probedict,
                                                      's':s,
                                                      },context_instance=RequestContext(req))   
+def PostCalcXmer(req):
+    if req.method=='POST':
+        dict_value=[]
+        dict_key=[]
+        dict_xmervalue=[]
+        probe_xmer_dict={}
+        dict_vlaue=req.POST.get('probedictvalue','')
+        dict_key=req.POST.get('probedictkey','')
+        for i in range(len(dict_value)):
+            xmerclac=CalcNSH()
+            dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]))
+        probe_xmer_dict=zip(dict_key,dict_xmervalue)
+        return render_to_response('showxmerscore.html',locals(),{
+                                                                              'local':local,
+                                                                              'dict_key':dict_key,
+                                                                              'dict_vlaue':dict_vlaue,
+                                                                              'dict_xmervalue':dict_xmervalue,
+                                                                              'probe_xmer_dict':probe_xmer_dict,
+                                                                              },context_instance=RequestContext(req))
+            
