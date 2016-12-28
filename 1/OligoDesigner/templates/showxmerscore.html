@@ -11,17 +11,27 @@
     <tr>
       <th>探针编号</th>
       <th>作为CE的x4mer值</th>
-      <th>作为LE的x4mer值</th></tr>
+      <th>作为LE的x4mer值</th>
+      <th>CE单选框</th>
+      <th>LE单选框</th>
+      <th>BL单选框</th></tr>
   </thead>
   <tbody>
   {% for key,value in probe_xmer_dict.items %}
     <tr>
       <td>{{key}}</td>
-
       <td>{{value.0}}</td>
       <td>{{value.1}}</td>
-
-      </tr>
+      <td><label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox1" value="option1">CE
+          </label>
+     </td>
+      <td><label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox2" value="option2">LE
+          </label></td>
+      <td><label class="checkbox-inline">
+    <input type="checkbox" id="inlineCheckbox3" value="option3">BL
+          </label></td>
     <tr>
    {%endfor%}
   </tbody>
