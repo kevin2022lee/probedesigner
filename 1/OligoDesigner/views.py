@@ -501,5 +501,5 @@ def GenerateProbesets(req):
                                       'probesseq':probesseq,
                                       'probesfunc':probesfunc,
                                       'probesets_list':probesets_list,
-                                      'CE_final_list':CE_final_list,
+                                      'LE_final_list':LE_final_list,
                                       },context_instance=RequestContext(req))
