@@ -483,7 +483,17 @@ def GenerateProbesets(req):
         probesets_list=[]
         for i in range(len(probesname)):
             probesets_list.append((probesname[i],probesseq[i],probesfunc[i]))
-        
+        CE_final_list=[]
+        LE_final_list=[]
+        BL_final_list=[]
+        for j in range(len(probesets_list)):
+            if probesets_list[j][2]=="CE":
+                CE_final_list.append((probesets_list[j][0],probesets_list[j][1]+'tttttCTCTTGGAAAGAAAGT'))
+            if probesets_list[j][2]=="BL":
+                CE_final_list.append((probesets_list[j][0],probesets_list[j][1]))
+            if probesets_list[j][2]=="LE":
+                LE_final_list.append((probesets_list[j][0],probesets_list[j][1]))
+        for k in range
         return render_to_response('generateprobes.html',{
                                       'probesname':probesname,
                                       'probesseq':probesseq,
