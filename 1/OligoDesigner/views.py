@@ -445,7 +445,7 @@ def ProbeSetsXmer(req):
         list_BL=req.POST.getlist("BLcheck")
         probesets_list=[]
         for i in range(len(list_pkey)):
-            probesets_list.append((list_pkey[i],list_CE[i],list_LE[i],list_BL[i]))
+            probesets_list.append((list_pkey[i],list_pseq[i],list_CE[i],list_LE[i],list_BL[i]))
         return render_to_response('showceleNSH.html',{
                                                         'local':local,
                                                         'list_pkey':list_pkey,
