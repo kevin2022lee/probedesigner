@@ -15,7 +15,7 @@
   <thead>
     <tr>
     {% for lep in LE_plist %}
-      <th style="text-align:center;">{{lep.0}}</th>
+      <th style="text-align:center;min-width:10%;">{{lep.0}}</th>
     {% endfor %}
     </tr>
   </thead>
@@ -41,9 +41,9 @@
       <tr>
       {% for score in clsl.1%}
       {% if score > 26 %}
-      <th><font color="red">{{score}}</font></th>
+      <th style="min-width:10%;"><font color="red">{{score}}</font></th>
       {%else%}
-      <th>{{score}}</th>
+      <th style="min-width:10%;">{{score}}</th>
       {%endif%}
       {%endfor%}
       </tr>
