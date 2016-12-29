@@ -460,14 +460,16 @@ def ProbeSetsXmer(req):
         xmerclaccele=CalcCELENSH()
         CEtoLE_score_list=[]
         CEtoLE_score=[]
+        fortimes=[]
         for c in range(len(CE_plist)):
             for l in range(len(LE_plist)):
                 CEtoLE_score.append(xmerclaccele.xmerCalcCELE(CE_plist[c][1], LE_plist[l][1]))
+                fortimes.append(l)
             CEtoLE_score_list.append((CE_plist[c][0],CEtoLE_score[len(LE_plist)*c:(c+1)*len(LE_plist)]))
-        
         return render_to_response('showceleNSH.html',{
                                                         'LE_plist':LE_plist,
                                                         'CE_plist':CE_plist,
                                                         'BL_plist':BL_plist,
                                                         'CEtoLE_score_list':CEtoLE_score_list,
+                                                        'fortimes':fortimes,
                                                         },context_instance=RequestContext(req))   
