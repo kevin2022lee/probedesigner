@@ -15,7 +15,7 @@
   <thead>
     <tr>
     {% for lep in LE_plist %}
-      <td style="text-align:center;">{{lep.0}}</td>
+      <th style="text-align:center;">{{lep.0}}</th>
     {% endfor %}
     </tr>
   </thead>
@@ -35,7 +35,7 @@
 </table>
       </div>
       <div class="col-sm-10">
-      <table class="table">
+      <table class="table table-bordered">
       <tbody>
  {% for clsl in CEtoLE_score_list %}
       <tr>
