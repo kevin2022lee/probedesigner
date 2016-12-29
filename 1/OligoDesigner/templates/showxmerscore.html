@@ -1,10 +1,28 @@
 {% extends "base.html" %} 
  {% block content %}
  <title>X4merCalculate结果</title>
+<script>
+ function checkForm()  
+{  
+       var t1 = document.getElementById("Plist").getElementsByTagName("input");  
+       for(i=0;i<t1.length;i++)  
+       {  
+           if(t1[i].type == "checkbox")  
+           {  
+               if(!(t1[i].checked))  
+               {  
+                   t1[i].checked = true;  
+                   t1[i].value = "0";  
+               }  
+           }  
+       }  
+       return true;  
+}  
+</script>
 <style></style>
  <div class="container">
  <div class="well">
-<form action="http://{{local}}/ProbeSetsXmer/" method="POST" role="form" class="form-horizontal" >{% csrf_token %}
+<form action="http://{{local}}/ProbeSetsXmer/" method="POST" id="Plist" role="form" class="form-horizontal" >{% csrf_token %}
 
 <table class="table table-condensed">
   <b><h5><caption>探针X4mer与通用序列的比对计算结果</caption></h5></b>
@@ -60,7 +78,7 @@
    {%endfor%}
   </tbody>
 </table>
-<button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-step-forward"></span>计算选定的各组探针间的x-mer值</button>
+<button type="submit" onclick="checkForm();" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-step-forward"></span>计算选定的各组探针间的x-mer值</button>
 </form>
  </div>
  </div>
