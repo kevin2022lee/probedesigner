@@ -430,7 +430,7 @@ def PostCalcXmer(req):
         for i in range(len(dict_value)):
             dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]))
         for v in range(len(dict_xmervalue)):
-            probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v])])
+            probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_value[v])])
         probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
         return render_to_response('showxmerscore.html',{
                                                                               'local':local,
@@ -439,7 +439,7 @@ def PostCalcXmer(req):
 def ProbeSetsXmer(req):
     if req.method=="POST":
         list_pkey=req.POST.getlist('pkey','')
-        list_pindex=req.POST.getlist('pindex','')
+        list_pseq=req.POST.getlist('pseq','')
         list_CE=req.POST.getlist("CEcheck")
         list_LE=req.POST.getlist("LEcheck")
         list_BL=req.POST.getlist("BLcheck")
