@@ -34,7 +34,7 @@
       <th>CE单选框</th>
       <th>LE单选框</th>
       <th>BL单选框</th>
-      <th>备注</th></tr>
+      <th>备注(只能选做一种)</th></tr>
   </thead>
   <tbody>
   {% for pxl in probe_xmer_list %}
@@ -73,7 +73,7 @@
       <label class="checkbox-inline"><input type="checkbox" checked id="BLcheck" name="BLcheck" value="BL">BL</label>
       
       </td>
-      <td><input type="hidden" style="width:25%" class="form control" name="pindex" value="{{pxl.1.1}}" readonly="readonly"/></td>
+      <td><input type="hidden" style="width:25%" class="form control" name="pseq" value="{{pxl.1.1}}" readonly="readonly"/></td>
     <tr>
    {%endfor%}
   </tbody>
