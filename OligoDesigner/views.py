@@ -480,8 +480,13 @@ def GenerateProbesets(req):
         probesname=req.POST.getlist("probename")
         probesseq=req.POST.getlist("probeseq")
         probesfunc=req.POST.getlist("probefunc")
+        probesets_list=[]
+        for i in range(len(probesname)):
+            probesets_list.append((probesname[i],probesseq[i],probesfunc[i]))
+        
         return render_to_response('generateprobes.html',{
                                       'probesname':probesname,
                                       'probesseq':probesseq,
                                       'probesfunc':probesfunc,
+                                      'probesets_list':probesets_list,
                                       },context_instance=RequestContext(req))
