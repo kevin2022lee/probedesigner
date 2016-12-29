@@ -36,7 +36,6 @@ class CalcCELENSH:
         ########LCS#############
         Calc_Seq1=Seq(Calc_Seq1, IUPAC.unambiguous_dna).upper()
         Calc_Seq2=Seq(Calc_Seq2, IUPAC.unambiguous_dna).upper()
-        ##############计算LCS#####################
         
         x4merlcs_CE_LE=self.lcs(str(Calc_Seq1),str(Calc_Seq2))
 ###########Server as CE Probe Weighting Factor##########################
