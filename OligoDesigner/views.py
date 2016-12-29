@@ -440,9 +440,9 @@ def ProbeSetsXmer(req):
     if req.method=="POST":
         list_pkey=req.POST.getlist('pkey','')
         list_pindex=req.POST.getlist('pindex','')
-        list_CE=req.REQUEST.getlist("CEcheck")
-        list_LE=req.REQUEST.getlist("LEcheck")
-        list_BL=req.POST.getlist('BLcheck','NBL')
+        list_CE=req.POST.getlist("CEcheck")
+        list_LE=req.POST.getlist("LEcheck")
+        list_BL=req.POST.getlist("BLcheck")
         #probesets_list=[]
         #for i in range(len(list_pkey)):
             #probesets_list.append((list_pkey[i],list_CE[i],list_LE[i],list_BL[i]))
