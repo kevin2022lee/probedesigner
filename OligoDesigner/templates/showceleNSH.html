@@ -48,11 +48,11 @@
  {% for clsl in CEtoLE_score_list %}
       <tr>
       {% for score in clsl.1%}
-      {% if score >26 %}
+      {% if score > 26 %}
       <th><font color="red">{{score}}</font></th>
       {%else%}
       <th>{{score}}</th>
-      {%endfoe%}
+      {%endif%}
       {%endfor%}
       </tr>
  {%endfor%}
