@@ -469,4 +469,5 @@ def ProbeSetsXmer(req):
                                                         'LE_plist':LE_plist,
                                                         'CE_plist':CE_plist,
                                                         'BL_plist':BL_plist,
+                                                        'CEtoLE_score_dict':CEtoLE_score_dict,
                                                         },context_instance=RequestContext(req))   
