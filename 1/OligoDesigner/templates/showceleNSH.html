@@ -45,9 +45,9 @@
       <tbody>
  {% for clsl in CEtoLE_score_list %}
       <tr>
-      
-      <td>{{clsl.1}}</td>
-      
+       {% for key in range(len(LE_plist)) %}
+      <th>{{clsl.key}}</th>
+        {% endfor %}
       </tr>
   {%endfor%}
       </tbody>
