@@ -43,10 +43,11 @@
       <div class="col-sm-10">
       <table class="table">
       <tbody>
- {% for key,value in CEtoLE_score_dict.items %}
+ {% for clsl in CEtoLE_score_list %}
       <tr>
-      <td>{{key}}</td>
-      <td>{{value}}</td>
+      
+      <td>{{clsl.1}}</td>
+      
       </tr>
   {%endfor%}
       </tbody>
