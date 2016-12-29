@@ -463,7 +463,7 @@ def ProbeSetsXmer(req):
         for c in range(len(CE_plist)):
             for l in range(len(LE_plist)):
                 CEtoLE_score.append(xmerclaccele.xmerCalcCELE(CE_plist[c][1], LE_plist[l][1]))
-                CEtoLE_score_dict.setdefault(CE_plist[c][0],CEtoLE_score)
+            CEtoLE_score_dict.setdefault(CE_plist[c][0],CEtoLE_score)
         
         return render_to_response('showceleNSH.html',{
                                                         'LE_plist':LE_plist,
