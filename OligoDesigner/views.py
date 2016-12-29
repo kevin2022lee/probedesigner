@@ -449,7 +449,7 @@ def ProbeSetsXmer(req):
         return render_to_response('showceleNSH.html',{
                                                         'local':local,
                                                         'list_pkey':list_pkey,
-                                                        'list_pindex':list_pindex,
+                                                        'list_pseq':list_pseq,
                                                         'list_CE':list_CE,
                                                         'list_LE':list_LE,
                                                         'list_BL':list_BL,
