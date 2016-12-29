@@ -4,24 +4,6 @@
 <style></style>
  <div class="container">
  <div class="well">
- {{list_pkey}}
- </div>
-  <div class="well">
- {{list_pseq}}
- </div>
-   <div class="well">
- {{list_CE}}
- </div>
-    <div class="well">
- {{list_LE}}
- </div>
-    <div class="well">
- {{list_BL}}
- </div>
-    <div class="well">
- {{probesets_list}}
- </div>
-  <div class="well">
  {{CE_plist}}
  </div>
  <div class="well">
@@ -30,6 +12,17 @@
  <div class="well">
  {{BL_plist}}
  </div>
+  <div class="well">
+  <div class="container">
+  <div class="row">LE序列</div>
+   <div class="row">
+      <div class="col-sm-4">CE序列</div>
+      <div class="col-sm-8">比分值</div>      
+   </div>
+</div>
+    
+  </tbody>
+</table>
  </div>
   <!-- /#mainWrap -->
 {% endblock %}

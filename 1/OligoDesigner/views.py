@@ -12,6 +12,7 @@ import Cookie
 from xmerCalcNSH import *
 from arithMetic import *
 from searchProbe import *
+from XmerCalcCELENSH import *
 from django.core.context_processors import request
 
 local='pdv1.applinzi.com'
@@ -456,14 +457,15 @@ def ProbeSetsXmer(req):
                 LE_plist.append((probesets_list[j][0],probesets_list[j][1]))
             if probesets_list[j][4]=="BL":
                 BL_plist.append((probesets_list[j][0],probesets_list[j][1]))
+        xmerclaccele=CalcCELENSH()
+        CEtoLE_score_dict={}
+        CEtoLE_score=[]
+        for c in range(len(CE_plist)):
+            for l in range(len(LE_plist)):
+                CEtoLE_score.append(xmerclaccele.xmerCalcCELE(CE_plist[c][1], LE_plist[l][1]))
+                CEtoLE_score_dict.setdefault(CE_plist[c][0],CEtoLE_score)
+        
         return render_to_response('showceleNSH.html',{
-                                                        'local':local,
-                                                        'list_pkey':list_pkey,
-                                                        'list_pseq':list_pseq,
-                                                        'list_CE':list_CE,
-                                                        'list_LE':list_LE,
-                                                        'list_BL':list_BL,
-                                                        'probesets_list':probesets_list,
                                                         'LE_plist':LE_plist,
                                                         'CE_plist':CE_plist,
                                                         'BL_plist':BL_plist,
