@@ -12,6 +12,7 @@ import Cookie
 from xmerCalcNSH import *
 from arithMetic import *
 from searchProbe import *
+from django.core.context_processors import request
 
 local='pdv1.applinzi.com'
 
@@ -444,7 +445,7 @@ def ProbeSetsXmer(req):
             list_CE.append(req.POST.get('CEcheck'))
         else:
             list_CE.append('NCE')
-        list_LE=req.POST.getlist('LEcheck','NLE')
+        list_LE=req.request.getlist('LEcheck','NLE')
         list_BL=req.POST.getlist('BLcheck','NBL')
         probesets_list=[]
         #for i in range(len(list_pkey)):
