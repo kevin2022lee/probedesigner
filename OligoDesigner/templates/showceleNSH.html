@@ -12,6 +12,11 @@
      </div>
       <div class="col-sm-10">
 <table class="table table-bordered">
+<thead><tr>
+{% for lep in LE_plist %}
+<th>LE探针</th>
+{% endfor %}
+</tr></thead>
   <tbody>
     <tr>
     {% for lep in LE_plist %}
