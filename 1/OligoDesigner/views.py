@@ -493,10 +493,13 @@ def GenerateProbesets(req):
                 CE_final_list.append((probesets_list[j][0],probesets_list[j][1]))
             if probesets_list[j][2]=="LE":
                 LE_final_list.append((probesets_list[j][0],probesets_list[j][1]))
-        for k in range
+        #for k in range(len(LE_final_list)):
+            #if LE_final_list.index(LE_final_list[k])%2==0:
+                
         return render_to_response('generateprobes.html',{
                                       'probesname':probesname,
                                       'probesseq':probesseq,
                                       'probesfunc':probesfunc,
                                       'probesets_list':probesets_list,
+                                      'CE_final_list':CE_final_list,
                                       },context_instance=RequestContext(req))
