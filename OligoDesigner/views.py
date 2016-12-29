@@ -233,6 +233,7 @@ def entreztoxml(request):
         #request.session['description']=nr.description
         #request.session['sequence']=nr.seq
     response=render_to_response('parselocalfile.html',{
+                                                       'local':local,
                                                      'filetype':filetype[0],
                                                      'local':local,
                                                      'accessid':nr.id,
@@ -437,6 +438,7 @@ def PostCalcXmer(req):
                                                                               'local':local,
                                                                               'probe_xmer_list':probe_xmer_list,
                                                                               },context_instance=RequestContext(req))
+#########################CE&LE cross#################################
 def ProbeSetsXmer(req):
     if req.method=="POST":
         CE_plist=[]
@@ -466,8 +468,20 @@ def ProbeSetsXmer(req):
                 CEtoLE_score.append(xmerclaccele.xmerCalcCELE(CE_plist[c][1], LE_plist[l][1]))
             CEtoLE_score_list.append((CE_plist[c][0],CEtoLE_score[len(LE_plist)*c:(c+1)*len(LE_plist)]))
         return render_to_response('showceleNSH.html',{
+                                                        'local':local,
                                                         'LE_plist':LE_plist,
                                                         'CE_plist':CE_plist,
                                                         'BL_plist':BL_plist,
                                                         'CEtoLE_score_list':CEtoLE_score_list,
                                                         },context_instance=RequestContext(req))   
+##################################Generate probe sets#####################################################
+def GenerateProbesets(req):
+    if req.method=="POST":
+        probesname=req.POST.getlist("probename")
+        probesseq=req.POST.getlist("probeseq")
+        probesfunc=req.POST.getlist("probefunc")
+        return render_to_response('generateprobes.html',{
+                                      'probesname':probesname,
+                                      'probesseq':probesseq,
+                                      'probesfunc':probesfunc,
+                                      },context_instance=RequestContext(req))

@@ -3,7 +3,7 @@
  <title>CE和LE探针的NSH结果</title>
 <style></style>
  <div class="container">
- <form role="form" method="PSOT" class="form-horizontal" >{% csrf_token %}
+ <form role="form" method="PSOT" class="form-horizontal" action="http://{{local}}/GenerateProbesets/">{% csrf_token %}
   <div class="well">
   <div class="container">
   <div class="row">
@@ -153,8 +153,8 @@
   </div>
  </div>
  <div class="row" style="text-align:center;">
- <button type="submit" onclick="checkForm();" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-step-forward"></span>生成引物序列</button>
- <button type="button" onclick="checkForm();" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-step-backward"></span>返回重新选择</button>
+ <button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-step-forward"></span>生成引物序列</button>
+ <button type="button" onclick="location='http://{{local}}/PostCalcXmer/'" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-step-backward"></span>返回重新选择</button>
  </div>
  </form>
  </div>

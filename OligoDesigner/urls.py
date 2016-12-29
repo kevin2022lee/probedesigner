@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from views import index,probedesign,subseq,entrez,fromfile,downloadentrez,entreztoxml,test,x4merCalc,startdesign,NonNshFilter,PostCalcXmer,ProbeSetsXmer
+from views import index,probedesign,subseq,entrez,fromfile,downloadentrez,entreztoxml,test,x4merCalc,startdesign,NonNshFilter,PostCalcXmer,ProbeSetsXmer,GenerateProbesets
 from django.contrib import admin
 import settings
 admin.autodiscover()
@@ -20,4 +20,5 @@ urlpatterns = patterns('',
     url(r'^NonNshFilter', NonNshFilter),
     url(r'^PostCalcXmer', PostCalcXmer),
     url(r'^ProbeSetsXmer',ProbeSetsXmer),
+    url(r'^GenerateProbesets',GenerateProbesets),
 )
