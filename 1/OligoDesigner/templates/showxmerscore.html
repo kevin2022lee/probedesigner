@@ -36,24 +36,17 @@
       <td>{{pxl.1.0.1}}</td>
       {% endif %}
       {% if pxl.1.0.0 > 26 %}
-      <td></td>
+      <td><label class="checkbox-inline"><input type="checkbox" readonly="readonly" name="CEcheck" value="CE">CE</label></td>
       {% else %}
-      <td><label class="checkbox-inline">
-    <input type="checkbox" name="CEcheck" value="CE">CE
-          </label>
-     </td>
+      <td><label class="checkbox-inline"><input type="checkbox" name="CEcheck" value="CE">CE</label></td>
      {% endif %}
      {% if pxl.1.0.1 > 16 %}
-      <td></td>
+      <td><label class="checkbox-inline"><input type="checkbox" readonly="readonly" name="LEcheck" value="LE">CE</label></td>
       {% else %}
-      <td><label class="checkbox-inline">
-    <input type="checkbox" name="LEcheck" value="LE">LE
-          </label></td>
+      <td><label class="checkbox-inline"><input type="checkbox" name="LEcheck" value="LE">LE</label></td>
       {% endif %}  
-      <td><label class="checkbox-inline">
-    <input type="checkbox" name="BLcheck" value="BL">BL
-          </label></td>
-          <td><input type="hidden" style="width:25%" class="form control" name="pindex" value="{{pxl.1.1}}" readonly="readonly"/></td>
+      <td><label class="checkbox-inline"><input type="checkbox" name="BLcheck" value="BL">BL</label></td>
+      <td><input type="hidden" style="width:25%" class="form control" name="pindex" value="{{pxl.1.1}}" readonly="readonly"/></td>
     <tr>
    {%endfor%}
   </tbody>
