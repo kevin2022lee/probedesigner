@@ -47,8 +47,8 @@
       <tbody>
  {% for clsl in CEtoLE_score_list %}
       <tr>
-      {% for fortime in fortimes%}
-      <th>{{clsl.1.forloop.counter0}}</th>
+      {% for score in clsl.1%}
+      <th>{{score}}</th>
       {%endfor%}
       </tr>
  {%endfor%}
