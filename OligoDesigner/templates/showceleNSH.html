@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>CE和LE探针的NSH结果</title>
+<style></style>
+ <div class="container">
+ <div class="well">
+ {{list_pkey}}
+ </div>
+  <div class="well">
+ {{list_pindex}}
+ </div>
+   <div class="well">
+ {{list_CE}}
+ </div>
+    <div class="well">
+ {{list_LE}}
+ </div>
+    <div class="well">
+ {{list_BL}}
+ </div>
+    <div class="well">
+ {{probesets_list}}
+ </div>
+ </div>
+  <!-- /#mainWrap -->
+{% endblock %}
