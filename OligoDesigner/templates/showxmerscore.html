@@ -40,7 +40,7 @@
       {% else %}
       <td>
       <label class="checkbox-inline"><input type="checkbox" id="CEcheck" name="CEcheck" value="CE">CE</label>
-      <input type="hidden" name="CEcheck" value="0" >
+      <input type="hidden" name="CEcheck" value="NCE" >
       </td>
      {% endif %}
      {% if pxl.1.0.1 > 16 %}
@@ -48,12 +48,12 @@
       {% else %}
       <td>
       <label class="checkbox-inline"><input type="checkbox" id="LEcheck" name="LEcheck" value="LE">LE</label>
-      <input type="hidden" name="LEcheck" value="0" >
+      <input type="hidden" name="LEcheck" value="NLE" >
       </td>
       {% endif %}  
       <td>
       <label class="checkbox-inline"><input type="checkbox" id="BLcheck" name="BLcheck" value="BL">BL</label>
-      <input type="hidden" name="BLcheck" value="0">
+      <input type="hidden" name="BLcheck" value="NBL">
       </td>
       <td><input type="hidden" style="width:25%" class="form control" name="pindex" value="{{pxl.1.1}}" readonly="readonly"/></td>
     <tr>
