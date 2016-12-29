@@ -3,6 +3,7 @@
  <title>CE和LE探针的NSH结果</title>
 <style></style>
  <div class="container">
+ <form role="form" method="PSOT" class="form-horizontal" >{% csrf_token %}
   <div class="well">
   <div class="container">
   <div class="row">
@@ -55,6 +56,20 @@
     
   </tbody>
 </table>
+ </div>
+ </form>
+ <div class="well">
+ <div class="container">
+  <div class="row">
+  <div class="col-sm-2">
+ {%for ce in CE_plist%}
+ <input type="text" class="form-control" value="{{ce.0}}">
+ </div> <div class="col-sm-10">
+  <input type="text" class="form-control" value="{{ce.1}}">
+  </div>
+  </div>
+ {%endfor%}
+ </div>
  </div>
   <!-- /#mainWrap -->
 {% endblock %}
