@@ -438,6 +438,9 @@ def PostCalcXmer(req):
                                                                               },context_instance=RequestContext(req))
 def ProbeSetsXmer(req):
     if req.method=="POST":
+        CE_plist=[]
+        LE_plist=[]
+        BL_plist=[]
         list_pkey=req.POST.getlist("pkey")
         list_pseq=req.POST.getlist("pseq")
         list_CE=req.POST.getlist("CEcheck")
@@ -446,9 +449,6 @@ def ProbeSetsXmer(req):
         probesets_list=[]
         for i in range(len(list_pkey)):
             probesets_list.append((list_pkey[i],list_pseq[i],list_CE[i],list_LE[i],list_BL[i]))
-        CE_plist=[]
-        LE_plist=[]
-        BL_plist=[]
         for j in range(len(probesets_list)):
             if probesets_list[j][2]=="CE":
                 CE_plist.append((probesets_list[j][0],probesets_list[j][1]))
