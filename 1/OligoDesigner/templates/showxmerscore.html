@@ -39,7 +39,7 @@
       <td><label class="checkbox-inline"><input type="hidden" onclick="return false" name="CEcheck" value="NCE"></label></td>
       {% else %}
       <td>
-      <label class="checkbox-inline"><input type="checkbox" name="CEcheck" value="CE">CE</label>
+      <label class="checkbox-inline"><input type="checkbox" id="CEcheck" name="CEcheck" value="CE">CE</label>
       <input type="hidden" name="CEcheck" value="0" />
       </td>
      {% endif %}
@@ -47,12 +47,12 @@
       <td><label class="checkbox-inline"><input type="hidden" onclick="return false" name="LEcheck" value="NLE"></label></td>
       {% else %}
       <td>
-      <label class="checkbox-inline"><input type="checkbox" name="LEcheck" value="LE">LE</label>
+      <label class="checkbox-inline"><input type="checkbox" id="LEcheck" name="LEcheck" value="LE">LE</label>
       <input type="hidden" name="CEcheck" value="0" >
       </td>
       {% endif %}  
       <td>
-      <label class="checkbox-inline"><input type="checkbox" name="BLcheck" value="BL">BL</label>
+      <label class="checkbox-inline"><input type="checkbox" id="BLcheck" name="BLcheck" value="BL">BL</label>
       <input type="hidden" name="BLcheck" value="0">
       </td>
       <td><input type="hidden" style="width:25%" class="form control" name="pindex" value="{{pxl.1.1}}" readonly="readonly"/></td>
