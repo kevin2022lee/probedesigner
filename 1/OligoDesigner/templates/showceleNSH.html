@@ -12,13 +12,13 @@
      </div>
       <div class="col-sm-10">
 <table class="table table-bordered">
-  <thead>
+  <tbody>
     <tr>
     {% for lep in LE_plist %}
-      <th style="font-size:10px; text-align:center;min-width:10%;">{{lep.0}}</th>
+      <td style="font-size:10px;text-align:center;min-width:10%;">{{lep.0}}</td>
     {% endfor %}
     </tr>
-  </thead>
+  </tbody>
 </table>
       </div>  
    </div>
@@ -41,9 +41,9 @@
       <tr>
       {% for score in clsl.1%}
       {% if score > 26 %}
-      <th style="font-size:10px;min-width:10%;"><font color="red">{{score}}</font></th>
+      <th style="min-width:10%;"><font color="red">{{score}}</font></th>
       {%else%}
-      <th style="font-size:10px;min-width:10%;">{{score}}</th>
+      <th style="min-width:10%;">{{score}}</th>
       {%endif%}
       {%endfor%}
       </tr>
