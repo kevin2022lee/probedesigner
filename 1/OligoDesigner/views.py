@@ -442,5 +442,15 @@ def ProbeSetsXmer(req):
         list_CE=req.POST.getlist('CE','')
         list_LE=req.POST.getlist('LE','')
         list_BL=req.POST.getlist('BL','')
-        probesets={}
-           
+        probesets_list=[]
+        for i in range(len(list_pkey)):
+            probesets_list.append((list_pkey[i],list_CE[i],list_LE[i],list_BL[i]))
+        return render_to_response('showceleNSH.html',{
+                                                        'local':local,
+                                                        'list_pkey':list_pkey,
+                                                        'list_pindex':list_pindex,
+                                                        'list_CE':list_CE,
+                                                        'list_LE':list_LE,
+                                                        'list_BL':list_LE,
+                                                        'probesets_list':probesets_list,
+                                                        },context_instance=RequestContext(req))   
