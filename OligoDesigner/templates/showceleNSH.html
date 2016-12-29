@@ -33,8 +33,8 @@
   <tbody>
    {% for cep in CE_plist %}
     <tr>
-      <td><b>CE</b></th>
-      <td><b>{{cep.0}}</b></th>
+      <td style="font-size:10px;"><b>CE</b></th>
+      <td style="font-size:10px;"><b>{{cep.0}}</b></th>
     </tr>
    {% endfor %}
   </tbody>
@@ -56,7 +56,7 @@
  {%endfor%}
       <tr>
       {% for lep in LE_plist %}
-      <td style="font-size:10px;font-color:white;">Value</td>
+      <th style="font-size:10px;font-color:white;">LE</th>
       {%endfor%}
       </tr>
       </thead>
