@@ -438,8 +438,8 @@ def PostCalcXmer(req):
                                                                               },context_instance=RequestContext(req))
 def ProbeSetsXmer(req):
     if req.method=="POST":
-        list_pkey=req.POST.getlist('pkey','')
-        list_pseq=req.POST.getlist('pseq','')
+        list_pkey=req.POST.getlist("pkey")
+        list_pseq=req.POST.getlist("pseq")
         list_CE=req.POST.getlist("CEcheck")
         list_LE=req.POST.getlist("LEcheck")
         list_BL=req.POST.getlist("BLcheck")
