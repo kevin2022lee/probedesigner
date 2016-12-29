@@ -446,6 +446,16 @@ def ProbeSetsXmer(req):
         probesets_list=[]
         for i in range(len(list_pkey)):
             probesets_list.append((list_pkey[i],list_pseq[i],list_CE[i],list_LE[i],list_BL[i]))
+        CE_plist=[]
+        LE_plist=[]
+        BL_plist=[]
+        for j in range(len(probesets_list)):
+            if probesets_list[j][2]=="CE":
+                CE_plist.append((probesets_list[j][0],probesets_list[j][1]))
+            if probesets_list[j][3]=="LE":
+                LE_plist.append((probesets_list[j][0],probesets_list[j][1]))
+            if probesets_list[j][4]=="BL":
+                BL_plist.append((probesets_list[j][0],probesets_list[j][1]))
         return render_to_response('showceleNSH.html',{
                                                         'local':local,
                                                         'list_pkey':list_pkey,
@@ -454,4 +464,7 @@ def ProbeSetsXmer(req):
                                                         'list_LE':list_LE,
                                                         'list_BL':list_BL,
                                                         'probesets_list':probesets_list,
+                                                        'LE_plist':LE_plist,
+                                                        'CE_plist':CE_plist,
+                                                        'BL_plist':BL_plist,
                                                         },context_instance=RequestContext(req))   
