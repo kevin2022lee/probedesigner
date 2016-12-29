@@ -48,7 +48,7 @@
  {% for clsl in CEtoLE_score_list %}
       <tr>
       {% for fortime in fortimes%}
-      <th>{{clsl.1.forloop }}</th>
+      <th>{{clsl.1.forloop.counter }}</th>
       {%endfor%}
       </tr>
  {%endfor%}
