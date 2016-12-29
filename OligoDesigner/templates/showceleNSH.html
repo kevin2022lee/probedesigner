@@ -14,10 +14,33 @@
  </div>
   <div class="well">
   <div class="container">
-  <div class="row">LE序列</div>
+  <div class="row">
+     <div class="col-sm-2">LE序列</div>
+      <div class="col-sm-10">
+<table class="table">
+  <thead>
+    <tr>
+    {% for lep in LE_plist %}
+      <th>{{lep.0}}</th>
+     {% endfor %}
+    </tr>
+  </thead>
+</table>
+      </div>  
+   </div>
    <div class="row">
-      <div class="col-sm-4">CE序列</div>
-      <div class="col-sm-8">比分值</div>      
+      <div class="col-sm-2">
+ <table class="table">
+  <tbody>
+   {% for cep in CE_plist %}
+    <tr>
+      <td>{{cep.0}}</th>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+      </div>
+      <div class="col-sm-10">{{CEtoLE_score_dict}}</div>      
    </div>
 </div>
     
