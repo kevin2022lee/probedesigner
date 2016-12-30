@@ -500,6 +500,7 @@ def GenerateProbesets(req):
             else:
                 LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTctgagtcaaagcat'))
         return render_to_response('generateprobes.html',{
+                                      'local':local,
                                       'CE_final_list':CE_final_list,
                                       'BL_final_list':BL_final_list,
                                       'LE_final_final_list':LE_final_final_list,
