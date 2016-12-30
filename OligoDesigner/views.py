@@ -490,7 +490,7 @@ def GenerateProbesets(req):
             if probesets_list[j][2]=="CE":
                 CE_final_list.append((probesets_list[j][0],probesets_list[j][1]+'tttttCTCTTGGAAAGAAAGT'))
             if probesets_list[j][2]=="BL":
-                CE_final_list.append((probesets_list[j][0],probesets_list[j][1]))
+                BL_final_list.append((probesets_list[j][0],probesets_list[j][1]))
             if probesets_list[j][2]=="LE":
                 LE_final_list.append((probesets_list[j][0],probesets_list[j][1]))
         LE_final_final_list=[]
