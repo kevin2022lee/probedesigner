@@ -100,12 +100,13 @@ p{ text-indent: 2em; /*em是相对单位，2em即现在一个字大小的两倍*
     <p>这里有两个4聚体: TTTC-GAAA and TTCG-CGAA</p>
     <p>2. 任何一个x聚体 (以一个典型的4聚体为例) 被计算分值通过一个简单的加权方案。</p>
     <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjAzMzAwMzUyOTVfMj.png" /></p>
-    <p>and 3. All the x-mer scores are summed for the probe-universal interaction</p>
+    <p>并且 3.所有的4聚体计算分值真多通用探针序列和设计探针交叉反应因子值</p>
     <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjA0MTAxMzcyODFfMj.png" /></p>
-    <P>Once the x-mer algorithm has produced results for all possible probe-universal interactions, the NSH algorithm is invoked. </p>
-    <p>1. Each x-mer score is multiplied by the appropriate weighting factor (1X for CE with AP, 6X for CE with AMP leader, 15X for CE with AMP arm) to determine the NSH score for that probe. There is one result for each probe-universal interaction. This process is performed once assuming the probe is a CE and once assuming it is an LE. For this example, assuming we are looking at a CE-AMP interaction…</p>
-    <p align="center"><b>NSH score = x-mer score * weighting factor = 1.375 * 6 =8.25</b></p>
-    <p>2. The x-mer scores are calculated for the other NSH interactions (this means that the x-mer algorithm is also revisited for each of the interactions). </p>
+    <P>一旦x聚体算法产生所有可能的通用序列的相互交叉反应的结果，NSH算法调用。</p>
+    <p>1。每个x聚体得分乘以相应的权重因子（1X CE与AP，6X CE放大器的前导，15倍的CE与放大臂）确定探针的NSH评分。有一个结果为每个探针与通用序列的交叉反应。
+    这个过程是执行一次假设探针是一个CE，一旦假设它是一个LE。在这个例子中，假设我们正在寻找一个ce-amp与所设计探针的交叉反应</p>
+    <p align="center"><b>NSH 得分 = x-聚体得分 * 权重因子 = 1.375 * 6 =8.25</b></p>
+    <p>2. x聚体的分数计算与其他探针NSH相互作用（这意味着x聚体算法也重新的计算探针间的交叉反应）。</p>
      <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjE5MzA3ODIxNjFfNQ.png" /></p>
     </div>
 </div>
