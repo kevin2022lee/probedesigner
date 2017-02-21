@@ -1,4 +1,3 @@
-from setuptools.package_index import HREF
 <html>
 <!-- 新 Bootstrap 核心 CSS 文件 -->
 <link href="//cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
@@ -92,12 +91,14 @@ p{ text-indent: 2em; /*em是相对单位，2em即现在一个字大小的两倍*
         <b><em>NSH </em>算法</b>
     </div>
     <div class="panel-body">
-        <p>At the heart of OligoDesigner is the x-mer algorithm. This algorithm estimates the stability of any extender-universal hybrid. </p>
-        <p>The term “x-mer” refers to the length of the smallest perfect hybrid to be considered by the algorithm. Although the default value for the program is a 4-mer, you can adjust this parameter. When the x-mer algorithm is initiated: the algorithm identifies all possible perfect x-mer hybrids between the probe and each universal, a simple weighting scheme is used to predict the stability of each perfect x-mer hybrid, and the results for all hybrids are summed for each probe-universal interaction. An example follows: </p>
-    <p>1. All possible 4-mers are identified:</p>
+        <p>ProbeDesigner软件的核心就是X-mer算法。该算法用于评估和任何通用序列之间的杂交稳定性 </p>
+        <p>“X-MER”指的是由算法考虑决定的最小的完美杂交的长度。虽然该程序的默认值是一个4聚体，你可以调整这个参数。
+        当算法：该x-mer算法开始识别在所选的探针和通用序列之间所有可能产生的x-mer，一个简单的加权方案是用来预测每一个完美的
+        x-mer混合的稳定性，并为所有的杂交结果总结每个探针与通用序列的交叉反应因子。下面的例子 ：</p>
+    <p>1. 所有的可能的4聚体定义如下:</p>
     <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjAxNTY2MTgyNTZfMj.png" /></p>
-    <p>There are two 4-mers: TTTC-GAAA and TTCG-CGAA</p>
-    <p>2. Each x-mer (a 4-mer for this example) is scored using a simple weighting scheme</p>
+    <p>这里有两个4聚体: TTTC-GAAA and TTCG-CGAA</p>
+    <p>2. 任何一个x聚体 (以一个典型的4聚体为例) 被计算分值通过一个简单的加权方案。</p>
     <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjAzMzAwMzUyOTVfMj.png" /></p>
     <p>and 3. All the x-mer scores are summed for the probe-universal interaction</p>
     <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjA0MTAxMzcyODFfMj.png" /></p>
