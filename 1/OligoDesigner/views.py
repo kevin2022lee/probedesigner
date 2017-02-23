@@ -34,6 +34,9 @@ def fromfile(request):
 def test(request):
     global local
     return render_to_response('test.html',{'local':local,},context_instance=RequestContext(request))
+def intro(request):
+    global local
+    return render_to_response('quantimat.html',{'local':local,},context_instance=RequestContext(request))
 def startdesign(request):
     global local
     return render_to_response('startdesign.html',{
