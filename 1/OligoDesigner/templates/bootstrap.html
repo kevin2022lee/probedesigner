@@ -68,19 +68,19 @@ p{ text-indent: 2em; /*em是相对单位，2em即现在一个字大小的两倍*
         <b><em>filter</em>说明</b>
     </div>
     <div class="panel-body">
-        <p><b>Filtering</b> is a powerful tool for changing the allowable service of probes. Using the filter criteria, you can either decrease or increase the number of probes which are available for use as CEs or LEs in the assay. </p>
-        <p>The details of filtering are discussed in the section on Filtering  in the chapter on “Probeset Design using OligoDesigner” . It should be noted that the primary reason for changing the filter criteria is to increase the number of CEs and LEs that are available for use in the assay. Although the default thresholds are excellent guidelines, they are….just that, guidelines. In many cases, you may have probes that are only slightly above or below the allowable thresholds.</p>
-<p>You, as the probeset designer (I’ll bet you’ve never been called that before), will need to review the properties of each of the probes in your probeset to determine which, if any, can be relaxed without negatively affecting assay performance. </p>
-    <p>Remember, the action of “filtering” (i.e., relaxing the filter criteria) relaxes the filters for all the probes in the tree. You cannot relax filters for individual probes. When you relax a filter for one probe you may change the status of other probes in a favorable manner.</p>
+        <p><b>过滤</b>是改变探针允许服务类型的有力工具。使用过滤器的准则，你可以增加或减少探针可用于检测CES或LES的数量。 </p>
+        <p>应该指出的是，改变过滤准则的主要原因是增加CES和LES，可用于检测的数量。虽然默认的阈值是优秀的指导方针，他们是。在许多情况下，你可能有探头略高于或低于允许的阈值。</p>
+        <p>你，作为引物组设计师（我打赌你从来没有叫过），将需要审查中每个探针组中的探针来确定，如果任何的特性，可以轻松但不影响检测性能。</p>
+        <p>请记住，“过滤”的动作（即，放宽过滤器标准）放宽过滤器的所有在树上探针。不能为单个探针放松过滤器。当您为一个探头放松过滤器时，您可以以有利的方式改变其他探针的状态。</p>
     </div>
 </div>
 <div class="panel panel-success">
     <div class="panel-heading">
-        <b><em>CE-LE interactions</em>说明</b>
+        <b><em>CE-LE 交叉反应</em>说明</b>
     </div>
     <div class="panel-body">
-        <p><b>CE-LE interactions</b> are the final source of assay background considered by OligoDesigner. In fact, these interactions are used to establish the final assignment of the probes in the assay. Complementary CEs and LEs could interact via the mechanism shown below. This may be prevented by excluding one of the probes from service in the probeset or by assigning the same service to both probes. The process of assigning probes, calculating CE-LE interactions, and reassigning as necessary is, as you can imagine, an iterative process. This process is enabled using the Assignment View.</p>
-        <p>Similar to CE and LE NSH calculations, the CE-LE interaction is evaluated using the x-mer algorithm. PD searches all possible x-mers that could form between the extenders (CEs vs. LEs), estimates their stability, and sums them. Similarly to the NSH calculations, it applies a weight to the x-mer results to estimate the contribution of the CE-LE hybrid to background. All CE-LE interactions are given a weight of 6 similar to LE-AMP leader interactions for the system 1 assays. </p>
+        <p><b>CE-LE 交叉反应</b> 被ProbeDesigner软件认为是最终的背景来源，事实上，这些相互作用被用来建立在分析中的探针的最终分配。互补的CES和LEs可能通过以下机制互动。这可以通过排除在探针组之一或两个探针分配相同的服务从服务探讨预防。将探针的方法，计算ce-le相互作用，和重新分配是必要的，你可以想象，一个迭代的过程。使用赋值视图启用此过程。</p>
+        <p>类似于CE和Le，NSH计算的ce-le交互使用X-聚体算法评价。PD搜索所有可能的延伸引物形式可能x-聚体（CEs vs. LEs），估计他们的稳定性，和他们。同样的组合计算，它将一个重的富X-聚体结果估计的ce-le交叉对背景的影响。所有的ce-le相互作用给出一个权重6类似le-amp交叉反应对于system 1检测。</p>
    <p><img class="img" width="300px;" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjQyNTk3MjY3MDFfNg.png" /></p>
     </div>
 </div>
