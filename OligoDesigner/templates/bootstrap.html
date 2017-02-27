@@ -118,32 +118,24 @@ p{ text-indent: 2em; /*em是相对单位，2em即现在一个字大小的两倍*
         </h3>
     </div>
     <div class="panel-body">
-        <p><b>NSH interactions are interactions involving capture and label extenders and universals which lead to elevated leve
-        ls of background in bDNA assays</b>. Minimizing NSH is an essential part of designing a successful probeset. As such, 
-        OligoDesigner screens probes against the universals to exclude those that could lead to elevated background through
-         NSH interactions. (For a published example of NSH interactions, see M. Collins et. al., NAR Vol 25, no. 15, Aug 
-                            1997). </p>
-        <p>Before proceeding, it is important that we define “universal” sequences. These are the molecules, common to all bDNA
-         assays (of the same universal chemistry type), that mediate the capture of the target and the signal amplification. 
-         For SYSTEM 1 assays (open kits), they include the branched DNA molecule, the AP probe and the capture probe (PSCP) 
-         on the plate. For the SYSTEM 8 assays, they include the branched DNA molecule (with iso-C, iso-G), the pre-amplifier
-          molecule and the capture probe on the plate. The CE and LE tails (also called overhangs) are also considered 
-          “universal”; after concatenation with the specific extender sequence via a spacer, they enable the hybridization 
-          of the probes to the universals and subsequent signal amplification. For each chemistry, the universal sequences
-           are grouped in a file and imported into OligoDesigner as a set. </p>
+        <p><b>NSH反应作用涉及捕获引物组和标记延伸引物组的交互以及通用序列在bDNA检测中导致高检测背景。</b>. 最小化NSH反应是一个成功的引物组设计必不可少的一部分。因此, 
+        Probedesigner能够筛选出引物探针以排除那些可能通过NSH反应导致背景的升高。 (引用一个关于NSH反应的文献, see M. Collins et. al., NAR Vol 25, no. 15, Aug 1997). </p>
+        <p>在开始之前，一件重要的事情是我们如何定义“通用”序列。这些分子，在所有BDNA检测系统中是通用的（即相同的通用化学类型），调解目标的捕获和信号放大。
+                                对于SYSTEM 1检测系统 (开放试剂盒), 他们包括了分支链DNA分子, AP探针 和在包被板上的捕获探针 (PSCP)。 对于SYSTEM 8检测系统, 他们包括了分支链DNA分子 (附带iso-C, iso-G), 前放大体分子和在板上的捕获探针， CE
+        CE和LE引物组的尾巴 (也被成为延伸) 也被认为是通用的，通过间隔与特定的扩展序列拼接后，他们共同协同似使得探针杂交到通用序列上以及随后的信号放大成为可能。对于任何一个化学系统而言，这些通用序列组合在一起形成一个文件导入到ProbeDesigner软件中成为一个组 </p>
         <ul>
-        The screening of probes from a probeset that could lead to higher background involves the following: 
-        <li>identifying the extender-universal interactions that could interact non-specifically </li>
-        <li>estimating the stability of the hybrids that form between the extenders and the universals</li>
-        <li>estimating the contribution of any potentially stable interaction to background</li>
+                              从一个探针组中筛选探针可能会导致高背景的涉及以下几个方面内容：
+        <li>识别能够导致非特异性杂交的通用延伸的反应 ；</li>
+        <li>评估形成于通用序列和延伸序列之间的杂交稳定性；</li>
+        <li>评估任何潜在的稳定交叉反应对背景的影响。</li>
         </ul>
-        <p>The NSH interactions for System 1 chemistry are depicted below. The interactions differ depending on whether the probe is a CE or an LE. Early in the design process we haven’t specified probe service; any probe can be either a CE or an LE. Hence, the analysis is performed twice for all probes: once assuming service as a CE and once assuming service as an LE. </p>
-<p>OligoDesigner estimates the stability of hybrids and their contribution to background. For each interaction the hybrid stability is evaluated using the x-mer algorithm (discussed below), and the contribution of the hybrid to background is calculated by multiplying this predicted stability by a weighting factor specific to the interaction. The score associated with each interaction for the system 1 universals is shown below. Although the default settings are recommended, the hybrid parameters and the NSH weighting factors can be changed within the program using the NSH Dialog.</p>    
+        <p>对于NSH交叉反应System 1化学系统是这么描述的。 交叉反应的不同，取决于引物是作为CE引物还是LE引物。早期的设计过程中，我们没有指定引物的服务类型，任何引物都可以是CE引物或LE引物。 因此, 对于所有的引物组都是进行两次的分析，一种假设作为CE引物服务，一种假设作为LE引物服务。</p>
+        <p>Probedesigner估计杂交稳定性及其背景影响。每一个相互作用的混合稳定性使用X-聚体算法评估（下面讨论），和混合背景的贡献乘以这个预测的加权因子的具体作用的稳定性计算。每个交互相关的系统1的共性评分如下。虽然建议使用默认设置，混合参数和NSH加权因素可以改变程序内使用NSH对话框。</p>    
 
-<p>As an example, note that the CE-AMP arm interaction has a weight of 15X. If the stability of the hybrid is calculated from the x-mer algorithm to be, say, “1”, the CE NSH score for this interactions would be 15 (the x-mer result times 15). Now, if you are paying attention, you are wondering why the CE-“AMP arm” interaction given more weight than the CE-“AMP leader” and CE-“AP probe” interaction. For the 15X3 molecule, each of the AMP arms has three binding sites for the AP probe. This yields 45 binding sites for both the AP and the CE probe should there be non-specific pairing. Conceptually you can envision why this is an NSH interaction we wish to avoid. </p>
+<p>作为一个例子，注意ce-amp臂相互作用重15倍。如果混合的稳定性从X-聚体造方法是计算，说，“1”，这种相互作用的CE NSH的成绩是15分（的富润机械制造结果的15倍）。现在，如果你正在关注，你想知道为什么CE -“放大器- ARM”的互动给予更多的重量比行政长官“AMP领导人”和行政长官-“AP探针”的互动。为15x3分子，每个AMP武器有AP探针三结合位点。这将产生45个结合位点的AP和CE探针应该有非特异性配对。从概念上讲你可以想象为什么这是一个互动，我们希望避免NSH。 </p>
 <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNTUwNTgxOTk2OTFfMj.png" /></p>
 <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNTUyMzMwMzU1NTNfMj.png" /></p>
-<p align="center"><b>NSH Interactions for System 1 Chemistry</b></p>
+<p align="center"><b>对于System 1 化学体系的NSH交叉反应</b></p>
     </div>
     
 </div>
