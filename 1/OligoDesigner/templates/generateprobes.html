@@ -1,36 +1,7 @@
 {% extends "base.html" %} 
  {% block content %}
  <title>CE和LE探针的NSH结果</title>
-<table>
-<tr>
-<th>探针编号</th>
-<th>探针序列</th>
-<th>功能区</th>
-</tr>
-{% for cfl in CE_final_list %}
-<tr>
-<td>{{ cfl.0 }}</td>
-<td>{{ cfl.1 }}</td>
-<td>CE</td>
-</tr>
-{%endfor%}
-<hr/>
-{% for lffl in LE_final_final_list %}
-<tr>
-<td>{{ lffl.0 }}</td>
-<td>{{ lffl.1 }}</td>
-<td>LE</td>
-</tr>
-{%endfor%}
-<hr/>
-{% for bfl in BL_final_list %}
-<tr>
-<td>{{ bfl.0 }}</td>
-<td>{{ bfl.1 }}</td>
-<td>BL</td>
-</tr>
-{%endfor%}
-</table>
+ 
 
 <div style="text-align:center;">
 <button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-file"></span>导出探针序列</button>
