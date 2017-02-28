@@ -16,31 +16,33 @@ from XmerCalcCELENSH import *
 from django.core.context_processors import request
 
 local='www.probedesigner.cn'
+thisyear=time.strftime('%Y',time.localtime(time.time()))
 
 #######################实现最长公共字符查找##################################
 
 def index(request):
     global local
-    return render_to_response('bootstrap.html',{'local':local,},context_instance=RequestContext(request))
+    return render_to_response('bootstrap.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
 def probedesign(request):
     global local
-    return render_to_response('probedesign.html',{'local':local,},context_instance=RequestContext(request))
+    return render_to_response('probedesign.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
 def entrez(request):
     global local
-    return render_to_response('entrez.html',{'local':local,},context_instance=RequestContext(request))
+    return render_to_response('entrez.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
 def fromfile(request):
     global local
-    return render_to_response('fromfile.html',{'local':local,},context_instance=RequestContext(request))
+    return render_to_response('fromfile.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
 def test(request):
     global local
-    return render_to_response('test.html',{'local':local,},context_instance=RequestContext(request))
+    return render_to_response('test.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
 def intro(request):
     global local
-    return render_to_response('quantimat.html',{'local':local,},context_instance=RequestContext(request))
+    return render_to_response('quantimat.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
 def startdesign(request):
     global local
     return render_to_response('startdesign.html',{
                                                   'local':local,
+                                                  'thisyear':thisyear,
                                                   'sequence':request.COOKIES.get('seq',''),
                                                   'description':request.COOKIES.get('des',''),
                                                   },context_instance=RequestContext(request))
@@ -143,7 +145,7 @@ def subseq(request):
             OD=0
             reverse=''
             pl=''
-    return render_to_response('showprobe.html',{'local':local,'oligoseq':oligoseq,'seqlen':seqlen,'acount':acount,'ccount':ccount,'gcount':gcount,'tcount':tcount,'GC':GC,'MW':MW,'Tm':Tm,'OD':OD,'reverse':reverse,'pl':pl,},context_instance=RequestContext(request))             
+    return render_to_response('showprobe.html',{'local':local,'thisyear':thisyear,'oligoseq':oligoseq,'seqlen':seqlen,'acount':acount,'ccount':ccount,'gcount':gcount,'tcount':tcount,'GC':GC,'MW':MW,'Tm':Tm,'OD':OD,'reverse':reverse,'pl':pl,},context_instance=RequestContext(request))             
 def probeList(s):
     probedict={}
     count=1
@@ -170,6 +172,7 @@ def downloadentrez(request):
         protein_seq="N/A"
         return render_to_response('showentrez.html',{
                                                      'local':local,
+                                                     'thisyear':thisyear,
                                                      'oligoseq':record[0]['GBSeq_sequence'],
                                                      'seqlen':record[0]['GBSeq_length'],
                                                      'cdate':record[0]['GBSeq_create-date'],
@@ -237,6 +240,7 @@ def entreztoxml(request):
         #request.session['sequence']=nr.seq
     response=render_to_response('parselocalfile.html',{
                                                        'local':local,
+                                                       'thisyear':thisyear,
                                                      'filetype':filetype[0],
                                                      'local':local,
                                                      'accessid':nr.id,
@@ -369,6 +373,7 @@ def x4merCalc(request):
 #############模板渲染开始##########################
         return render_to_response('showcalcresult.html',{
                                                      'local':local,
+                                                     'thisyear':thisyear,
                                                      'x4merlcs_Aleader':x4merlcs_Aleader,
                                                      'x4merlcslen_Aleader':x4merlcslen_Aleader,
                                                      'uni_Aleader_seq':uni_Aleader_seq,
@@ -421,6 +426,7 @@ def NonNshFilter(req):
                 probedict.setdefault('p'+str(probelist[i]),[s[probelist[i]:probelist[i+1]],probelist[i]])
         return render_to_response('showfilterprobe.html',{
                                                      'local':local,
+                                                     'thisyear':thisyear,
                                                      'probedict':probedict,
                                                      },context_instance=RequestContext(req))   
 def PostCalcXmer(req):
@@ -439,6 +445,7 @@ def PostCalcXmer(req):
         probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
         return render_to_response('showxmerscore.html',{
                                                                               'local':local,
+                                                                              'thisyear':thisyear,
                                                                               'probe_xmer_list':probe_xmer_list,
                                                                               },context_instance=RequestContext(req))
 #########################CE&LE cross#################################
@@ -472,6 +479,7 @@ def ProbeSetsXmer(req):
             CEtoLE_score_list.append((CE_plist[c][0],CEtoLE_score[len(LE_plist)*c:(c+1)*len(LE_plist)]))
         return render_to_response('showceleNSH.html',{
                                                         'local':local,
+                                                        'thisyear':thisyear,
                                                         'LE_plist':LE_plist,
                                                         'CE_plist':CE_plist,
                                                         'BL_plist':BL_plist,
@@ -504,6 +512,7 @@ def GenerateProbesets(req):
                 LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTctgagtcaaagcat'))
         return render_to_response('generateprobes.html',{
                                       'local':local,
+                                      'thisyear':thisyear,
                                       'CE_final_list':CE_final_list,
                                       'BL_final_list':BL_final_list,
                                       'LE_final_final_list':LE_final_final_list,
