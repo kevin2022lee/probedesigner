@@ -1,9 +1,11 @@
 {% extends "base.html" %} 
  {% block content %}
  <title>CE和LE探针的NSH结果</title>
+ <script src="../static/js/jquery.base64.js"></script>
+ <script src="../static/js/tableExport.js"></script>
 <div class="container"> 
 <div class="well">
-<table class="table table-bordered">
+<table id="tb_pl_m" class="table table-bordered">
 <tr>
 <th>探针编号</th>
 <th>探针序列</th>
@@ -35,7 +37,7 @@
 </table>
 </div>
 <div style="text-align:center;">
-<button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-file"></span>导出探针序列</button>
+<button type="submit" onclick="$('#tb_pl_m').tableExport({ type: 'excel', separator: ';', escape: 'false' });"  class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-file"></span>导出探针序列</button>
 </div>
 </div>
 <!-- /#mainWrap -->
