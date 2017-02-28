@@ -15,7 +15,7 @@ from searchProbe import *
 from XmerCalcCELENSH import *
 from django.core.context_processors import request
 
-local='pdv1.applinzi.com'
+local='www.probedesigner.cn'
 
 #######################实现最长公共字符查找##################################
 
