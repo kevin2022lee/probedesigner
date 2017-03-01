@@ -4,9 +4,9 @@
 
 <div class="panel panel-success">
  <div class="panel-heading">
-        <b><em>CE-LE 交叉反应</em>说明</b>
+        <b><em>选取Genebank或者Fasta文件</em>开始探针设计就</b>
     </div>
-    <div class="panel-body">
+    <div class="well">
 <form action="http://{{ local }}/xmltoentrez/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
 <div class="col-sm-10">
 <input class="form-control" type="file" name="file" accept=".gb,.fasta" >
