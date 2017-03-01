@@ -52,9 +52,9 @@
       <div class="col-sm-10 col-md-10">
       <table class="table table-bordered">
       <thead>
- {% for clsl in CEtoLE_score_list1 %}
+ {% for clsl1 in CEtoLE_score_list1 %}
       <tr>
-      {% for score in clsl.1%}
+      {% for score in clsl1.1%}
       {% if score > 26 %}
       <th style="font-size:10px;"><font color="red">{{score}}</font></th>
       {%else%}
@@ -76,7 +76,8 @@
   </tbody>
 </table>
  </div>
-<div class="well">{{CEtoLE_score_list}}</div>
+<div class="well">{{CEtoLE_score_list1}}</div>
+<div class="well">{{CEtoLE_score_list2}}</div>
  <!-- 表格代码结束@@ -->
 
  <!--显示探针序列列表html代码-->
