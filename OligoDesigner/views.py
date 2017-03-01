@@ -533,7 +533,7 @@ def ProbeSetsXmer(req):
                 CEtoLE_score_list1.append((clsl[0],clsl[1][0:len_lep]))
         elif 16<len_lep<=30:
             for clsl in CEtoLE_score_list:
-                CEtoLE_score_list1.append((clsl[0],clsl[1][0:len_lep]))
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
                 CEtoLE_score_list2.append((clsl[0],clsl[1][16:len_lep]))
         
         
