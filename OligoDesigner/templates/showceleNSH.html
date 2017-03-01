@@ -2,6 +2,10 @@
  {% block content %}
  <title>CE和LE探针的NSH结果</title>
 <style></style>
+<div class="panel panel-success">
+<div class="panel-heading">
+        <b>CE和LE探针的NSH算法计算结果</b>
+</div>
  <div class="container">
  <form role="form" method="POST" class="form-horizontal" action="http://{{local}}/GenerateProbesets/">{% csrf_token %}
   <div class="well">
@@ -605,6 +609,7 @@
  <button type="button" onclick="history.go(-1)" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-step-backward"></span>返回重新选择</button>
  </div>
  </form>
+ </div>
  </div>
   <!-- /#mainWrap -->
 {% endblock %}
