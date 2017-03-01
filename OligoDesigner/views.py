@@ -472,6 +472,15 @@ def ProbeSetsXmer(req):
         xmerclaccele=CalcCELENSH()
         CEtoLE_score_list=[]
         CEtoLE_score=[]
+        LE_plist1=[]
+        LE_plist2=[]  
+        LE_plist3=[]
+        LE_plist4=[]
+        LE_plist5=[]
+        LE_plist6=[]
+        LE_plist7=[]
+        LE_plist8=[]
+        LE_plist9=[]
         len_lep=len(LE_plist)
         if len(LE_plist)<=10:
             LE_plist1=LE_plist[0:len(LE_plist)-1]
