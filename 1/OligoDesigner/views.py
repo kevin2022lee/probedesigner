@@ -480,34 +480,34 @@ def ProbeSetsXmer(req):
         LE_plist6=[]
         LE_plist7=[]
         len_lep=len(LE_plist)
-        if len(LE_plist)<=15:
+        if len_lep<=15:
             LE_plist1=LE_plist[0:len(LE_plist)-1]
-        elif 16<len(LE_plist)<=30:
+        elif 16<len_lep<=30:
             LE_plist1=LE_plist[0:15]
             LE_plist2=LE_plist[16:len(LE_plist)-1]
-        elif 31<len(LE_plist)<=45:
+        elif 31<len_lep<=45:
             LE_plist1=LE_plist[0:15]
             LE_plist2=LE_plist[16:30]  
             LE_plist3=LE_plist[31:len(LE_plist)-1]
-        elif 46<len(LE_plist)<=60:
+        elif 46<len_lep<=60:
             LE_plist1=LE_plist[0:15]
             LE_plist2=LE_plist[16:30]  
             LE_plist3=LE_plist[31:45]
             LE_plist4=LE_plist[46:len(LE_plist)-1]
-        elif 61<len(LE_plist)<=75:
+        elif 61<len_lep<=75:
             LE_plist1=LE_plist[0:15]
             LE_plist2=LE_plist[16:30]  
             LE_plist3=LE_plist[31:45]
             LE_plist4=LE_plist[46:60]
             LE_plist5=LE_plist[61:len(LE_plist)-1]
-        elif 76<len(LE_plist)<=90:
+        elif 76<len_lep<=90:
             LE_plist1=LE_plist[0:15]
             LE_plist2=LE_plist[16:30]  
             LE_plist3=LE_plist[31:45]
             LE_plist4=LE_plist[46:60]
             LE_plist5=LE_plist[61:75]
             LE_plist6=LE_plist[76:len(LE_plist)-1]
-        elif 91<len(LE_plist)<=105:
+        elif 91<len_lep<=105:
             LE_plist1=LE_plist[0:15]
             LE_plist2=LE_plist[16:30]  
             LE_plist3=LE_plist[31:45]
@@ -518,7 +518,25 @@ def ProbeSetsXmer(req):
         for c in range(len(CE_plist)):
             for l in range(len(LE_plist)):
                 CEtoLE_score.append(xmerclaccele.xmerCalcCELE(CE_plist[c][1], LE_plist[l][1]))
-            CEtoLE_score_list.append((CE_plist[c][0],CEtoLE_score[len(LE_plist)*c:(c+1)*len(LE_plist)]))
+            CEtoLE_score_list.append((CE_plist[c][0],CEtoLE_score[len_lep*c:(c+1)*len_lep]))
+            
+        CEtoLE_score_list1=[]
+        CEtoLE_score_list2=[]
+        CEtoLE_score_list3=[]
+        CEtoLE_score_list4=[]
+        CEtoLE_score_list5=[]
+        CEtoLE_score_list6=[]
+        CEtoLE_score_list7=[]
+        
+        if len_lep<=15:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:len_lep]))
+        elif 16<len_lep<=30:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:len_lep]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][16:len_lep]))
+        
+        
         return render_to_response('showceleNSH.html',{
                                                         'local':local,
                                                         'thisyear':thisyear,
@@ -534,6 +552,8 @@ def ProbeSetsXmer(req):
                                                         'CE_plist':CE_plist,
                                                         'BL_plist':BL_plist,
                                                         'CEtoLE_score_list':CEtoLE_score_list,
+                                                        'CEtoLE_score_list1':CEtoLE_score_list1,
+                                                        'CEtoLE_score_list2':CEtoLE_score_list2,
                                                         },context_instance=RequestContext(req))   
 ##################################Generate probe sets#####################################################
 def GenerateProbesets(req):
