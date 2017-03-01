@@ -531,12 +531,46 @@ def ProbeSetsXmer(req):
         if len_lep<=15:
             for clsl in CEtoLE_score_list:
                 CEtoLE_score_list1.append((clsl[0],clsl[1][0:len_lep]))
-        elif 16<len_lep<=30:
+        elif 15<len_lep<=30:
             for clsl in CEtoLE_score_list:
                 CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
                 CEtoLE_score_list2.append((clsl[0],clsl[1][15:len_lep]))
-        
-        
+        elif 30<len_lep<=45:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:len_lep]))
+        elif 45<len_lep<=60:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:45]))
+                CEtoLE_score_list4.append((clsl[0],clsl[1][45:len_lep]))
+        elif 60<len_lep<=75:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:45]))
+                CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
+                CEtoLE_score_list5.append((clsl[0],clsl[1][60:len_lep]))
+        elif 75<len_lep<=90:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:45]))
+                CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
+                CEtoLE_score_list5.append((clsl[0],clsl[1][60:75])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][75:len_lep]))
+        elif 90<len_lep<=105:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:45]))
+                CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
+                CEtoLE_score_list5.append((clsl[0],clsl[1][60:75])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][75:90]))
+                CEtoLE_score_list6.append((clsl[0],clsl[1][90:len_lep]))       
+                
         return render_to_response('showceleNSH.html',{
                                                         'local':local,
                                                         'thisyear':thisyear,
@@ -554,6 +588,11 @@ def ProbeSetsXmer(req):
                                                         'CEtoLE_score_list':CEtoLE_score_list,
                                                         'CEtoLE_score_list1':CEtoLE_score_list1,
                                                         'CEtoLE_score_list2':CEtoLE_score_list2,
+                                                        'CEtoLE_score_list3':CEtoLE_score_list3,
+                                                        'CEtoLE_score_list4':CEtoLE_score_list4,
+                                                        'CEtoLE_score_list5':CEtoLE_score_list5,
+                                                        'CEtoLE_score_list6':CEtoLE_score_list6,
+                                                        'CEtoLE_score_list7':CEtoLE_score_list7,
                                                         },context_instance=RequestContext(req))   
 ##################################Generate probe sets#####################################################
 def GenerateProbesets(req):
