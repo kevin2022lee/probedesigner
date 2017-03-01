@@ -149,6 +149,80 @@
 </table>
 {% endif %}
 <!-- 2个表格结束 -->
+{% if len_lep >= 30 %}
+<!-- 第三个表格 -->
+  <div class="container">
+  <!-- 表格开始 -->
+  <div class="row">
+     <div class="col-sm-2 col-md-2">
+     <table class="table table-bordered">
+     <tr>
+     <td><h5><b>CE&LE probesets NSH_XmerScore</b></h5></td>
+     </tr>
+     </table>
+     </div>
+      <div class="col-sm-10 col-md-10">
+<table class="table table-bordered">
+<thead><tr>
+{% for lep in LE_plist3 %}
+<th style="font-size:22px;">LE</th>
+{% endfor %}
+</tr></thead>
+  <tbody>
+    <tr>
+    {% for lep in LE_plist3 %}
+      <td style="font-size:10px;text-align:center;"><b>{{lep.0}}</b></td>
+    {% endfor %}
+    </tr>
+  </tbody>
+</table>
+      </div>  
+   </div>
+   <div class="row">
+      <div class="col-sm-2 col-md-2">
+ <table class="table table-bordered">
+  <tbody>
+   {% for cep in CE_plist %}
+    <tr>
+      <td style="font-size:10px;"><b>CE</b></th>
+      <td style="font-size:10px;"><b>{{cep.0}}</b></th>
+    </tr>
+   {% endfor %}
+   <tr>
+   <td style="font-size:10px;"><font style="color:transparent">CES</font></td>
+   <td style="font-size:10px;"><font style="color:transparent">CES</font></td>
+   </tr>
+  </tbody>
+</table>
+      </div>
+      <div class="col-sm-10 col-md-10">
+      <table class="table table-bordered">
+      <thead>
+ {% for clsl3 in CEtoLE_score_list3 %}
+      <tr>
+      {% for score in clsl3.1%}
+      {% if score > 26 %}
+      <th style="font-size:10px;"><font color="red">{{score}}</font></th>
+      {%else%}
+      <th style="font-size:10px;">{{score}}</th>
+      {%endif%}
+      {%endfor%}
+      </tr>
+ {%endfor%}
+      <tr>
+      {% for lep in LE_plist3 %}
+      <th style="font-size:10px;"><font style="color:transparent">LEss</font></th>
+      {%endfor%}
+      </tr>
+      </thead>
+      </table>
+      </div>      
+   </div>
+</div>    
+  </tbody>
+</table>
+{% endif %}
+<!-- 3个表格结束 -->
  </div>
 
  <!-- 表格代码结束@@ -->
