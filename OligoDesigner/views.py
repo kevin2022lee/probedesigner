@@ -481,32 +481,32 @@ def ProbeSetsXmer(req):
         LE_plist7=[]
         len_lep=len(LE_plist)
         if len_lep<=15:
-            LE_plist1=LE_plist[0:len(LE_plist)-1]
+            LE_plist1=LE_plist[0:len(LE_plist)]
         elif 16<len_lep<=30:
             LE_plist1=LE_plist[0:15]
-            LE_plist2=LE_plist[15:len(LE_plist)-1]
+            LE_plist2=LE_plist[15:len(LE_plist)]
         elif 31<len_lep<=45:
             LE_plist1=LE_plist[0:15]
             LE_plist2=LE_plist[15:30]  
-            LE_plist3=LE_plist[30:len(LE_plist)-1]
+            LE_plist3=LE_plist[30:len(LE_plist)]
         elif 46<len_lep<=60:
             LE_plist1=LE_plist[0:15]
             LE_plist2=LE_plist[16:30]  
             LE_plist3=LE_plist[31:45]
-            LE_plist4=LE_plist[46:len(LE_plist)-1]
+            LE_plist4=LE_plist[46:len(LE_plist)]
         elif 61<len_lep<=75:
             LE_plist1=LE_plist[0:15]
             LE_plist2=LE_plist[15:30]  
             LE_plist3=LE_plist[30:45]
             LE_plist4=LE_plist[45:60]
-            LE_plist5=LE_plist[60:len(LE_plist)-1]
+            LE_plist5=LE_plist[60:len(LE_plist)]
         elif 76<len_lep<=90:
             LE_plist1=LE_plist[0:15]
             LE_plist2=LE_plist[15:30]  
             LE_plist3=LE_plist[30:45]
             LE_plist4=LE_plist[45:60]
             LE_plist5=LE_plist[60:75]
-            LE_plist6=LE_plist[75:len(LE_plist)-1]
+            LE_plist6=LE_plist[75:len(LE_plist)]
         elif 91<len_lep<=105:
             LE_plist1=LE_plist[0:15]
             LE_plist2=LE_plist[15:30]  
@@ -514,7 +514,7 @@ def ProbeSetsXmer(req):
             LE_plist4=LE_plist[45:60]
             LE_plist5=LE_plist[60:75]
             LE_plist6=LE_plist[75:90]
-            LE_plist7=LE_plist[90:len(LE_plist)-1]
+            LE_plist7=LE_plist[90:len(LE_plist)]
         for c in range(len(CE_plist)):
             for l in range(len(LE_plist)):
                 CEtoLE_score.append(xmerclaccele.xmerCalcCELE(CE_plist[c][1], LE_plist[l][1]))
