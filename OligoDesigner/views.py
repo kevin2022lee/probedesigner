@@ -491,9 +491,9 @@ def ProbeSetsXmer(req):
             LE_plist3=LE_plist[30:len(LE_plist)]
         elif 46<len_lep<=60:
             LE_plist1=LE_plist[0:15]
-            LE_plist2=LE_plist[16:30]  
-            LE_plist3=LE_plist[31:45]
-            LE_plist4=LE_plist[46:len(LE_plist)]
+            LE_plist2=LE_plist[15:30]  
+            LE_plist3=LE_plist[30:45]
+            LE_plist4=LE_plist[45:len(LE_plist)]
         elif 61<len_lep<=75:
             LE_plist1=LE_plist[0:15]
             LE_plist2=LE_plist[15:30]  
