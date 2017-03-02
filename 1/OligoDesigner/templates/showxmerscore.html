@@ -20,13 +20,13 @@
 }  
 </script>
 <style></style>
-<div class="panel panel-info" style="padding:20px;height:auto;">
+<div class="panel panel-info">
 <div class="panel-heading">
         <b>根据Xmer值选择引物作为适合的功能区</b>
 </div>
 <form action="http://{{local}}/ProbeSetsXmer/" method="POST" id="Plist" role="form" class="form-horizontal" >{% csrf_token %}
 
-<table class="table table-condensed">
+<table class="table table-condensed"  style="margin:20px;height:auto;">
   <b><h5><caption>探针X4mer与通用序列的比对计算结果</caption></h5></b>
   <thead>
     <tr>
