@@ -24,6 +24,7 @@
 <div class="panel-heading">
         <b>根据Xmer值选择引物作为适合的功能区</b>
 </div>
+<div class="container" style="padding:20px;height:auto;" >
 <form action="http://{{local}}/ProbeSetsXmer/" method="POST" id="Plist" role="form" class="form-horizontal" >{% csrf_token %}
 
 <table class="table table-condensed"  style="padding:20px;height:auto;">
@@ -82,6 +83,7 @@
 </table>
  <div class="panel panel-active" style="margin:20px;">
  <button type="submit" onclick="checkForm();" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-step-forward"></span>计算选定的各组探针间的x-mer值</button>
+ </div>
  </div>
  </form>
  </div>
