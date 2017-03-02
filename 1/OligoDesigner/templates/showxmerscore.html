@@ -21,7 +21,10 @@
 </script>
 <style></style>
  <div class="container">
- <div class="well">
+ <div class="panel panel-success" style="padding:20px;">
+ <div class="panel-heading">
+ <b>根据X-mer计算值选择引物的功能区</b>
+ </div>
 <form action="http://{{local}}/ProbeSetsXmer/" method="POST" id="Plist" role="form" class="form-horizontal" >{% csrf_token %}
 
 <table class="table table-condensed">
