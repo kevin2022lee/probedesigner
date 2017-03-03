@@ -49,6 +49,12 @@ def startdesign(request):
 def statichelp(request):
     global local
     return render_to_response('statichelp/default.htm',context_instance=RequestContext(request))
+def ContentTree(request):
+    global local
+    return render_to_response('statichelp/ContentTree.htm',context_instance=RequestContext(request))
+def statichelp(request):
+    global local
+    return render_to_response('statichelp/default.htm',context_instance=RequestContext(request))
 
 def oligoGC(s):
     if len(s)!= 0:
