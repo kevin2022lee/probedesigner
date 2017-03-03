@@ -32,7 +32,7 @@ class NonNSHFilter:
                     data.append(ns[:i])
                 for d in data:
                     data_tm.append(self.oligoTm(d))
-                data_probe.append(self.search(data_tm,58,58))
+                data_probe.append(self.search(data_tm,58,60))
             else:
                 print "List index out of range"
 ####返回probedata############################################################
