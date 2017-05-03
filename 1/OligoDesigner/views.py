@@ -444,7 +444,7 @@ def PostCalcXmer(req):
         for i in range(len(dict_value)):
             dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]))
         for v in range(len(dict_xmervalue)):
-            probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v]),dict_value[v]])
+            probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v]),dict_value[v],oligoGC(dict_value[v])])
         probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
         return render_to_response('showxmerscore.html',{
                                                                               'local':local,
