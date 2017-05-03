@@ -413,7 +413,8 @@ def x4merScore(seq):
     SumGC=seq.count("G")+seq.count("C")
     Score=round((0.5*SumAT+1.0*SumGC)/4,3)
     return Score  
-############序列过滤条件###############################################
+
+##################################################################
 @csrf_protect    
 def NonNshFilter(req):
     if req.method=='POST':
@@ -424,7 +425,8 @@ def NonNshFilter(req):
         probelist.append(len(s))
         for i in range(len(probelist)):
             if probelist[i]<len(s)-20:
-                probedict.setdefault('p'+str(probelist[i]),[s[probelist[i]:probelist[i+1]],probelist[i]])
+#计算GC含量以及计算CE&LE属性公式：
+                probedict.setdefault('p'+str(probelist[i]),[s[probelist[i]:probelist[i+1]],probelist[i],oligoGC(s[probelist[i]:probelist[i+1]])])
         return render_to_response('showfilterprobe.html',{
                                                      'local':local,
                                                      'thisyear':thisyear,
