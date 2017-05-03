@@ -425,8 +425,8 @@ def NonNshFilter(req):
         probelist.append(len(s))
         for i in range(len(probelist)):
             if probelist[i]<len(s)-20:
-#计算GC含量以及计算CE&LE属性公式：
-                probedict.setdefault('p'+str(probelist[i]),[s[probelist[i]:probelist[i+1]],probelist[i],oligoGC(s[probelist[i]:probelist[i+1]])])
+#计算GC含量以及计算CE&LE 公式：
+                probedict.setdefault('p'+str(probelist[i]),[s[probelist[i]:probelist[i+1]],probelist[i]])
         return render_to_response('showfilterprobe.html',{
                                                      'local':local,
                                                      'thisyear':thisyear,
@@ -449,6 +449,7 @@ def PostCalcXmer(req):
         return render_to_response('showxmerscore.html',{
                                                                               'local':local,
                                                                               'thisyear':thisyear,
+                                                                              'probe_xmer_dict':probe_xmer_dict,
                                                                               'probe_xmer_list':probe_xmer_list,
                                                                               },context_instance=RequestContext(req))
 #########################CE&LE cross#################################
