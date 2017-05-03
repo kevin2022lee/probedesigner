@@ -449,7 +449,6 @@ def PostCalcXmer(req):
         return render_to_response('showxmerscore.html',{
                                                                               'local':local,
                                                                               'thisyear':thisyear,
-                                                                              'probe_xmer_dict':probe_xmer_dict,
                                                                               'probe_xmer_list':probe_xmer_list,
                                                                               },context_instance=RequestContext(req))
 #########################CE&LE cross#################################
