@@ -15,7 +15,7 @@ from searchProbe import *
 from XmerCalcCELENSH import *
 from django.core.context_processors import request
 
-local='www.probedesigner.cn'
+local='127.0.0.1:8000'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
 
 #######################实现最长公共字符查找##################################
@@ -629,3 +629,15 @@ def GenerateProbesets(req):
                                       'BL_final_list':BL_final_list,
                                       'LE_final_final_list':LE_final_final_list,
                                       },context_instance=RequestContext(req))
+############################ 软件英文版入口##################################################
+def fromfile_en(request):
+    global local
+    return render_to_response('fromfile_en.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
+def startdesign_en(request):
+    global local
+    return render_to_response('startdesign_en.html',{
+                                                  'local':local,
+                                                  'thisyear':thisyear,
+                                                  'sequence':request.COOKIES.get('seq',''),
+                                                  'description':request.COOKIES.get('des',''),
+                                                  },context_instance=RequestContext(request))
