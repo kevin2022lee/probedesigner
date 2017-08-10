@@ -259,7 +259,7 @@ def entreztoxml(request):
     response.set_cookie("des",nr.description)
     return response
 
-def entreztoxml_en(request):
+def convertdata(request):
     if request.method=='POST':
         content = request.FILES['file']
         name=content.name
@@ -307,7 +307,7 @@ def entreztoxml_en(request):
         #cookie['descri']=nr.description
         #request.session['description']=nr.description
         #request.session['sequence']=nr.seq
-    response=render_to_response('parselocalfile_en.html',{
+    response=render_to_response('parserresults.html',{
                                                        'local':local,
                                                        'thisyear':thisyear,
                                                      'filetype':filetype[0],
