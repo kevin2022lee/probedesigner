@@ -698,9 +698,9 @@ def GenerateProbesets(req):
                                       'LE_final_final_list':LE_final_final_list,
                                       },context_instance=RequestContext(req))
 ############################ 软件英文版入口##################################################
-def fromfile_en(request):
+def english(request):
     global local
-    return render_to_response('fromfile_en.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
+    return render_to_response('english.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
 def startdesign_en(request):
     global local
     return render_to_response('startdesign_en.html',{
