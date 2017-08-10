@@ -499,6 +499,24 @@ def NonNshFilter(req):
                                                      'local':local,
                                                      'thisyear':thisyear,
                                                      'probedict':probedict,
+                                                     },context_instance=RequestContext(req))  
+##################################################################
+@csrf_protect    
+def Probelist(req):
+    if req.method=='POST':
+        nonnshfilter=NonNSHFilter()
+        probedict={}
+        probelist=nonnshfilter.filterSequence(req.POST['seqtxt'])
+        s=req.POST['seqtxt'].upper()
+        probelist.append(len(s))
+        for i in range(len(probelist)):
+            if probelist[i]<len(s)-20:
+#计算GC含量以及计算CE&LE 公式：
+                probedict.setdefault('p'+str(probelist[i]),[s[probelist[i]:probelist[i+1]],probelist[i]])
+        return render_to_response('probelist.html',{
+                                                     'local':local,
+                                                     'thisyear':thisyear,
+                                                     'probedict':probedict,
                                                      },context_instance=RequestContext(req))   
 def PostCalcXmer(req):
     if req.method=='POST':
