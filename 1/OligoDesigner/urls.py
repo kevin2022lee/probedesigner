@@ -25,6 +25,7 @@ urlpatterns = patterns('',
     url(r'^NonNshFilter', NonNshFilter),
     url(r'^Probelist', Probelist),
     url(r'^PostCalcXmer', PostCalcXmer),
+    url(r'^Universalvalue', Universalvalue),
     url(r'^ProbeSetsXmer',ProbeSetsXmer),
     url(r'^GenerateProbesets',GenerateProbesets),
 )

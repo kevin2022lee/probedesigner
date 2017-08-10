@@ -538,6 +538,28 @@ def PostCalcXmer(req):
                                                                               'probe_xmer_list':probe_xmer_list,
                                                                               },context_instance=RequestContext(req))
 #########################CE&LE cross#################################
+###################################################
+def Universalvalue(req):
+    if req.method=='POST':
+        dict_xmervalue=[]
+        probe_xmer_list=[]
+        probe_xmer_dict={}
+        dict_value=req.POST.getlist('probedictvalue','')
+        dict_key=req.POST.getlist('probedictkey','')
+        dict_length=req.POST.getlist('probelength','')
+        xmerclac=CalcNSH()
+        for i in range(len(dict_value)):
+            dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]))
+        for v in range(len(dict_xmervalue)):
+            probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v]),dict_value[v],oligoGC(dict_value[v])])
+        probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
+        return render_to_response('universalvalue.html',{
+                                                                              'local':local,
+                                                                              'thisyear':thisyear,
+                                                                              'probe_xmer_list':probe_xmer_list,
+                                                                              },context_instance=RequestContext(req))
+#########################CE&LE cross#################################
+####################################################
 def ProbeSetsXmer(req):
     if req.method=="POST":
         CE_plist=[]
