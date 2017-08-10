@@ -701,9 +701,9 @@ def GenerateProbesets(req):
 def english(request):
     global local
     return render_to_response('english.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
-def startdesign_en(request):
+def bingodesign(request):
     global local
-    return render_to_response('startdesign_en.html',{
+    return render_to_response('bingodesign.html',{
                                                   'local':local,
                                                   'thisyear':thisyear,
                                                   'sequence':request.COOKIES.get('seq',''),
