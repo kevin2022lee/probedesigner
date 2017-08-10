@@ -27,5 +27,6 @@ urlpatterns = patterns('',
     url(r'^PostCalcXmer', PostCalcXmer),
     url(r'^Universalvalue', Universalvalue),
     url(r'^ProbeSetsXmer',ProbeSetsXmer),
+    url(r'^Probegroupsvalues',Probegroupsvalues),
     url(r'^GenerateProbesets',GenerateProbesets),
 )
