@@ -243,17 +243,17 @@ def entreztoxml(request):
     response=render_to_response('parselocalfile.html',{
                                                        'local':local,
                                                        'thisyear':thisyear,
-                                                     'filetype':filetype[0],
-                                                     'local':local,
-                                                     'accessid':nr.id,
-                                                     'sequence':str(nr.seq),
-                                                     'description':nr.description,
-                                                     'name':nr.name,
+                                                       'filetype':filetype[0],
+                                                       'local':local,
+                                                       'accessid':nr.id,
+                                                       'sequence':str(nr.seq),
+                                                       'description':nr.description,
+                                                       'name':nr.name,
                                                      #'dbxrefs':nr.dbxrefs[0],
-                                                     'source':source,
-                                                     'organism':organism,
-                                                     'taxonomy':taxonomy,
-                                                     'topology':topology,
+                                                       'source':source,
+                                                       'organism':organism,
+                                                       'taxonomy':taxonomy,
+                                                       'topology':topology,
                                                      },context_instance=RequestContext(request))
     response.set_cookie("seq",nr.seq)
     response.set_cookie("des",nr.description)

@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import *
 from views import *
 from django.contrib import admin
 import settings
@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^intro', intro),
     url(r'^entrez', entrez),
     url(r'^fromfile', fromfile),
+    url(r'^fromfile_en', fromfile_en),
     url(r'^downloadentrez', downloadentrez),
     url(r'^xmltoentrez', entreztoxml),
     url(r'^xmltoentrez_en', entreztoxml_en),
@@ -25,5 +26,4 @@ urlpatterns = patterns('',
     url(r'^PostCalcXmer', PostCalcXmer),
     url(r'^ProbeSetsXmer',ProbeSetsXmer),
     url(r'^GenerateProbesets',GenerateProbesets),
-    url(r'^fromfile_en', fromfile),
 )
