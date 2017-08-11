@@ -24,6 +24,10 @@ thisyear=time.strftime('%Y',time.localtime(time.time()))
 def index(request):
     global local
     return render_to_response('bootstrap.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
+def eindex(request):
+    global local
+    return render_to_response('englishindex.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
+#english version######
 def probedesign(request):
     global local
     return render_to_response('probedesign.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
