@@ -31,4 +31,5 @@ urlpatterns = patterns('',
     url(r'^Probegroupsvalues',Probegroupsvalues),
     url(r'^GenerateProbesets',GenerateProbesets),
     url(r'^Probesetsgenerate',Probesetsgenerate),
+    url(r'^bigdata',BigData),
 )
