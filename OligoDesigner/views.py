@@ -931,3 +931,25 @@ def bingodesign(request):
                                                   'sequence':request.COOKIES.get('seq',''),
                                                   'description':request.COOKIES.get('des',''),
                                                   },context_instance=RequestContext(request))
+def BigData(request):
+    global local
+    from Bio import Entrez
+    Entrez.email = "A.N.Other@example.com" 
+    handle = Entrez.egquery(term="bDNA")
+    handle1= Entrez.egquery(term="pcr")
+    record = Entrez.read(handle)
+    record1= Entrez.read(handle1)
+    bDNA=[]
+    pcr=[]
+    for row0 in record["eGQueryResult"]: 
+        bDNA.append([row0["Count"],row0["DbName"]])
+    for row1 in record1["eGQueryResult"]: 
+        pcr.append([row1["Count"],row1["DbName"]])
+    return render_to_response('bigdata.html',{
+                                                  'local':local,
+                                                  'thisyear':thisyear,
+                                                  'bDNA':bDNA,
+                                                  'pcr':pcr,
+                                                  },context_instance=RequestContext(request))
+    
+    
