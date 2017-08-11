@@ -29,4 +29,5 @@ urlpatterns = patterns('',
     url(r'^ProbeSetsXmer',ProbeSetsXmer),
     url(r'^Probegroupsvalues',Probegroupsvalues),
     url(r'^GenerateProbesets',GenerateProbesets),
+    url(r'^Probesetsgenerate',Probesetsgenerate),
 )

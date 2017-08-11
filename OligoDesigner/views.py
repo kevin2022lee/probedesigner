@@ -883,6 +883,38 @@ def GenerateProbesets(req):
                                       'BL_final_list':BL_final_list,
                                       'LE_final_final_list':LE_final_final_list,
                                       },context_instance=RequestContext(req))
+def Probesetsgenerate(req):
+    if req.method=="POST":
+        probesname=req.POST.getlist("probename")
+        probesseq=req.POST.getlist("probeseq")
+        probesfunc=req.POST.getlist("probefunc")
+        probesets_list=[]
+        for i in range(len(probesname)):
+            probesets_list.append((probesname[i],probesseq[i],probesfunc[i]))
+        CE_final_list=[]
+        LE_final_list=[]
+        BL_final_list=[]
+        for j in range(len(probesets_list)):
+            if probesets_list[j][2]=="CE":
+                CE_final_list.append((probesets_list[j][0],probesets_list[j][1]+'tttttCTCTTGGAAAGAAAGT'))
+            if probesets_list[j][2]=="BL":
+                BL_final_list.append((probesets_list[j][0],probesets_list[j][1]))
+            if probesets_list[j][2]=="LE":
+                LE_final_list.append((probesets_list[j][0],probesets_list[j][1]))
+        LE_final_final_list=[]
+        for k in range(len(LE_final_list)):
+            if LE_final_list.index(LE_final_list[k])%2==0:
+                LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTgaagttaccgtttt'))
+            else:
+                LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTctgagtcaaagcat'))
+        return render_to_response('probelistgenerate.html',{
+                                      'local':local,
+                                      'thisyear':thisyear,
+                                      'CE_final_list':CE_final_list,
+                                      'BL_final_list':BL_final_list,
+                                      'LE_final_final_list':LE_final_final_list,
+                                      },context_instance=RequestContext(req))
+
 ############################ 软件英文版入口##################################################
 def english(request):
     global local
