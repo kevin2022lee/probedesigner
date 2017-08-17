@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>NGS-转录本数据TF处理过程</title>
+ <div>
+ <form method="POST" action="" role="form" class="form-horizontal" >{% csrf_token %}
+ <div class="form-group">
+    <label for="name">输入数据</label>
+    <textarea class="form-control" rows="3"></textarea>
+  </div>
+ </form>
+  <div class="form-group">
+    <label for="name">转化结果</label>
+    <textarea class="form-control" rows="3">
+    {%for c in cdata%}
+    {% c %}
+    {% endfor %}
+    </textarea>
+  </div>
+ </div>
+ <!-- /#mainWrap -->
+ {% endblock %}
