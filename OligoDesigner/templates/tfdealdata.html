@@ -7,7 +7,12 @@
     <label for="name">输入数据</label>
     <textarea class="form-control" rows="3"></textarea>
   </div>
+   <!-- Button -->
+          <div class="controls">
+            <button type="submit" class="btn btn-success">提交处理</button>
+          </div>
  </form>
+ <form>
   <div class="form-group">
     <label for="name">转化结果</label>
     {%for c in cdata%}
@@ -23,6 +28,7 @@
     {% endfor %}
     </textarea>
   </div>
+ </form>
  </div>
  <!-- /#mainWrap -->
  {% endblock %}
