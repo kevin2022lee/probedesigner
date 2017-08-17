@@ -15,8 +15,8 @@ from searchProbe import *
 from XmerCalcCELENSH import *
 from django.core.context_processors import request
 
-local='probedesigner.cn'
-#local='127.0.0.1:8000'
+#local='probedesigner.cn'
+local='127.0.0.1:8000'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
 
 #######################实现最长公共字符查找##################################
@@ -60,11 +60,12 @@ def tfdeal(request):
 def tfdealdata(request):
     if request.method=="POST":
         fdata=request.POST['fdata']
+        farr=fdata.split('\r\n')
         cdata=[]
         data=[]
         f1=[]
         f2=[]
-        for x in fdata:
+        for x in farr:
             c=x.replace(';','\t')
             d=c.split('\t')
 #########################################################
@@ -72,9 +73,9 @@ def tfdealdata(request):
             f2=d[1].split('[')
             g=f1+f2
             data.append(g[1]+";"+g[2]+"\n")
-            sdata=set(data)
-            cdata=[i for i in sdata]
-            return render_to_response('showtfdata.html',{'local':local,'thisyear':thisyear,'cdata':cdata,},context_instance=RequestContext(request))             
+        sdata=set(data)
+        cdata=[i for i in sdata]
+        return render_to_response('showtfdata.html',{'local':local,'thisyear':thisyear,'cdata':cdata,},context_instance=RequestContext(request))             
             
 def oligoGC(s):
     if len(s)!= 0:
