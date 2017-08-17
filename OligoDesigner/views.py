@@ -53,7 +53,7 @@ def startdesign(request):
                                                   },context_instance=RequestContext(request))
 
 def tfdeal(request):
-    return render_to_response('tfdealdata,html',{'local':local,
+    return render_to_response('tfdealdata.html',{'local':local,
                                                  'thisyear':thisyear,
                                                  },context_instance=RequestContext(request))
 def tfdealdata(request):
