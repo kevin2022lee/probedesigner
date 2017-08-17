@@ -1,0 +1,17 @@
+{% extends "base.html" %} 
+ {% block content %}
+ <title>NGS-转录本数据TF处理过程</title>
+ <div>
+ <div>
+    <label for="name">转化结果</label>
+    {% if cdata %}
+    {% for c in cdata %}
+    <div class="well well-sm">
+    {{ c }}
+    </div>
+    {% endfor %}
+    {%endif%}
+  </div>
+  </div>
+ <!-- /#mainWrap -->
+ {% endblock %}
