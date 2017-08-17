@@ -59,6 +59,7 @@ def tfdeal(request):
 def tfdealdata(request):
     if request.method=="POST":
         fdata=request.POST['fdata']
+        cdata=[]
         data=[]
         f1=[]
         f2=[]
