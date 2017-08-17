@@ -11,14 +11,13 @@
   <div class="form-group">
     <label for="name">转化结果</label>
     {%for c in cdata%}
-    {% if c=='' %}
-    {% c='nothing;nothing\n' %}
+    {% if c %}
     <textarea class="form-control" rows="3">
     {{ c }}
     </textarea>
     {% else %}
     <textarea class="form-control" rows="3">
-    {{ c }}
+    nothing;nothing\n
     </textare>
     {% endfor %}
     </textarea>
