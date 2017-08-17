@@ -56,6 +56,7 @@ def tfdeal(request):
     return render_to_response('tfdealdata.html',{'local':local,
                                                  'thisyear':thisyear,
                                                  },context_instance=RequestContext(request))
+@csrf_protect
 def tfdealdata(request):
     if request.method=="POST":
         fdata=request.POST['fdata']
@@ -73,7 +74,7 @@ def tfdealdata(request):
             data.append(g[1]+";"+g[2]+"\n")
             sdata=set(data)
             cdata=[i for i in sdata]
-            return render_to_response('tfdealdata.html',{'local':local,'thisyear':thisyear,'cdata':cdata,},context_instance=RequestContext(request))             
+            return render_to_response('showtfdata.html',{'local':local,'thisyear':thisyear,'cdata':cdata,},context_instance=RequestContext(request))             
             
 def oligoGC(s):
     if len(s)!= 0:
