@@ -2,7 +2,7 @@
  {% block content %}
  <title>NGS-转录本数据TF处理过程</title>
  <div>
- <form method="POST" action="" role="form" class="form-horizontal" >{% csrf_token %}
+ <form method="POST" action="http://{{ local }}/tfdeal/" role="form" class="form-horizontal" >{% csrf_token %}
  <div class="form-group">
     <label for="name">输入数据</label>
     <textarea class="form-control" rows="3"></textarea>
