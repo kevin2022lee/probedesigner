@@ -5,7 +5,7 @@
  <form method="POST" action="http://{{ local }}/tfdeal/" role="form" class="form-horizontal" >{% csrf_token %}
  <div class="form-group">
     <label for="name">输入数据</label>
-    <textarea name="fdata" class="form-control" rows="3"></textarea>
+    <textarea name="fdata" class="form-control" rows="8"></textarea>
   </div>
    <!-- Button -->
           <div class="controls">
@@ -15,7 +15,7 @@
   <div class="form-group">
     <label for="name">转化结果</label>
     {% if cdata %}
-    {% for c in data %}
+    {% for c in cdata %}
     <div class="well well-sm">
     {{ c }}
     </div>
