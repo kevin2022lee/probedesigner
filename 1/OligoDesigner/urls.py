@@ -33,5 +33,5 @@ urlpatterns = patterns('',
     url(r'^Probesetsgenerate',Probesetsgenerate),
     url(r'^bigdata',BigData),
     url(r'^tfdeal',tfdeal),
-    url(r'^tfdealdata',tfdealdata),
+    url(r'^datatfshow',tfdealdata),
 )
