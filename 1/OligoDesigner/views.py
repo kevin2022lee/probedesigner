@@ -15,8 +15,8 @@ from searchProbe import *
 from XmerCalcCELENSH import *
 from django.core.context_processors import request
 
-#local='probedesigner.cn'
-local='127.0.0.1:8000'
+local='probedesigner.cn'
+#local='127.0.0.1:8000'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
 
 #######################实现最长公共字符查找##################################
@@ -52,6 +52,12 @@ def startdesign(request):
                                                   'description':request.COOKIES.get('des',''),
                                                   },context_instance=RequestContext(request))
 
+def GetMiddleStr(content,startStr,endStr):
+    startIndex = content.index(startStr)
+    if startIndex>=0:
+        startIndex += len(startStr)
+        endIndex = content.index(endStr)
+    return content[startIndex:endIndex]
 def tfdeal(request):
     return render_to_response('tfdealdata.html',{'local':local,
                                                  'thisyear':thisyear,
