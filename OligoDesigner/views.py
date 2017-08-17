@@ -52,6 +52,28 @@ def startdesign(request):
                                                   'description':request.COOKIES.get('des',''),
                                                   },context_instance=RequestContext(request))
 
+def tfdeal(request):
+    return render_to_response('tfdealdata,html',{'local':local,
+                                                 'thisyear':thisyear,
+                                                 },context_instance=RequestContext(request))
+def tfdealdata(request):
+    if request.method=="POST":
+        fdata=request.POST['fdata']
+        data=[]
+        f1=[]
+        f2=[]
+        for x in fdata:
+            c=x.replace(';','\t')
+            d=c.split('\t')
+#########################################################
+            f1=d[0].split('|')
+            f2=d[1].split('[')
+            g=f1+f2
+            data.append(g[1]+";"+g[2]+"\n")
+            sdata=set(data)
+            cdata=[i for i in sdata]
+            return render_to_response('tfdealdata.html',{'local':local,'thisyear':thisyear,'cdata':cdata,},context_instance=RequestContext(request))             
+            
 def oligoGC(s):
     if len(s)!= 0:
         s=s.upper()
