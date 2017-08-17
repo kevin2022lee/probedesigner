@@ -12,6 +12,10 @@
     <label for="name">转化结果</label>
     <textarea class="form-control" rows="3">
     {%for c in cdata%}
+    {% if c=='' %}
+    {% c='nothing;nothing\n' %}
+    {% c %}
+    {% else %}
     {% c %}
     {% endfor %}
     </textarea>
