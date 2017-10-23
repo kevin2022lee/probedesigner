@@ -15,7 +15,7 @@ from searchProbe import *
 from XmerCalcCELENSH import *
 from django.core.context_processors import request
 
-local='probedesigner.cn'
+local='www.probedesigner.cn'
 #local='127.0.0.1:8000'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
 
