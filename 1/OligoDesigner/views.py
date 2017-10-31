@@ -327,9 +327,9 @@ def convertdata(request):
         filetype=re.findall(r'\.[^.\\/:*?"<>|\r\n]+$',fileurl)
         global record
         if filetype[0]==".gb" :
-            record=SeqIO.parse(urlopen(fileurl),"genbank")
+            record=SeqIO.read(urlopen(fileurl),"genbank")
         elif filetype[0]==".fasta":
-            record=SeqIO.parse(urlopen(fileurl),"fasta")
+            record=SeqIO.read(urlopen(fileurl),"fasta")
         nr=record.next()
 ################模板开始渲染######################################        
         if len(nr.annotations)!=0:
@@ -367,7 +367,17 @@ def convertdata(request):
     response.set_cookie("des",nr.description)
     return response
 ##############X-mer数值计算函数################
-
+def entrezseqidtoxml(request):
+    if request.method=="POST":
+        from Bio import Entrez
+        from Bio import SeqIO
+        Entrez.email="kkds@slyyc.asia"
+        SeqId=request.POST['seqid']
+        handle=Entrez.efetch(db="nucleotide",rettype="gb",retmote="text",id=SeqId)
+        record=SeqIO.read(handle,"gb")
+        handle.close()
+        return HttpResponse(str(record.seq))
+#########远程访问Entrez数据库#####################    
 @csrf_protect                                                             
 def x4merCalc(request):
     if request.method=="POST":
