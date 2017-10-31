@@ -1,4 +1,4 @@
-#coding:utf-8
+﻿#coding:utf-8
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.http import HttpResponse,HttpResponseRedirect,response
@@ -227,6 +227,7 @@ def downloadentrez(request):
                                                      },context_instance=RequestContext(request))
     else:
         return HttpResponse("<script>alert(‘非法参数的进入！’)</script>")
+@csrf_protect  
 def entreztoxml(request):
     if request.method=='POST':
         content = request.FILES['file']
@@ -367,6 +368,7 @@ def convertdata(request):
     response.set_cookie("des",nr.description)
     return response
 ##############X-mer数值计算函数################
+@csrf_protect  
 def entrezseqidtoxml(request):
     if request.method=="POST":
         from Bio import Entrez
@@ -375,14 +377,10 @@ def entrezseqidtoxml(request):
         SeqId=request.POST['seqid']
         handle=Entrez.efetch(db="nucleotide",rettype="gb",retmote="text",id=SeqId)
         record=SeqIO.read(handle,"gb")
-        time.sleep(10)
+        time.sleep(1)
         handle.close()
         cookie=Cookie.SimpleCookie()
-        #cookie['sequence']=nr.seq
-        #cookie['descri']=nr.description
-        #request.session['description']=nr.description
-        #request.session['sequence']=nr.seq
-        response=render_to_response('parserresults.html',{
+        response=render_to_response('parselocalfile.html',{
                                                        'local':local,
                                                        'thisyear':thisyear,
                                                        'filetype':'genbank',
