@@ -300,7 +300,7 @@ def entreztoxml(request):
     response.set_cookie("seq",nr.seq)
     response.set_cookie("des",nr.description)
     return response
-
+@csrf_protect 
 def convertdata(request):
     if request.method=='POST':
         content = request.FILES['file']
@@ -394,7 +394,7 @@ def entrezseqidtoxml(request):
                                                        'taxonomy':record.annotations['taxonomy'],
                                                        'topology':record.annotations['topology'],
                                                            },context_instance=RequestContext(request))
-        response.set_cookie("seq",record.seq)
+        response.set_cookie("seq",record.seq[0:4050])
         response.set_cookie("des",record.description)
         return response
 #########远程访问Entrez数据库#####################    
