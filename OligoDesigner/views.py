@@ -253,12 +253,15 @@ def entreztoxml(request):
         from urllib import urlopen
         import re
         filetype=re.findall(r'\.[^.\\/:*?"<>|\r\n]+$',fileurl)
+        header={
+            'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36',
+            }
         global record
         if filetype[0]==".gb" :
-            record=SeqIO.parse(urlopen(fileurl,data=None,timeout=10),"genbank")
+            record=SeqIO.parse(urlopen(fileurl,data=None,header=header),"genbank")
             #time.sleep(10)
         elif filetype[0]==".fasta":
-            record=SeqIO.parse(urlopen(fileurl,data=None,timeout=10),"fasta")
+            record=SeqIO.parse(urlopen(fileurl,data=None,header=header),"fasta")
             #time.sleep(10)
         nr=record.next()
 ################模板开始渲染######################################        
