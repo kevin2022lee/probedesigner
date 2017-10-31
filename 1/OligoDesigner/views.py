@@ -376,7 +376,28 @@ def entrezseqidtoxml(request):
         handle=Entrez.efetch(db="nucleotide",rettype="gb",retmote="text",id=SeqId)
         record=SeqIO.read(handle,"gb")
         handle.close()
-        return HttpResponse(str(record.seq))
+        cookie=Cookie.SimpleCookie()
+        #cookie['sequence']=nr.seq
+        #cookie['descri']=nr.description
+        #request.session['description']=nr.description
+        #request.session['sequence']=nr.seq
+        response=render_to_response('parserresults.html',{
+                                                       'local':local,
+                                                       'thisyear':thisyear,
+                                                       'filetype':'genbank',
+                                                       'accessid':record.id,
+                                                       'sequence':str(record.seq),
+                                                       'description':record.description,
+                                                       'name':record.name,
+                                                       #'dbxrefs':nr.dbxrefs[0],
+                                                       'source':record.annotations['source'],
+                                                       'organism':record.annotations['organism'],
+                                                       'taxonomy':record.annotations['taxonomy'],
+                                                       'topology':record.annotations['topology'],
+                                                           },context_instance=RequestContext(request))
+        response.set_cookie("seq",record.seq)
+        response.set_cookie("des",record.description)
+        return response
 #########远程访问Entrez数据库#####################    
 @csrf_protect                                                             
 def x4merCalc(request):
