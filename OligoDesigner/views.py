@@ -256,8 +256,10 @@ def entreztoxml(request):
         global record
         if filetype[0]==".gb" :
             record=SeqIO.parse(urlopen(fileurl),"genbank")
+            time.sleep(10)
         elif filetype[0]==".fasta":
             record=SeqIO.parse(urlopen(fileurl),"fasta")
+            time.sleep(10)
         nr=record.next()
 ################模板开始渲染######################################        
         if len(nr.annotations)!=0:
