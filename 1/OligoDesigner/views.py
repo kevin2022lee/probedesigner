@@ -375,6 +375,7 @@ def entrezseqidtoxml(request):
         SeqId=request.POST['seqid']
         handle=Entrez.efetch(db="nucleotide",rettype="gb",retmote="text",id=SeqId)
         record=SeqIO.read(handle,"gb")
+        time.sleep(10)
         handle.close()
         cookie=Cookie.SimpleCookie()
         #cookie['sequence']=nr.seq
