@@ -247,6 +247,7 @@ def entreztoxml(request):
         cname=content.name
         cname_rb=base64.encodestring(datetime.now().strftime("%Y%m%d%H%M%S%f")+'_'+str(len(cname)))[:-3]+'.'+cname.split('.')[-1]
         fileurl = s.put(domain_name, cname_rb, ob)
+        time.sleep(10)
         from Bio import Entrez,SeqIO
         import urllib
         from urllib import urlopen
