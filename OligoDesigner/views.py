@@ -15,8 +15,8 @@ from searchProbe import *
 from XmerCalcCELENSH import *
 from django.core.context_processors import request
 
-local='www.probedesigner.cn'
-#local='127.0.0.1:8000'
+#local='www.probedesigner.cn'
+local='127.0.0.1:8000'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
 
 #######################实现最长公共字符查找##################################
@@ -43,14 +43,16 @@ def test(request):
 def intro(request):
     global local
     return render_to_response('quantimat.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
+@csrf_protect
 def startdesign(request):
-    global local
-    return render_to_response('startdesign.html',{
-                                                  'local':local,
-                                                  'thisyear':thisyear,
-                                                  'sequence':request.COOKIES.get('seq',''),
-                                                  'description':request.COOKIES.get('des',''),
-                                                  },context_instance=RequestContext(request))
+    if request.method=="POST":
+        global local
+        return render_to_response('startdesign.html',{
+                                                      'local':local,
+                                                      'thisyear':thisyear,
+                                                      'sequence':request.POST['seq'],
+                                                      'description':request.COOKIES.get('des',''),
+                                                      },context_instance=RequestContext(request))
 
 def GetMiddleStr(content,startStr,endStr):
     startIndex = content.index(startStr)
@@ -392,7 +394,7 @@ def entrezseqidtoxml(request):
                                                        'thisyear':thisyear,
                                                        'filetype':'genbank',
                                                        'accessid':record.id,
-                                                       'sequence':replace_RAGTC(str(record.seq[Start-1:Start+1618])),
+                                                       'sequence':replace_RAGTC(str(record.seq[Start-1:])),
                                                        'description':record.description,
                                                        'name':record.name,
                                                        #'dbxrefs':nr.dbxrefs[0],
@@ -401,7 +403,7 @@ def entrezseqidtoxml(request):
                                                        'taxonomy':record.annotations['taxonomy'],
                                                        'topology':record.annotations['topology'],
                                                            },context_instance=RequestContext(request))
-        response.set_cookie("seq",replace_RAGTC(str(record.seq[Start-1:Start+1618])))
+#         response.set_cookie("seq",replace_RAGTC(str(record.seq[Start-1:])))
         response.set_cookie("des",record.description)
         return response
 #########远程访问Entrez数据库#####################    
