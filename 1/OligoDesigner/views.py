@@ -136,6 +136,12 @@ def oligoOD(s):
     return ODValue
 #################################碱基互补配对函数######################################################################   
 re_seq=''
+def replace_RAGTC(seq):
+    seq=seq.replace('AAAAAAAAAA','')
+    seq=seq.replace('TTTTTTTTTT','')
+    seq=seq.replace('CCCCCCCCCC','')
+    seq=seq.replace('GGGGGGGGGG','')
+    return  seq
 def reverseOligo(ss):
     if len(ss)!= 0:
         strss=str(ss)
@@ -375,9 +381,10 @@ def entrezseqidtoxml(request):
         from Bio import SeqIO
         Entrez.email="kkds@slyyc.asia"
         SeqId=request.POST['seqid']
+        Start=int(request.POST['start'])
         handle=Entrez.efetch(db="nucleotide",rettype="gb",retmote="text",id=SeqId)
         record=SeqIO.read(handle,"gb")
-        time.sleep(1)
+        time.sleep(10)
         handle.close()
         cookie=Cookie.SimpleCookie()
         response=render_to_response('parselocalfile.html',{
@@ -385,7 +392,7 @@ def entrezseqidtoxml(request):
                                                        'thisyear':thisyear,
                                                        'filetype':'genbank',
                                                        'accessid':record.id,
-                                                       'sequence':str(record.seq[0:1000]),
+                                                       'sequence':replace_RAGTC(str(record.seq[Start-1:Start+4049])),
                                                        'description':record.description,
                                                        'name':record.name,
                                                        #'dbxrefs':nr.dbxrefs[0],
@@ -394,7 +401,7 @@ def entrezseqidtoxml(request):
                                                        'taxonomy':record.annotations['taxonomy'],
                                                        'topology':record.annotations['topology'],
                                                            },context_instance=RequestContext(request))
-        response.set_cookie("seq",record.seq[0:4050])
+        response.set_cookie("seq",replace_RAGTC(str(record.seq[Start-1:Start+4049])))
         response.set_cookie("des",record.description)
         return response
 #########远程访问Entrez数据库#####################    
