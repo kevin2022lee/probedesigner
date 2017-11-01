@@ -4,7 +4,7 @@
 
 <div class="panel panel-success">
 <div class="panel-heading">
-        <b>选取本地<em>Genbank</em>或者<em>Fasta</em>文件开始探针设计[本地文件小于6Kb推荐]</b>
+        <b>选取本地<em>Genbank</em>或者<em>Fasta</em>文件开始探针设计[本地文件小于2Kb推荐]</b>
 </div>
     <div class="panel body" style="height:200px; padding-top:50px;">
 <form action="http://{{ local }}/xmltoentrez/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
@@ -19,7 +19,7 @@
 </div>
 <div class="panel panel-info">
 <div class="panel-heading">
-        <b>读取Entrez远程<em>Genbank</em>或者<em>Fasta</em>文件开始探针设计[适用于大于6Kb序列文件]</b>
+        <b>读取Entrez远程<em>Genbank</em>或者<em>Fasta</em>文件开始探针设计[适用于大于2Kb序列文件]</b>
 </div>
     <div class="panel body" style="height:200px; padding-top:50px;">
 <form action="http://{{ local }}/seqidtoentrez/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
