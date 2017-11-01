@@ -23,8 +23,14 @@
 </div>
     <div class="panel body" style="height:200px; padding-top:50px;">
 <form action="http://{{ local }}/seqidtoentrez/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
-<div class="col-sm-10">
-<input class="form-control" type="text" name="seqid">
+<div class="col-sm-5">
+<input class="form-control" type="text" name="seqid" placeholder="输入NCBI的Accession ID">
+</div>
+<div class="col-sm-3">
+<label for="start" >输入起始点(最大允许4字节)</label>
+</div>
+<div class="col-sm-2">
+<input class="form-control" type="text" name="start" placeholder="默认从1开始">
 </div>
 <div class="col-sm-2">
 <button class="btn-primary btn" type="submit">读取文件</button>
