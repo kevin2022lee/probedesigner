@@ -384,6 +384,7 @@ def entrezseqidtoxml(request):
         Entrez.email="kkds@slyyc.asia"
         SeqId=request.POST['seqid']
         Start=int(request.POST['start'])
+        End=int(request.POST['end'])
         handle=Entrez.efetch(db="nucleotide",rettype="gb",retmote="text",id=SeqId)
         record=SeqIO.read(handle,"gb")
         time.sleep(10)
@@ -394,7 +395,7 @@ def entrezseqidtoxml(request):
                                                        'thisyear':thisyear,
                                                        'filetype':'genbank',
                                                        'accessid':record.id,
-                                                       'sequence':replace_RAGTC(str(record.seq[Start-1:])),
+                                                       'sequence':replace_RAGTC(str(record.seq[Start-1:End-1])),
                                                        'description':record.description,
                                                        'name':record.name,
                                                        #'dbxrefs':nr.dbxrefs[0],
@@ -407,6 +408,19 @@ def entrezseqidtoxml(request):
         response.set_cookie("des",record.description)
         return response
 #########远程访问Entrez数据库#####################    
+######################检查Accession ID并返回长度############################################################
+def checkAccessionLen(ID):
+    from Bio import SeqIO
+    from Bio import Entrez
+    
+    Entrez.email='lxk@yhkodia.com'
+    handle=Entrez.efetch(db='nucleotide',rettype='gb',retmote='text',id='U89349')
+    record=SeqIO.read(handle, 'gb')
+    Length=len(record.seq)
+    handle.close()
+    return HttpResponse(Length)
+###################################################################################
+
 @csrf_protect                                                             
 def x4merCalc(request):
     if request.method=="POST":
