@@ -414,7 +414,7 @@ def checkAccessionLen(ID):
     from Bio import Entrez
     
     Entrez.email='lxk@yhkodia.com'
-    handle=Entrez.efetch(db='nucleotide',rettype='gb',retmote='text',id=str(ID))
+    handle=Entrez.efetch(db='nucleotide',rettype='gb',retmote='text',id='X04773')
     record=SeqIO.read(handle, 'gb')
     Length=len(record.seq)
     handle.close()
