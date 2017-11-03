@@ -35,5 +35,5 @@ urlpatterns = patterns('',
     url(r'^bigdata',BigData),
     url(r'^tfdeal',tfdeal),
     url(r'^datatfshow',tfdealdata),
-    url(r'^checkAccessionLen/(\d+)$',checkAccessionLen),
+    url(r'^checkAccessionLen/(.+)/$',checkAccessionLen),
 )
