@@ -409,12 +409,12 @@ def entrezseqidtoxml(request):
         return response
 #########远程访问Entrez数据库#####################    
 ######################检查Accession ID并返回长度############################################################
-def checkAccessionLen(ID):
+def checkAccessionLen(accessionid):
     from Bio import SeqIO
     from Bio import Entrez
     
     Entrez.email='lxk@yhkodia.com'
-    handle=Entrez.efetch(db='nucleotide',rettype='gb',retmote='text',id='X04773')
+    handle=Entrez.efetch(db='nucleotide',rettype='gb',retmote='text',id=accessionid)
     record=SeqIO.read(handle, 'gb')
     Length=len(record.seq)
     handle.close()
