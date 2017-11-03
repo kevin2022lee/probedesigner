@@ -409,7 +409,7 @@ def entrezseqidtoxml(request):
         return response
 #########远程访问Entrez数据库#####################    
 ######################检查Accession ID并返回长度############################################################
-def checkAccessionLen(accessionid):
+def checkAccessionLen(request,accessionid):
     from Bio import SeqIO
     from Bio import Entrez
     
