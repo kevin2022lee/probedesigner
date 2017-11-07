@@ -1,0 +1,39 @@
+    body { color: #B9D3EE; background: #B9D3EE; padding: 0 10em; margin-top:0em;font-family:宋体，黑体; } 
+    body a:hover {text-decoration:none; color:#453;}
+    body a:link{text-decoration:none; color:#000;}
+    body a:active{text-decoration:none; color:#543;}.
+    form {border:none;margin: 0;}
+    input .login {margin-top:1em; BORDER-TOP: #7F9DB9 1px solid; BORDER-LEFT: #7F9DB9 1px solid; BORDER-RIGHT: #7F9DB9 1px solid; BORDER-BOTTOM: #7F9DB9 1px solid;  TEXT-ALIGN: LIFT;overflow-y:hidden;}
+    #footer {backgroud:#354; border:1px solid #B9D3EE;text-align:center;padding:5px;margin-top: 2em;font-size:12px;clear:both;}
+    #info{height:30px;font-size:12px;background-color:#B9D3EE;border-left:#B9D3EE 1px solid;border-right:#B9D3EE 1px solid;}
+    #logon_errors{margin:0px;padding:0px;}
+    #sea_nav{float: left; height: 50px; width: auto;}
+    #sea_box {float:left; width: 201px; height: 31px; background: url("/site_medias/imgs/bg_search_box.gif"); } 
+    #s { float: left; padding: 0; margin: 6px 0 0 6px; border: none; height: 22px; width: 162px; background: none; font-size:0.8em; } 
+    #go {float: right; margin: 3px 4px 0 0; } 
+    #navi{with:auto;}
+    #navi ul{list-style:none;} 
+    #navi li{float:left;}
+    #navi ul li a,#navi ul li a:visited{background-color:#F5FFFB;border: 1px #453 solid;color: #465c71;display:block; line-height: 1.05em;padding: 8px 35px;text-decoration: none;white-space: nowrap;}
+    #navi ul li a:hover{background-color: #465c71;color: #dde4ec;text-decoration: none;}
+    #navi ul li a:active{background-color: #465c71;color: #cfdbe6; text-decoration: none;}
+    #sddm{margin: 0 auto;padding: 0;z-index: 65;background-color:#F5FFFB;width: auto;}
+    #sddm li{margin: 0;padding-top:5px;list-style: none;float: left;font: bold 12px}
+    #sddm li a{	display:block;margin:0;padding:0;height:18px;width:95px;color:#000;text-align: center;text-decoration: none}
+    #sddm li a:hover{	background: #F5FFFB;}
+    #sddm div{	position: absolute;visibility:hidden;margin: 0;padding: 0;background: #EAEBD8;border: 1px solid #5970B2}
+    #sddm div a{display: block;position: relative;margin-top:3px;padding: 5px 10px;width: 95px;;white-space: nowrap;text-align: left;text-decoration: none;background: #EAEBD8;color: #2875DE;font: 12px arial}
+    #sddm div a:hover{	background: #49A3FF;color: #FFF;}
+    .box-header{padding: 2px 0 4px 10px;background:url("/site_medias/imgs/info_bg_repeat.gif") repeat-x;height:24px;font-size:16px;font-weight:bold;color:black;}
+    .bizmail_loginpanel{font-size:12px;width:300px;height:auto;border:1px solid #cccccc;background:#ffffff;}
+.bizmail_LoginBox{padding:10px 15px;}
+.bizmail_loginpanel h3{padding-bottom:5px;margin:0 0 5px 0;border-bottom:1px solid #cccccc;font-size:14px;}
+.bizmail_loginpanel form{margin:0;padding:0;}
+.bizmail_loginpanel input.text{font-size:12px;width:100px;height:20px;margin:0 2px;border:1px solid #C3C3C3;border-color:#7C7C7C #C3C3C3 #C3C3C3 #9A9A9A;}
+.bizmail_loginpanel .bizmail_column{height:28px;}
+.bizmail_loginpanel .bizmail_column label{display:block;float:left;width:30px;height:24px;line-height:24px;font-size:12px;}
+.bizmail_loginpanel .bizmail_column .bizmail_inputArea{float:left;width:240px;}
+.bizmail_loginpanel .bizmail_column span{font-size:12px;word-wrap:break-word;margin-left: 2px;line-height:200%;}
+.bizmail_loginpanel .bizmail_SubmitArea{margin-left:30px;clear:both;}
+.bizmail_loginpanel .bizmail_SubmitArea a{font-size:12px;margin-left:5px;}
+.bizmail_loginpanel select{width:110px;height:20px;margin:0 2px;}

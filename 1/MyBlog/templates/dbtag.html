@@ -1,0 +1,140 @@
+{% extends "base.html" %} 
+ {% block content %} 
+ <title>我的{{tag}}读书单</title>
+<style type="text/css">  
+#content{min-height:420px} 
+.grid-16-8 .article{float:left;width:590px;padding-right:40px}
+.grid-16-8 .article .switch-to-shuo{float:right;margin-top:-45px}
+.grid-16-8 .article .switch-to-shuo a{display:block;width:134px;height:38px;background:url(https://img3.doubanio.com/f/book/4b96ff7f14f7e4afc66325721537b53f3a647545/css/book/f/book/6822457a2fc71115d0774dfaf5c9d245577d5992/pics/switch_to_shuo.png) no-repeat left top}
+.grid-16-8 .article .switch-to-shuo a:hover{background-position:left -38px}
+.grid-16-8 .article .switch-to-shuo a:active{background-position:left -76px}
+.grid-16-8 .aside{float:right;width:310px}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{zoom:1;display:inline-block;_height:1px}
+* html .clearfix{height:1%}
+*+html .clearfix{height:1%}
+.clearfix{display:block}
+.article{float:left;width:590px;padding-right:40px} 
+.indent{word-break:break-all}
+.aside .indent{margin-bottom:40px}
+.item{padding:10px;border-bottom:1px solid #eee}
+.onlines .item .actions{margin:-5px 0 0 10px;*margin-top:-15px}
+.onlines .item a.lnk-confirm{display:none;color:#f96360;background:#fdd6d5;border:1px solid #fa9492}
+.onlines .item a.lnk-confirm:hover{color:#fff;background:#fa8280;border:1px solid #e3241b}
+.onlines .item h5{font-size:14px;margin-right:80px}
+.onlines .item .info{color:#aaa}.onlines .item .actions{float:right;height:19px;color:#aaa;zoom:1}
+.onlines .item .status .joined{display:block;_display:inline-block}
+.onlines .item .status .quit{display:none}.onlines .item .status.enter .joined{display:none}
+.onlines .item .status.enter .quit{display:block;_display:inline-block}.onlines .item .photos{margin:8px}
+.onlines .item .photos a{float:left;margin:4px}
+.onlines .item .photos a img{max-width:80px;_width:80px}
+a:hover,a.nbg:hover,a.gtright:hover,.headerline_img a:hover{background:none}
+.pl2{line-height:1em}
+.pl2{font:14px Arial, Helvetica, sans-serif;line-height:150%;color:#666666}
+.pl2{margin-bottom:10px}
+.pl2{line-height:16px}
+.pl{font:12px Arial, Helvetica, sans-serif;line-height:150%;color:#666666}
+.pl{vertical-align:top}
+.pl{margin:6px 0 3px 0}
+.pl{padding-top:3px;display:block}
+ .pl a{float:none;margin:0;padding:0}
+ .clear{clear:both} 
+ .aside{float:right;width:310px}
+ .aside{float:right;width:230px}
+</style>   
+<script>
+!function(e){var o=function(o,n,t){var c,i,r=new Date;n=n||30,t=t||"/",r.setTime(r.getTime()+24*n*60*60*1e3),c="; expires="+r.toGMTString();for(i in o)e.cookie=i+"="+o[i]+c+"; path="+t},n=function(o){var n,t,c,i=o+"=",r=e.cookie.split(";");for(t=0,c=r.length;t<c;t++)if(n=r[t].replace(/^\s+|\s+$/g,""),0==n.indexOf(i))return n.substring(i.length,n.length).replace(/\"/g,"");return null},t=e.write,c={"douban.com":1,"douban.fm":1,"google.com":1,"google.cn":1,"googleapis.com":1,"gmaptiles.co.kr":1,"gstatic.com":1,"gstatic.cn":1,"google-analytics.com":1,"googleadservices.com":1},i=function(e,o){var n=new Image;n.onload=function(){},n.src="https://www.douban.com/j/except_report?kind=ra022&reason="+encodeURIComponent(e)+"&environment="+encodeURIComponent(o)},r=function(o){try{t.call(e,o)}catch(e){t(o)}},a=/<script.*?src\=["']?([^"'\s>]+)/gi,g=/http:\/\/(.+?)\.([^\/]+).+/i;e.writeln=e.write=function(e){var t,l=a.exec(e);return l&&(t=g.exec(l[1]))?c[t[2]]?void r(e):void("tqs"!==n("hj")&&(i(l[1],location.href),o({hj:"tqs"},1),setTimeout(function(){location.replace(location.href)},50))):void r(e)}}(document);
+</script>
+</head>  
+ <div id="content">
+    
+    <h3>豆瓣图书 Top250</h3>
+
+    <div class="grid-16-8 clearfix">
+      
+      <div class="article">
+  <div class="indent">
+        <p class="ulfirst"></p> 
+{% for b in bts %}
+      <table width="100%">
+        <tr class="item">
+          <td width="100" valign="top">
+            <a class="nbg" href="{{b.baddr}}"
+              onclick="moreurl(this,{i:'0'})"
+
+              >
+              <img src="{{b.bimage}}" width="64" />
+            </a>
+          </td>
+          <td valign="top">
+            
+            <div class="pl2">
+
+
+              <a href="{{b.baddr}}" onclick=&#34;moreurl(this,{i:&#39;0&#39;})&#34; title="{{b.bname}}">
+               {{b.bname}}
+
+                
+              </a>
+                &nbsp; <img src="https://img3.doubanio.com/pics/read.gif" alt="可试读" title="可试读"/>
+
+              
+                <br/>
+                <span style="font-size:12px;">{{b.bname}}</span>
+            </div>
+              <p class="pl">作者：{{b.bauthor}}</p>             
+              <div>
+                  <span><em>豆瓣评分</em>{{b.brnum}}<b>分</b></span>
+              </div>
+
+            
+              <p class="quote" style="margin: 10px 0; color: #666">
+                  <span class="inq">“{{b.bdescription}}”</span>
+              </p>
+
+
+          </td>
+        </tr>
+      </table>
+        <p class="ul"></p>
+{% endfor %}
+<div>
+ {% if is_paginated %}
+                    {% ifequal current_page 1 %}<button  type="button" class="btn btn-default btn-xs" >首页 </button>
+                    {% else %} <button  type="button" class="btn btn-primary btn-xs" onclick="location='?p=1'">首页</button>
+                    {% endifequal %}
+                    {% if has_previous %} <button  type="button" class="btn btn-primary btn-xs" onclick="location='?p={{ previous_page }}'"><</button>
+                    {% else %} 
+                    {% endif %}
+                    {% for p in page_numbers %}
+                    {% ifequal current_page p %}
+                        <button  type="button" class="btn btn-default btn-xs" >{{ current_page }}</button>   
+                    {% else %}
+                        <button  type="button" class="btn btn-primary btn-xs" onclick="location='?p={{ p }}'">{{ p }}</button>  
+                    {% endifequal %}
+                    {% endfor %}                    
+                    {% if has_next %}<button  type="button" class="btn btn-primary btn-xs" onclick="location='?p={{ next_page }}'">></button>
+                    {% else %}
+                    {% endif %}
+                    {% ifequal current_page pages %}<button  type="button" class="btn btn-default btn-xs" >末页 </button>
+                    {% else %} <button  type="button" class="btn btn-primary btn-xs" onclick="location='?p={{ pages }}'">末页</button>
+                    {% endifequal %}
+                    
+                页{{ current_page }}/共{{ pages }}页码
+                        共{{ hits }}本书籍
+     {% endif %}   
+</div>    
+</div>
+</div>
+<div class="aside">
+        
+  <span class="indent pl">
+    豆瓣用户每天都在对“读过”的书进行“很差”到“力荐”的评价，豆瓣根据每本书读过的人数以及该书所得的评价等综合数据，通过算法分析产生了豆瓣图书250。
+  </span>
+
+      </div>
+</div>
+</div>
+
+ <div class="clear"></div> 
+ {% endblock %}

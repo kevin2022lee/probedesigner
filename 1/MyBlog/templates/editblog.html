@@ -1,0 +1,138 @@
+ {% extends "user_base.html" %} 
+ {% block userdefine %}
+ <title>编辑我的博客</title>
+ <style>
+ </style>
+ <script type="text/javascript" src="/static/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+tinymce.init({
+	selector: "textarea",
+	width:"800px",
+	plugins: [
+		"advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+		"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+		"table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"
+	],
+
+	toolbar1: "newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
+	toolbar2: "cut copy paste pastetext | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime | forecolor backcolor",
+	toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft preview",
+
+	menubar: false,
+	toolbar_items_size: 'small',
+
+	style_formats: [
+		{title: 'Bold text', inline: 'b'},
+		{title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+		{title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+		{title: 'Example 1', inline: 'span', classes: 'example1'},
+		{title: 'Example 2', inline: 'span', classes: 'example2'},
+		{title: 'Table styles'},
+		{title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+	],
+
+	templates: [
+		{title: 'Test template 1', content: '<b>Test 1</b>'},
+		{title: 'Test template 2', content: '<em>Test 2</em>'}
+	]
+});
+$(document).ready(function() {
+	$("input#articletitle").blur(function(){
+		 var articletitle = $.trim($("input#articletitle").val());
+		 var atlen =articletitle.length;
+		 if(atlen<6){
+			 $('label#articletitle_errors').html('<font color="red"><span>标题不能少于6个字符</span></font>');
+		 }else{
+			 $('label#articletitle_errors').html('<font color="green"><span>文章标题正确</span></font>');
+		 }
+	 });
+	$("select#articletype").blur(function(){
+		 var articletype = $.trim($("select#articletype").val());
+		 var actlen =articletype.length;
+		 if(actlen==''){
+			 $('label#articletype_errors').html('<font color="red"><span>请选择一个文章类型！</span></font>');
+		 }else{
+			 $('label#articletype_errors').html('<font color="green"><span>文章类型已选择</span></font>');
+		 }
+	 });
+	$("input#equalcontent").focus(function(){
+		 var articlecontent = tinymce.get('articlecontent').getContent({format: 'raw'});
+		 var aclen =articlecontent.length;
+		 if(aclen<=91){
+			 $('label#articlecontent_errors').html('<font color="red"><span>文章内容不能少于20字！</span></font>');
+		 }else{
+			 $('label#articlecontent_errors').html('<font color="green"><span>准备提交吧！</span></font>');
+		 }
+	 });
+	$("input#addblog").click(function(check){
+		var articleccontent = tinymce.get('articlecontent').getContent({format: 'raw'});
+		var acclen =articleccontent.length;
+		var atype = $.trim($("select#articletype").val());
+		var atitle = $.trim($("input#articletitle").val());
+		if(atitle==""){
+			 alert("文章标题没有写！");
+			 $("#articletitle").focus();
+			 check.preventDefault();//此处阻止提交表单 
+			 $('label#articletitle_errors').html('<font color="red"><span>文章内容不能少于20字！</span></font>');
+		}
+		if(atype==""){
+			 alert("文章类型没有选择！");
+			 $("#articletype").focus();
+			 check.preventDefault();//此处阻止提交表单 
+			 $('label#articletype_errors').html('<font color="red"><span>文章内容不能少于20字！</span></font>');
+		}
+		if(acclen<=91){
+			 alert("文章内容少于20字！不能提交表单！");
+			 $("#articlecontent").focus();
+			 check.preventDefault();//此处阻止提交表单 
+			 $('label#articlecontent_errors').html('<font color="red"><span>文章内容不能少于20字！</span></font>');
+		 }
+	});
+});
+</script>
+ <div class="clr orderNumberBar">
+				<div class="fll">编辑我的博客</div>
+			</div>
+ <div id="manageblog">
+ <form id="manageblogform" method="post" action="http://{{ localip }}/MyBlog/updateblogall/">{% csrf_token %}
+  {% for blogedit in blogedits %}
+ <table width="auto">
+ <tbody>
+ <tr>
+ <td align="left" width="360px"><label>Title：</label></td>
+ <td><input style="width:420px;" id="articletitle" type="text" class="title" name="articletitle" value="{{ blogedit.title }}" /></td>
+ <td width="200px"><label id="articletitle_errors"></label></td>
+ </tr>
+ <tr>
+ <td align="left" width="360px"><label>Type：</label></td>
+ <td><select  id="articletype" name="articletype">
+  <option value="{{ blogedit.artcle_type_id }}" selected>{{ blogedit.artcle_type_id }}</option>
+{% for type in types %}  
+  <option value ="{{ type.id }}">{{ type.typename }}</option>  
+{% endfor %}    
+</select> 
+</td>
+<td><label id="articletype_errors"></label>
+</td>
+ </tr>
+  <tr>
+ <td align="left" width="400px"><label>Content：</label></td>
+ <td width="400px">
+ <textarea  id="articlecontent" name="articlecontent" rows="10" cols="60">{{ blogedit.content }}</textarea>
+ </td>
+ <td><label id="articlecontent_errors"></label></td>
+ </tr>
+ <tr>
+ <td align="center"></td>
+ <td align="center">
+ <input type="hidden" name="bid" value="{{ blogedit.id }}" />
+ <button type="submit" class="btn btn-primary" id="addblog">修改</button>
+ <button type="button" class="btn btn-active" id="return" onclick="javascript:history.go(-1);">返回</button>
+ </td>
+ </tr>
+ </tbody>
+ </table>
+  {% endfor %}
+ </form>
+ </div>
+  {% endblock %}

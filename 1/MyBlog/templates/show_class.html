@@ -1,0 +1,217 @@
+ {% extends "base.html" %} 
+ {% block content %}
+<title>分类文章</title>
+<link type="text/css" rel="stylesheet" href="http://{{ localip }}/site_medias/css/shCoreDefault.css"/>
+ <style type="text/css">  
+    #pindao{margin:5px;padding:5px;font-size:13px;background-color:#B9D3EE;border:none;}
+    #pindao span{margin-left:10px;}
+    #sidebar { float:left; width:135px;}
+    #content {margin:o; width:100%;height:auo;float:right;}
+    #mainContent {margin-left:135px;padding:5px;font-size:14px; margin-bottom:5px;}
+    #mainContent h1{font-size:24px;margin-top:15px;}
+    #navilink{width:120px;margin-bottom:5px;border-left:1px solid #B9D3EE;border-right:1px solid #B9D3EE;border-bottom:1px solid #B9D3EE;}
+    div#navilink ul{font-size:13px; list-style-type:none; margin:0px;padding:5px;}
+    div#navilink ul h3{display:block;background:#B9D3EE;color:#fff;padding:5px;}
+    div#navilink ul li{ border-bottom: 1px dotted #FCC;font-size:13px;margin-top:5px;padding:0px;}
+    div#navilink ul li a{ font-size:14px;display:block; width:100%; color:#000; background:none; text-align:center;}
+    div#navilink ul li a:hover{ background:#999;}
+    div#navilink ul li a:active{color:#ff0000;} 
+    div#navilink ul li a:link{ color::#453; }
+    div#navilink ul li a:visited{ background:#999; }
+    div#maincontent p .reply{font-size:12px;font-color:#765;cursor:hand;}
+    div#maincontent p a:hover {text-decoration:none; color:#453;}
+    div#maincontent p a:link{text-decoration:none; color:#000;}
+    div#maincontent p a:active{text-decoration:none; color:#543;}
+    #showtextarea{margin:5px;padding:5px;}  
+    div#mainContent .view{padding-left:30px;margin-left:20px;}
+    #type{text-align:center;}
+    #type span{margin-left:30px;}
+    .b1,.b2,.b3,.b4,.b1b,.b2b,.b3b,.b4b,.b{display:block;overflow:hidden;}
+    .b1,.b2,.b3,.b1b,.b2b,.b3b{height:1px;}
+    .b2,.b3,.b4,.b2b,.b3b,.b4b,.b{border-left:1px solid #B9D3EE;border-right:1px solid #B9D3EE;}
+    .b1,.b1b{margin:0 5px;background:#B9D3EE;}
+    .b2,.b2b{margin:0 3px;border-width:2px;}
+    .b3,.b3b{margin:0 2px;}
+    .b4,.b4b{height:2px;margin:0 1px;}
+    .d1{}
+    .k {height:auto;padding:5px;}
+/*Cl1024*/
+.c{clear:both;height:0;font:0/0 Arial;}
+.b{font-weight:bold}
+.tal{text-align:left}
+.tac{text-align:center}
+.tar{text-align:right}
+.fr{float:right}
+.fl{float:left}
+/*a link */
+a{text-decoration:none;color:#2f5fa1}
+a:hover{text-decoration:underline;}
+/*font size*/
+.f9{font-size:11px;}
+.f10{font-size:11px;}
+.f12{font-size:12px}
+.f14{font-size:14px}
+.fn,.fn a{font-weight:normal}
+/*span color*/
+.s1{color:#008000;}
+.s2{color:#984B98;}
+.s3{color:#FA891B;}
+.s4{color:#0033FF;}
+.s5{color:#659B28}
+.gray{color:#818a89}
+/*main color*/
+.f_one,.t_one,.r_one{background:#F9F9EC;}
+.f_one:hover,.t_one:hover,.r_one:hover{background:#F4FBFF;}
+/*form*/
+textarea,input,select{font:12px Arial;padding:1px 3px 0 3px;vertical-align:middle;margin-bottom:1px}
+select{border:solid 1px #D4EFF7;}
+.btn{background:#A6CBE7;color:#004c7d;border-width:1px;padding-left:15px;padding-right:15px;vertical-align:middle}
+.input{border:solid 1px #A6CBE7;padding:2px 0px 2px 1px;font-size:1.0em;vertical-align:middle}
+form{display:inline;}
+textarea{border:solid 1px #A6CBE7;}
+/*header*/
+#header{max-width:1280px;margin:auto}
+/*toolbar*/
+.toptool{border-bottom:1px solid #daebcd;}
+.toptool span{padding:1px 5px;line-height:150%}
+/*banner*/
+.banner{padding-right:3%;background:#0F7884}
+.banner img{vertical-align:middle;}
+.t{border:1px solid #A6CBE7;margin:0px auto 8px;}
+.t table{border:1px solid #fff;margin:0 auto;width:99.98%;}
+.t2{border-top:#A6CBE7 1px solid;margin:0px auto 5px;}
+.t3{margin:auto}
+.t4{padding:1px 0 1px 1px}
+/*table head*/
+.h{border-bottom:4px solid #dbecF4;background:#B1D3E0;text-align:left;color:#004c7d;padding:5px 7px 3px 7px;}
+.h span{font-weight:normal;}
+.h h2{font-weight:bold}
+.h a{font-family:Arial;color:#004c7d}
+.h span a,.h span{color:#5599bb;}
+.h a.a2{margin-left:12px;}
+/*table tr1*/
+.tr1 th{padding:5px 10px;text-align:left;vertical-align:top;font-weight:normal;}
+.tr1 td.td1{border:1px solid #D4EFF7;}
+/*table tr2*/
+.tr2{background:#f3f8ef;color:#659b28;}
+.tr2 td,.tr2 th{line-height:21px;border-bottom:1px solid #daebcd;padding:0px 6px 0px;border-top:1px solid #A6CBE7;}
+.tr2 a{color:#659b28;margin:2px}
+/*table tr3*/
+.tr3 td,.tr3 th{border-right:1px solid #D4EFF7;border-bottom:1px solid #D4EFF7;padding:5px 8px}
+.tr3 th{text-align:left;font-weight:normal;}
+.tr4{background:#B1D3E0;color:#004c7d;}
+.tr4 td{padding:4px 10px;}
+.tr td,.tr th{padding:2px}
+/*topic content tips*/
+.tpc_content{font-size:14px;font-family:Arial;padding:0 2% 0 0.5%;margin:0 0 2%}
+.tips{background:#F4FBFF;border:#D4EFF7 1px solid;padding:5px;margin:0 1% 1% 0;float:left;text-align:center;}
+.tips li{list-style:none;padding:0 5px;float:left;overflow: hidden;white-space:nowrap}
+.tiptop{border-bottom:1px solid #D4EFF7;padding:0 0 5px 0;vertical-align:middle;}
+.tipad{border-top:1px solid #D4EFF7;margin:10px 0 0;padding:5px 0 0;}
+.quote{font-size:70%;color:#004c7d;margin:2px;padding:0}
+blockquote{width:92%;font-size:85%;color:#81888c;border:1px solid #D4EFF7;border-left-width:3px;padding:5px;margin:0 0 1%}
+/*menu*/
+.menu{position:absolute;background:#fff;border:1px solid #A6CBE7;}
+.menu td, .menu li,.menu ul{background:#B1D3E0;padding:0; margin:0}
+.menu li{list-style:none;}
+.menu a{display:block;padding:3px 15px 3px 15px}
+.menu a:hover{background:#2f5fa1;text-decoration:none;color:#fff;}
+.menu ul.ul1 li a{display:inline;padding:0}
+/*pages*/
+.pages{margin:3px 0px;font-size:14px}
+.pages a{padding:2px 10px;border-width:1px 0px 1px 1px;border-color:#A6CBE7;border-style:solid}
+.pages a:hover{background:#F4FBFF;text-decoration:none;color:#004c7d}
+.pages input{border:0px;font-size:14px;background:#F9F9EC;text-align:center;}
+.pages #last{border-width:1px;}
+/*footer*/
+#footer{max-width:1280px;text-align:right;border-top:2px solid #dbecF4;margin:auto;padding:5px 0;}
+#main{max-width:1280px;margin:auto}
+/*y-style*/
+.y-style{text-align:center;}
+.t table{border:0;width:100%;}
+.tr1 th{border-right:1px solid #D4EFF7;}
+.tr1 td.td1{border-left:0}
+.t{padding:1px}
+.signature{height:expression(this.scrollHeight>parseInt(this.currentStyle.maxHeight)?this.currentStyle.maxHeight:"auto");}
+/*ad css*/
+.sptable h4{margin:0em 0 -.1em;color:#6666FF;font-size:14px;padding-bottom:8px;}
+.sptable a{color:#339900;}
+.sptable h4:hover{text-decoration:underline;}
+.sptable td{cursor:pointer;text-align:left;}
+  </style> 
+<div id="pindao"><a href="/MyBlog/">首页</a><span>&nbsp;/&nbsp;</span><a href="#">频道</a><span>&nbsp;/&nbsp;</span><span>显示主题:{{ title }}</span></div>
+<div id="content">
+<div id="sidebar">
+<div id="navilink">
+<div class="box-header">频道导航栏</div>
+<ul>
+{% for type in types %}
+<li><a href="http://{{ localip }}/MyBlog/classfy/{{ type.id }}/" title="{{ type.id }}">{{ type.typename }}</a></li>
+{% endfor %}
+</ul>
+</div>
+<div id="navilink">
+<div class="box-header">文章存档</div>
+{% for cd in cds %}
+<ul>
+<li><a href="#" title="文章数量{{ cd.number }}">{{ cd.year }}年{{ cd.month }}月[<sup>{{ cd.number }}</sup>]</a></li>
+</ul>
+{% endfor %}
+</div>
+</div>
+<div id="maincontent">
+<b class="b1"></b><b class="b2 d1"></b><b class="b3 d1"></b><b class="b4 d1"></b>
+<div class="b d1 k">
+<table>
+<tbody style="table-layout:fixed;"><tr></tr>
+	<tr class="tr2">
+	<td class="tac y-style">.::</td>
+	<td style="width:42%" class="tac">文章</td>
+	<td style="width:20%" class="y-style">作者</td>
+	<td style="width:10%" class="y-style">回復</td>
+	<td style="width:28%" class="y-style">最後發表</td>
+	</tr>
+{% for cr in crs %}
+<tr align="center" class="tr3 t_one">
+<td><a title="打開新窗口" href="read.php?tid=1315" target="_blank">.::</a></td>
+<td style="text-align:left;padding-left:8px" ><a title="{{ cr.title}}" href="http://{{ localip }}/MyBlog/topics/{{ cr.id }}/">{{ cr.title}}</a></td>
+<td style="width:10%" class="tal y-style">{{ cr.u }}</td>
+<td style="width:17%" class="tal f10 y-style">{{ cr.article_click }}</td>
+<td style="width:10%" class="y-style"><a href="#" class="f10">{{ cr.timestamp|date:"Y-m-d H:i"}}</a></td>
+</tr>
+{% endfor %}
+</table>
+<div id="fenye">
+  {% if is_paginated %}
+                    {% ifequal current_page 1 %}<button  type="button" class="btn btn-default btn-xs" >首页 </button>
+                    {% else %} <button  type="button" class="btn btn-primary btn-xs" onclick="location='?p=1&ps={{ pagesize }}'">首页</button>
+                    {% endifequal %}
+                    {% if has_previous %} <button  type="button" class="btn btn-primary btn-xs" onclick="location='?p={{ previous_page }}&ps={{ pagesize }}'"><</button>
+                    {% else %} 
+                    {% endif %}
+                    {% for p in page_numbers %}
+                    {% ifequal current_page p %}
+                        <button  type="button" class="btn btn-default btn-xs" >{{ current_page }}</button>   
+                    {% else %}
+                        <button  type="button" class="btn btn-primary btn-xs" onclick="location='?p={{ p }}&ps={{ pagesize }}'">{{ p }}</button>  
+                    {% endifequal %}
+                    {% endfor %}                    
+                    {% if has_next %}<button  type="button" class="btn btn-primary btn-xs" onclick="location='?p={{ next_page }}&ps={{ pagesize }}'">></button>
+                    {% else %}
+                    {% endif %}
+                    {% ifequal current_page pages %}<button  type="button" class="btn btn-default btn-xs" >末页 </button>
+                    {% else %} <button  type="button" class="btn btn-primary btn-xs" onclick="location='?p={{ pages }}&ps={{ pagesize }}'">末页</button>
+                    {% endifequal %}
+                    
+                页{{ current_page }}/共{{ pages }}页
+                        共{{ hits }}篇
+                       每页 <a href="?p=1&ps=20">20</a> 
+                             <a href="?p=1&ps=40">40</a> 
+                               <a href="?p=1&ps=80">80</a> 篇
+     {% endif %}              
+</div>
+</div>
+<b class="b4b d1"></b><b class="b3b d1"></b><b class="b2b d1"></b><b class="b1b"></b>
+</div>
+<div style="clear:both"></div>
+{% endblock %}

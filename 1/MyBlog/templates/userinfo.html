@@ -1,0 +1,71 @@
+{% extends "user_base.html" %} 
+ {% block userdefine %}
+ <title>用户中心</title>
+             <div class="clr orderNumberBar">
+				<div class="fll">修改用户资料</div>
+			</div>
+<div style="margin:10px auto auto 40px;">
+				用户编号{{ request.session.uid }} <!-- &nbsp;<a href="" style="color: #FE9231">鏇存敼</a> -->
+				<div style="margin-top: 20px;" class="user_detail_box">
+					<img alt="" src='/site_medias/imgs/icon_personal_03.png'>
+					<div style="display: inline-block; margin-left: 15px;" >
+						<table style="height: 116px;">
+							<tr>
+								<td class="ar">昵称:</td>
+								<td>{{ request.session.nick }} </td>
+							</tr>
+							<tr>
+								<td class="ar">邮箱地址:</td>
+								<td>{{ request.session.email }} </td>
+							</tr>
+							<tr>
+								<td class="ar">姓氏:</td>
+								<td>{{ show_user.first_name }}</td>
+							</tr>
+							<tr>
+								<td class="ar">名称:</td>
+								<td>{{ show_user.last_name }}</td>
+							</tr>
+						</table>
+					</div>
+					<div>
+						<a class="btnModule_small to_modify" href="javascript:void(0);" style="margin-top: 10px;">修改资料</a>
+					</div>
+				</div>
+				
+				<div style="margin-top: 20px;" class="modify_userinfo_box">
+					<img alt="" src='/static/imgs/icon_personal_03.png'>
+					<div style="display: inline-block; margin-left: 15px;" >
+						<form action='http://{{ localip }}/MyBlog/modify_userinfo/' method="post" id="modify_userinfo">{% csrf_token %}
+							<table style="height: 116px;">
+								<tr>
+									<td class="ar">昵称:</td>
+									<td><font color="red"> * </font><input type="text" value="{{ request.session.nick }}" name="name" readonly="readonly"></td>
+								</tr>
+								<tr>
+									<td class="ar">邮件地址:</td>
+									<td><font color="red"> * </font><input type="text" value="{{ request.session.email }}" name="companyName" readonly="readonly"></td>
+								</tr>
+								<tr>
+									<td class="ar">姓氏:</td>
+									<td><font color="red"> * </font><input type="text" value="{{ show_user.first_name }}" name="FamilyName"></td>
+								</tr>
+								<tr>
+									<td class="ar">名称:</td>
+									<td><font color="red"> * </font><input id="modify" type="text" value="{{ show_user.last_name }}" name="LastName"></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<div>
+						<div class="editTipsBox modify_tips_box" style="display: none">
+							<em class="ico ico-editTips-error vam"></em><span class="dib vam modify_tips" style="color: red"></span>
+						</div>
+						<a class="btnModule_small modify_userinfo" href="javascript:void(0);" style="margin-top: 10px;">确定</a>
+					</div>
+				</div>
+			</div>
+
+<!-- /#mainWrap -->
+
+ {% endblock %}
