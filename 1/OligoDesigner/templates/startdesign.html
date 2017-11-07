@@ -8,6 +8,13 @@ div{word-break:break-all;word-wrap:break-word;overflow:hidden;text-align:left;}
 textarea{overflow-y:visible;}
 h5{font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;}
 </style>
+<script src='../site_medias/js/textareastyle'></script>
+<script>
+//调用
+$(function () {
+    $("#textarea").txtaAutoHeight();
+});
+</script>
 <div class="container">
 <form action="http://{{local}}/NonNshFilter/" method="POST" role="form">{% csrf_token %}
 <div class="list-group">
