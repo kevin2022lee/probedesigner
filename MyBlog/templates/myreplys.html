@@ -1,0 +1,107 @@
+{% extends "user_base.html" %} 
+ {% block userdefine %}
+ <title>我的回复列表</title>
+ <style>
+#listblog{margin-top:10px;}
+#listblog table{}
+#listblog tr td{border:1px solid #66cc33;}
+#listblog table .center{text-align:center;width:80px;font-size:14px;}
+#listblog table .title{width:680px;font-size:14px;}
+#listblog table a{color:#000;margin-right:20px; background:none;}
+#listblog table a:hover{ background:#66cc33;outline: thin solid #6633cc;}
+#listblog table a:active{color:#ff0000;} 
+#listblog table a:link{ color::#453; }
+#listblog .th td{width:160px;text-indent:2em}
+#listblog .th{ background:#66cc33; font-weight:bold; border-top:1px;font-size:14px;}
+#listblog .clear{clear:both;}
+#listblog .block{font-size:13px;}
+ </style>
+<script type="text/javascript">
+$(document).ready(function() {
+    var ltype=getQueryString('listtype');
+    if(ltype=='recycle'){
+        $("#privatebtn").hide();
+        $("#publicbtn").show();    
+        $("#showprivate").hide();
+        $("#showpublic").show();
+    }else{
+        $("#publicbtn").hide();
+        $("#privatebtn").show();
+        $("#showprivate").show();
+        $("#showpublic").hide();
+    }
+    $("input#checkall").click(function(){
+        //var flag=$(this).attr("checked");
+        //alert(flag);
+        if($(this).attr("checked") == "checked") { // 鍏ㄩ�� 
+            $("input[name='checkid']").each(function(){
+                $(this).attr("checked",true);
+            });    
+        }else{  //鍙栨秷鍏ㄩ��
+            $("input[name='checkid']").each(function(){ 
+                $(this).attr("checked", false); 
+            }); 
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+</script>
+            <div class="clr orderNumberBar">
+                <div class="fll">我的回复</div>
+            </div>
+             <div id="listblog">
+<table>
+<tr class="th">
+ <td style="width:10%">序号</td>
+ <td style="width:40%">文章标题</td>
+ <td style="width:15%" >类型</td>
+ <td style="width:15%">作者</td>
+ <td style="width:20%">回复时间</td>
+ </tr>
+{% for mr in mrs %}
+ <tr>
+ <td class="center">{{ mr.id }}</td>
+ <td class="title"><a href="http://{{ localip }}/MyBlog/topics/{{ mr.bid }}/">{{ mr.title }}</a></td>
+ <td class="center">{{ mr.typename }}</td>
+ <td class="center">{{ mr.username }}</td>
+ <td class="center">{{ mr.createtime|date:"Y-n-d H:i"  }}</td>
+ </tr>
+{% endfor %}
+ </table>
+<div id="fenye">
+  {% if is_paginated %}
+                    {% ifequal current_page 1 %}<button  type="button" class="btn btn-default btn-xs" >首页 </button>
+                    {% else %} <button  type="button" class="btn btn-primary btn-xs" onclick="location='?p=1&ps={{ pagesize }}'">首页</button>
+                    {% endifequal %}
+                    {% if has_previous %} <button  type="button" class="btn btn-primary btn-xs" onclick="location='?p={{ previous_page }}&ps={{ pagesize }}'"><</button>
+                    {% else %} 
+                    {% endif %}
+                    {% for p in page_numbers %}
+                    {% ifequal current_page p %}
+                        <button  type="button" class="btn btn-default btn-xs" >{{ current_page }}</button>   
+                    {% else %}
+                        <button  type="button" class="btn btn-primary btn-xs" onclick="location='?p={{ p }}&ps={{ pagesize }}'">{{ p }}</button>  
+                    {% endifequal %}
+                    {% endfor %}                    
+                    {% if has_next %}<button  type="button" class="btn btn-primary btn-xs" onclick="location='?p={{ next_page }}&ps={{ pagesize }}'">></button>
+                    {% else %}
+                    {% endif %}
+                    {% ifequal current_page pages %}<button  type="button" class="btn btn-default btn-xs" >末页 </button>
+                    {% else %} <button  type="button" class="btn btn-primary btn-xs" onclick="location='?p={{ pages }}&ps={{ pagesize }}'">末页</button>
+                    {% endifequal %}
+                    
+                页{{ current_page }}/共{{ pages }}页
+                        共{{ hits }}篇
+                       每页 <a href="?p=1&ps=25">25</a> 
+                             <a href="?p=1&ps=35">35</a> 
+                               <a href="?p=1&ps=55">55</a> 篇
+     {% endif %}              
+</div>
+ </div>
+ {% endblock %}

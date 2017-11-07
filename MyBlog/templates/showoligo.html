@@ -1,0 +1,64 @@
+{% extends "user_base.html" %} 
+ {% block userdefine %}
+ <title>我的引物清单</title>
+<style>
+body {
+  background-color: #f5fffb;
+}
+</style>
+<div class="clr orderNumberBar">
+<div class="fll">我的探针清单</div>
+</div>
+<table class="table table-hover table-expandable ">
+<caption><h3 align="center">引物信息</h3></caption>
+<thead class="table">
+ <tr class="info">
+ <th width="124px" style="text-align:center;">
+编号
+ </th>
+ <th width="324px" style="text-align:center;">
+序列名称
+ </th>
+ <th width="144px" style="text-align:center;">
+序列所有人信息
+ </th>
+ <th width="144px" style="text-align:center;">
+显示详细信息
+ </th>
+ </tr>
+  </thead>
+  <tbody>
+ {% for oligo in oligos %}
+ <tr class="data">
+ <td align="center">
+{{ oligo.id }}
+ </td>
+  <td>
+<a href="/designoligo/"> {{ oligo.SeqName }}</a>
+ </td>
+ <td align="center">
+{{ request.session.nick }}
+ </td>
+ <td>
+ >>>>>>
+ </td>
+</tr>
+<tr>
+<td colspan="5">
+<h4>序列详细信息</h4>
+<ul>
+<li>序列名称:{{ oligo.SeqName }}</li>
+<li>序列长度:{{ oligo.SeqLength }}</li>
+<li>Tm值:{{ oligo.SeqTm }}</li>
+<li>GC含量:{{ oligo.SeqGC }}</li>
+<li>道尔顿质量:{{ oligo.SeqMW }}</li>
+<li>OD/微摩尔:{{ oligo.SeqOD }}</li>
+<li>序列引物:<span style="width:550px;">{{ oligo.SeqReverse }}</span></li>
+</ul>
+</td>
+</tr>
+ {% endfor %}
+ </tbody>
+ </table>
+<!-- /#mainWrap -->
+ {% endblock %}

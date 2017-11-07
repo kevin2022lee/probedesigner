@@ -1,0 +1,644 @@
+<html>
+<meta content="497f37171062087b28c8ce4015734948" name="baidu_union_verify">
+<link href="http://www.slyyc.asia/site_medias/css/base.css" rel="stylesheet" type="text/css">
+<link href="http://www.slyyc.asia/site_medias/bsp/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/bootstrap-modal/2.2.5/css/bootstrap-modal.css" rel="stylesheet">
+<script src="http://www.slyyc.asia/site_medias/js/jquery-1.8.2.js"></script>
+<script src="http://www.slyyc.asia/site_medias/js/menu.js"></script>
+<script src="http://www.slyyc.asia/site_medias/bsp/dist/js/bootstrap.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-modal/2.2.5/js/bootstrap-modal.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-modal/2.2.5/js/bootstrap-modalmanager.min.js"></script>
+<script charset="utf-8" src="http://exmail.qq.com/zh_CN/htmledition/js_biz/outerlogin.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var va_username=false;
+	var va_password=false;
+	$('input#logonname').blur(function(){
+		var logonname=$.trim($('input#logonname').val());
+		var ulen=logonname.length;
+		if(ulen<6){
+			$('label#logonname_errors').html('<font color="red"><span>&times;用户名少于6个字符</span></font>');
+			va_username=false;
+		}else{
+			  $.get("http://www.slyyc.asia/MyBlog/checkuser/?username="+logonname,function(data,status){
+				     if (data == "null"){
+				      $('label#logonname_errors').html('<font color="red"><span>&times;不存在该用户</span></font>');	
+				      va_username=false;
+				     }else{
+				      $('label#logonname_errors').html('<font color="green"><span>&radic;</span></font>');
+				      va_username=true;				    	 
+				     }});
+		  }
+	});
+	 $("input#logonpass").blur(function(){
+		 var logonpass = $.trim($("input#logonpass").val());
+		 var llen =logonpass.length;
+		 if(llen<6){
+			 $('label#logonpass_errors').html('<font color="red"><span>&times;密码少于6个字符！</span></font>');
+			 va_password=false;
+		 }else{
+			 $('label#logonpass_errors').html('<font color="green"><span>&radic;</span></font>');
+			 va_password=true;
+		 }
+	 });
+	 $("input#logon").click(function(pre){
+		if(va_username&&va_password){
+			
+		}else{
+			if(va_username){
+				alert("请输入密码!");
+				$("input#logonpass").focus();
+				pre.preventDefault();//阻止表单提交
+			}else if(va_password){
+				alert("请输入正确的用户名!");
+				$("input#logonname").focus();
+				pre.preventDefault();//阻止表单提交
+			}else{
+				alert("用户名和密码不能为空!");
+				$("input#logonname").focus();
+				pre.preventDefault();//阻止表单提交
+			}
+		} 
+	 });
+});
+</script>
+<body>
+<div id="info">
+<form action="http://www.slyyc.asia/MyBlog/login/" class="form-inline" id="checkin" method="POST" role="form"><input name="csrfmiddlewaretoken" type="hidden" value="zEQ0DQ2NcCW1adTriv3ZPykI5lVOru3l"/>
+<label class="control-label" for="logonname">用户登录：</label>
+<input class="login" id="logonname" name="account" placeholder="请输入用户名" type="text"/>
+<label class="control-label" for="logonname" id="logonname_errors"></label>
+<label class="control-label" for="logonpass">密码：</label>
+<input class="login" id="logonpass" name="password" placeholder="请输入密码" type="password"/>
+<label class="control-label" for="logonpass" id="logonpass_errors"></label>
+<div class="checkbox"><label><input type="checkbox">记住我</input></label></div>
+<button "="" class="btn btn-primary btn-xs" id="logon" type="submit">登陆</button>没有账号 <a href="http://www.slyyc.asia/MyBlog/register/" id="register" name="register">注册</a>一个
+</form>
+</div>
+<img src="http://www.slyyc.asia/site_medias/imgs/logo.gif"/>
+<table border="0">
+<tbody>
+<tr>
+<td width="auto">
+<div id="sea_box">
+<form action="http://www.slyyc.asia/MyBlog/search/" id="sea_form" method="post">
+<input class="swap_value" id="s" name="search_words" placeholder="请输入电影、书籍、文章信息" type="text"/>
+<input alt="检索" height="24" id="go" src="http://www.slyyc.asia/site_medias/imgs/btn_search_box.gif" title="检索" type="image" width="27"/>
+</form>
+</div>
+</td>
+<td align="right" width="700">
+<div id="navi" style="float:right;">
+<ul>
+<li><a alt="首页" href="http://www.slyyc.asia/">广场</a></li>
+<li><a href="http://www.slyyc.asia/movie/?tag=top250">电影</a></li>
+<li><a href="http://www.slyyc.asia/photo/">图片</a></li>
+<li><a href="http://www.slyyc.asia/book/?tag=top250">读书</a></li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<style type="text/css">  
+    #content{width:100%;height:auto;margin-top:2px;float:left;margin-right:-240px;} 
+    #content_inner{height:auto;margin-left:190px;margin-right:245px;border-left:1px solid #B9D3EE;border-right:1px solid #B9D3EE;border-bottom:1px solid #B9D3EE;}   
+    #post-list{font-size:14px;padding:5px;}
+    #post-list ul{list-style-type: none;margin:0px;padding:0px;} 
+    div#post-list span .view-count {margin-left:10px;color:#808080;float:right}
+    div#post-list ul li a {float:left;color:#000;margin-right:20px; background:none;}
+    div#post-list ul li a:hover{ background:#999;outline: thin dotted #333;}
+    div#post-list ul li a:active{color:#ff0000;} 
+    div#post-list ul li a:link{ color::#453; }
+    div#post-list ul li {border-bottom: 1px dotted #FCC;display: block;line-height: 2em;}
+    #side{width:230px;height:auto;float:right;border:none;}
+    #leftbar{width:180px;height:auto;float:left;border:none;}
+    #about{margin-bottom:5px;width:170px;border-left:1px solid #B9D3EE;border-right:1px solid #B9D3EE;border-bottom:1px solid #B9D3EE;}
+    #about img{padding:5px; width:135px; height:135px; }
+    .about-me {text-align:center;padding-top:5px;}
+    .about-me ul {text-align:right;margin:0;list-style-type: none;}
+    .about-me ul li{padding-right:5px;}
+    div#leftbar ul{font-size:13px; list-style-type:none; margin:0px;padding:0px; }
+    div#leftbar ul h3{display:block;background:#B9D3EE;color:#fff;padding:5px;}
+    .clear{clear:both} 
+    #hotarticle{width:230px;margin:0px;border-left:1px solid #B9D3EE;border-right:1px solid #B9D3EE;border-bottom:1px solid #B9D3EE;}
+    div#hotarticle ul{font-size:13px; list-style-type:none; margin:0px;padding:5px;}
+    div#hotarticle ul h3{display:block;background:#B9D3EE;color:#fff;padding:5px;}
+    div#hotarticle ul li{ border-bottom: 1px dotted #FCC;font-size:13px;margin-top:5px;padding:0px;}
+    div#hotarticle ul li a{ display:block; width:100%; color:#000; background:none; }
+    div#hotarticle ul li a:hover{ background:#999; }
+    div#hotarticle ul li a:active{color:#ff0000;} 
+    div#hotarticle ul li a:link{ color::#453; }
+    #newarticle{width:230px;margin:0px;border-left:1px solid #B9D3EE;border-right:1px solid #B9D3EE;border-bottom:1px solid #B9D3EE;margin-top:5px;margin-bottom:3px;}
+    div#newarticle ul{font-size:13px; list-style-type:none; margin:0px;padding:5px; }
+    div#newarticle ul h3{display:block;background:#B9D3EE;color:#fff;padding:5px;}
+    div#newarticle ul li{ border-bottom: 1px dotted #FCC;font-size:13px;margin-top:5px;padding:0px;}
+    div#newarticle ul li a{ display:block; width:100%; color:#000; background:none;}
+    div#newarticle ul li a:hover{ background:#999; }
+    div#newarticle ul li a:active{color:#ff0000;} 
+    div#newarticle ul li a:link{ color::#453; }
+    #fenye{width:100%;border:none;font-size:12px;padding:3px;}
+    p {font-size:14px;font-famliy:"幼圆";}
+    p .reply{font-size:12px;font-color:#765;}
+    p a:hover {text-decoration:none; color:#453;}
+    p a:link{text-decoration:none; color:#000;}
+    p a:active{text-decoration:none; color:#543;}
+    .cat{text-align:center;padding-top:5px;}
+    .cat ul{font-size:13px; list-style-type:none; margin:0px;padding:5px;}
+    .cat ul h3{display:block;background:#B9D3EE;color:#fff;padding:5px;}
+    .cat ul li{ border-bottom: 1px dotted #FCC;font-size:13px;margin-top:5px;padding:0px;}
+    .cat ul li a{ font-size:14px;display:block; width:100%; color:#000; background:none; text-align:center;}
+    .cat ul li a:hover{ background:#999;}
+    .cat ul li a:active{color:#ff0000;} 
+    .cat ul li a:link{ color::#453; }
+    .cat ul li a:visited{ background:#999; }
+ </style>
+<script charset="utf-8" src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var s= 'Email:<a href="mailto:kkds+slyyc.asia">kkds+slyyc.asia</a>';
+    $('#mail-here').html(s.replace(/\+/g,'@'));
+
+});
+</script>
+<title>坤坤大神的部落格首页</title>
+<div id="content">
+<div id="side">
+<div id="hotarticle">
+<div class="box-header">热门文章</div>
+<ul>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/258/" title="ntpath join(path, *paths) 发生UnicodeDecodeError的Bug的解决方案 ">ntpath join(p-2016-12-22</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/257/" title="30个有关Python的小技巧">30个有关Python的小-2016-12-20</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/256/" title="记录学习Biopython出现的一次重大bug">记录学习Biopython-2016-12-19</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/255/" title="wouderful tonight">wouderful ton-2016-12-14</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/254/" title="一支钢笔的故事">一支钢笔的故事-2016-12-07</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/253/" title="回忆南京的混沌摊">回忆南京的混沌摊-2016-12-07</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/252/" title="嵩山少林一日游">嵩山少林一日游-2016-12-05</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/251/" title="图片一组设计开发">图片一组设计开发-2016-12-02</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/250/" title="【头条】郑州空降一所大学">【头条】郑州空降一所大学-2016-11-28</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/249/" title="另一角度的冯小刚">另一角度的冯小刚-2016-11-28</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/248/" title="【置顶】请大家文明发帖">【置顶】请大家文明发帖-2016-11-28</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/247/" title="明朝覆灭的真实原因：人口近2亿 粮食耗尽">明朝覆灭的真实原因：人口近-2016-11-25</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/246/" title="python最常见的17个错误bug">python最常见的17个-2016-11-25</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/244/" title="王国之所以为王国">王国之所以为王国-2016-11-23</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/243/" title="三观超正却过不好">三观超正却过不好-2016-11-18</a></li>
+</ul>
+</div>
+<div id="newarticle">
+<div class="box-header">最新评论</div>
+<ul>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/256/" title="
+
+
+
+
+就你能，日
+
+">@刚哥2015：
+
+
+
+
+就你能，日
+
+</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/252/" title="
+
+
+
+
+
+
+">@刚哥2015：
+
+
+
+
+
+
+</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/256/" title="
+
+
+
+
+傻逼
+
+">磨人的小妖精：
+
+
+
+
+傻逼
+
+</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/255/" title="
+
+
+
+
+请告诉我，有么罗用？
+
+">@大井装逼男：
+
+
+
+
+请告诉我，有么罗用？</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/253/" title="
+
+
+
+
+派大星有毒！
+
+">磨人的小妖精：
+
+
+
+
+派大星有毒！
+
+</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/254/" title="
+
+
+
+
+回复一下就赚了3个积分！
+
+">@大井装逼男：
+
+
+
+
+回复一下就赚了3个积</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/252/" title="
+
+
+
+
+刷积分专用帖！
+
+">秋裤外穿不论：
+
+
+
+
+刷积分专用帖！
+</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/249/" title="
+
+
+
+
+
+
+">东风吹战鼓擂：
+
+
+
+
+
+
+</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/252/" title="
+
+
+
+
+
+
+">东风吹战鼓擂：
+
+
+
+
+
+
+</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/252/" title="
+
+
+
+
+
+
+">磨人的小妖精：
+
+
+
+
+
+
+</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/252/" title="
+
+
+
+
+
+
+">大神大神大神：
+
+
+
+
+
+
+</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/41/" title="
+
+
+
+
+略屌啊略屌啊略屌
+
+">@刚哥2015：
+
+
+
+
+略屌啊略屌啊略屌
+</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/252/" title="
+
+
+
+
+看上去很吊的样子
+
+">老王头是流氓：
+
+
+
+
+看上去很吊的样子
+</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/252/" title="
+
+
+
+
+楼主屌爆了！
+
+">东风吹战鼓擂：
+
+
+
+
+楼主屌爆了！
+
+</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/249/" title="
+
+
+
+
+
+
+">老王老王本领强：
+
+
+
+
+
+
+</a></li>
+</ul>
+</div>
+</div>
+<div id="leftbar">
+<div id="about">
+<div class="box-header">关于博主</div>
+<div class="about-me">
+<img alt="" src="http://www.slyyc.asia/site_medias/imgs/me.jpg">
+<ul>
+<li> <strong>坤坤大神</strong>
+                    ,资深不务正业者
+                </li>
+<li>现居郑州</li>
+<li id="mail-here">欢迎给我发邮件咨询</li>
+<li>
+<wb:follow-button height="24" type="gray_3" uid="1611979577" width="67"></wb:follow-button>
+</li>
+</ul>
+</img></div>
+</div>
+<div id="about">
+<div class="box-header">文章分类</div>
+<div class="cat">
+<ul>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/1/" title="1">技术开发</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/2/" title="2">bug日志</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/3/" title="3">解决方案</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/4/" title="4">代码分析</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/5/" title="5">休闲旅游</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/6/" title="6">风土人情</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/7/" title="7">邻里之间</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/8/" title="8">小城大事</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/9/" title="9">育儿经验</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/10/" title="10">生活窍门</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/11/" title="11">生活感悟</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/12/" title="12">娱乐八卦</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/13/" title="13">资讯分享</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/14/" title="14">科技之光</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/15/" title="15">美文分享</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/16/" title="16">美食佳肴</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/17/" title="17">新闻转载</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/18/" title="18">电影欣赏</a></li>
+<li><a href="http://www.slyyc.asia/MyBlog/classfy/19/" title="19">居家设计</a></li>
+</ul>
+</div>
+</div>
+<div id="about">
+<div class="box-header">我的页面</div>
+<div class="cat">
+<ul>
+<li><a href="#" title="1">windows使用技巧</a></li>
+<li><a href="#" title="2">分子生物学工具</a></li>
+<li><a href="#" title="3">python社区讨论组</a></li>
+<li><a href="#" title="4">旅游见闻分享</a></li>
+<li><a href="#" title="5">源码下载</a></li>
+<li><a href="#" title="6">南方周末版</a></li>
+<li><a href="#" title="7">家居小技巧</a></li>
+<li><a href="#" title="8">周末指南</a></li>
+<li><a href="#" title="9">HTML-W3C</a></li>
+<li><a href="#" title="10">学习笔记</a></li>
+<li><a href="#" title="11">Linux开发</a></li>
+<li><a href="#" title="12">Android开发</a></li>
+<li><a href="#" title="12">BootStrap快速开发</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="content_inner">
+<div class="box-header">大神的最新文章</div>
+<div id="post-list">
+<ul>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/258/" title="ntpath join(path, *paths) 发生UnicodeDecodeError的Bug的解决方案 ">ntpath join(path</a>
+<span class="viewcount"><small>浏览：<i>2</i>次</small></span>
+<span class="viewcount"> <i>2016-12-22</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/257/" title="30个有关Python的小技巧">30个有关Python的小技巧</a>
+<span class="viewcount"><small>浏览：<i>18</i>次</small></span>
+<span class="viewcount"> <i>2016-12-20</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/256/" title="记录学习Biopython出现的一次重大bug">记录学习Biopython出现的</a>
+<span class="viewcount"><small>浏览：<i>22</i>次</small></span>
+<span class="viewcount"> <i>2016-12-19</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/255/" title="wouderful tonight">wouderful tonigh</a>
+<span class="viewcount"><small>浏览：<i>13</i>次</small></span>
+<span class="viewcount"> <i>2016-12-14</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/254/" title="一支钢笔的故事">一支钢笔的故事</a>
+<span class="viewcount"><small>浏览：<i>13</i>次</small></span>
+<span class="viewcount"> <i>2016-12-07</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/253/" title="回忆南京的混沌摊">回忆南京的混沌摊</a>
+<span class="viewcount"><small>浏览：<i>11</i>次</small></span>
+<span class="viewcount"> <i>2016-12-07</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/252/" title="嵩山少林一日游">嵩山少林一日游</a>
+<span class="viewcount"><small>浏览：<i>43</i>次</small></span>
+<span class="viewcount"> <i>2016-12-05</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/251/" title="图片一组设计开发">图片一组设计开发</a>
+<span class="viewcount"><small>浏览：<i>17</i>次</small></span>
+<span class="viewcount"> <i>2016-12-02</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/250/" title="【头条】郑州空降一所大学">【头条】郑州空降一所大学</a>
+<span class="viewcount"><small>浏览：<i>23</i>次</small></span>
+<span class="viewcount"> <i>2016-11-28</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/249/" title="另一角度的冯小刚">另一角度的冯小刚</a>
+<span class="viewcount"><small>浏览：<i>20</i>次</small></span>
+<span class="viewcount"> <i>2016-11-28</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/248/" title="【置顶】请大家文明发帖">【置顶】请大家文明发帖</a>
+<span class="viewcount"><small>浏览：<i>17</i>次</small></span>
+<span class="viewcount"> <i>2016-11-28</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/247/" title="明朝覆灭的真实原因：人口近2亿 粮食耗尽">明朝覆灭的真实原因：人口近2亿 </a>
+<span class="viewcount"><small>浏览：<i>25</i>次</small></span>
+<span class="viewcount"> <i>2016-11-25</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/246/" title="python最常见的17个错误bug">python最常见的17个错误b</a>
+<span class="viewcount"><small>浏览：<i>15</i>次</small></span>
+<span class="viewcount"> <i>2016-11-25</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/244/" title="王国之所以为王国">王国之所以为王国</a>
+<span class="viewcount"><small>浏览：<i>8</i>次</small></span>
+<span class="viewcount"> <i>2016-11-23</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/243/" title="三观超正却过不好">三观超正却过不好</a>
+<span class="viewcount"><small>浏览：<i>21</i>次</small></span>
+<span class="viewcount"> <i>2016-11-18</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/242/" title="图片限制大小不美气">图片限制大小不美气</a>
+<span class="viewcount"><small>浏览：<i>29</i>次</small></span>
+<span class="viewcount"> <i>2016-11-18</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/241/" title="一个用来爬虫豆瓣害羞组的程序脚本">一个用来爬虫豆瓣害羞组的程序脚本</a>
+<span class="viewcount"><small>浏览：<i>36</i>次</small></span>
+<span class="viewcount"> <i>2016-11-18</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/240/" title="MT离合器为什么会烧片">MT离合器为什么会烧片</a>
+<span class="viewcount"><small>浏览：<i>19</i>次</small></span>
+<span class="viewcount"> <i>2016-11-16</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/239/" title="河南为什么被黑">河南为什么被黑</a>
+<span class="viewcount"><small>浏览：<i>18</i>次</small></span>
+<span class="viewcount"> <i>2016-11-07</i></span>
+</li>
+<li><a href="http://www.slyyc.asia/MyBlog/topics/238/" title=" 王莽改制后为何仅一年就灭亡"> 王莽改制后为何仅一年就灭亡</a>
+<span class="viewcount"><small>浏览：<i>10</i>次</small></span>
+<span class="viewcount"> <i>2016-11-04</i></span>
+</li>
+</ul>
+</div>
+<div id="fenye">
+<button class="btn btn-default btn-xs" type="button">首页 </button>
+<button class="btn btn-default btn-xs" type="button">1</button>
+<button class="btn btn-primary btn-xs" onclick="location='?p=2&amp;ps=20'" type="button">2</button>
+<button class="btn btn-primary btn-xs" onclick="location='?p=3&amp;ps=20'" type="button">3</button>
+<button class="btn btn-primary btn-xs" onclick="location='?p=4&amp;ps=20'" type="button">4</button>
+<button class="btn btn-primary btn-xs" onclick="location='?p=5&amp;ps=20'" type="button">5</button>
+<button class="btn btn-primary btn-xs" onclick="location='?p=6&amp;ps=20'" type="button">6</button>
+<button class="btn btn-primary btn-xs" onclick="location='?p=2&amp;ps=20'" type="button">&gt;</button>
+<button class="btn btn-primary btn-xs" onclick="location='?p=12&amp;ps=20'" type="button">末页</button>
+                    
+                    
+                页1/共12页
+                        共234篇
+                       每页 <a href="?p=1&amp;ps=20">20</a>
+<a href="?p=1&amp;ps=40">40</a>
+<a href="?p=1&amp;ps=80">80</a> 篇
+                   
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<a href="http://www.slyyc.asia/MyBlog/">首页</a>  
+ <font style="font-family:arial,Times New Roman;">CopyRights@2013~2016</font>
+ 本页面访问量统计：4206人访问本页面！
+ <!-- Button trigger modal -->
+<button class="btn btn-primary btn-xs" data-target="#myModalmail" data-toggle="modal" id="sd" type="button">
+社区邮箱登陆
+</button>
+<!-- Modal -->
+<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="myModalmail" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+<h4 class="modal-title" id="myModalLabel">登陆社区邮箱</h4>
+</div>
+<div class="modal-body">
+<div class="bizmail_loginpanel" id="divLoginpanelVer">
+<div class="bizmail_LoginBox">
+<h3>登录邮箱</h3>
+<form action="https://exmail.qq.com/cgi-bin/login" method="post" name="form1" onsubmit="return checkInput()" target="_blank">
+<input name="firstlogin" type="hidden" value="false"/>
+<input name="errtemplate" type="hidden" value="dm_loginpage"/>
+<input name="aliastype" type="hidden" value="other"/>
+<input name="dmtype" type="hidden" value="bizmail"/>
+<input name="p" type="hidden" value=""/>
+<div class="bizmail_column">
+<label>帐号:</label>
+<div class="bizmail_inputArea">
+<input class="text" name="uin" type="text" value=""/>@<span>slyyc.asia</span>
+<input name="domain" type="hidden" value="slyyc.asia"/>
+</div>
+</div>
+<div class="bizmail_column">
+<label>密码:</label>
+<div class="bizmail_inputArea"><input class="text" name="pwd" type="password" value=""/>
+</div>
+</div>
+<div class="bizmail_SubmitArea">
+<input class="" name="" style="width:66px;" type="submit" value="登录"/>
+<a href="https://exmail.qq.com/cgi-bin/readtemplate?check=false&amp;t=bizmail_orz" target="_blank">忘记密码？</a>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-default" data-dismiss="modal" type="button">关闭</button>
+</div>
+</div>
+</div>
+</div>
+<div id="beian" style="text-align:center;">
+本应用由新浪云计算平台提供服务支持
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257476379'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1257476379%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+<img alt="云计算提供商" src="http://sae.sina.com.cn/doc/_images/poweredby-120x33px.png"><br>
+本站工信部备案号：<a href="http://www.beianbeian.com/beianxinxi/a7816513-b67e-436d-8fdf-1f71f86929e9.html">豫ICP备14029863号-1</a>
+<a href="http://shang.qq.com/wpa/qunwpa?idkey=bd9472b87a3d35d77384ec07deb6035e5028cb73b1419d55162ab0da545d0644" target="_blank"><img alt="升龙又一城F区业主群" border="0" src="http://pub.idqqimg.com/wpa/images/group.png" title="升龙又一城F区业主群"/></a>
+</br></img></div>
+</div>
+</body>
+</link></link></link></meta></html> 

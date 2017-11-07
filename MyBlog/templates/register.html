@@ -1,0 +1,231 @@
+{% extends "base.html" %} 
+{% block content %} 
+
+<title>新用户注册页面</title>
+<style>
+    .register { BORDER: #7F9DB9 1px solid; FONT-SIZE: 12px; TEXT-ALIGN: LEFT; width:160px;}
+    sub{ color:red;margin:5px;}
+    .b1,.b2,.b3,.b4,.b1b,.b2b,.b3b,.b4b,.b{display:block;overflow:hidden;}
+    .b1,.b2,.b3,.b1b,.b2b,.b3b{height:1px;}
+    .b2,.b3,.b4,.b2b,.b3b,.b4b,.b{border-left:1px solid #B9D3EE;border-right:1px solid #B9D3EE;}
+    .b1,.b1b{margin:0 5px;background:#B9D3EE;}
+    .b2,.b2b{margin:0 3px;border-width:2px;}
+    .b3,.b3b{margin:0 2px;}
+    .b4,.b4b{height:2px;margin:0 1px;}
+    .d1{}
+    .k {height:auto;padding:5px;}
+</style>
+<script language="javascript">
+$(document).ready(function() {
+	$('#submit').attr({"disabled":"disabled"});
+	var va_user=false;
+	var va_pass=false;
+	var va_pass2=false;
+	var va_email=false;
+	 $("input#username").blur(function(){
+	  var username = $.trim($("input#username").val());
+	  var len=username.length
+	  if(len<6){
+		  $('label#name_errors').html('<font color="red"><span>&times;&nbsp;&nbsp;只能是字母数字且不能少于6个字符哦</span></font>');
+		  $('#submit').attr({"disabled":"disabled"});
+	  }else{
+		  $.get("http://{{ localip }}/MyBlog/checkuser/?username="+username,function(data,status){
+			     if (data == "null"){
+			      $('label#name_errors').html('<font color="green"><span>&radic;&nbsp;&nbsp;"' + username + '"可以注册</span></font>');
+			      va_user=true;
+			      if(va_user&&va_pass&&va_pass2&&va_email){
+						 $('#submit').removeAttr("disabled");
+					 }else{
+						 $('#submit').attr({"disabled":"disabled"});
+					 }
+			     }else{
+			      $('label#name_errors').html('<font color="red"><span>&times;&nbsp;&nbsp;“' + username + '”已被注册</span></font>');
+			      $('#submit').attr({"disabled":"disabled"});
+			     }});
+	  }});
+	 $("input#password").blur(function(){
+		 var password = $.trim($("input#password").val());
+		 var plen =password.length;
+		 if(plen<6){
+			 $('label#password_errors').html('<font color="red"><span>&times;&nbsp;&nbsp;密码不能少于6个字符！</span></font>');
+			 $('#submit').attr({"disabled":"disabled"});
+		 }else{
+			 $('label#password_errors').html('<font color="green"><span>&radic;&nbsp;&nbsp;密码符合规范！</span></font>');
+			 va_pass=true;
+			 if(va_user&&va_pass&&va_pass2&&va_email){
+				 $('#submit').removeAttr("disabled");
+			 }else{
+				 $('#submit').attr({"disabled":"disabled"});
+			 }
+		 }
+	 });
+	 $("input#password2").blur(function(){
+		 var password = $.trim($("input#password").val());
+		 var password2 = $.trim($("input#password2").val());
+		 var plen =password2.length;
+		 if(plen<6){
+			 $('label#password2_errors').html('<font color="red"><span>&times;&nbsp;&nbsp;密码不能少于6个字符！</span></font>');
+			 $('#submit').attr({"disabled":"disabled"});
+		 }else if(password==password2){
+			 $('label#password2_errors').html('<font color="green"><span>&radic;&nbsp;&nbsp;两次密码一致！</span></font>');
+			 va_pass2=true;
+			 if(va_user&&va_pass&&va_pass2&&va_email){
+				 $('#submit').removeAttr("disabled");
+			 }else{
+				 $('#submit').attr({"disabled":"disabled"});
+			 }
+		 }else{
+			 $('label#password2_errors').html('<font color="red"><span>&times;&nbsp;&nbsp;两次密码不一致，请重新输入！</span></font>');
+			 $('#submit').attr({"disabled":"disabled"});
+		 }
+	 });
+	 $("input#email").blur(function(){
+		 var email_addr=$.trim($("input#email").val());
+		 if (!email_addr.match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)){
+			 $('label#email_errors').html('<font color="red"><span>&times;&nbsp;&nbsp;邮箱格式不正确！</span></font>');
+			 $('#submit').attr({"disabled":"disabled"});
+		 }else{
+			 $('label#email_errors').html('<font color="green"><span>&radic;&nbsp;&nbsp;邮箱格式正确，请提交注册信息！</span></font>');
+			 va_email=true;
+			 if(va_user&&va_pass&&va_pass2&&va_email){
+				 $('#submit').removeAttr("disabled");
+			 }else{
+				 $('#submit').attr({"disabled":"disabled"});
+			 }
+		 }
+	 }); 
+	 });
+</script>
+<div style="margin-top:5px;">
+<b class="b1"></b><b class="b2 d1"></b><b class="b3 d1"></b><b class="b4 d1"></b>
+<div class="b d1 k">
+<h2>新用户注册</h2>
+<form class="form-horizontal" role="form" action="http://{{ localip }}/MyBlog/sregister/" method="POST">{% csrf_token %}
+ <div class="form-group">
+<label for="username" class="col-sm-2 control-label">起个响亮名号：</label>
+<div class="col-sm-4"><input id="username" class="form-control" type="text" placeholder="请输入用户名称" class="register" name="account" /></div><div class="col-sm-6"><sub>*</sub><label for="username" id="name_errors"></label>
+</div>
+</div>
+ <div class="form-group">
+<label for="password" class="col-sm-2 control-label">输入登录密码：</label>
+<div class="col-sm-4"><input id="password" class="form-control" type="password" placeholder="请输入密码" class="register" name="password" /></div><div class="col-sm-6"><sub>*</sub><label for="password" id="password_errors"></label>
+</div>
+</div>
+ <div class="form-group">
+<label for="password2" class="col-sm-2 control-label">确认登录密码：</label>
+<div class="col-sm-4"><input id="password2" class="form-control" type="password" placeholder="请再次输入密码" class="register" name="password2" /></div><div class="col-sm-6"><sub>*</sub><label for="password2" id="password2_errors"></label>
+</div>
+</div>
+ <div class="form-group">
+<label for="email" class="col-sm-2 control-label">请输入邮箱地址：</label>
+<div class="col-sm-4"><input id="email" class="form-control" type="text" placeholder="请输入邮件地址" class="register" name="email" /></div><div class="col-sm-6"><sub>*</sub><label for="email" id="email_errors"></label>
+</div>
+</div>
+<div class="col-sm-2"></div>
+<div class="col-sm-10">
+<div class="checkbox">
+    <label>
+      <input type="checkbox" checked> 我同意服务条款
+    </label>
+ </div>
+ </div>
+<div style="margin-left:5px;" name="tk">
+<h2>服务条款</h2>
+<div style="height:320px;width:800px;text-align:left;overflow:scroll;">
+1 服务条款的确认和接纳  <br> 
+感谢你注册本网站。凡进入及使用本网站，即代表你在法律上接纳本网站订定的服务条款。你在注册过程中，如选择"同意服务条款"的选项，一旦注册成功，这表示你与本网站达成并接受如下相关服务协议或条款。<br>
+ 
+2 一般条款  <br>
+本网站不得用作任何非法用途。本网站将不时修订服务条款的内容，因此，请你在进入或使用本网站时，经常复阅服务条款的内容。最新修订的服务条款一经登出，任何使用本网站或本网站服务的人士，即视为已接纳经修订的服务条款内容。任何时候倘你不接纳服务条款的内容，请不要使用本网站。本网站明文拒绝由你对服务条款提出任何增订条文或任何与本服务条款内容有冲突的条文，任何此等条文均不具任何效力。
+你明白及同意本网站可随时中止本网站的运作或更改网站内容而毋须作出任何通知。
+你也明白及同意本网站可随时以任何理由中止或限制你使用本网站而毋须作出任何通知。<br>
+
+3 版权及使用限制  <br>
+为了保护知识产权，保障著作人权益，本网站及其注册用户及本网页内的资料提供者拥有此网页内所有资料的版权。未经本网站的明确书面许可，任何人不得复制或在非本网站所属的服务器上做镜像。本网站不保证为向用户提供便利而设置的外部链接的准确性和完整性。
+本网站提供的一切服务，包括但不限於文字、内容、照片、录像、声音及图片，均属本网站的财产，而且受到版权法及其他知识产权法例所保障。
+本网站有权利发布注册会员提供（上传）的个人形象照片，会员向本网站提供（上传）的个人照片必须是真实有效的，若滥用他人照片所造成的一切法律责任由该会员承担，本网站将不承担任何法律责任。 <br>
+本网站及一切有关服务，只供你作个人及非商业用途。你同意不得复制、翻制、修改、展示、展出、印制或储存本网站提供的任何服务内容，并不得复制本网站内容制作任可衍生产品。你也同意，除非得到本网站明文准许，否则不得向任何人士，包括但不限于在同一公司或机构内的人士发布、传送、广播或通传任何由本网站提供的服务内容，惟在以下情况，则属例外：
+你可以非商业用途并在不收取费用的情况下，间歇或及非经常性地将本网站提供服务的小部分内容翻制、分发、展示或传送予少数人士，但有关服务须以该服务在本网站所展示的同一形式出现，而且须附有所有版权及专利标示、资料来源，并附有获本网站授权使用。
+本网站列有个别人士及机构或感兴趣的事实、观点、意见及建议，惟本网站并不对此等观点、意见及建议的准确程度、完整性或适时性提供任何保证，亦不一定认同此等观点、意见及建议。<br>
+
+4 信息提供  <br>
+为保障你的合法权益，避免在提供服务时因你的注册资料与真实情况不符而发生纠纷，你在本网站注册时务必按照真实、全面、准确的原则填写。对因你自身原因而造成的无法联系及其它服务，本网站概不负责。如果你提供的资料包含有不正确的信息，本网站保留结束你使用该服务资格的权利。<br>
+
+5 资料隐私  <br> 
+尊重你个人隐私是本站的一项基本政策。所以，作为对以上你所提供信息的补充，本站一定不会公开、编辑或透露你的注册资料及保存在本站各项服务中的非公开内容，除非本站在诚信的基础上认为透露这些信息在以下几种情况是必要的：<br>
+a) 遵守有关法律规定，包括在国家有关机关查询时，提供你在本站的网页上发布的信息内容及其发布时间、互联网地址或者域名。<br>
+b) 遵从本站产品服务程序。<br>
+c) 保持维护本站的商标所有权。<br>
+d) 在紧急情况下竭力维护你个人和社会大众的隐私安全。<br>
+e) 本站及关联方为了提供更多更好的服务而有必要与你进行联系。<br>
+
+6 资料安全  <br>
+本网站对你所注册的信息提供最大限度的安全保障。同时，你务必对其你的帐户密码、个人帐号等信息自行保密，免被盗用或窜改。你如发现上述情况请立即与本网站联系。<br>
+
+7 用户权利   <br>
+你有权对个人登记资料进行查询、修改。但，为保护你注册信息以及你资金安全，你对个人资料进行修改时，需同意并依照本网站的相关规定。 
+你可免费使用本网站提供的各种服务。<br>
+
+8 本站信息的储存及限制  <br>
+本网站不对你所发布信息的删除或储存失败负责。本站没有对信息的传输量规定上限，但是它有判定你的行为是否符合本站服务条款的要求和精神的保留权利，如果你违背了服务条款的规定，则中断其服务的帐号。本站内所有的文章版权归原文作者和本站共同所有，任何人需要转载本站内文章，必须征得原文作者或本站授权。<br>
+
+ 
+9 用户管理 <br>
+你单独承担发布内容的责任。你对服务的使用是根据所有适用于服务的地方法律、国家法律和国际法律标准的。你承诺：<br>
+1) 在本站的网页上发布信息或者利用本站的服务时必须符合中国有关法规(部分法规请见附录)，不得在本站的网页上或者利用本站的服务制作、复制、发布、传播以下信息：<br>
+a) 反对宪法所确定的基本原则的；<br>
+b) 危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；<br>
+c) 损害国家荣誉和利益的；<br>
+d) 煽动民族仇恨、民族歧视，破坏民族团结的；<br>
+e) 破坏国家宗教政策，宣扬邪教和封建迷信的；<br>
+f) 散布谣言，扰乱社会秩序，破坏社会稳定的；<br>
+g) 散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；<br>
+h) 侮辱或者诽谤他人，侵害他人合法权益的；<br>
+i) 含有法律、行政法规禁止的其他内容的。<br>
+2) 在本站的网页上发布信息或者利用本站的服务时还必须符合其他有关国家和地区的法律规定以及国际法的有关规定。<br>
+3) 不利用本站的服务从事以下活动：<br>
+a) 未经允许，进入计算机信息网络或者使用计算机信息网络资源的；<br>
+b) 未经允许，对计算机信息网络功能进行删除、修改或者增加的；<br>
+c) 未经允许，对进入计算机信息网络中存储、处理或者传输的数据和应用程序进行删除、修改或者增加的；<br>
+d) 故意制作、传播计算机病毒等破坏性程序的；<br>
+e) 其他危害计算机信息网络安全的行为。<br>
+4) 以任何方式干扰本站的服务。<br>
+5) 遵守本站的所有其他规定和程序。<br>
+你需对自己在使用本站服务过程中的行为承担法律责任。你理解，如果本站发现其网站传输的信息明显属于上段第(1)条所列内容之一，依据中国法律，本站有义务立即停止传输，保存有关记录，向国家有关机关报告，并且删除含有该内容的地址、目录或关闭服务器。你使用本站电子公告服务，包括电子布告牌、电子白板、电子论坛、网络聊天室和留言板等以交互形式为上网你提供信息发布条件的行为，也须遵守本条的规定以及本站将专门发布的电子公告服务规则，上段中描述的法律后果和法律责任同样适用于电子公告服务的用户。<br>
+若你的行为不符合以上提到的服务条款，本站将作出独立判断立即取消用户服务帐号。<br>
+
+10 免责声明  <br>
+发生下列情况时本网站不予承担任何法律责任： <br>
+a) 由于用户将密码告知他人或与他人共享注册帐户，由此导致的任何个人资料泄露，以及由此产生的纠纷。 <br>
+b) 任何由于黑客攻击、计算机病毒侵入或发作、因政府管制而造成的暂时性关闭等影响网络正常经营之不可抗力而造成的个人资料或委托购买指令泄露、丢失、被盗用、被篡改或本网站未能收到等，以及由此产生的纠纷。 <br>
+c) 由于与本网站链接的其它网站所造成之个人资料泄露及由此而导致的任何争议和后果。<br>
+d) 任何由于不可抗力因素（如地震、火灾、水灾、战争、国家以及电信线路故障等非本网站所能控制的因素）而导致的情况。<br>
+另外，由于本网站服务的资料来源众多，加上电子传送形式本身的限制，因此本网站及本服务或会出现延误、遗漏或失准。本网站及网站内容以「既有情况」提供，本网站并不提供任何保证。本网站无法也不会就本网站或本网站所提供内容的准确性、完整性、时效性、适时性提供任何保证，也不就有关内容是否涉及侵权、拥有权、商业潜力、或是否适用于某一特定用途提供任何保证。本网站现此声明，不对此等情况提供任何明示或默示的保证。<br>
+倘你或任何其他人士在取得、收编、诠释、报导或交付本网站及任何网站内容时，完全或部份由于疏忽或其他无法控制的事故，因直接使用本网站而导致死亡或个人损伤，本网站不会就有关损失或损伤承担任何责任。在任何情况下，你或任何其他人士因信赖本网站或本网站资料而作出的任何决定或采取的任何行动，本网站概不负责。除了直接损害赔偿外，本网站不对你或任何其他人士的任何损害赔偿（包括但不限于衍生性、特别的、附带、间接或类似的损害赔偿承担任何责任）。<br>
+ 
+11 与其他网站的连结  <br>
+本网站设有超连结(hyperlinks)，连结至由本网站以外其他人士营办的网站。提供该等超连结，只为方便使用者，及供使用者参考。你同意本网站毋须为该等网站的内容或运作承担任何责任。透过超连结由本网站连结到另一个网站，不代表本网站认同该网站的内容或该网站的经营者或经营方式。经由本网站连结的其他网站的内容，在多大程度取决你决定使用，全属你的个人责任。
+倘你有意经由本网站或经由本网站以外其他人士营办的「联营网站」（「联营网站」）进行买卖，交易人士或联营网站的经营者或其他与你交易的人士可能要求你提供若干资料，包括信用卡资料、扣数卡资料，或其他缴款机制的资料。你同意倘因与任何联营网站或交易人士或联营网站的营运者或其与之交易的人士进行交易而导致任何损失或损害，均毋须本网站承担任何责任。你同意你为进行交易而提供的一切资料均准确、完整及具时效。你同意缴付自你的信用卡、扣数卡或其他缴款机制扣除的款项，款额为扣除款项当时的实际数额。你亦须缴付与你所进行交易有关的税项。每个联营网站均载有该网站的私隐权政策，就该网站要求进行交易人士披露个人身份证明资料的政策作出说明。
+ <br>
+12 额外法律条款  <br>
+本服务条款、你的权利和责任，以及任何根据本服务条款而采取的行动，均受到中华人民共和国法例规管，一如本服务条款是一份完全在中国签订及完全在中国履行的合约一样。即使本服务条款内的任何条文在有关法例下属无效或无法执行，服务条款的其他条文也继续完全生效及有效，而有关无效或无法执行的条文则会由最接近原条文原意而属有效及能够执行的条文取代。
+任何未有在本服务条款明文订明的权利，均属保留权利。本服务条款是本网站及本服务的全部及最终协议，并取代任何你先前或同时与本网站就本网站及本服务所达成的沟通。
+<br>
+13 保留权利  <br>
+你与本网站之间任何目前及将来的业务秘密、专利、版权、商标、服务标记、技术，及根据本地或外地任何政府机关有关法例所享有的任何形式的专有权利，包括本服务的应用及登记的权利（「知识产权的权利」），任何时候均属本网站唯一专有的财产。本服务的一切目前及日后的权利及拥有权（包括目前或日后的技术使用本服务或本服务的任何部分）均保留予本网站专有使用。除非你已得到本服务条款特别准许，否则不得复制或以任何形式使用本服务或服务的任何部分。除非你已得到本网站以书面事先批准，否则不得使用本网站的知识产权权利或本服务；或参与或促成本服务的任何人士的姓名，或由其变化或衍生的任何服务。<br></div>
+</div>
+
+ <div class="form-group">
+<label id="va_all" class="col-sm-2"></label>
+<div class="col-sm-5">
+<button id="submit" class="btn btn-primary btn-lg" type="submit" >注册</button></div>
+<div class="col-sm-5">
+<button type="reset" class="btn btn-default btn-lg">清除</button> 
+</div>
+</div>
+</div>
+</form> 
+</div>
+<b class="b4b d1"></b><b class="b3b d1"></b><b class="b2b d1"></b><b class="b1b"></b>
+</div>
+{% endblock %}

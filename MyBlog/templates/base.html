@@ -1,0 +1,188 @@
+<html>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="baidu_union_verify" content="497f37171062087b28c8ce4015734948"> 
+<link type="text/css" href="http://{{localip}}/site_medias/css/base.css"rel="stylesheet">
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+<link href="http://cdn.bootcss.com/bootstrap-modal/2.2.5/css/bootstrap-modal.css" rel="stylesheet">
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> 
+<script src="http://{{localip}}/site_medias/js/menu.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-modal/2.2.5/js/bootstrap-modal.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-modal/2.2.5/js/bootstrap-modalmanager.min.js"></script>
+<script type="text/javascript" src="http://exmail.qq.com/zh_CN/htmledition/js_biz/outerlogin.js"  charset="utf-8"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var va_username=false;
+	var va_password=false;
+	$('input#logonname').blur(function(){
+		var logonname=$.trim($('input#logonname').val());
+		var ulen=logonname.length;
+		if(ulen<6){
+			$('label#logonname_errors').html('<font color="red"><span>&times;用户名少于6个字符</span></font>');
+			va_username=false;
+		}else{
+			  $.get("http://{{ localip }}/MyBlog/checkuser/?username="+logonname,function(data,status){
+				     if (data == "null"){
+				      $('label#logonname_errors').html('<font color="red"><span>&times;不存在该用户</span></font>');	
+				      va_username=false;
+				     }else{
+				      $('label#logonname_errors').html('<font color="green"><span>&radic;</span></font>');
+				      va_username=true;				    	 
+				     }});
+		  }
+	});
+	 $("input#logonpass").blur(function(){
+		 var logonpass = $.trim($("input#logonpass").val());
+		 var llen =logonpass.length;
+		 if(llen<6){
+			 $('label#logonpass_errors').html('<font color="red"><span>&times;密码少于6个字符！</span></font>');
+			 va_password=false;
+		 }else{
+			 $('label#logonpass_errors').html('<font color="green"><span>&radic;</span></font>');
+			 va_password=true;
+		 }
+	 });
+	 $("input#logon").click(function(pre){
+		if(va_username&&va_password){
+			
+		}else{
+			if(va_username){
+				alert("请输入密码!");
+				$("input#logonpass").focus();
+				pre.preventDefault();//阻止表单提交
+			}else if(va_password){
+				alert("请输入正确的用户名!");
+				$("input#logonname").focus();
+				pre.preventDefault();//阻止表单提交
+			}else{
+				alert("用户名和密码不能为空!");
+				$("input#logonname").focus();
+				pre.preventDefault();//阻止表单提交
+			}
+		} 
+	 });
+});
+</script>
+<body>
+{% if request.session.is_logined %}
+<div id="info">
+<ul id="sddm">
+<li><a href="#" onmouseover="mopen('m0')" onmouseout="mclosetime()">{{ request.session.nick }}</a></li>
+<li><a href="http://{{ localip }}/MyBlog/userinfo/" onmouseover="mopen('m1')" onmouseout="mclosetime()">用户中心</a>
+<div id="m1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+		<a href="http://{{ localip }}/MyBlog/addblog/">发表文章</a>
+		<a href="http://{{ localip }}/MyBlog/manageblog/?listtype=all">管理文章</a>
+		<a href="http://{{ localip }}/MyBlog/showoligo/">我的序列</a>
+		<a href="http://{{ localip }}/MyBlog/oligo/">探针分析</a>
+</div>
+</li>
+<li><a href="http://{{ localip }}/MyBlog/loginout/">退出</a></li>
+<li>最后登录：{{ request.session.lastlogin }}</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li>可用积分：{{ request.session.usd }}</li>
+</ul>
+</div>
+ {% else %}
+<div id="info">
+<form class="form-inline" role="form" id="checkin" action="http://{{ localip }}/MyBlog/login/" method="POST">{% csrf_token %}
+<label class="control-label" for="logonname">用户登录：</label>
+<input class="form-control input-sm" id="logonname" type="text" placeholder="请输入用户名" class="login" name="account" />
+<label class="control-label" id="logonname_errors" for="logonname"></label>
+<label class="control-label" for="logonpass">密码：</label>
+<input class="form-control input-sm" id="logonpass" type="password" placeholder="请输入密码" class="login" name="password" />
+<label class="control-label" id="logonpass_errors" for="logonpass"></label>
+<div class="checkbox"><label><input type="checkbox">记住我</label></div>
+<button id="logon" type="submit" class="btn btn-primary btn-xs"">登陆</button>没有账号 <a name="register" id="register" href="http://{{ localip }}/MyBlog/register/">注册</a>一个
+</form> 
+</div>
+{% endif %}
+<img src="http://{{ localip }}/site_medias/imgs/logo.png" />
+<table border="0">
+<tbody>
+<tr>
+<td width="auto">
+ <div id="sea_box"> 
+<form id="sea_form" method="post" action="http://{{ localip }}/MyBlog/search/">
+<input type="text" id="s" placeholder="请输入电影、书籍、文章信息" class="swap_value" name="search_words" /> 
+<input type="image" src="http://{{ localip }}/site_medias/imgs/btn_search_box.gif" width="27" height="24" id="go" alt="检索" title="检索" /> 
+</form> 
+</div> 
+</td>
+<td align="right" width="700">
+<div id="navi" style="float:right;">
+<ul>
+<li><a href="http://{{ localip }}/" alt="首页">广场</a></li>
+<li><a href="http://{{ localip }}/movie/?tag=top250">电影</a></li>
+<li><a href="http://{{ localip }}/photo/">图片</a></li>
+<li><a href="http://{{ localip }}/book/?tag=top250">读书</a></li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+ {% block content %}
+ <!-- 此处为模板引用位置 -->
+ {% endblock %}
+<div id="footer">
+<a href="http://{{ localip }}/MyBlog/">首页</a>&nbsp;&nbsp;
+ <font style="font-family:arial,Times New Roman;">CopyRights@2013~{{ thisyear }}</font>
+ 本页面访问量统计：{{ count }}人访问本页面！
+ <!-- Button trigger modal -->
+<button id="sd" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalmail">
+社区邮箱登陆
+</button>
+<!-- Modal -->
+ <div class="modal fade" id="myModalmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+        <h4 class="modal-title" id="myModalLabel">登陆社区邮箱</h4>
+      </div>
+      <div class="modal-body">
+<div id="divLoginpanelVer" class="bizmail_loginpanel">
+<div class="bizmail_LoginBox">
+<h3>登录邮箱</h3>
+<form name="form1" action="https://exmail.qq.com/cgi-bin/login" target="_blank" method="post" onsubmit="return checkInput()">
+<input type="hidden" name="firstlogin" value="false" />
+<input type="hidden" name="errtemplate" value="dm_loginpage" />
+<input type="hidden" name="aliastype" value="other" />
+<input type="hidden" name="dmtype" value="bizmail" />
+<input type="hidden" name="p" value="" />
+<div class="bizmail_column">
+<label>帐号:</label>
+<div class="bizmail_inputArea">
+<input type="text" name="uin" class="text" value="" />@<span>slyyc.asia</span>
+<input type="hidden" name="domain" value="slyyc.asia" />
+</div>
+</div>
+<div class="bizmail_column">
+<label>密码:</label>
+<div class="bizmail_inputArea"><input type="password" name="pwd" class="text" value="" />
+</div>
+</div>
+<div class="bizmail_SubmitArea">
+<input type="submit" class="" name="" style="width:66px;" value="登录" />
+<a href="https://exmail.qq.com/cgi-bin/readtemplate?check=false&t=bizmail_orz" target="_blank">忘记密码？</a>
+</div>
+</form>
+</div>
+</div> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="beian" style="text-align:center;">
+本应用由新浪云计算平台提供服务支持
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257476379'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1257476379%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+<img alt="云计算提供商" src="http://sae.sina.com.cn/doc/_images/poweredby-120x33px.png"><br>
+本站工信部备案号：<a href="http://www.beianbeian.com/beianxinxi/a7816513-b67e-436d-8fdf-1f71f86929e9.html">豫ICP备14029863号-1</a>
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=bd9472b87a3d35d77384ec07deb6035e5028cb73b1419d55162ab0da545d0644"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="升龙又一城F区业主群" title="升龙又一城F区业主群"></a>
+</div>
+</div>  
+  </body>  
+</html>   
