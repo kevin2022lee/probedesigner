@@ -146,6 +146,7 @@ def replace_RAGTC(seq):
     return  seq
 def reverseOligo(ss):
     if len(ss)!= 0:
+        re_seq=''
         strss=str(ss)
         for s in strss:
 #             global re_seq
