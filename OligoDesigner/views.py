@@ -148,7 +148,7 @@ def reverseOligo(ss):
     if len(ss)!= 0:
         strss=str(ss)
         for s in strss:
-            global re_seq
+#             global re_seq
             if s=='A':
                 re_s='T'
                 re_seq=re_seq+re_s
