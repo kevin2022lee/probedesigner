@@ -959,11 +959,11 @@ def GenerateProbesets(req):
         BL_final_list=[]
         for j in range(len(probesets_list)):
             if probesets_list[j][2]=="CE":
-                CE_final_list.append((probesets_list[j][0],probesets_list[j][1]+'tttttCTCTTGGAAAGAAAGT'))
+                CE_final_list.append((probesets_list[j][0],reverseOligo(probesets_list[j][1])+'tttttCTCTTGGAAAGAAAGT'))
             if probesets_list[j][2]=="BL":
-                BL_final_list.append((probesets_list[j][0],probesets_list[j][1]))
+                BL_final_list.append((probesets_list[j][0],reverseOligo(probesets_list[j][1])))
             if probesets_list[j][2]=="LE":
-                LE_final_list.append((probesets_list[j][0],probesets_list[j][1]))
+                LE_final_list.append((probesets_list[j][0],reverseOligo(probesets_list[j][1])))
         LE_final_final_list=[]
         for k in range(len(LE_final_list)):
             if LE_final_list.index(LE_final_list[k])%2==0:
