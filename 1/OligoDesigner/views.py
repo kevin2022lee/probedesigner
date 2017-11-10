@@ -589,7 +589,7 @@ def NonNshFilter(req):
         for i in range(len(probelist)):
             if probelist[i]<len(s)-20:
 #计算GC含量以及计算CE&LE 公式：
-                probedict.setdefault('p'+str(probelist[i]),[s[probelist[i]:probelist[i+1]],probelist[i]])
+                probedict.setdefault('p'+str(probelist[i]),[reverseOligo(s[probelist[i]:probelist[i+1]],probelist[i])])
         return render_to_response('showfilterprobe.html',{
                                                      'local':local,
                                                      'thisyear':thisyear,
@@ -960,11 +960,11 @@ def GenerateProbesets(req):
         BL_final_list=[]
         for j in range(len(probesets_list)):
             if probesets_list[j][2]=="CE":
-                CE_final_list.append((probesets_list[j][0],reverseOligo(probesets_list[j][1])+'tttttCTCTTGGAAAGAAAGT'))
+                CE_final_list.append((probesets_list[j][0],probesets_list[j][1]+'tttttCTCTTGGAAAGAAAGT'))
             if probesets_list[j][2]=="BL":
-                BL_final_list.append((probesets_list[j][0],reverseOligo(probesets_list[j][1])))
+                BL_final_list.append((probesets_list[j][0],probesets_list[j][1]))
             if probesets_list[j][2]=="LE":
-                LE_final_list.append((probesets_list[j][0],reverseOligo(probesets_list[j][1])))
+                LE_final_list.append((probesets_list[j][0],probesets_list[j][1]))
         LE_final_final_list=[]
         for k in range(len(LE_final_list)):
             if LE_final_list.index(LE_final_list[k])%2==0:
