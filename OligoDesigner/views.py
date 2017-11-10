@@ -589,7 +589,7 @@ def NonNshFilter(req):
         for i in range(len(probelist)):
             if probelist[i]<len(s)-20:
 #计算GC含量以及计算CE&LE 公式：
-                probedict.setdefault('p'+str(probelist[i]),[reverseOligo(s[probelist[i]:probelist[i+1]],probelist[i])])
+                probedict.setdefault('p'+str(probelist[i]),[reverseOligo(s[probelist[i]:probelist[i+1]]),probelist[i]])
         return render_to_response('showfilterprobe.html',{
                                                      'local':local,
                                                      'thisyear':thisyear,
