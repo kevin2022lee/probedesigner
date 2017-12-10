@@ -46,7 +46,7 @@
     <div class="panel-body">
         <p><b>CE-LE 交叉反应</b> 被ProbeDesigner软件认为是最终的背景来源，事实上，这些相互作用被用来建立在分析中的探针的最终分配。互补的CES和LEs可能通过以下机制互动。这可以通过排除在探针组之一或两个探针分配相同的服务从服务探讨预防。将探针的方法，计算ce-le相互作用，和重新分配是必要的，你可以想象，一个迭代的过程。使用赋值视图启用此过程。</p>
         <p>类似于CE和Le，NSH计算的ce-le交互使用X-聚体算法评价。PD搜索所有可能的延伸引物形式可能x-聚体（CEs vs. LEs），估计他们的稳定性，和他们。同样的组合计算，它将一个重的富X-聚体结果估计的ce-le交叉对背景的影响。所有的ce-le相互作用给出一个权重6类似le-amp交叉反应对于system 1检测。</p>
-   <p><img class="img" width="300px;" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjQyNTk3MjY3MDFfNg.png" /></p>
+   <p><img class="img" width="300px;" src="http://www.probedesigner.cn/static/images/MjAxNjEyMjMxNjQyNTk3MjY3MDFfNg.png" /></p>
     </div>
 </div>
         </div>
@@ -61,18 +61,18 @@
         当算法：该x-mer算法开始识别在所选的探针和通用序列之间所有可能产生的x-mer，一个简单的加权方案是用来预测每一个完美的
         x-mer混合的稳定性，并为所有的杂交结果总结每个探针与通用序列的交叉反应因子。下面的例子 ：</p>
     <p>1. 所有的可能的4聚体定义如下:</p>
-    <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjAxNTY2MTgyNTZfMj.png" /></p>
+    <p><img class="img" src="http://www.probedesigner.cn/static/images/MjAxNjEyMjMxNjAxNTY2MTgyNTZfMj.png" /></p>
     <p>这里有两个4聚体: TTTC-GAAA and TTCG-CGAA</p>
     <p>2. 任何一个x聚体 (以一个典型的4聚体为例) 被计算分值通过一个简单的加权方案。</p>
-    <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjAzMzAwMzUyOTVfMj.png" /></p>
+    <p><img class="img" src="http://www.probedesigner.cn/static/images/MjAxNjEyMjMxNjAzMzAwMzUyOTVfMj.png" /></p>
     <p>并且 3.所有的4聚体计算分值真多通用探针序列和设计探针交叉反应因子值</p>
-    <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjA0MTAxMzcyODFfMj.png" /></p>
+    <p><img class="img" src="http://www.probedesigner.cn/static/images/MjAxNjEyMjMxNjA0MTAxMzcyODFfMj.png" /></p>
     <P>一旦x聚体算法产生所有可能的通用序列的相互交叉反应的结果，NSH算法调用。</p>
     <p>1。每个x聚体得分乘以相应的权重因子（1X CE与AP，6X CE放大器的前导，15倍的CE与放大臂）确定探针的NSH评分。有一个结果为每个探针与通用序列的交叉反应。
     这个过程是执行一次假设探针是一个CE，一旦假设它是一个LE。在这个例子中，假设我们正在寻找一个ce-amp与所设计探针的交叉反应</p>
     <p align="center"><b>NSH 得分 = x-聚体得分 * 权重因子 = 1.375 * 6 =8.25</b></p>
     <p>2. x聚体的分数计算与其他探针NSH相互作用（这意味着x聚体算法也重新的计算探针间的交叉反应）。</p>
-     <p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNjE5MzA3ODIxNjFfNQ.png" /></p>
+     <p><img class="img" src="http://www.probedesigner.cn/static/images/MjAxNjEyMjMxNjE5MzA3ODIxNjFfNQ.png" /></p>
     </div>
 </div>
  
@@ -98,8 +98,8 @@
         <p>Probedesigner估计杂交稳定性及其背景影响。每一个相互作用的混合稳定性使用X-聚体算法评估（下面讨论），和混合背景的贡献乘以这个预测的加权因子的具体作用的稳定性计算。每个交互相关的系统1的共性评分如下。虽然建议使用默认设置，混合参数和NSH加权因素可以改变程序内使用NSH对话框。</p>    
 
 <p>作为一个例子，注意ce-amp臂相互作用重15倍。如果混合的稳定性从X-聚体造方法是计算，说，“1”，这种相互作用的CE NSH的成绩是15分（的富润机械制造结果的15倍）。现在，如果你正在关注，你想知道为什么CE -“放大器- ARM”的互动给予更多的重量比行政长官“AMP领导人”和行政长官-“AP探针”的互动。为15x3分子，每个AMP武器有AP探针三结合位点。这将产生45个结合位点的AP和CE探针应该有非特异性配对。从概念上讲你可以想象为什么这是一个互动，我们希望避免NSH。 </p>
-<p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNTUwNTgxOTk2OTFfMj.png" /></p>
-<p><img class="img" src="http://kkds1314-img2.stor.sinaapp.com/MjAxNjEyMjMxNTUyMzMwMzU1NTNfMj.png" /></p>
+<p><img class="img" src="http://www.probedesigner.cn/static/images/MjAxNjEyMjMxNTUwNTgxOTk2OTFfMj.png" /></p>
+<p><img class="img" src="http://www.probedesigner.cn/static/images/MjAxNjEyMjMxNTUyMzMwMzU1NTNfMj.png" /></p>
 <p align="center"><b>对于System 1 化学体系的NSH交叉反应</b></p>
     </div>
     
