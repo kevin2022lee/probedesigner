@@ -1063,5 +1063,7 @@ def BigData(request):
                                                   'bDNA':bDNA,
                                                   'pcr':pcr,
                                                   },context_instance=RequestContext(request))
-    
+def updatalog(request):
+    global local
+    return render_to_response('updatalog.html',{},context_instance=RequestContext(request))    
     

@@ -36,4 +36,5 @@ urlpatterns = patterns('',
     url(r'^tfdeal',tfdeal),
     url(r'^datatfshow',tfdealdata),
     url(r'^checkAccessionLen/(.+)/$',checkAccessionLen),
+    url(r'^updatalog',updatalog),
 )
