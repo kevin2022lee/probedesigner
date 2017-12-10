@@ -852,6 +852,8 @@ def Probegroupsvalues(req):
         LE_plist5=[]
         LE_plist6=[]
         LE_plist7=[]
+        LE_plist8=[]
+        LE_plist9=[]
         len_lep=len(LE_plist)
         if len_lep<=15:
             LE_plist1=LE_plist[0:len(LE_plist)]
@@ -888,6 +890,25 @@ def Probegroupsvalues(req):
             LE_plist5=LE_plist[60:75]
             LE_plist6=LE_plist[75:90]
             LE_plist7=LE_plist[90:len(LE_plist)]
+        elif 106<len_lep<=120:
+            LE_plist1=LE_plist[0:15]
+            LE_plist2=LE_plist[15:30]  
+            LE_plist3=LE_plist[30:45]
+            LE_plist4=LE_plist[45:60]
+            LE_plist5=LE_plist[60:75]
+            LE_plist6=LE_plist[75:90]
+            LE_plist7=LE_plist[90:105]
+            LE_plist8=LE_plist[105:len(LE_plist)]
+        elif 121<len_lep<=135:
+            LE_plist1=LE_plist[0:15]
+            LE_plist2=LE_plist[15:30]  
+            LE_plist3=LE_plist[30:45]
+            LE_plist4=LE_plist[45:60]
+            LE_plist5=LE_plist[60:75]
+            LE_plist6=LE_plist[75:90]
+            LE_plist7=LE_plist[90:105]
+            LE_plist8=LE_plist[105:120]
+            LE_plist9=LE_plist[120:len(LE_plist)]
         for c in range(len(CE_plist)):
             for l in range(len(LE_plist)):
                 CEtoLE_score.append(xmerclaccele.xmerCalcCELE(CE_plist[c][1], LE_plist[l][1]))
@@ -900,6 +921,8 @@ def Probegroupsvalues(req):
         CEtoLE_score_list5=[]
         CEtoLE_score_list6=[]
         CEtoLE_score_list7=[]
+        CEtoLE_score_list8=[]
+        CEtoLE_score_list9=[]
         
         if len_lep<=15:
             for clsl in CEtoLE_score_list:
@@ -942,7 +965,28 @@ def Probegroupsvalues(req):
                 CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
                 CEtoLE_score_list5.append((clsl[0],clsl[1][60:75])) 
                 CEtoLE_score_list6.append((clsl[0],clsl[1][75:90]))
-                CEtoLE_score_list6.append((clsl[0],clsl[1][90:len_lep]))       
+                CEtoLE_score_list7.append((clsl[0],clsl[1][90:len_lep]))
+        elif 105<len_lep<=120:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:45]))
+                CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
+                CEtoLE_score_list5.append((clsl[0],clsl[1][60:75])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][75:90]))
+                CEtoLE_score_list7.append((clsl[0],clsl[1][90:105])) 
+                CEtoLE_score_list8.append((clsl[0],clsl[1][105:len_lep]))   
+        elif 120<len_lep<=135:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:45]))
+                CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
+                CEtoLE_score_list5.append((clsl[0],clsl[1][60:75])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][75:90]))
+                CEtoLE_score_list7.append((clsl[0],clsl[1][90:105])) 
+                CEtoLE_score_list8.append((clsl[0],clsl[1][105:120]))    
+                CEtoLE_score_list9.append((clsl[0],clsl[1][120:len_lep]))   
                 
         return render_to_response('probegroupsvalues.html',{
                                                         'local':local,
@@ -956,6 +1000,8 @@ def Probegroupsvalues(req):
                                                         'LE_plist5':LE_plist5,
                                                         'LE_plist6':LE_plist6,
                                                         'LE_plist7':LE_plist7,
+                                                        'LE_plist8':LE_plist8,
+                                                        'LE_plist9':LE_plist9,
                                                         'CE_plist':CE_plist,
                                                         'BL_plist':BL_plist,
                                                         'CEtoLE_score_list':CEtoLE_score_list,
@@ -966,6 +1012,8 @@ def Probegroupsvalues(req):
                                                         'CEtoLE_score_list5':CEtoLE_score_list5,
                                                         'CEtoLE_score_list6':CEtoLE_score_list6,
                                                         'CEtoLE_score_list7':CEtoLE_score_list7,
+                                                        'CEtoLE_score_list8':CEtoLE_score_list8,
+                                                        'CEtoLE_score_list9':CEtoLE_score_list9,
                                                         },context_instance=RequestContext(req))   
 ##################################Generate probe sets#####################################################
 def GenerateProbesets(req):
