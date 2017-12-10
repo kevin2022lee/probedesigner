@@ -1065,5 +1065,7 @@ def BigData(request):
                                                   },context_instance=RequestContext(request))
 def updatelog(request):
     global local
-    return render_to_response('updatelog.html',{},context_instance=RequestContext(request))    
+    return render_to_response('updatelog.html',{
+        'local':local,
+        },context_instance=RequestContext(request))    
     
