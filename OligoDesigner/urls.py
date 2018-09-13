@@ -48,4 +48,3 @@ urlpatterns = patterns('',
     url(r'zzProbeSetsXmer',zzProbeSetsXmer),
     url(r'GeneratezzProbesets',GeneratezzProbesets),
 )
-)
