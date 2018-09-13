@@ -40,4 +40,5 @@ urlpatterns = patterns('',
     url(r'^updatelog',updatelog),
     url(r'^sightintro',sightintro),
     url(r'^zzprobe',zzprobe),
+    url(r'^seqresolve',seqresolve),
 )
