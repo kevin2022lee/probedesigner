@@ -1117,3 +1117,5 @@ def updatelog(request):
         'local':local,
         },context_instance=RequestContext(request))    
     
+    
+######################################代码更新结束--############################################################

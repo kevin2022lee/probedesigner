@@ -1,5 +1,6 @@
 from django.conf.urls import *
 from views import *
+from SightViews import *
 from django.contrib import admin
 import settings
 admin.autodiscover()
@@ -37,4 +38,5 @@ urlpatterns = patterns('',
     url(r'^datatfshow',tfdealdata),
     url(r'^checkAccessionLen/(.+)/$',checkAccessionLen),
     url(r'^updatelog',updatelog),
+    url(r'^sightintro',sightintro),
 )
