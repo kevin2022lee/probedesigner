@@ -181,3 +181,20 @@ def PCXzzprobe(req):
                                                                               },context_instance=RequestContext(req))
 #########################CE&LE cross#################################
 ###################################################
+def zzProbeSetsXmer(req):
+    if req.method=="POST":
+        LE_plist=[]
+        list_pkey=req.POST.getlist("pkey")
+        list_pseq=req.POST.getlist("pseq")
+        list_LE=req.POST.getlist("LEcheck")
+        probesets_list=[]
+        for i in range(len(list_pkey)):
+            probesets_list.append((list_pkey[i],list_pseq[i],list_LE[i]))
+        for j in range(len(probesets_list)):
+            if probesets_list[j][3]=="LE":
+                LE_plist.append((probesets_list[j][0],probesets_list[j][1]))
+        return render_to_response('zzprobe/showceleNSH.html',{
+                                                        'local':local,
+                                                        'thisyear':thisyear,
+                                                        'LE_plist':LE_plist,
+                                                        },context_instance=RequestContext(req))   
