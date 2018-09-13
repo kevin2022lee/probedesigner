@@ -49,6 +49,12 @@
       </td>
 
      {% if pxl.1.0.1 > 16 or pxl.1.3 > 70 %}
+    <td><font color="red"><b>{{pxl.1.0.1}}</b></font></td>
+    {% else %}
+    <td>{{pxl.1.0.1}}</td>
+    {% endif %}
+
+     {% if pxl.1.0.1 > 16 or pxl.1.3 > 70 %}
       <td><label class="checkbox-inline"><input type="hidden" onclick="return false" name="LEcheck" value="NLE"></label></td>
       {% else %}
       <td>
