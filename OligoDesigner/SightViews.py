@@ -143,7 +143,7 @@ def startzzprobedesign(request):
                                                       },context_instance=RequestContext(request))
 
 @csrf_protect    
-def zzprobeNonNshFilter(req):
+def NNFzzprobe(req):
     if req.method=='POST':
         nonnshfilter=NonNSHFilter()
         probedict={}
@@ -160,7 +160,7 @@ def zzprobeNonNshFilter(req):
                                                      'probedict':probedict,
                                                      },context_instance=RequestContext(req))  
 ##################################################################
-def zzprobePostCalcXmer(req):
+def PCXzzprobe(req):
     if req.method=='POST':
         dict_xmervalue=[]
         probe_xmer_list=[]
