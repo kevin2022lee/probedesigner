@@ -22,3 +22,6 @@ thisyear=time.strftime('%Y',time.localtime(time.time()))
 def sightintro(request):
     global local
     return render_to_response('sightintro.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
+def zzprobe(request):
+    global local
+    return render_to_response('zzprobe/zzprobe.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
