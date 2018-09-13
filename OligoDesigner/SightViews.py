@@ -197,4 +197,27 @@ def zzProbeSetsXmer(req):
                                                         'local':local,
                                                         'thisyear':thisyear,
                                                         'LE_plist':LE_plist,
-                                                        },context_instance=RequestContext(req))   
+##################################Generate probe sets#####################################################                                                        },context_instance=RequestContext(req))   
+def GeneratezzProbesets(req):
+    if req.method=="POST":
+        probesname=req.POST.getlist("probename")
+        probesseq=req.POST.getlist("probeseq")
+        probesfunc=req.POST.getlist("probefunc")
+        probesets_list=[]
+        for i in range(len(probesname)):
+            probesets_list.append((probesname[i],probesseq[i],probesfunc[i]))
+        LE_final_list=[]
+        for j in range(len(probesets_list)):
+            if probesets_list[j][2]=="LE":
+                LE_final_list.append((probesets_list[j][0],probesets_list[j][1]))
+        LE_final_final_list=[]
+        for k in range(len(LE_final_list)):
+            if LE_final_list.index(LE_final_list[k])%2==0:
+                LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTgaagttaccgtttt'))
+            else:
+                LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTctgagtcaaagcat'))
+        return render_to_response('zzprobe/generateprobes.html',{
+                                      'local':local,
+                                      'thisyear':thisyear,
+                                      'LE_final_final_list':LE_final_final_list,
+                                      },context_instance=RequestContext(req))
