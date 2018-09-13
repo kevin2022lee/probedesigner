@@ -45,4 +45,5 @@ urlpatterns = patterns('',
     url(r'startzzprobedesign', startzzprobedesign),
     url(r'NNFzzprobe',NNFzzprobe),
     url(r'PCXzzprobe',PCXzzprobe),
+    url(r'zzProbeSetsXmer',zzProbeSetsXmer),
 )
