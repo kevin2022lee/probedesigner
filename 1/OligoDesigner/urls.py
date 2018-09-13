@@ -42,4 +42,7 @@ urlpatterns = patterns('',
     url(r'^zzprobe',zzprobe),
     url(r'^seqresolve',seqresolve),
     url(r'^entrezremote',entrezremote),
+    url(r'^zzprobestartdesign', zzprobestartdesign),
+    url(r'^zzprobeNonNshFilter',zzprobeNonNshFilter),
+    url(r'^zzprobePostCalcXmer',zzprobePostCalcXmer),
 )
