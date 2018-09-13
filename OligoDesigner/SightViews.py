@@ -131,3 +131,53 @@ def entrezremote(request):
         response.set_cookie("des",record.description)
         return response
 #########远程访问Entrez数据库#####################    
+@csrf_protect
+def zzprobestartdesign(request):
+    if request.method=="POST":
+        global local
+        return render_to_response('startdesign.html',{
+                                                      'local':local,
+                                                      'thisyear':thisyear,
+                                                      'sequence':request.POST['seq'],
+                                                      'description':request.COOKIES.get('des',''),
+                                                      },context_instance=RequestContext(request))
+
+@csrf_protect    
+def zzprobeNonNshFilter(req):
+    if req.method=='POST':
+        nonnshfilter=NonNSHFilter()
+        probedict={}
+        probelist=nonnshfilter.filterSequence(req.POST['seqtxt'])
+        s=req.POST['seqtxt'].upper()
+        probelist.append(len(s))
+        for i in range(len(probelist)):
+            if probelist[i]<len(s)-20:
+#计算GC含量以及计算CE&LE 公式：
+                probedict.setdefault('p'+str(probelist[i]),[reverseOligo(s[probelist[i]:probelist[i+1]]),probelist[i]])
+        return render_to_response('showfilterprobe.html',{
+                                                     'local':local,
+                                                     'thisyear':thisyear,
+                                                     'probedict':probedict,
+                                                     },context_instance=RequestContext(req))  
+##################################################################
+def zzprobePostCalcXmer(req):
+    if req.method=='POST':
+        dict_xmervalue=[]
+        probe_xmer_list=[]
+        probe_xmer_dict={}
+        dict_value=req.POST.getlist('probedictvalue','')
+        dict_key=req.POST.getlist('probedictkey','')
+        dict_length=req.POST.getlist('probelength','')
+        xmerclac=CalcNSH()
+        for i in range(len(dict_value)):
+            dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]))
+        for v in range(len(dict_xmervalue)):
+            probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v]),dict_value[v],oligoGC(dict_value[v])])
+        probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
+        return render_to_response('zzprobe/xmerscore.html',{
+                                                                              'local':local,
+                                                                              'thisyear':thisyear,
+                                                                              'probe_xmer_list':probe_xmer_list,
+                                                                              },context_instance=RequestContext(req))
+#########################CE&LE cross#################################
+###################################################
