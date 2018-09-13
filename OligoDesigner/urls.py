@@ -43,6 +43,6 @@ urlpatterns = patterns('',
     url(r'^seqresolve',seqresolve),
     url(r'^entrezremote',entrezremote),
     url(r'startzzprobedesign', startzzprobedesign),
-    url(r'^zzprobeNonNshFilter',zzprobeNonNshFilter),
+    url(r'zzprobeNonNshFilter',zzprobeNonNshFilter),
     url(r'zzprobePostCalcXmer',zzprobePostCalcXmer),
 )
