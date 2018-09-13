@@ -1,50 +1,50 @@
 {% extends "base.html" %} 
  {% block content %}
- <title>½âÎögenbankÎÄÒ³Ãæ</title>
+ <title>è§£ægenbankæ–‡é¡µé¢</title>
 <style>
 table{table-layout:fixed;}
 td{word-break:break-all;word-wrap:break-word;overflow:hidden;text-align:left;}
 </style>
 <div class="panel panel-info" style="margin-top:20px;height:auto;">
 <div class="panel-heading">
-        <b>¿ªÊ¼Ì½ÕëÉè¼Æ</b>
+        <b>å¼€å§‹æ¢é’ˆè®¾è®¡</b>
 </div>
 <table class="table" > 
-  <caption><h3><b>½âÎögenbankÎÄ¼ş½á¹ûÄÚÈİ</b></h3></caption>
+  <caption><h3><b>è§£ægenbankæ–‡ä»¶ç»“æœå†…å®¹</b></h3></caption>
   <thead>
     <tr>
-      <th width="15%" text-align="center">ÏîÄ¿</th>
-      <th width="35%" text-align="center">Êı¾İ</th>
-      <th width="15%" text-align="center">ÏîÄ¿</th>
-      <th width="35%" text-align="center">Êı¾İ</th>
+      <th width="15%" text-align="center">é¡¹ç›®</th>
+      <th width="35%" text-align="center">æ•°æ®</th>
+      <th width="15%" text-align="center">é¡¹ç›®</th>
+      <th width="35%" text-align="center">æ•°æ®</th>
       </tr>
   </thead>
   <tbody>
     <tr class="active">
-      <td width="15%"><b>Description£º</b></td>
+      <td width="15%"><b>Descriptionï¼š</b></td>
       <td width="35%">{{description}}</td>
-      <td width="15%"><b>GenBank&FASTA£º</b></td>
+      <td width="15%"><b>GenBank&FASTAï¼š</b></td>
       <td width="35%">{{filetype}}</td></tr>
       <tr class="warning">
-      <td width="15%"><b>Accessid£º</b></td>
+      <td width="15%"><b>Accessidï¼š</b></td>
       <td width="35%" >{{accessid}}</td>
-      <td width="15%"><b>Name£º</b></td>
+      <td width="15%"><b>Nameï¼š</b></td>
       <td width="35%">{{name}}</td></tr>
       <tr class="success">
-      <td width="15%"><b>Source£º</b></td>
+      <td width="15%"><b>Sourceï¼š</b></td>
       <td width="35%" >{{source}}</td>
-      <td width="15%"><b>Organism£º</b></td>
+      <td width="15%"><b>Organismï¼š</b></td>
       <td width="35%">{{organism}}</td></tr>
       <tr class="danger">
-      <td width="15%"><b>Taxonomy£º</b></td>
+      <td width="15%"><b>Taxonomyï¼š</b></td>
       <td width="35%" >{{taxonomy}}</td>
-      <td width="15%"><b>Topology£º</b></td>
+      <td width="15%"><b>Topologyï¼š</b></td>
       <td width="35%">{{topology}}</td></tr>
       <tr class="active">
       <td colspan="4"><u><i>
       <form name="form1" method="post" action="http://{{ local }}/zzprobestartdesign/" role="form" >{% csrf_token %}
       <textarea name="seq" style="display:none;">{{ sequence }}</textarea>
-      <a href="javascript:document.form1.submit();" title="ĞòÁĞĞÅÏ¢£¨5¡®-3¡¯£©">{{ sequence }}</a>
+      <a href="javascript:document.form1.submit();" title="åºåˆ—ä¿¡æ¯ï¼ˆ5â€˜-3â€™ï¼‰">{{ sequence }}</a>
       </form>
       </i></u> </td>
       </tr>
