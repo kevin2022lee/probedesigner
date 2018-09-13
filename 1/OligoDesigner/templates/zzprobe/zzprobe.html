@@ -1,0 +1,99 @@
+{% extends "base.html" %} 
+ {% block content %}
+<script type="text/javascript">
+$(document).ready(function(){
+  maxvalue=2048;
+  $("#seqid").blur(function(){
+      var id=$("#seqid").val();
+      if(id.length==0)
+      {
+          $("#btnentrez").attr("disabled", true); 
+          $("#enderror").html("Accession id输入不能为空！");
+          $("#seqid").focus();
+      }else{
+          $("#btnentrez").removeAttr("disabled"); 
+          $("#enderror").html("");
+          htmlobj=$.ajax({url:"/checkAccessionLen/"+id,async:false});
+          maxvalue=htmlobj.responseText
+          $("#end").attr("value",htmlobj.responseText); 
+      }
+  });
+  $("#end").blur(function(){
+      var inputvalue = Number($("#end").val());
+      if(inputvalue > maxvalue)
+      {
+          $("#btnentrez").attr("disabled", true); 
+          $("#enderror").html("超过最大长度范围！");
+          $("#end").focus();
+      }else
+      {
+          $("#btnentrez").removeAttr("disabled"); 
+          $("#enderror").html("");
+      }
+  });
+  $("#start").blur(function(){
+      var startvalue = Number($("#start").val());
+      if(startvalue > maxvalue)
+      {
+          $("#btnentrez").attr("disabled", true); 
+          $("#enderror").html("起始点不能大于结束点！");
+          $("#start").focus();
+      }else
+      {
+          $("#btnentrez").removeAttr("disabled"); 
+          $("#enderror").html("");
+      }
+  });
+});
+</script>
+ <title>从GenBank文件中解析</title>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+        <b>选取本地<em>Genbank</em>或者<em>Fasta</em>文件开始探针设计[本地文件小于2Kb推荐]</b>
+</div>
+    <div class="panel body" style="height:100px; padding-top:50px;">
+<form action="http://{{ local }}/xmltoentrez/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
+<div class="col-sm-10">
+<input class="form-control" type="file" name="file" accept=".gb,.fasta" >
+</div>
+<div class="col-sm-2">
+<button class="btn-primary btn" type="submit">解析文件</button>
+</div>    
+</form>
+</div>
+</div>
+<div class="panel panel-info">
+<div class="panel-heading">
+        <b>读取Entrez远程<em>Genbank</em>或者<em>Fasta</em>文件开始探针设计[适用于大于2Kb序列文件]</b>
+</div>
+    <div class="panel body" style="height:100px; padding-top:50px;">
+<form action="http://{{ local }}/seqidtoentrez/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
+<div class="col-sm-2">
+<input class="form-control" id="seqid" type="text" name="seqid" placeholder="输入NCBI的Accession ID">
+</div>
+<div class="col-sm-1">
+<label for="start" >起始点</label>
+</div>
+<div class="col-sm-2">
+<input class="form-control" type="text" id="start" name="start" value=1 placeholder="默认从1开始">
+</div>
+<div class="col-sm-1">
+<label for="start" >截止点</label>
+</div>
+<div class="col-sm-2">
+<input class="form-control" id="end" type="text" name="end" value=2048 placeholder="默认最大长度值">
+</div>
+<div class="col-sm-2">
+<font color="red">
+<label id="enderror" for="end" ></label>
+</font>
+</div>
+<div class="col-sm-2">
+<button class="btn-primary btn" id="btnentrez" type="submit">读取文件</button>
+</div>    
+</form>
+</div>
+</div>
+<!-- /#mainWrap -->
+ {% endblock %}
