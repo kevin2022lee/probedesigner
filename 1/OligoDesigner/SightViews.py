@@ -190,11 +190,10 @@ def zzProbeSetsXmer(req):
         zzprobesets_list=[]
         for i in range(len(list_pkey)):
             zzprobesets_list.append((list_pkey[i],list_pseq[i],list_LE[i]))
-#         for j in range(len(probesets_list)):
-#             if probesets_list[j][1]=="LE":
-#                 LE_plist.append((probesets_list[j][0],probesets_list[j][1]))
+        for j in range(len(zzprobesets_list)):
+                LE_plist.append((zzprobesets_list[j][0],zzprobesets_list[j][1]))
         return render_to_response('zzprobe/showceleNSH.html',{
                                                         'local':local,
                                                         'thisyear':thisyear,
-                                                        'zzprobesets_list':zzprobesets_list,
+                                                        'LE_plist':LE_plist,
                                                         },context_instance=RequestContext(req))   
