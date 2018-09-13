@@ -135,7 +135,7 @@ def entrezremote(request):
 def zzprobestartdesign(request):
     if request.method=="POST":
         global local
-        return render_to_response('startdesign.html',{
+        return render_to_response('zzprobe/startdesign.html',{
                                                       'local':local,
                                                       'thisyear':thisyear,
                                                       'sequence':request.POST['seq'],
