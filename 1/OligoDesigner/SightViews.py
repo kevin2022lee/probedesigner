@@ -99,7 +99,7 @@ def seqresolve(request):
     response.set_cookie("des",nr.description)
     return response
 @csrf_protect  
-def entrezseqidtoxml(request):
+def entrezremote(request):
     if request.method=="POST":
         from Bio import Entrez
         from Bio import SeqIO
