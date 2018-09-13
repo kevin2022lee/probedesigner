@@ -187,14 +187,14 @@ def zzProbeSetsXmer(req):
         list_pkey=req.POST.getlist("pkey")
         list_pseq=req.POST.getlist("pseq")
         list_LE=req.POST.getlist("LEcheck")
-        probesets_list=[]
+        zzprobesets_list=[]
         for i in range(len(list_pkey)):
-            probesets_list.append((list_pkey[i],list_pseq[i],list_LE[i]))
-        for j in range(len(probesets_list)):
-            if probesets_list[j][1]=="LE":
-                LE_plist.append((probesets_list[j][0],probesets_list[j][1]))
+            zzprobesets_list.append((list_pkey[i],list_pseq[i],list_LE[i]))
+#         for j in range(len(probesets_list)):
+#             if probesets_list[j][1]=="LE":
+#                 LE_plist.append((probesets_list[j][0],probesets_list[j][1]))
         return render_to_response('zzprobe/showceleNSH.html',{
                                                         'local':local,
                                                         'thisyear':thisyear,
-                                                        'LE_plist':LE_plist,
+                                                        'zzprobesets_list':zzprobesets_list,
                                                         },context_instance=RequestContext(req))   
