@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_protect,csrf_exempt
 import time
 from datetime import datetime
 from models import *
+from views import *
 import sys,urllib
 import base64
 import Cookie
