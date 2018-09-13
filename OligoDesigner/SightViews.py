@@ -191,7 +191,7 @@ def zzProbeSetsXmer(req):
         for i in range(len(list_pkey)):
             probesets_list.append((list_pkey[i],list_pseq[i],list_LE[i]))
         for j in range(len(probesets_list)):
-            if probesets_list[j][3]=="LE":
+            if probesets_list[j][1]=="LE":
                 LE_plist.append((probesets_list[j][0],probesets_list[j][1]))
         return render_to_response('zzprobe/showceleNSH.html',{
                                                         'local':local,
