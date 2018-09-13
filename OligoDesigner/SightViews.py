@@ -81,7 +81,7 @@ def seqresolve(request):
         #cookie['descri']=nr.description
         #request.session['description']=nr.description
         #request.session['sequence']=nr.seq
-    response=render_to_response('parselocalfile.html',{
+    response=render_to_response('zzprobe/parselocalfile.html',{
                                                        'local':local,
                                                        'thisyear':thisyear,
                                                        'filetype':filetype[0],
