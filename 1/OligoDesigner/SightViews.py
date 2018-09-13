@@ -132,7 +132,7 @@ def entrezremote(request):
         return response
 #########远程访问Entrez数据库#####################    
 @csrf_protect
-def zzprobestartdesign(request):
+def startzzprobedesign(request):
     if request.method=="POST":
         global local
         return render_to_response('zzprobe/startdesign.html',{
