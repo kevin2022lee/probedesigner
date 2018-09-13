@@ -154,7 +154,7 @@ def zzprobeNonNshFilter(req):
             if probelist[i]<len(s)-20:
 #计算GC含量以及计算CE&LE 公式：
                 probedict.setdefault('p'+str(probelist[i]),[reverseOligo(s[probelist[i]:probelist[i+1]]),probelist[i]])
-        return render_to_response('showfilterprobe.html',{
+        return render_to_response('zzprobe/showfilterprobe.html',{
                                                      'local':local,
                                                      'thisyear':thisyear,
                                                      'probedict':probedict,
