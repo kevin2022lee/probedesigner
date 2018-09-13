@@ -2,6 +2,7 @@ eclipse.preferences.version=1
 encoding//OligoDesigner/SightViews.py=utf-8
 encoding//OligoDesigner/templates/base.html=UTF-8
 encoding//OligoDesigner/templates/fromfile.html=UTF-8
+encoding//OligoDesigner/templates/parselocalfile.html=UTF-8
 encoding//OligoDesigner/templates/quantimat.html=UTF-8
 encoding//OligoDesigner/templates/showxmerscore.html=UTF-8
 encoding//OligoDesigner/templates/sightintro.html=UTF-8
