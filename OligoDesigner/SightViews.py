@@ -197,7 +197,8 @@ def zzProbeSetsXmer(req):
                                                         'local':local,
                                                         'thisyear':thisyear,
                                                         'LE_plist':LE_plist,
-##################################Generate probe sets#####################################################                                                        },context_instance=RequestContext(req))   
+                                                        },context_instance=RequestContext(req))   
+##################################Generate probe sets#####################################################                                                        
 def GeneratezzProbesets(req):
     if req.method=="POST":
         probesname=req.POST.getlist("probename")
