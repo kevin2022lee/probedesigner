@@ -26,6 +26,9 @@ def sightintro(request):
 def zzprobe(request):
     global local
     return render_to_response('zzprobe/zzprobe.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
+def designbranch(request):
+    global local
+    return render_to_response('designbranch/designbranch.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
 @csrf_protect  
 def seqresolve(request):
     if request.method=='POST':
