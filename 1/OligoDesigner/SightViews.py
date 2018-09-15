@@ -238,7 +238,7 @@ def branchscorecalc(request):
         branchdata=rawdata.split('\r\n')
         for bd in branchdata:
             CN=CalcNSH()
-            data.append(CN(bd))
+            data.append(CN.xmerCalc(bd))
     return render_to_response('designbranch/showbranchscore.html',{
         'data':data,
         'local':local,
