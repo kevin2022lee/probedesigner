@@ -237,7 +237,8 @@ def branchscorecalc(request):
         branchdata=[]
         branchdata=rawdata.split('\r\n')
         for bd in branchdata:
-            data.append(bd)
+            CN=CalcNSH()
+            data.append(CN(bd))
     return render_to_response('designbranch/showbranchscore.html',{
         'data':data,
         'local':local,
