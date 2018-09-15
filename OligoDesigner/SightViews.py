@@ -29,6 +29,9 @@ def zzprobe(request):
 def designbranch(request):
     global local
     return render_to_response('designbranch/designbranch.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
+def showbranchscore(request):
+    global local
+    return render_to_response('designbranch/showbranchscore.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
 @csrf_protect  
 def seqresolve(request):
     if request.method=='POST':
@@ -225,3 +228,16 @@ def GeneratezzProbesets(req):
                                       'thisyear':thisyear,
                                       'LE_final_final_list':LE_final_final_list,
                                       },context_instance=RequestContext(req))
+def branchscorecalc(request):
+    global local
+    if request.method=="POST":
+        rawdata=request.POST['rawdata']#获取表单数据
+        data=[]
+        branchdata=[]
+        branchdata=rawdata.split('\r\n')#将字符串分割成数组
+        for bd in branchdata:
+            #计算每个目标的多具体数据
+            data.append(x4merCalc(bd))
+    return render_to_response('designbranch/showbranchscore.html',{'data':data,},context_instance=RequestContext(request))
+            
+        
