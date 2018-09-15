@@ -237,8 +237,7 @@ def branchscorecalc(request):
         branchdata=[]
         branchdata=rawdata.split('\r\n')
         for bd in branchdata:
-
-            data.append(x4merCalc(bd))
+            data.append(bd)
     return render_to_response('designbranch/showbranchscore.html',{
         'data':data,
         'local':local,
