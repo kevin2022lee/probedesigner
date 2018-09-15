@@ -238,6 +238,10 @@ def branchscorecalc(request):
         for bd in branchdata:
             #计算每个目标的多具体数据
             data.append(x4merCalc(bd))
-    return render_to_response('designbranch/showbranchscore.html',{'data':data,},context_instance=RequestContext(request))
+    return render_to_response('designbranch/showbranchscore.html',{
+        'data':data,
+        'local':local,
+        'thisyear':thisyear,
+        },context_instance=RequestContext(request))
             
         
