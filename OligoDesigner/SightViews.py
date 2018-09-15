@@ -231,7 +231,7 @@ def GeneratezzProbesets(req):
 def branchscorecalc(request):
     global local
     if request.method=="POST":
-        rawdata=request.POST['rawdata']#获取表单数据
+        rawdata=request.POST['raw']#获取表单数据
         data=[]
         branchdata=[]
         branchdata=rawdata.split('\r\n')#将字符串分割成数组
