@@ -232,7 +232,7 @@ def GeneratezzProbesets(req):
 def branchscorecalc(request):
     global local
     if request.method=="POST":
-        rawdata=request.POST['raw']
+        rawdata=request.POST['rawdata']
         data=[]
         branchdata=[]
         branchdata=rawdata.split('\r\n')
