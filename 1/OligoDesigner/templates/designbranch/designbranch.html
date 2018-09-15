@@ -6,8 +6,8 @@
         <b>开始设计BRANCH TREE 设计!</b>
 </div>
 <div class="container" style="padding:20px;height:auto;" >
-<form action="http://{{local}}/branchscorecalc/" method="POST" id="raw" role="form" name="raw" class="form-horizontal" >{% csrf_token %}
-<textarea class="form-control" rows="3" name=textarea></textarea>
+<form action="http://{{local}}/branchscorecalc/" method="POST" id="raw" role="form" class="form-horizontal" >{% csrf_token %}
+<textarea class="form-control" rows="3" name=rawdata></textarea>
 <div class="panel panel-active" style="margin:20px;">
 <button type="submit" onclick="checkForm();" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon-step-forward"></span>计算BRANCH SCORE</button>
 </div> 
