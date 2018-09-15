@@ -10,7 +10,7 @@
 <table>
 {%for d in data%}
 <tr>
-<td>{{d}}</td>
+<td>{{forloop.count}}</td><td>{{d}}</td>
 </tr>
 {%endfor%}
 </table>
