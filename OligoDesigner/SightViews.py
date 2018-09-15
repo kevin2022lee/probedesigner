@@ -228,6 +228,7 @@ def GeneratezzProbesets(req):
                                       'thisyear':thisyear,
                                       'LE_final_final_list':LE_final_final_list,
                                       },context_instance=RequestContext(req))
+@csrf_protect
 def branchscorecalc(request):
     global local
     if request.method=="POST":
