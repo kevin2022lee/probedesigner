@@ -11,6 +11,7 @@ import pymysql
 
 
 local='www.probedesigner.cn'
+thisyear=time.strftime('%Y',time.localtime(time.time()))
 def genesearch(request):
     global local
     return render_to_response('genedatabase/genesearch.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
