@@ -1,5 +1,6 @@
 from django.conf.urls import *
 from views import *
+from geneviews import *
 from SightViews import *
 from django.contrib import admin
 import settings
@@ -50,4 +51,5 @@ urlpatterns = patterns('',
     url(r'designbranch',designbranch),
     url(r'branchscorecalc',branchscorecalc),
     url(r'showbranchscore',showbranchscore),
+    url(r'genesearch',geneviews.genesearch),
 )
