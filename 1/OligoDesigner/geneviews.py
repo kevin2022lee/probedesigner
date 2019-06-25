@@ -9,6 +9,8 @@ from models import *
 from django.core.context_processors import request
 import pymysql
 
+
+local='www.probedesigner.cn'
 def genesearch(request):
     global local
     return render_to_response('genedatabase/genesearch.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
