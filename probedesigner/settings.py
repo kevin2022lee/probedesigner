@@ -53,7 +53,16 @@ ROOT_URLCONF = 'OligoDesigner.urls'
 
 WSGI_APPLICATION = 'OligoDesigner.wsgi.application'
 
+# Make `python manage.py syncdb` works happy!
+MYSQL_HOST = '39.107.81.84'
 
+MYSQL_PORT = '3306'
+
+MYSQL_USER = 'root'
+
+MYSQL_PASS = '8588027'
+
+MYSQL_DB   = 'gene_database'
 
 LANGUAGE_CODE = 'en-us'
 
