@@ -14,11 +14,11 @@
 {%else%}
 {% for gene in genes %}
 <div class="well well-sm">
-{{gene.genename}}
+<span class="glyphicon glyphicon-star"></span>Gene Name：{{gene.genename}}
 </div>
 <div class="well well-sm">
 
-{{gene.geneprobetype}}
+<span class="glyphicon glyphicon-cog"></span>ProbeSets application type：{{gene.geneprobetype}}
 
 </div>
 <div class="well well-sm">
