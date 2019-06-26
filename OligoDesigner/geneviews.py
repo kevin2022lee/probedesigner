@@ -24,7 +24,7 @@ def gdbsearch(request):
             genes=GeneInfo.objects.filter(genename="GAPDH")
         else:
             genes=GeneInfo.objects.filter(genename=genename)
-            return render_to_response('genedatabase/geneshow.html',{
+        return render_to_response('genedatabase/geneshow.html',{
                  'genes':genes,
                  'local':local,
                  'thisyear':thisyear
