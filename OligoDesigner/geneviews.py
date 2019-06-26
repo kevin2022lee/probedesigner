@@ -31,6 +31,8 @@ def gdbsearch(request):
                     'genedescription':'暂无相关信息',
                     'genesectiongroup':'暂无相关信息'
                     }
+            else:
+                pass
         return render_to_response('genedatabase/geneshow.html',{
                  'genes':genes,
                  'local':local,
