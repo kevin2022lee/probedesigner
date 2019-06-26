@@ -26,7 +26,9 @@ def gdbsearch(request):
             genes=GeneInfo.objects.filter(genename=genename)
             if len(genes)== 0:
                 genes={
-                    'gene':'暂无相关信息',
+                    'gene':{
+                        'genename':'暂无相关信息'
+                        }
                     }
             else:
                 pass
