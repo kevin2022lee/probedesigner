@@ -21,7 +21,7 @@ def gdbsearch(request):
     if request.method=="POST":
         genename=request.POST["search_text"] 
         if genename=="*" or genename=="":
-             genes=GeneInfo.objects.filter(genename="GAPDH")
+            genes=GeneInfo.objects.filter(genename="GAPDH")
         else:
             genes=GeneInfo.objects.filter(genename=genename)
             return render_to_response('genedatabase/geneshow.html',{
