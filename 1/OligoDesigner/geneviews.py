@@ -19,9 +19,9 @@ def genesearch(request):
 @csrf_protect
 def gdbsearch(request):
     if request.method=="POST":
-       genename=request.POST["search_text"] 
-       genes=GeneInfo.obejects.filter(genename=genename)
-       return render_to_response('genedatabase/geneshow.html',{
+        genename=request.POST["search_text"] 
+        genes=GeneInfo.obejects.filter(genename=genename)
+        return render_to_response('genedatabase/geneshow.html',{
            'genes':genes,
            'local':local,
            'thisyear':thisyear
