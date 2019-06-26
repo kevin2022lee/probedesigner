@@ -16,6 +16,7 @@ def genesearch(request):
     global local
     return render_to_response('genedatabase/genesearch.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
 
+@csrf_protect
 def gdbsearch(request):
     if request.method=="POST":
        genename=request.POST["search_text"] 
