@@ -24,12 +24,7 @@ def gdbsearch(request):
             genes=GeneInfo.objects.filter(genename="GAPDH")
         else:
             genes=GeneInfo.objects.filter(genename=genename)
-            if len(genes)== 0:
-                genes={
-                        'genename':'暂无相关信息'
-                    }
-            else:
-                pass
+
         return render_to_response('genedatabase/geneshow.html',{
                  'genes':genes,
                  'local':local,
