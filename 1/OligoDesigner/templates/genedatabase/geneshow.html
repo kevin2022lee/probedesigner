@@ -1,7 +1,7 @@
 {% extends "base.html" %} 
  {% block content %}
  
-  <title>探针信息检索</title>
+<title>探针信息检索</title>
  <div class="panel panel-info" >
 <div class="panel-heading">
 <b>检索基因结果信息</b>
@@ -14,7 +14,7 @@
 {%else%}
 {% for gene in genes %}
 <div class="well well-sm">
-<span class="glyphicon glyphicon-star"></span><b>Gene Name：</b>{{gene.genename}}
+<span class="glyphicon glyphicon-star"></span><b>Gene Symbol：</b>{{gene.genename}}
 </div>
 <div class="well well-sm">
 
