@@ -52,4 +52,5 @@ urlpatterns = patterns('',
     url(r'branchscorecalc',branchscorecalc),
     url(r'showbranchscore',showbranchscore),
     url(r'genesearch',genesearch),
+    url(r'gdbsearch',gdbsearch),
 )
