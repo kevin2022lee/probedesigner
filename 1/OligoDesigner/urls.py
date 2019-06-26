@@ -1,6 +1,6 @@
 from django.conf.urls import *
 from views import *
-from geneviews import genesearch
+from geneviews import genesearch,gdbsearch
 from SightViews import *
 from django.contrib import admin
 import settings
