@@ -12,13 +12,19 @@
 {{gene.genename}}
 </div>
 <div class="well well-sm">
+
 {{gene.geneprobetype}}
+
 </div>
 <div class="panel panel-default">
+{% autoescape off %}
 {{gene.genedescription}}
+{% endautoescape %}
 </div>
 <div class="panel panel-default">
+{% autoescape off %}
 {{gene.genesectiongroup}}
+{% endautoescape %}
 </div>
 
 {%endfor%}
