@@ -26,10 +26,7 @@ def gdbsearch(request):
             genes=GeneInfo.objects.filter(genename=genename)
             if len(genes)== 0:
                 genes={
-                    'genename':'暂无相关信息',
-                    'geneprobetype':'暂无相关信息',
-                    'genedescription':'暂无相关信息',
-                    'genesectiongroup':'暂无相关信息'
+                    'gene':'暂无相关信息',
                     }
             else:
                 pass
