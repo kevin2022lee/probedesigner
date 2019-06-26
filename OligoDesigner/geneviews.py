@@ -20,10 +20,13 @@ def genesearch(request):
 def gdbsearch(request):
     if request.method=="POST":
         genename=request.POST["search_text"] 
-        genes=GeneInfo.objects.filter(genename=genename)
-        return render_to_response('genedatabase/geneshow.html',{
-           'genes':genes,
-           'local':local,
-           'thisyear':thisyear
-           },context_instance=RequestContext(request))
+        if genename=="*" or genename=="":
+             genes=GeneInfo.objects.filter(genename="GAPDH")
+        else:
+            genes=GeneInfo.objects.filter(genename=genename)
+            return render_to_response('genedatabase/geneshow.html',{
+                 'genes':genes,
+                 'local':local,
+                 'thisyear':thisyear
+                 },context_instance=RequestContext(request))
     
