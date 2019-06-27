@@ -18,7 +18,7 @@ def genesearch(request):
         genes=GeneInfo.objects.filter()[:20]
     else:
         genes={}
-    return render_to_response('genedatabase/genesearch.html',{
+return render_to_response('genedatabase/genesearch.html',{
         'local':local,
         'thisyear':thisyear,
         'genes':genes
