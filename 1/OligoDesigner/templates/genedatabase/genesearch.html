@@ -54,7 +54,7 @@
  
 <div class="list-group">
 
-<a class="list-group-item" href="#"><span class="badge">28957</span>Human Genes</a>
+<a class="list-group-item" href="http://{{local}}/gdbsearch/?genetype=Human"><span class="badge">28957</span>Human Genes</a>
 <a class="list-group-item"  href="#"><span class="badge">8957</span>Mouse Genes</a>
 <a class="list-group-item"  href="#"><span class="badge">7953</span>Rat Genes</a>
 <a class="list-group-item"  href="#"><span class="badge">1422</span>At Arabidopsis</a>
@@ -65,18 +65,21 @@
 
 </div>
 <div class="col-sm-8 col-md-9">
+{% for gene in genes %}
 <div class="panel panel-success">
+
 <div class="panel-heading">
- <a href="#">检测ID</a>
+ <a href="#">{{gene.id}}</a>
  </div>
 <div class="panel-body">
-Gene：SPHK2 Species Human Transcripts
-11 RefSeqsProduct Type
-QuantiGene Singleplex RNA
 
+{% autoescape off %}
+{{gene.genedescription}}
+{% endautoescape %}
 
 </div>
 </div>
+{%endfor%}
 </div>
 
 </div>
