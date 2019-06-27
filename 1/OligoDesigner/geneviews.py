@@ -17,7 +17,7 @@ thisyear=time.strftime('%Y',time.localtime(time.time()))
 def genesearch(request):
     genes={} 
     if request.GET.get('genetype'):
-        genes=GeneInfo.objects.filter()[:10]  
+        genes=GeneInfo.objects.all().reverse()[:10]  
     return render_to_response('genedatabase/genesearch.html',{
         'local':local,
         'thisyear':thisyear,
