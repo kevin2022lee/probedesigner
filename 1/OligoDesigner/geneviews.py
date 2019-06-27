@@ -14,9 +14,10 @@ local='www.probedesigner.cn'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
 def genesearch(request):
     global local
- 
-    genes=GeneInfo.objects.filter()[:20]
-        
+    if request.GET.get('genetype')=='Human':
+        genes=GeneInfo.objects.filter()[:20]
+    else:
+        genes={}    
     return render_to_response('genedatabase/genesearch.html',{
         'local':local,
         'thisyear':thisyear,
