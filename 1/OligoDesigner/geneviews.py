@@ -19,7 +19,11 @@ def genesearch(request):
     if request.GET.get('genetype')=='Human':
         genes=GeneInfo.objects.all().reverse()[:10]  
     if request.GET.get('genetype')=='Mouse':
-        genes=GeneInfo1.objects.all().reverse()[:10]  
+        genes=GeneInfo1.objects.all().reverse()[:10]
+    if request.GET.get('genetype')=='Rat':
+        genes=GeneInfo2.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='At_Arabidopsis':
+        genes=GeneInfo3.objects.all().reverse()[:10]   
     stype=request.GET.get("genetype",'Human')
     return render_to_response('genedatabase/genesearch.html',{
         'local':local,
