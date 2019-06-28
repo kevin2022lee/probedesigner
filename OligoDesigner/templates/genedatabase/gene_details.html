@@ -52,11 +52,12 @@ display:inline;
 
 <div class="container" style="padding:20px;height:auto;">
 {%for gene in genes%}
-
+{% autoescape off %}
 {{gene.genedescription}}
-
+{% endautoescape %}
+{% autoescape off %}
 {{gene.genesectiongroup}}
-
+{% endautoescape %}
 {%endfor%}
 
 </div>
