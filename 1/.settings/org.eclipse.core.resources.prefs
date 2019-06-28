@@ -7,6 +7,7 @@ encoding//OligoDesigner/templates/bootstrap.html=UTF-8
 encoding//OligoDesigner/templates/designbranch/designbranch.html=UTF-8
 encoding//OligoDesigner/templates/en_base.html=UTF-8
 encoding//OligoDesigner/templates/fromfile.html=UTF-8
+encoding//OligoDesigner/templates/genedatabase/gene_details.html=UTF-8
 encoding//OligoDesigner/templates/genedatabase/genesearch.html=UTF-8
 encoding//OligoDesigner/templates/genedatabase/geneshow.html=UTF-8
 encoding//OligoDesigner/templates/parselocalfile.html=UTF-8
