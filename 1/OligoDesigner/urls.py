@@ -53,5 +53,5 @@ urlpatterns = patterns('',
     url(r'showbranchscore',showbranchscore),
     url(r'genesearch/$',genesearch),
     url(r'gdbsearch/',gdbsearch),
-    url(r'geneshow/(\s+)/(\s+)/',gdbsearch),
+    url(r'geneshow/(\w+)/(\w+)/',gdbsearch),
 )
