@@ -47,7 +47,8 @@ def gdbsearch(request):
                  'thisyear':thisyear
                  },context_instance=RequestContext(request))
 
-def geneshow(request,specy,genename):
+
+def geneshow(specy,genename):
     if specy=='Human':
         genes=GeneInfo.objects.filter(genename=genename)
      
