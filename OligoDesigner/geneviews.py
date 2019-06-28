@@ -51,8 +51,13 @@ def gdbsearch(request):
 def geneshow(request,specy,genename):
     if specy=='Human':
         genes=GeneInfo.objects.filter(genename=genename)
-     
-     
+    if specy=='Mouse':
+        genes=GeneInfo1.objects.filter(genename=genename)
+    if specy=='Rat':
+        genes=GeneInfo2.objects.filter(genename=genename) 
+    if specy=='At_Arabidopsis':
+        genes=GeneInfo3.objects.filter(genename=genename)
+         
     return render_to_response('genedatabase/gene_details.html',{
         'local':local,
         'thisyear':thisyear,
