@@ -48,7 +48,7 @@ def gdbsearch(request):
                  },context_instance=RequestContext(request))
 
 
-def geneshow(specy,genename):
+def geneshow(request,specy,genename):
     if specy=='Human':
         genes=GeneInfo.objects.filter(genename=genename)
      
