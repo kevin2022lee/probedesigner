@@ -46,4 +46,15 @@ def gdbsearch(request):
                  'local':local,
                  'thisyear':thisyear
                  },context_instance=RequestContext(request))
-    
+
+def geneshow(request,specy,genename):
+    if specy=='Human':
+        genes=GeneInfo.objects.filter(genename=genename)
+     
+     
+    return render_to_response('genedatabase/gene_details.html',{
+        'local':local,
+        'thisyear':thisyear,
+        'genes':genes,
+        },context_instance=RequestContext(request))
+        
