@@ -20,10 +20,12 @@ def genesearch(request):
         genes=GeneInfo.objects.all().reverse()[:10]  
     if request.GET.get('genetype')=='Mouse':
         genes=GeneInfo1.objects.all().reverse()[:10]  
+    stype=request.GET.get("genetype")
     return render_to_response('genedatabase/genesearch.html',{
         'local':local,
         'thisyear':thisyear,
-        'genes':genes
+        'genes':genes,
+        'stype':stype
         },context_instance=RequestContext(request))
 
 @csrf_protect
