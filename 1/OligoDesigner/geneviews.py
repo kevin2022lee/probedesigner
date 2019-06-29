@@ -65,7 +65,7 @@ def geneshow(request,specy,genename):
         genes=GeneInfo2.objects.filter(genename=genename) 
     if specy=='At_Arabidopsis':
         genes=GeneInfo3.objects.filter(genename=genename)
-    if specy=='C.elegans':
+    if specy=='C_elegans':
         genes=GeneInfo4.objects.filter(genename=genename)
     if specy=='Fruit_fly':
         genes=GeneInfo5.objects.filter(genename=genename)
