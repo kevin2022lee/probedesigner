@@ -65,6 +65,14 @@ def geneshow(request,specy,genename):
         genes=GeneInfo2.objects.filter(genename=genename) 
     if specy=='At_Arabidopsis':
         genes=GeneInfo3.objects.filter(genename=genename)
+    if specy=='C.elegans':
+        genes=GeneInfo4.objects.filter(genename=genename)
+    if specy=='Fruit_fly':
+        genes=GeneInfo5.objects.filter(genename=genename)
+    if specy=='Bovine':
+        genes=GeneInfo6.objects.filter(genename=genename) 
+    if specy=='Dog':
+        genes=GeneInfo7.objects.filter(genename=genename)
          
     return render_to_response('genedatabase/gene_details.html',{
         'local':local,
