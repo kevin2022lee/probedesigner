@@ -24,7 +24,7 @@ def genesearch(request):
         genes=GeneInfo2.objects.all().reverse()[:10] 
     if request.GET.get('genetype')=='At_Arabidopsis':
         genes=GeneInfo3.objects.all().reverse()[:10]   
-    if request.GET.get('genetype')=='C.elegans':
+    if request.GET.get('genetype')=='C_elegans':
         genes=GeneInfo4.objects.all().reverse()[:10]  
     if request.GET.get('genetype')=='Fruit_fly':
         genes=GeneInfo5.objects.all().reverse()[:10]
