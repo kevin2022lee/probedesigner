@@ -58,21 +58,21 @@ def gdbsearch(request):
 
 def geneshow(request,specy,genename):
     if specy=='Human':
-        genes=GeneInfo.objects.filter(genename=genename)
+        genes=GeneInfo.objects.filter(genename__contains=genename)
     if specy=='Mouse':
-        genes=GeneInfo1.objects.filter(genename=genename)
+        genes=GeneInfo1.objects.filter(genename__contains=genename)
     if specy=='Rat':
-        genes=GeneInfo2.objects.filter(genename=genename) 
+        genes=GeneInfo2.objects.filter(genename__contains=genename) 
     if specy=='At_Arabidopsis':
-        genes=GeneInfo3.objects.filter(genename=genename)
+        genes=GeneInfo3.objects.filter(ggenename__contains=genename)
     if specy=='C_elegans':
-        genes=GeneInfo4.objects.filter(genename=genename)
+        genes=GeneInfo4.objects.filter(genename__contains=genename)
     if specy=='Fruit_fly':
-        genes=GeneInfo5.objects.filter(genename=genename)
+        genes=GeneInfo5.objects.filter(genename__contains=genename)
     if specy=='Bovine':
-        genes=GeneInfo6.objects.filter(genename=genename) 
+        genes=GeneInfo6.objects.filter(genename__contains=genename) 
     if specy=='Dog':
-        genes=GeneInfo7.objects.filter(genename=genename)
+        genes=GeneInfo7.objects.filter(genename__contains=genename)
          
     return render_to_response('genedatabase/gene_details.html',{
         'local':local,
