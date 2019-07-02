@@ -2,6 +2,7 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.http import HttpResponse,HttpResponseRedirect,response
+from django.core.paginator import Paginator
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 import time
 from datetime import datetime
@@ -79,4 +80,23 @@ def geneshow(request,specy,id):
         'thisyear':thisyear,
         'genes':genes,
         },context_instance=RequestContext(request))
+        
+        
+        
+def loadmore(request,specy):
+    if request.method=="POST":
+        #异步刷新获取数据
+        if specy=="Human":
+            genes=GeneInfo.objects.all()
+            pagesize = int(request.GET.get('ps', '10'))
+            paginator = Paginator(genes,pagesize)#使用paginator对象
+            page = int(request.GET.get('p', '1'))#取当前页的号码
+            genes = paginator.page(page).object_list
+            return HttpResponse(genes)
+    return render_to_response('genedatabase/load_more.html',{
+        'local':local,
+        'thisyear':thisyear,
+        },context_instance=RequestContext(request))
+        
+        
         
