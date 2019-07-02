@@ -96,7 +96,7 @@ def loadmore(request,specy):
     return render_to_response('genedatabase/load_more.html',{
         'local':local,
         'thisyear':thisyear,
-        'stype':stype
+        'stype':specy
         },context_instance=RequestContext(request))
         
         
