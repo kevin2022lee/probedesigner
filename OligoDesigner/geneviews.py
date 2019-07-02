@@ -86,6 +86,7 @@ def geneshow(request,specy,id):
 def loadmore(request,specy):
     if request.method=="POST":
         #异步刷新获取数据
+        return HttpResponse("欢迎使用ajax")
         if specy=="Human":
             genes=GeneInfo.objects.all()
             pagesize = int(request.GET.get('ps', '10'))
