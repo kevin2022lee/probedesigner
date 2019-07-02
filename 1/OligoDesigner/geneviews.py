@@ -64,7 +64,7 @@ def geneshow(request,specy,id):
     if specy=='Rat':
         genes=GeneInfo2.objects.filter(id__iexact=id) 
     if specy=='At_Arabidopsis':
-        genes=GeneInfo3.objects.filter(gid__iexact=id)
+        genes=GeneInfo3.objects.filter(id__iexact=id)
     if specy=='C_elegans':
         genes=GeneInfo4.objects.filter(id__iexact=id)
     if specy=='Fruit_fly':
