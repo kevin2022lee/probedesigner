@@ -48,7 +48,7 @@ display:inline;
 <script>
     $(document).ready(function(){
         $('#{{stype}}').click(function(){
-            var stype = this.stype
+            var stype = $(this).attr("id");
             //console.log(id)
             
             $.ajax({
