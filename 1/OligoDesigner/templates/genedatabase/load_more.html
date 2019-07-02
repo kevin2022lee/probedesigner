@@ -1,7 +1,7 @@
 {% extends "base.html" %} 
  {% block content %}
  
-<title>Ì½ÕëĞÅÏ¢¼ìË÷</title>
+<title>æ¢é’ˆä¿¡æ¯æ£€ç´¢</title>
 <style>
 .datatable tbody tr td {
   background-color: #F6F6F6;
@@ -61,7 +61,7 @@ display:inline;
                 success:function(res){
                     var res = JSON.parse(res)
                     //console.log(res)
-                    var html = '¼ÓÔØ¸ü¶àÁË'
+                    var html = 'åŠ è½½æ›´å¤šäº†'
                     }
                     $('#content').html(html)
                 }
@@ -77,7 +77,7 @@ display:inline;
 </div>
 <div class="col-sm-2">
 <a class="list-group-item">&#8595&#8595&#8595&#8595</a>
-<a id="{{stype}}" class="list-group-item" href="http://{{local}}/loadmore/{{stype}}/">¼ÓÔØ¸ü¶à...</a>
+<a id="{{stype}}" class="list-group-item" href="http://{{local}}/loadmore/{{stype}}/">åŠ è½½æ›´å¤š...</a>
 </div>
 <div class="col-sm-5">
 
