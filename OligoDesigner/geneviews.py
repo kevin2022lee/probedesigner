@@ -92,7 +92,7 @@ def loadmore(request,specy):
             paginator = Paginator(genes,pagesize)#使用paginator对象
             page = int(request.GET.get('p', '1'))#取当前页的号码
             genes = paginator.page(page).object_list
-            return HttpResponse(genes)
+            return HttpResponse("欢迎使用ajax")
     return render_to_response('genedatabase/load_more.html',{
         'local':local,
         'thisyear':thisyear,
