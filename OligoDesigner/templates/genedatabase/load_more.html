@@ -1,0 +1,87 @@
+{% extends "base.html" %} 
+ {% block content %}
+ 
+<title>探针信息检索</title>
+<style>
+.datatable tbody tr td {
+  background-color: #F6F6F6;
+}
+
+.datatable tbody tr:nth-of-type(odd) td {
+  background-color: #EEEEEE;
+}
+
+.datatable th {
+  background-color: #FFFFFF;
+}
+
+.datatable td,
+.datatable th {
+  border: 1px solid #CCCCCC;
+  padding: 5px 8px;
+}
+
+.product-description,
+ {
+  float: left;
+  width: 600px;
+}
+
+.product-description dt,
+.product-description dd,{
+ margin-bottom: 5px;
+}
+
+dd .info{
+display:inline;
+
+}
+
+.product-description dt,
+.product-description td.heading {
+  clear: both;
+  float: left;
+  font-weight: bold;
+  width: 35%;
+}
+</style>
+<script>
+    $(document).ready(function(){
+        $('#{{stype}}').click(function(){
+            var stype = this.stype
+            //console.log(id)
+            
+            $.ajax({
+                url:'/loadmore/'+stype+'/',
+                type:'post',
+                data:{
+                    'csrfmiddlewaretoken': $.cookie('csrftoken'),
+                    id:id
+                },
+                success:function(res){
+                    var res = JSON.parse(res)
+                    //console.log(res)
+                    var html = '加载更多了'
+                    }
+                    $('#content').html(html)
+                }
+            })
+        })
+    })
+</script>
+<div>
+<div id="content"></div>
+<div class="row">
+<div class="col-sm-5">
+
+</div>
+<div class="col-sm-2">
+<a class="list-group-item">&#8595&#8595&#8595&#8595</a>
+<a id="{{stype}}" class="list-group-item" href="http://{{local}}/loadmore/{{stype}}/">加载更多...</a>
+</div>
+<div class="col-sm-5">
+
+</div>
+</div>
+</div>
+ {% endblock %}

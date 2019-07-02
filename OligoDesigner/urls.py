@@ -1,6 +1,6 @@
 from django.conf.urls import *
 from views import *
-from geneviews import genesearch,gdbsearch,geneshow
+from geneviews import genesearch,gdbsearch,geneshow,loadmore
 from SightViews import *
 from django.contrib import admin
 import settings
@@ -54,4 +54,5 @@ urlpatterns = patterns('',
     url(r'genesearch/$',genesearch),
     url(r'gdbsearch/',gdbsearch),
     url(r'genedatabase/(\w+)/(\d+)/',geneshow),
+    url(r'loadmore/(\w+)/',loadmore),
 )
