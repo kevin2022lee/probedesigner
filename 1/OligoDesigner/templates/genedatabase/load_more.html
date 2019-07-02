@@ -55,8 +55,7 @@ display:inline;
                 url:'/loadmore/Human/',
                 type:'post',
                 data:{
-                    'csrfmiddlewaretoken': $.cookie('csrftoken'),
-                    id:id
+                    'csrfmiddlewaretoken': $.cookie('csrftoken')
                 },
                 success:function(res){
                     var res = JSON.parse(res)
