@@ -55,3 +55,10 @@ class GeneInfo7(models.Model):
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
+
+class GeneInfo8(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
