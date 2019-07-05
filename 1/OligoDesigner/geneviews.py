@@ -48,7 +48,8 @@ def gdbsearch(request):
         if genename=="*" or genename=="":
             genes=GeneInfo.objects.filter(genename="GAPDH")
         else:
-            genes=GeneInfo.objects.filter(genename=genename)
+            table_num=request.POST["species"]
+            genes=(GeneInfo+table_num).objects.filter(genename=genename)
 
         return render_to_response('genedatabase/geneshow.html',{
                  'genes':genes,
