@@ -35,10 +35,10 @@ def genesearch(request):
         genes=GeneInfo7.objects.all().reverse()[:10] 
     stype=request.GET.get("genetype",'Human')
     return render_to_response('genedatabase/genesearch.html',{
-        'local':local,
-        'thisyear':thisyear,
-        'genes':genes,
-        'stype':stype
+                                    'local':local,
+                                    'thisyear':thisyear,
+                                    'genes':genes,
+                                    'stype':stype
         },context_instance=RequestContext(request))
 
 @csrf_protect
@@ -70,7 +70,7 @@ def gdbsearch(request):
             if  table_num=="8":
                 genes=GeneInfo8.objects.filter(genename=genename)
                 
-        return render_to_response('genedatabase/geneshow.html',{
+            return render_to_response('genedatabase/geneshow.html',{
                  'genes':genes,
                  'local':local,
                  'thisyear':thisyear
