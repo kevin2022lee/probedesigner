@@ -57,10 +57,8 @@ def gdbsearch(request):
                 genes=GeneInfo2.objects.filter(genename=genename)
             if  table_num=="3":
                 genes=GeneInfo3.objects.filter(genename=genename)
-            if  table_num=="3":
-                genes=GeneInfo1.objects.filter(genename=genename)    
             if  table_num=="4":
-                genes=GeneInfo4.objects.filter(genename=genename)
+                genes=GeneInfo4.objects.filter(genename=genename)    
             if  table_num=="5":
                 genes=GeneInfo5.objects.filter(genename=genename)
             if  table_num=="6":
@@ -69,6 +67,8 @@ def gdbsearch(request):
                 genes=GeneInfo7.objects.filter(genename=genename)
             if  table_num=="8":
                 genes=GeneInfo8.objects.filter(genename=genename)
+            if  table_num=="9":
+                genes=GeneInfo9.objects.filter(genename=genename)
                 
         return render_to_response('genedatabase/geneshow.html',{
                  'genes':genes,
