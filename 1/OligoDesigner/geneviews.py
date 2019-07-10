@@ -33,6 +33,12 @@ def genesearch(request):
         genes=GeneInfo6.objects.all().reverse()[:10] 
     if request.GET.get('genetype')=='Dog':
         genes=GeneInfo7.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='Chinese_hamster':
+        genes=GeneInfo8.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='Goat':
+        genes=GeneInfo9.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='Guinea_pig':
+        genes=GeneInfo10.objects.all().reverse()[:10] 
     stype=request.GET.get("genetype",'Human')
     return render_to_response('genedatabase/genesearch.html',{
                                     'local':local,
