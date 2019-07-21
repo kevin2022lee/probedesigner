@@ -102,6 +102,8 @@ def geneshow(request,specy,id):
         genes=GeneInfo7.objects.filter(id__iexact=id)
     if specy=='Chinese_hamster':
         genes=GeneInfo8.objects.filter(id__iexact=id)
+    if specy=='Goat':
+        genes=GeneInfo9.objects.filter(id__iexact=id)
          
     return render_to_response('genedatabase/gene_details.html',{
         'local':local,
