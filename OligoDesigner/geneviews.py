@@ -39,6 +39,43 @@ def genesearch(request):
         genes=GeneInfo9.objects.all().reverse()[:10] 
     if request.GET.get('genetype')=='Guinea_pig':
         genes=GeneInfo10.objects.all().reverse()[:10] 
+    #####################################################
+    if request.GET.get('genetype')=='Zebrafish':
+        genes=GeneInfo11.objects.all().reverse()[:10]  
+    if request.GET.get('genetype')=='Horse':
+        genes=GeneInfo12.objects.all().reverse()[:10]
+    if request.GET.get('genetype')=='Chicken':
+        genes=GeneInfo13.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='Soybean':
+        genes=GeneInfo14.objects.all().reverse()[:10]   
+    if request.GET.get('genetype')=='Naked_mole-rat':
+        genes=GeneInfo15.objects.all().reverse()[:10]  
+    if request.GET.get('genetype')=='Cynomolgus_Monkey':
+        genes=GeneInfo16.objects.all().reverse()[:10]
+    if request.GET.get('genetype')=='Sheep':
+        genes=GeneInfo17.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='Rabbit':
+        genes=GeneInfo18.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='Rice':
+        genes=GeneInfo19.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='Rhesus_monkey_hamster':
+        genes=GeneInfo20.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='Baker%27s_yeast':
+        genes=GeneInfo21.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='Fission_yeast':
+        genes=GeneInfo22.objects.all().reverse()[:10]  
+    if request.GET.get('genetype')=='Pig':
+        genes=GeneInfo23.objects.all().reverse()[:10]
+    if request.GET.get('genetype')=='Bread_wheat':
+        genes=GeneInfo24.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='Wine_grape':
+        genes=GeneInfo25.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='Western_clawed_frog':
+        genes=GeneInfo26.objects.all().reverse()[:10] 
+    if request.GET.get('genetype')=='Maize':
+        genes=GeneInfo27.objects.all().reverse()[:10] 
+
+
     stype=request.GET.get("genetype",'Human')
     return render_to_response('genedatabase/genesearch.html',{
                                     'local':local,
@@ -75,6 +112,44 @@ def gdbsearch(request):
                 genes=GeneInfo8.objects.filter(genename=genename)
             if  table_num=="9":
                 genes=GeneInfo9.objects.filter(genename=genename)
+                ##########################
+            if  table_num=="10":
+                genes=GeneInfo10.objects.filter(genename=genename)
+            if  table_num=="11":
+                genes=GeneInfo11.objects.filter(genename=genename)
+            if  table_num=="12":
+                genes=GeneInfo12.objects.filter(genename=genename)
+            if  table_num=="13":
+                genes=GeneInfo13.objects.filter(genename=genename)    
+            if  table_num=="14":
+                genes=GeneInfo14.objects.filter(genename=genename)
+            if  table_num=="15":
+                genes=GeneInfo15.objects.filter(genename=genename)
+            if  table_num=="16":
+                genes=GeneInfo16.objects.filter(genename=genename)
+            if  table_num=="17":
+                genes=GeneInfo17.objects.filter(genename=genename)
+            if  table_num=="18":
+                genes=GeneInfo18.objects.filter(genename=genename)
+                #######################################
+            if  table_num=="19":
+                genes=GeneInfo19.objects.filter(genename=genename)
+            if  table_num=="20":
+                genes=GeneInfo20.objects.filter(genename=genename)
+            if  table_num=="21":
+                genes=GeneInfo21.objects.filter(genename=genename)
+            if  table_num=="22":
+                genes=GeneInfo22.objects.filter(genename=genename)    
+            if  table_num=="23":
+                genes=GeneInfo23.objects.filter(genename=genename)
+            if  table_num=="24":
+                genes=GeneInfo24.objects.filter(genename=genename)
+            if  table_num=="25":
+                genes=GeneInfo25.objects.filter(genename=genename)
+            if  table_num=="26":
+                genes=GeneInfo26.objects.filter(genename=genename)
+            if  table_num=="27":
+                genes=GeneInfo27.objects.filter(genename=genename)
                 
         return render_to_response('genedatabase/geneshow.html',{
                  'genes':genes,
@@ -104,6 +179,47 @@ def geneshow(request,specy,id):
         genes=GeneInfo8.objects.filter(id__iexact=id)
     if specy=='Goat':
         genes=GeneInfo9.objects.filter(id__iexact=id)
+    ####################################################
+    if specy=='Guinea_pig':
+        genes=GeneInfo10.objects.filter(id__iexact=id)
+    if specy=='Zebrafish':
+        genes=GeneInfo11.objects.filter(id__iexact=id)
+    if specy=='Horse':
+        genes=GeneInfo12.objects.filter(id__iexact=id) 
+    if specy=='Chicken':
+        genes=GeneInfo13.objects.filter(id__iexact=id)
+    if specy=='Soybean':
+        genes=GeneInfo14.objects.filter(id__iexact=id)
+    if specy=='Naked_mole-rat':
+        genes=GeneInfo15.objects.filter(id__iexact=id)
+    if specy=='Cynomolgus_Monkey':
+        genes=GeneInfo16.objects.filter(id__iexact=id) 
+    if specy=='Sheep':
+        genes=GeneInfo17.objects.filter(id__iexact=id)
+    if specy=='Rabbit':
+        genes=GeneInfo18.objects.filter(id__iexact=id)
+    if specy=='Rice':
+        genes=GeneInfo19.objects.filter(id__iexact=id)
+        #################################################
+    if specy=='Rhesus_monkey_hamster':
+        genes=GeneInfo20.objects.filter(id__iexact=id)
+    if specy=='Baker%27s_yeast':
+        genes=GeneInfo21.objects.filter(id__iexact=id)
+    if specy=='Fission_yeast':
+        genes=GeneInfo22.objects.filter(id__iexact=id) 
+    if specy=='Pig':
+        genes=GeneInfo23.objects.filter(id__iexact=id)
+    if specy=='Bread_wheat':
+        genes=GeneInfo24.objects.filter(id__iexact=id)
+    if specy=='Wine_grape':
+        genes=GeneInfo25.objects.filter(id__iexact=id)
+    if specy=='Western_clawed_frog':
+        genes=GeneInfo26.objects.filter(id__iexact=id) 
+    if specy=='Maize':
+        genes=GeneInfo27.objects.filter(id__iexact=id)
+
+
+
          
     return render_to_response('genedatabase/gene_details.html',{
         'local':local,
