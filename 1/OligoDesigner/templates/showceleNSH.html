@@ -1,7 +1,14 @@
 {% extends "base.html" %} 
  {% block content %}
  <title>CE和LE探针的NSH结果</title>
-<style></style>
+<style>
+input{
+    border:none;//去除边框
+    border-radius:0;
+    //border-bottom:#8D8D8D 1px solid;
+    box-shadow: 0px 0px 0px 0px;//去除阴影
+    }
+</style>
 <div class="panel panel-success">
 <div class="panel-heading">
         <b>CE和LE探针的NSH算法计算结果</b>
@@ -22,7 +29,7 @@
 <table class="table table-bordered">
 <thead><tr>
 {% for lep in LE_plist1 %}
-<th style="font-size:22px;">LE</th>
+<th style="font-size:22px;">BP</th>
 {% endfor %}
 </tr></thead>
   <tbody>
@@ -41,7 +48,7 @@
   <tbody>
    {% for cep in CE_plist %}
     <tr>
-      <td style="font-size:11px;"><b>CE</b></th>
+      <td style="font-size:11px;"><b>CP</b></th>
       <td style="font-size:11px;"><b>{{cep.0}}</b></th>
     </tr>
    {% endfor %}
@@ -94,7 +101,7 @@
 <table class="table table-bordered">
 <thead><tr>
 {% for lep in LE_plist2 %}
-<th style="font-size:22px;">LE</th>
+<th style="font-size:22px;">BP</th>
 {% endfor %}
 </tr></thead>
   <tbody>
@@ -113,7 +120,7 @@
   <tbody>
    {% for cep in CE_plist %}
     <tr>
-      <td style="font-size:11px;"><b>CE</b></th>
+      <td style="font-size:11px;"><b>CP</b></th>
       <td style="font-size:11px;"><b>{{cep.0}}</b></th>
     </tr>
    {% endfor %}
@@ -168,7 +175,7 @@
 <table class="table table-bordered">
 <thead><tr>
 {% for lep in LE_plist3 %}
-<th style="font-size:22px;">LE</th>
+<th style="font-size:22px;">BP</th>
 {% endfor %}
 </tr></thead>
   <tbody>
@@ -187,7 +194,7 @@
   <tbody>
    {% for cep in CE_plist %}
     <tr>
-      <td style="font-size:11px;"><b>CE</b></th>
+      <td style="font-size:11px;"><b>CP</b></th>
       <td style="font-size:11px;"><b>{{cep.0}}</b></th>
     </tr>
    {% endfor %}
@@ -242,7 +249,7 @@
 <table class="table table-bordered">
 <thead><tr>
 {% for lep in LE_plist4 %}
-<th style="font-size:22px;">LE</th>
+<th style="font-size:22px;">BP</th>
 {% endfor %}
 </tr></thead>
   <tbody>
@@ -261,7 +268,7 @@
   <tbody>
    {% for cep in CE_plist %}
     <tr>
-      <td style="font-size:11px;"><b>CE</b></th>
+      <td style="font-size:11px;"><b>CP</b></th>
       <td style="font-size:11px;"><b>{{cep.0}}</b></th>
     </tr>
    {% endfor %}
@@ -316,7 +323,7 @@
 <table class="table table-bordered">
 <thead><tr>
 {% for lep in LE_plist5 %}
-<th style="font-size:22px;">LE</th>
+<th style="font-size:22px;">BP</th>
 {% endfor %}
 </tr></thead>
   <tbody>
@@ -335,7 +342,7 @@
   <tbody>
    {% for cep in CE_plist %}
     <tr>
-      <td style="font-size:11px;"><b>CE</b></th>
+      <td style="font-size:11px;"><b>CP</b></th>
       <td style="font-size:11px;"><b>{{cep.0}}</b></th>
     </tr>
    {% endfor %}
@@ -390,7 +397,7 @@
 <table class="table table-bordered">
 <thead><tr>
 {% for lep in LE_plist6 %}
-<th style="font-size:22px;">LE</th>
+<th style="font-size:22px;">BP</th>
 {% endfor %}
 </tr></thead>
   <tbody>
@@ -409,7 +416,7 @@
   <tbody>
    {% for cep in CE_plist %}
     <tr>
-      <td style="font-size:11px;"><b>CE</b></th>
+      <td style="font-size:11px;"><b>CP</b></th>
       <td style="font-size:11px;"><b>{{cep.0}}</b></th>
     </tr>
    {% endfor %}
@@ -464,7 +471,7 @@
 <table class="table table-bordered">
 <thead><tr>
 {% for lep in LE_plist7 %}
-<th style="font-size:22px;">LE</th>
+<th style="font-size:22px;">BP</th>
 {% endfor %}
 </tr></thead>
   <tbody>
@@ -483,7 +490,7 @@
   <tbody>
    {% for cep in CE_plist %}
     <tr>
-      <td style="font-size:11px;"><b>CE</b></th>
+      <td style="font-size:11px;"><b>CP</b></th>
       <td style="font-size:11px;"><b>{{cep.0}}</b></th>
     </tr>
    {% endfor %}
