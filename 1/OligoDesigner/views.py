@@ -1028,11 +1028,11 @@ def GenerateProbesets(req):
         LE_final_list=[]
         BL_final_list=[]
         for j in range(len(probesets_list)):
-            if probesets_list[j][2]=="CE":
+            if probesets_list[j][2]=="CP":
                 CE_final_list.append((probesets_list[j][0],probesets_list[j][1]+'tttttCTCTTGGAAAGAAAGT'))
             if probesets_list[j][2]=="BL":
                 BL_final_list.append((probesets_list[j][0],probesets_list[j][1]))
-            if probesets_list[j][2]=="LE":
+            if probesets_list[j][2]=="BP":
                 LE_final_list.append((probesets_list[j][0],probesets_list[j][1]))
         LE_final_final_list=[]
         for k in range(len(LE_final_list)):
