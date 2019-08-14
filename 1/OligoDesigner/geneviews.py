@@ -60,7 +60,7 @@ def genesearch(request):
         genes=GeneInfo19.objects.all().reverse()[:10] 
     if request.GET.get('genetype')=='Rhesus_monkey_hamster':
         genes=GeneInfo20.objects.all().reverse()[:10] 
-    if request.GET.get('genetype')=='Baker%27s_yeast':
+    if request.GET.get('genetype')=='Bakers_yeast':
         genes=GeneInfo21.objects.all().reverse()[:10] 
     if request.GET.get('genetype')=='Fission_yeast':
         genes=GeneInfo22.objects.all().reverse()[:10]  
