@@ -19,7 +19,7 @@ class NonNSHFilter:
             TmValue=0
         return TmValue
 
-    def filterSequence(self,string):
+    def filterSequence(self,string,lower,upper):
         length=len(string)
         data_probe=[]
         probelist=[0]
@@ -32,7 +32,7 @@ class NonNSHFilter:
                     data.append(ns[:i])
                 for d in data:
                     data_tm.append(self.oligoTm(d))
-                data_probe.append(self.search(data_tm,53,58))
+                data_probe.append(self.search(data_tm,lower,upper))
             else:
                 print "List index out of range"
 ####返回probedata############################################################
