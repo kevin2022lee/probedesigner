@@ -608,7 +608,7 @@ def NonNshFilter(req):
         probedict2={}
         probelist=nonnshfilter.filterSequence(req.POST['seqtxt'],53,58)
         probelist1=nonnshfilter.filterSequence(req.POST['seqtxt'],50,55)
-        probelist2=nonnshfilter.filterSequence(req.POST['seqtxt'],56,60)
+        probelist2=nonnshfilter.filterSequence(req.POST['seqtxt'],58,65)
         s=req.POST['seqtxt'].upper()
         probelist.append(len(s))
         probelist1.append(len(s))
