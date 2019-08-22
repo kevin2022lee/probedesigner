@@ -604,17 +604,31 @@ def NonNshFilter(req):
     if req.method=='POST':
         nonnshfilter=NonNSHFilter()
         probedict={}
-        probelist=nonnshfilter.filterSequence(req.POST['seqtxt'])
+        probedict1={}
+        probedict2={}
+        probelist=nonnshfilter.filterSequence(req.POST['seqtxt'],53,58)
+        probelist1=nonnshfilter.filterSequence(req.POST['seqtxt'],50,55)
+        probelist2=nonnshfilter.filterSequence(req.POST['seqtxt'],56,60)
         s=req.POST['seqtxt'].upper()
         probelist.append(len(s))
+        probelist1.append(len(s))
+        probelist2.append(len(s))
         for i in range(len(probelist)):
             if probelist[i]<len(s)-20:
 #计算GC含量以及计算CE&LE 公式：
                 probedict.setdefault('p'+str(probelist[i]),[reverseOligo(s[probelist[i]:probelist[i+1]]),probelist[i]])
+        for i in range(len(probelist1)):
+            if probelist1[i]<len(s)-20:
+                probedict1.setdefault('p'+str(probelist1[i]),[reverseOligo(s[probelist1[i]:probelist1[i+1]]),probelist1[i]])
+        for i in range(len(probelist2)):
+            if probelist2[i]<len(s)-20:
+                probedict2.setdefault('p'+str(probelist2[i]),[reverseOligo(s[probelist2[i]:probelist2[i+1]]),probelist2[i]])
         return render_to_response('showfilterprobe.html',{
                                                      'local':local,
                                                      'thisyear':thisyear,
                                                      'probedict':probedict,
+                                                     'probedict1':probedict1,
+                                                     'probedict2':probedict2,
                                                      },context_instance=RequestContext(req))  
 ##################################################################
 @csrf_protect    
