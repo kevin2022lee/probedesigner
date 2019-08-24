@@ -58,7 +58,7 @@ MYSQL_HOST = '39.107.81.84'
 
 MYSQL_PORT = '3306'
 
-MYSQL_USER = 'root'
+MYSQL_USER = 'gene_query'
 
 MYSQL_PASS = '8588027'
 
