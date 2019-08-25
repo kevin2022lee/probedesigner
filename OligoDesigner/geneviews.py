@@ -48,7 +48,7 @@ def genesearch(request):
         genes=GeneInfo13.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Soybean':
         genes=GeneInfo14.objects.all().reverse()[:100]   
-    if request.GET.get('genetype')=='Naked_mole-rat':
+    if request.GET.get('genetype')=='Nakedmolerat':
         genes=GeneInfo15.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='Cynomolgus_Monkey':
         genes=GeneInfo16.objects.all().reverse()[:100]
@@ -190,7 +190,7 @@ def geneshow(request,specy,id):
         genes=GeneInfo13.objects.filter(id__iexact=id)
     if specy=='Soybean':
         genes=GeneInfo14.objects.filter(id__iexact=id)
-    if specy=='Naked_mole_rat':
+    if specy=='Nakedmolerat':
         genes=GeneInfo15.objects.filter(id__iexact=id)
     if specy=='Cynomolgus_Monkey':
         genes=GeneInfo16.objects.filter(id__iexact=id) 
