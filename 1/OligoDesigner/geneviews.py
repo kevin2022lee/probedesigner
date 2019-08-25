@@ -23,21 +23,21 @@ def genesearch(request):
         genes=GeneInfo1.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Rat':
         genes=GeneInfo2.objects.all().reverse()[:100] 
-    if request.GET.get('genetype')=='At_Arabidopsis':
+    if request.GET.get('genetype')=='AtArabidopsis':
         genes=GeneInfo3.objects.all().reverse()[:100]   
-    if request.GET.get('genetype')=='C_elegans':
+    if request.GET.get('genetype')=='Celegans':
         genes=GeneInfo4.objects.all().reverse()[:100]  
-    if request.GET.get('genetype')=='Fruit_fly':
+    if request.GET.get('genetype')=='Fruitfly':
         genes=GeneInfo5.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Bovine':
         genes=GeneInfo6.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Dog':
         genes=GeneInfo7.objects.all().reverse()[:100] 
-    if request.GET.get('genetype')=='Chinese_hamster':
+    if request.GET.get('genetype')=='Chinesehamster':
         genes=GeneInfo8.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Goat':
         genes=GeneInfo9.objects.all().reverse()[:100] 
-    if request.GET.get('genetype')=='Guinea_pig':
+    if request.GET.get('genetype')=='Guineapig':
         genes=GeneInfo10.objects.all().reverse()[:100] 
     #####################################################
     if request.GET.get('genetype')=='Zebrafish':
@@ -50,7 +50,7 @@ def genesearch(request):
         genes=GeneInfo14.objects.all().reverse()[:100]   
     if request.GET.get('genetype')=='Nakedmolerat':
         genes=GeneInfo15.objects.all().reverse()[:100]  
-    if request.GET.get('genetype')=='Cynomolgus_Monkey':
+    if request.GET.get('genetype')=='CynomolgusMonkey':
         genes=GeneInfo16.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Sheep':
         genes=GeneInfo17.objects.all().reverse()[:100] 
@@ -58,19 +58,19 @@ def genesearch(request):
         genes=GeneInfo18.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Rice':
         genes=GeneInfo19.objects.all().reverse()[:100] 
-    if request.GET.get('genetype')=='Rhesus_monkey_hamster':
+    if request.GET.get('genetype')=='Rhesusmonkeyhamster':
         genes=GeneInfo20.objects.all().reverse()[:100] 
-    if request.GET.get('genetype')=='Bakers_yeast':
+    if request.GET.get('genetype')=='Bakersyeast':
         genes=GeneInfo21.objects.all().reverse()[:100] 
-    if request.GET.get('genetype')=='Fission_yeast':
+    if request.GET.get('genetype')=='Fissionyeast':
         genes=GeneInfo22.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='Pig':
         genes=GeneInfo23.objects.all().reverse()[:100]
-    if request.GET.get('genetype')=='Bread_wheat':
+    if request.GET.get('genetype')=='Breadwheat':
         genes=GeneInfo24.objects.all().reverse()[:100] 
-    if request.GET.get('genetype')=='Wine_grape':
+    if request.GET.get('genetype')=='Winegrape':
         genes=GeneInfo25.objects.all().reverse()[:100] 
-    if request.GET.get('genetype')=='Western_clawed_frog':
+    if request.GET.get('genetype')=='Westernclawedfrog':
         genes=GeneInfo26.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Maize':
         genes=GeneInfo27.objects.all().reverse()[:100] 
@@ -165,22 +165,22 @@ def geneshow(request,specy,id):
         genes=GeneInfo1.objects.filter(id__iexact=id)
     if specy=='Rat':
         genes=GeneInfo2.objects.filter(id__iexact=id) 
-    if specy=='At_Arabidopsis':
+    if specy=='AtArabidopsis':
         genes=GeneInfo3.objects.filter(id__iexact=id)
-    if specy=='C_elegans':
+    if specy=='Celegans':
         genes=GeneInfo4.objects.filter(id__iexact=id)
-    if specy=='Fruit_fly':
+    if specy=='Fruitfly':
         genes=GeneInfo5.objects.filter(id__iexact=id)
     if specy=='Bovine':
         genes=GeneInfo6.objects.filter(id__iexact=id) 
     if specy=='Dog':
         genes=GeneInfo7.objects.filter(id__iexact=id)
-    if specy=='Chinese_hamster':
+    if specy=='Chinesehamster':
         genes=GeneInfo8.objects.filter(id__iexact=id)
     if specy=='Goat':
         genes=GeneInfo9.objects.filter(id__iexact=id)
     ####################################################
-    if specy=='Guinea_pig':
+    if specy=='Guineapig':
         genes=GeneInfo10.objects.filter(id__iexact=id)
     if specy=='Zebrafish':
         genes=GeneInfo11.objects.filter(id__iexact=id)
@@ -192,7 +192,7 @@ def geneshow(request,specy,id):
         genes=GeneInfo14.objects.filter(id__iexact=id)
     if specy=='Nakedmolerat':
         genes=GeneInfo15.objects.filter(id__iexact=id)
-    if specy=='Cynomolgus_Monkey':
+    if specy=='CynomolgusMonkey':
         genes=GeneInfo16.objects.filter(id__iexact=id) 
     if specy=='Sheep':
         genes=GeneInfo17.objects.filter(id__iexact=id)
@@ -201,19 +201,19 @@ def geneshow(request,specy,id):
     if specy=='Rice':
         genes=GeneInfo19.objects.filter(id__iexact=id)
         #################################################
-    if specy=='Rhesus_monkey_hamster':
+    if specy=='Rhesusmonkeyhamster':
         genes=GeneInfo20.objects.filter(id__iexact=id)
-    if specy=='Baker%27s_yeast':
+    if specy=='Bakersyeast':
         genes=GeneInfo21.objects.filter(id__iexact=id)
-    if specy=='Fission_yeast':
+    if specy=='Fissionyeast':
         genes=GeneInfo22.objects.filter(id__iexact=id) 
     if specy=='Pig':
         genes=GeneInfo23.objects.filter(id__iexact=id)
-    if specy=='Bread_wheat':
+    if specy=='Breadwheat':
         genes=GeneInfo24.objects.filter(id__iexact=id)
-    if specy=='Wine_grape':
+    if specy=='Winegrape':
         genes=GeneInfo25.objects.filter(id__iexact=id)
-    if specy=='Western_clawed_frog':
+    if specy=='Westernclawedfrog':
         genes=GeneInfo26.objects.filter(id__iexact=id) 
     if specy=='Maize':
         genes=GeneInfo27.objects.filter(id__iexact=id)
