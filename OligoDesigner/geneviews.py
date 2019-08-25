@@ -190,7 +190,7 @@ def geneshow(request,specy,id):
         genes=GeneInfo13.objects.filter(id__iexact=id)
     if specy=='Soybean':
         genes=GeneInfo14.objects.filter(id__iexact=id)
-    if specy=='Naked-mole-rat':
+    if specy=='Naked_mole_rat':
         genes=GeneInfo15.objects.filter(id__iexact=id)
     if specy=='Cynomolgus_Monkey':
         genes=GeneInfo16.objects.filter(id__iexact=id) 
