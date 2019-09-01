@@ -75,8 +75,8 @@ def genesearch(request):
     if request.GET.get('genetype')=='Maize':
         genes=GeneInfo27.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='':
-        genes="""
- <div class="panel panel-success">
+        hots="""
+<div class="panel panel-success">
  <div class="panel-heading">
  热门检索基因
  </div>
@@ -107,14 +107,13 @@ def genesearch(request):
 <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
 </div>
 </div>
-        """
-
-
-    stype=request.GET.get("genetype",'Human')
+"""
+    stype=request.GET.get("genetype",'')
     return render_to_response('genedatabase/genesearch.html',{
                                     'local':local,
                                     'thisyear':thisyear,
                                     'genes':genes,
+                                    'hots':hots,
                                     'stype':stype
         },context_instance=RequestContext(request))
 
