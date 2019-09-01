@@ -16,6 +16,39 @@ thisyear=time.strftime('%Y',time.localtime(time.time()))
 
 
 def genesearch(request):
+    hots="""
+        <div class="panel panel-success">
+         <div class="panel-heading">
+         热门检索基因
+         </div>
+        <div class="panel-body">
+        <a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-large">GAPDH</span></a>
+        <a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-large">TERT</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-large">Aff3</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-large">LOC103690090</span></a>
+        <a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-large">AT4G33770</span></a>
+        <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
+        <a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-large">GAPDH</span></a>
+        <a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-large">TERT</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-large">Aff3</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-large">LOC103690090</span></a>
+        <a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-large">AT4G33770</span></a>
+        <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
+        <a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-large">GAPDH</span></a>
+        <a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-large">TERT</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-large">Aff3</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-large">LOC103690090</span></a>
+        <a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-large">AT4G33770</span></a>
+        <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
+        <a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-large">GAPDH</span></a>
+        <a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-large">TERT</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-large">Aff3</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-large">LOC103690090</span></a>
+        <a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-large">AT4G33770</span></a>
+        <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
+        </div>
+        </div>
+    """
     genes={} 
     if request.GET.get('genetype')=='Human':
         hots=''
@@ -101,41 +134,7 @@ def genesearch(request):
         hots=''
     if request.GET.get('genetype')=='Maize':
         hots=''
-        genes=GeneInfo27.objects.all().reverse()[:100] 
-    if request.GET.get('genetype')=='':
-        hots="""
-<div class="panel panel-success">
- <div class="panel-heading">
- 热门检索基因
- </div>
-<div class="panel-body">
-<a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-large">GAPDH</span></a>
-<a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-large">TERT</span></a>
-<a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-large">Aff3</span></a>
-<a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-large">LOC103690090</span></a>
-<a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-large">AT4G33770</span></a>
-<a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
-<a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-large">GAPDH</span></a>
-<a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-large">TERT</span></a>
-<a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-large">Aff3</span></a>
-<a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-large">LOC103690090</span></a>
-<a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-large">AT4G33770</span></a>
-<a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
-<a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-large">GAPDH</span></a>
-<a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-large">TERT</span></a>
-<a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-large">Aff3</span></a>
-<a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-large">LOC103690090</span></a>
-<a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-large">AT4G33770</span></a>
-<a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
-<a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-large">GAPDH</span></a>
-<a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-large">TERT</span></a>
-<a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-large">Aff3</span></a>
-<a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-large">LOC103690090</span></a>
-<a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-large">AT4G33770</span></a>
-<a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
-</div>
-</div>
-"""
+        genes=GeneInfo27.objects.all().reverse()[:100]        
     stype=request.GET.get("genetype",'')
     return render_to_response('genedatabase/genesearch.html',{
                                     'local':local,
