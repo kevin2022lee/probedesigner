@@ -22,30 +22,30 @@ def genesearch(request):
          热门检索基因
          </div>
         <div class="panel-body">
-        <a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-large">GAPDH</span></a>
-        <a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-large">TERT</span></a>
-        <a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-large">Aff3</span></a>
-        <a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-large">LOC103690090</span></a>
-        <a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-large">AT4G33770</span></a>
-        <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
-        <a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-large">GAPDH</span></a>
-        <a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-large">TERT</span></a>
-        <a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-large">Aff3</span></a>
-        <a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-large">LOC103690090</span></a>
-        <a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-large">AT4G33770</span></a>
-        <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
-        <a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-large">GAPDH</span></a>
-        <a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-large">TERT</span></a>
-        <a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-large">Aff3</span></a>
-        <a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-large">LOC103690090</span></a>
-        <a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-large">AT4G33770</span></a>
-        <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
-        <a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-large">GAPDH</span></a>
-        <a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-large">TERT</span></a>
-        <a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-large">Aff3</span></a>
-        <a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-large">LOC103690090</span></a>
-        <a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-large">AT4G33770</span></a>
-        <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-large">srz-32</span></a>
+        <a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-small">GAPDH</span></a>
+        <a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-small">TERT</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-small">Aff3</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-small">LOC103690090</span></a>
+        <a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-small">AT4G33770</span></a>
+        <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-small">srz-32</span></a>
+        <a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-small">GAPDH</span></a>
+        <a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-small">TERT</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-small">Aff3</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-small">LOC103690090</span></a>
+        <a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-small">AT4G33770</span></a>
+        <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-small">srz-32</span></a>
+        <a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-small">GAPDH</span></a>
+        <a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-small">TERT</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-small">Aff3</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-small">LOC103690090</span></a>
+        <a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-small">AT4G33770</span></a>
+        <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-small">srz-32</span></a>
+        <a href="http://{{local}}/genedatabase/Human/52401/"><span class="label label-success label-small">GAPDH</span></a>
+        <a href="http://{{local}}/genedatabase/Human/51470/"><span class="label label-success label-small">TERT</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/1886/"><span class="label label-success label-small">Aff3</span></a>
+        <a href="http://{{local}}/genedatabase/Mouse/19382/"><span class="label label-success label-small">LOC103690090</span></a>
+        <a href="http://{{local}}/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-small">AT4G33770</span></a>
+        <a href="http://{{local}}/genedatabase/Celegans/200/"><span class="label label-success label-small">srz-32</span></a>
         </div>
         </div>
     """
