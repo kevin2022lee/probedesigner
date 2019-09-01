@@ -18,61 +18,89 @@ thisyear=time.strftime('%Y',time.localtime(time.time()))
 def genesearch(request):
     genes={} 
     if request.GET.get('genetype')=='Human':
+        hots=''
         genes=GeneInfo.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='Mouse':
+        hots=''
         genes=GeneInfo1.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Rat':
+        hots=''
         genes=GeneInfo2.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='AtArabidopsis':
+        hots=''
         genes=GeneInfo3.objects.all().reverse()[:100]   
     if request.GET.get('genetype')=='Celegans':
+        hots=''
         genes=GeneInfo4.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='Fruitfly':
+        hots=''
         genes=GeneInfo5.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Bovine':
+        hots=''
         genes=GeneInfo6.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Dog':
+        hots=''
         genes=GeneInfo7.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Chinesehamster':
+        hots=''
         genes=GeneInfo8.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Goat':
+        hots=''
         genes=GeneInfo9.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Guineapig':
+        hots=''
         genes=GeneInfo10.objects.all().reverse()[:100] 
     #####################################################
     if request.GET.get('genetype')=='Zebrafish':
+        hots=''
         genes=GeneInfo11.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='Horse':
+        hots=''
         genes=GeneInfo12.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Chicken':
+        hots=''
         genes=GeneInfo13.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Soybean':
+        hots=''
         genes=GeneInfo14.objects.all().reverse()[:100]   
     if request.GET.get('genetype')=='Nakedmolerat':
+        hots=''
         genes=GeneInfo15.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='CynomolgusMonkey':
+        hots=''
         genes=GeneInfo16.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Sheep':
+        hots=''
         genes=GeneInfo17.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Rabbit':
+        hots=''
         genes=GeneInfo18.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Rice':
+        hots=''
         genes=GeneInfo19.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Rhesusmonkeyhamster':
+        hots=''
         genes=GeneInfo20.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Bakersyeast':
+        hots=''
         genes=GeneInfo21.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Fissionyeast':
+        hots=''
         genes=GeneInfo22.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='Pig':
+        hots=''
         genes=GeneInfo23.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Breadwheat':
+        hots=''
         genes=GeneInfo24.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Winegrape':
+        hots=''
         genes=GeneInfo25.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Westernclawedfrog':
         genes=GeneInfo26.objects.all().reverse()[:100] 
+        hots=''
     if request.GET.get('genetype')=='Maize':
+        hots=''
         genes=GeneInfo27.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='':
         hots="""
