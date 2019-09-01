@@ -22,30 +22,19 @@ def genesearch(request):
          热门检索基因
          </div>
         <div class="panel-body">
-        <a href="http://www.probedesigner.cn/genedatabase/Human/52401/"><span class="label label-success label-small">GAPDH</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Human/51470/"><span class="label label-success label-small">TERT</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Mouse/1886/"><span class="label label-success label-small">Aff3</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Mouse/19382/"><span class="label label-success label-small">LOC103690090</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-small">AT4G33770</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Celegans/200/"><span class="label label-success label-small">srz-32</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Human/52401/"><span class="label label-success label-small">GAPDH</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Human/51470/"><span class="label label-success label-small">TERT</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Mouse/1886/"><span class="label label-success label-small">Aff3</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Mouse/19382/"><span class="label label-success label-small">LOC103690090</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-small">AT4G33770</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Celegans/200/"><span class="label label-success label-small">srz-32</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Human/52401/"><span class="label label-success label-small">GAPDH</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Human/51470/"><span class="label label-success label-small">TERT</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Mouse/1886/"><span class="label label-success label-small">Aff3</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Mouse/19382/"><span class="label label-success label-small">LOC103690090</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-small">AT4G33770</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Celegans/200/"><span class="label label-success label-small">srz-32</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Human/52401/"><span class="label label-success label-small">GAPDH</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Human/51470/"><span class="label label-success label-small">TERT</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Mouse/1886/"><span class="label label-success label-small">Aff3</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Mouse/19382/"><span class="label label-success label-small">LOC103690090</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/AtArabidopsis/19999/"><span class="label label-success label-small">AT4G33770</span></a>
-        <a href="http://www.probedesigner.cn/genedatabase/Celegans/200/"><span class="label label-success label-small">srz-32</span></a>
+        <a href="http://www.probedesigner.cn/genedatabase/Human/52401/"><span class="label label-info label-small">GAPDH</span></a>
+        <a href="http://www.probedesigner.cn/genedatabase/Human/51470/"><span class="label label-info label-small">TERT</span></a>
+        <a href="http://www.probedesigner.cn/genedatabase/Mouse/1886/"><span class="label label-info label-small">Aff3</span></a>
+        <a href="http://www.probedesigner.cn/genedatabase/Mouse/19382/"><span class="label label-info label-small">LOC103690090</span></a>
+        <a href="http://www.probedesigner.cn/genedatabase/AtArabidopsis/19999/"><span class="label label-info label-small">AT4G33770</span></a>
+        <a href="http://www.probedesigner.cn/genedatabase/Celegans/200/"><span class="label label-info label-small">srz-32</span></a>
+        <a href="http://www.probedesigner.cn/genedatabase/Human/52401/"><span class="label label-info label-small">GAPDH</span></a>
+        <a href="http://www.probedesigner.cn/genedatabase/Human/51470/"><span class="label label-info label-small">TERT</span></a>
+        <a href="http://www.probedesigner.cn/genedatabase/Mouse/1886/"><span class="label label-info label-small">Aff3</span></a>
+        <a href="http://www.probedesigner.cn/genedatabase/Mouse/19382/"><span class="label label-info label-small">LOC103690090</span></a>
+        <a href="http://www.probedesigner.cn/genedatabase/AtArabidopsis/19999/"><span class="label label-info label-small">AT4G33770</span></a>
+        <a href="http://www.probedesigner.cn/genedatabase/Celegans/200/"><span class="label label-info label-small">srz-32</span></a>
+
         </div>
         </div>
     """
