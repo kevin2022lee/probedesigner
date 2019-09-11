@@ -720,6 +720,12 @@ def ProbeSetsXmer(req):
         LE_plist5=[]
         LE_plist6=[]
         LE_plist7=[]
+        LE_plist8=[]
+        LE_plist9=[]
+        LE_plist10=[]
+        LE_plist11=[]
+        LE_plist12=[]
+        LE_plist13=[]
         len_lep=len(LE_plist)
         if len_lep<=15:
             LE_plist1=LE_plist[0:len(LE_plist)]
@@ -756,6 +762,75 @@ def ProbeSetsXmer(req):
             LE_plist5=LE_plist[60:75]
             LE_plist6=LE_plist[75:90]
             LE_plist7=LE_plist[90:len(LE_plist)]
+        elif 106<len_lep<=120:
+            LE_plist1=LE_plist[0:15]
+            LE_plist2=LE_plist[15:30]  
+            LE_plist3=LE_plist[30:45]
+            LE_plist4=LE_plist[45:60]
+            LE_plist5=LE_plist[60:75]
+            LE_plist6=LE_plist[75:90]
+            LE_plist7=LE_plist[90:105]
+            LE_plist8=LE_plist[105:len(LE_plist)]
+        elif 121<len_lep<=135:
+            LE_plist1=LE_plist[0:15]
+            LE_plist2=LE_plist[15:30]  
+            LE_plist3=LE_plist[30:45]
+            LE_plist4=LE_plist[45:60]
+            LE_plist5=LE_plist[60:75]
+            LE_plist6=LE_plist[75:90]
+            LE_plist7=LE_plist[90:105]
+            LE_plist8=LE_plist[105:120]
+            LE_plist9=LE_plist[120:len(LE_plist)]
+        elif 135<len_lep<=150:
+            LE_plist1=LE_plist[0:15]
+            LE_plist2=LE_plist[15:30]  
+            LE_plist3=LE_plist[30:45]
+            LE_plist4=LE_plist[45:60]
+            LE_plist5=LE_plist[60:75]
+            LE_plist6=LE_plist[75:90]
+            LE_plist7=LE_plist[90:105]
+            LE_plist8=LE_plist[105:120]
+            LE_plist9=LE_plist[120:135]
+            LE_plist10=LE_plist[134:len(LE_plist)]
+        elif 150<len_lep<=165:
+            LE_plist1=LE_plist[0:15]
+            LE_plist2=LE_plist[15:30]  
+            LE_plist3=LE_plist[30:45]
+            LE_plist4=LE_plist[45:60]
+            LE_plist5=LE_plist[60:75]
+            LE_plist6=LE_plist[75:90]
+            LE_plist7=LE_plist[90:105]
+            LE_plist8=LE_plist[105:120]
+            LE_plist9=LE_plist[120:135]
+            LE_plist10=LE_plist[120:135]
+            LE_plist11=LE_plist[135:len(LE_plist)]
+        elif 165<len_lep<=180:
+            LE_plist1=LE_plist[0:15]
+            LE_plist2=LE_plist[15:30]  
+            LE_plist3=LE_plist[30:45]
+            LE_plist4=LE_plist[45:60]
+            LE_plist5=LE_plist[60:75]
+            LE_plist6=LE_plist[75:90]
+            LE_plist7=LE_plist[90:105]
+            LE_plist8=LE_plist[105:120]
+            LE_plist9=LE_plist[120:135]
+            LE_plist10=LE_plist[120:135]
+            LE_plist11=LE_plist[135:150]
+            LE_plist12=LE_plist[150:len(LE_plist)]
+        elif 180<len_lep<=195:
+            LE_plist1=LE_plist[0:15]
+            LE_plist2=LE_plist[15:30]  
+            LE_plist3=LE_plist[30:45]
+            LE_plist4=LE_plist[45:60]
+            LE_plist5=LE_plist[60:75]
+            LE_plist6=LE_plist[75:90]
+            LE_plist7=LE_plist[90:105]
+            LE_plist8=LE_plist[105:120]
+            LE_plist9=LE_plist[120:135]
+            LE_plist10=LE_plist[120:135]
+            LE_plist11=LE_plist[135:150]
+            LE_plist12=LE_plist[150:165]
+            LE_plist13=LE_plist[165:len(LE_plist)]    
         for c in range(len(CE_plist)):
             for l in range(len(LE_plist)):
                 CEtoLE_score.append(xmerclaccele.xmerCalcCELE(CE_plist[c][1], LE_plist[l][1]))
@@ -768,6 +843,12 @@ def ProbeSetsXmer(req):
         CEtoLE_score_list5=[]
         CEtoLE_score_list6=[]
         CEtoLE_score_list7=[]
+        CEtoLE_score_list8=[]
+        CEtoLE_score_list9=[]
+        CEtoLE_score_list10=[]
+        CEtoLE_score_list11=[]
+        CEtoLE_score_list12=[]
+        CEtoLE_score_list13=[]
         
         if len_lep<=15:
             for clsl in CEtoLE_score_list:
@@ -810,7 +891,92 @@ def ProbeSetsXmer(req):
                 CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
                 CEtoLE_score_list5.append((clsl[0],clsl[1][60:75])) 
                 CEtoLE_score_list6.append((clsl[0],clsl[1][75:90]))
-                CEtoLE_score_list6.append((clsl[0],clsl[1][90:len_lep]))       
+                CEtoLE_score_list7.append((clsl[0],clsl[1][90:len_lep]))    
+        elif 105<len_lep<=120:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:45]))
+                CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
+                CEtoLE_score_list5.append((clsl[0],clsl[1][60:75])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][75:90]))
+                CEtoLE_score_list7.append((clsl[0],clsl[1][90:105]))
+                CEtoLE_score_list8.append((clsl[0],clsl[1][105:len_lep]))  
+                
+        elif 120<len_lep<=135:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:45]))
+                CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
+                CEtoLE_score_list5.append((clsl[0],clsl[1][60:75])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][75:90]))
+                CEtoLE_score_list7.append((clsl[0],clsl[1][90:105]))
+                CEtoLE_score_list8.append((clsl[0],clsl[1][105:120]))
+                CEtoLE_score_list9.append((clsl[0],clsl[1][120:len_lep]))  
+                
+        elif 135<len_lep<=150:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:45]))
+                CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
+                CEtoLE_score_list5.append((clsl[0],clsl[1][60:75])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][75:90]))
+                CEtoLE_score_list7.append((clsl[0],clsl[1][90:105]))
+                CEtoLE_score_list8.append((clsl[0],clsl[1][105:120])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][120:135]))
+                CEtoLE_score_list9.append((clsl[0],clsl[1][135:150]))
+                CEtoLE_score_list10.append((clsl[0],clsl[1][150:len_lep])) 
+        
+        elif 150<len_lep<=165:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:45]))
+                CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
+                CEtoLE_score_list5.append((clsl[0],clsl[1][60:75])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][75:90]))
+                CEtoLE_score_list7.append((clsl[0],clsl[1][90:105]))
+                CEtoLE_score_list8.append((clsl[0],clsl[1][105:120])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][120:135]))
+                CEtoLE_score_list9.append((clsl[0],clsl[1][135:150]))
+                CEtoLE_score_list10.append((clsl[0],clsl[1][150:165]))
+                CEtoLE_score_list11.append((clsl[0],clsl[1][165:len_lep]))
+        
+        
+        elif 165<len_lep<=180:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:45]))
+                CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
+                CEtoLE_score_list5.append((clsl[0],clsl[1][60:75])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][75:90]))
+                CEtoLE_score_list7.append((clsl[0],clsl[1][90:105]))
+                CEtoLE_score_list8.append((clsl[0],clsl[1][105:120])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][120:135]))
+                CEtoLE_score_list9.append((clsl[0],clsl[1][135:150]))
+                CEtoLE_score_list10.append((clsl[0],clsl[1][150:165]))
+                CEtoLE_score_list11.append((clsl[0],clsl[1][165:180]))
+                CEtoLE_score_list12.append((clsl[0],clsl[1][180:len_lep]))
+        
+        elif 180<len_lep<=195:
+            for clsl in CEtoLE_score_list:
+                CEtoLE_score_list1.append((clsl[0],clsl[1][0:15]))
+                CEtoLE_score_list2.append((clsl[0],clsl[1][15:30]))
+                CEtoLE_score_list3.append((clsl[0],clsl[1][30:45]))
+                CEtoLE_score_list4.append((clsl[0],clsl[1][45:60]))
+                CEtoLE_score_list5.append((clsl[0],clsl[1][60:75])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][75:90]))
+                CEtoLE_score_list7.append((clsl[0],clsl[1][90:105]))
+                CEtoLE_score_list8.append((clsl[0],clsl[1][105:120])) 
+                CEtoLE_score_list6.append((clsl[0],clsl[1][120:135]))
+                CEtoLE_score_list9.append((clsl[0],clsl[1][135:150]))
+                CEtoLE_score_list10.append((clsl[0],clsl[1][150:165]))
+                CEtoLE_score_list11.append((clsl[0],clsl[1][165:180]))
+                CEtoLE_score_list12.append((clsl[0],clsl[1][180:195]))
+                CEtoLE_score_list12.append((clsl[0],clsl[1][195:len_lep]))
                 
         return render_to_response('showceleNSH.html',{
                                                         'local':local,
@@ -824,6 +990,12 @@ def ProbeSetsXmer(req):
                                                         'LE_plist5':LE_plist5,
                                                         'LE_plist6':LE_plist6,
                                                         'LE_plist7':LE_plist7,
+                                                        'LE_plist8':LE_plist8,
+                                                        'LE_plist9':LE_plist9,
+                                                        'LE_plist10':LE_plist10,
+                                                        'LE_plist11':LE_plist11,
+                                                        'LE_plist12':LE_plist12,
+                                                        'LE_plist13':LE_plist13,
                                                         'CE_plist':CE_plist,
                                                         'BL_plist':BL_plist,
                                                         'CEtoLE_score_list':CEtoLE_score_list,
@@ -834,6 +1006,12 @@ def ProbeSetsXmer(req):
                                                         'CEtoLE_score_list5':CEtoLE_score_list5,
                                                         'CEtoLE_score_list6':CEtoLE_score_list6,
                                                         'CEtoLE_score_list7':CEtoLE_score_list7,
+                                                        'CEtoLE_score_list8':CEtoLE_score_list8,
+                                                        'CEtoLE_score_list9':CEtoLE_score_list9,
+                                                        'CEtoLE_score_list10':CEtoLE_score_list10,
+                                                        'CEtoLE_score_list11':CEtoLE_score_list11,
+                                                        'CEtoLE_score_list12':CEtoLE_score_list12,
+                                                        'CEtoLE_score_list13':CEtoLE_score_list13,
                                                         },context_instance=RequestContext(req))   
 ##################################Generate probe sets#####################################################
 def Probegroupsvalues(req):
