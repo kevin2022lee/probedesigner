@@ -183,6 +183,40 @@ def reverseOligo(ss):
             elif s=='C':
                 re_s='G'
                 re_seq=re_seq+re_s
+            elif s=='R':
+                re_s='Y'
+                re_seq=re_seq+re_s
+            elif s=='Y':
+                re_s='R'
+                re_seq=re_seq+re_s
+            elif s=='M':
+                re_s='K'
+                re_seq=re_seq+re_s
+            elif s=='K':
+                re_s='M'
+                re_seq=re_seq+re_s
+            elif s=='S':
+                re_s='S'
+                re_seq=re_seq+re_s
+            elif s=='W':
+                re_s='W'
+                re_seq=re_seq+re_s
+            elif s=='H':
+                re_s='D'
+                re_seq=re_seq+re_s
+            elif s=='B':
+                re_s='V'
+                re_seq=re_seq+re_s
+            elif s=='V':
+                re_s='B'
+                re_seq=re_seq+re_s
+            elif s=='D':
+                re_s='H'
+                re_seq=re_seq+re_s
+            elif s=='N':
+                re_s='N'
+                re_seq=re_seq+re_s
+            
     return re_seq[::-1]
 ##############################################################功能实现代码区############################################
 @csrf_protect
