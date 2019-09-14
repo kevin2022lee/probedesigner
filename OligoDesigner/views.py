@@ -661,6 +661,7 @@ def NonNshFilter(req):
         return render_to_response('showfilterprobe.html',{
                                                      'local':local,
                                                      'thisyear':thisyear,
+                                                     'seqtxt':seqtxt,
                                                      'probedict':probedict,
                                                      'probedict1':probedict1,
                                                      'probedict2':probedict2,
