@@ -71,7 +71,7 @@ def startdesign(request):
         return render_to_response('startdesign.html',{
                                                       'local':local,
                                                       'thisyear':thisyear,
-                                                      'sequence':request.POST['seq'],
+                                                      'sequence':request.POST['seq'].split(),
                                                       'description':request.COOKIES.get('des',''),
                                                       },context_instance=RequestContext(request))
 
