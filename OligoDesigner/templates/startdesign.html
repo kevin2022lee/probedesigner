@@ -31,8 +31,7 @@ $(function () {
   待设计序列全部基因序列(简并碱基请手动替换)
  </h5>
  </a>
-<div style="background:url(http://www.probedesigner.cn/static/images/seq_bg.jpg);">
-
+<div class="well well-lg" >
 
  <table class="table">
   <caption>简并碱基一览表</caption>
@@ -83,15 +82,16 @@ $(function () {
     </tr>
   </tbody>
 </table>
- {% for s in sequence %}
+<div style="background:url(http://www.probedesigner.cn/static/images/seq_bg.jpg);">
+{% for s in sequence %}
 <input type="text" name="seqtxt" style="width:31px;" title="{{forloop.counter}}" placeholder="{{forloop.counter}}" value="{{s}}">
-{%endfor%} 
+{%endfor%}
 <!-- 
 <textarea id="textarea" name="seqtxt" class="form-control" >
 {{sequence}}
 </textarea>
 -->
-
+</div>
 <button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon glyphicon-step-forward"></span>开始设计</button>
 </form>
 </div>
