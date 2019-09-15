@@ -83,7 +83,7 @@ $(function () {
 </table>
 <div style="background:url(http://www.probedesigner.cn/static/images/seqbg.png); padding-left:30px;padding-right:5px;padding-top:25px;">
 {% for s in sequence %}
-<input type="text" name="seqtxt" style="margin-top:2px;margin-bottom:2px;border:none; width:31px;background-color:transparent;" title="{{forloop.counter}}" placeholder="{{forloop.counter}}" value="&nbsp;">
+<input type="text" name="seqtxt" style="margin-top:2px;margin-bottom:2px;border:none; width:31px;background-color:transparent;" title="{{forloop.counter}}" placeholder="{{forloop.counter}}" value="{{s}}">
 {%endfor%}
 <!-- 
 <textarea id="textarea" name="seqtxt" class="form-control" >
