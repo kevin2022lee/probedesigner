@@ -451,7 +451,7 @@ def entrezseqidtoxml(request):
                                                        'thisyear':thisyear,
                                                        'filetype':'genbank',
                                                        'accessid':record.id,
-                                                       'sequence':str(record.seq[Start:End]),
+                                                       'sequence':str(record.seq[(Start-1):(End-1)]),
                                                        'description':record.description,
                                                        'name':record.name,
                                                        #'dbxrefs':nr.dbxrefs[0],
