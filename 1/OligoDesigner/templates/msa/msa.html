@@ -10,7 +10,7 @@
                                   '</textarea>\n'+                                  
                                   '</li>');
             }else{// 提示选项个数已经达到最大
-                $("#optips").html("最低需要两个序列Alignment,不能再添加!");
+                $("#optips").html("最多支持10个序列Alignment,不能再添加!");
                 $("#optips").css({"color":"red"});
             }
             
@@ -19,7 +19,7 @@
         // 删除选项
         $("#delbtn").click(function(){
             if($("#opts>li").size() <= 2){
-                $("#optips").html("已经没有选项可以删除了!");
+                $("#optips").html("最低需要2个序列alignment，已经没有选项可以删除了!");
                 $("#optips").css({"color":"red"});
             } else{
                 // 删除选项,每次删除最后一个
