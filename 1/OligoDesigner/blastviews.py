@@ -15,5 +15,3 @@ def MSA(request):
                                     'local':local,
                                     'thisyear':thisyear,
         },context_instance=RequestContext(request))
-def multiseqalign(request):
-  
