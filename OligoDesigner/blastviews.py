@@ -26,11 +26,11 @@ def multiseqalign(request):
             lst=list(sl.replace('\r\n',''))
             lst123.append(lst)
         tup123=tuple(lst123)
-        lstall=np.column_stacks((tup123))
+        arrall=np.column_stack((tup123))
             
     return render_to_response('msa/msa_result.html',
                               {'local':local,
                                'thisyear':thisyear,
-                               'lst':lst123,
+                               'lst':arrall,
                                   },
                               context_instance=RequestContext(request))
