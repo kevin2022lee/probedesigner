@@ -6,7 +6,7 @@
         // 添加选项
         $("#opbtn").click(function(){
             if($("#opts>li").size() < 10){// 最多添加6个选项
-                $("#opts").append("<li><input /></li>");
+                $("#opts").append("<label>Alignment序列</label><textarea id="textarea" name="seqtxt" class="form-control" ></textarea>");
             }else{// 提示选项个数已经达到最大
                 $("#optips").html("选项个数已经达到最大,不能再添加!");
                 $("#optips").css({"color":"red"});
@@ -53,11 +53,11 @@
 
 <div id="opts" class="container" style="padding:20px;height:auto;">
 <form action="http://{{local}}/multiseqalign/" method="POST" role="form">{% csrf_token %}
-<label>Alignment序列1</label>
+<label>Alignment序列</label>
 <textarea id="textarea" name="seqtxt" class="form-control" >
 
 </textarea>
-<label>Alignment序列2</label>
+<label>Alignment序列</label>
 <textarea id="textarea" name="seqtxt" class="form-control" >
 
 </textarea>
