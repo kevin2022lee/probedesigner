@@ -2,7 +2,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.http import HttpResponse,HttpResponseRedirect,response
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
-import numpy as np
+
 import time
 from datetime import datetime
 from django.core.context_processors import request
