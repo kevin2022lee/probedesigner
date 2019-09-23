@@ -52,6 +52,7 @@
 </div>
 
 <div id="opts" class="container" style="padding:20px;height:auto;">
+<div style="margin: 50px;">
 <form action="http://{{local}}/multiseqalign/" method="POST" role="form">{% csrf_token %}
 <label>Alignment序列</label>
 <textarea id="textarea" name="seqtxt" class="form-control" >
@@ -63,7 +64,6 @@
 </textarea>
 <br/>
  <span id="optips"></span>
-<div style="margin: 50px;">
         <button id="opbtn" type="button"  class="btn btn-info">添加选项</button>
         <button id="delbtn" type="button"  class="btn btn-info">删除选项</button>
 </div>
