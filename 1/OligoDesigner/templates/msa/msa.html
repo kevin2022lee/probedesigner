@@ -6,7 +6,7 @@
         // 添加选项
         $("#opbtn").click(function(){
             if($("#opts>li").size() < 10){// 最多添加6个选项
-                $("#opts").append("<label>Alignment序列</label>");
+                $("#opts").append("<label>Alignment序列</label><textarea id="textarea" name="seqtxt" class="form-control" ></textarea>");
             }else{// 提示选项个数已经达到最大
                 $("#optips").html("选项个数已经达到最大,不能再添加!");
                 $("#optips").css({"color":"red"});
@@ -51,9 +51,10 @@
 <b>多序列比对（Multiple sequence alignment）</b>
 </div>
 
-<div id="opts" class="container" style="padding:20px;height:auto;">
-<div style="margin: 50px;">
+<div class="container" style="padding:20px;height:auto;">
+
 <form action="http://{{local}}/multiseqalign/" method="POST" role="form">{% csrf_token %}
+<ol id="opts" type="1">
 <label>Alignment序列</label>
 <textarea id="textarea" name="seqtxt" class="form-control" >
 
@@ -62,10 +63,11 @@
 <textarea id="textarea" name="seqtxt" class="form-control" >
 
 </textarea>
+</ol>
 <br/>
  <span id="optips"></span>
-        <button id="opbtn" type="button"  class="btn btn-info">添加选项</button>
-        <button id="delbtn" type="button"  class="btn btn-info">删除选项</button>
+        <button id="opbtn" type="button"  class="btn btn-info">添加Alignment选项</button>
+        <button id="delbtn" type="button"  class="btn btn-info">删除Alignment选项</button>
 </div>
 <button type="submit" class="btn btn-primary" ><span class="glyphicon glyphicon glyphicon-step-forward"></span>提交比对</button>
 </form>
