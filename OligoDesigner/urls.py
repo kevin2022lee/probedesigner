@@ -2,7 +2,7 @@ from django.conf.urls import *
 from views import *
 from geneviews import genesearch,gdbsearch,geneshow,loadmore
 from SightViews import *
-
+from blastviews import *
 from django.contrib import admin
 import settings
 admin.autodiscover()
@@ -57,5 +57,5 @@ urlpatterns = patterns('',
     url(r'gdbsearch/',gdbsearch),
     url(r'genedatabase/(\w+)/(\d+)/',geneshow),
     url(r'loadmore/(\w+)/',loadmore),
-
+    url(r'tools/msa/',MSA),
 )
