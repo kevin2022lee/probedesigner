@@ -9,9 +9,18 @@
 
 <div class="container" style="padding:20px;height:auto;">
 <form action="http://{{local}}/multiseqalign/" method="POST" role="form">{% csrf_token %}
+<label>序列1</label>
 <textarea id="textarea" name="seqtxt" class="form-control" >
 
 </textarea>
+<label>序列2</label>
+<textarea id="textarea" name="seqtxt" class="form-control" >
+
+</textarea>
+
+<button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon glyphicon-step-forward"></span>提交比对</button>
+</form>
 </div>
+
 </div>
 {% endblock %}
