@@ -11,7 +11,4 @@ local='www.probedesigner.cn'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
 
 def MSA(request):
-    return render_to_response('msa/msa.html',{
-                                    'local':local,
-                                    'thisyear':thisyear,
-        },context_instance=RequestContext(request))
+    return render_to_response('msa/msa.html',context_instance=RequestContext(request))
