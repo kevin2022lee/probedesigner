@@ -21,9 +21,11 @@ def multiseqalign(request):
         seqlst=request.POST.getlist('seqtxt')
         lst=[]
         lst123=[]
+        lstall=[]
         for sl in seqlst:
             lst=list(sl.replace('\r\n',''))
             lst123.append(lst)
+        lstall=np.column_stacks((lst123))
             
     return render_to_response('msa/msa_result.html',
                               {'local':local,
