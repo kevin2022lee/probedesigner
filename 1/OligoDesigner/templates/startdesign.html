@@ -5,7 +5,6 @@
 <style>
 div{table-layout:fixed;}
 div{word-break:break-all;word-wrap:break-word;overflow:hidden;text-align:left;}
-textarea{overflow-y:visible;}
 h5{font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;}
 </style>
 <script src='../site_medias/js/textareastyle.js'></script>
@@ -85,11 +84,7 @@ $(function () {
 {% for s in sequence %}
 <input type="text" name="seqtxt" style="margin-top:2px;margin-bottom:2px;border:none; width:31px;background-color:transparent;" title="{{forloop.counter}}" placeholder="{{forloop.counter}}" value="{{s}}">
 {%endfor%}
-<!-- 
-<textarea id="textarea" name="seqtxt" class="form-control" >
-{{sequence}}
-</textarea>
--->
+
 </div>
 </div>
 <button type="submit" class="btn btn-primary" style="text-shadow: black 5px 3px 3px;"><span class="glyphicon glyphicon glyphicon-step-forward"></span>开始设计</button>

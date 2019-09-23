@@ -1,0 +1,17 @@
+{% extends "base.html" %} 
+{% block content %}
+ <title>多序列比对（Multiple sequence alignment）</title>
+
+<div class="panel panel-info" >
+<div class="panel-heading">
+<b>多序列比对（Multiple sequence alignment）</b>
+</div>
+
+<div class="container" style="padding:20px;height:auto;">
+<form action="http://{{local}}/multiseqalign/" method="POST" role="form">{% csrf_token %}
+<textarea id="textarea" name="seqtxt" class="form-control" >
+
+</textarea>
+</div>
+</div>
+{% endblock %}
