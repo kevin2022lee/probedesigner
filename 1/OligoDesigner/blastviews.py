@@ -18,7 +18,7 @@ def MSA(request):
                               context_instance=RequestContext(request))
 def multiseqalign(request):
     if request.method=="POST":
-        seqlst=request.getlist('seqtxt')
+        seqlst=request.POST.getlist('seqtxt')
     return render_to_response('msa/msa_result.html',
                               {'local':local,
                                'thisyear':thisyear,
