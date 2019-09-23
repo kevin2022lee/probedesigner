@@ -6,7 +6,7 @@
         // 添加选项
         $("#opbtn").click(function(){
             if($("#opts>li").size() < 10){// 最多添加6个选项
-                $("#opts").append("<li><label>Alignment序列</label><textarea /></li>");
+                $("#opts").append("<li><label>Alignment序列</label><textarea class="form-control"  /></li>");
             }else{// 提示选项个数已经达到最大
                 $("#optips").html("选项个数已经达到最大,不能再添加!");
                 $("#optips").css({"color":"red"});
@@ -70,6 +70,7 @@
 </ol>
 <br/>
  <span id="optips"></span>
+ <br>
         <button id="opbtn" type="button"  class="btn btn-info">添加Alignment选项</button>
         <button id="delbtn" type="button"  class="btn btn-info">删除Alignment选项</button>
 </div>
