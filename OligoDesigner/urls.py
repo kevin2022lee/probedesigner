@@ -2,7 +2,7 @@ from django.conf.urls import *
 from views import *
 from geneviews import genesearch,gdbsearch,geneshow,loadmore
 from SightViews import *
-from blastviews import *
+from blastviews import MSA
 from django.contrib import admin
 import settings
 admin.autodiscover()
