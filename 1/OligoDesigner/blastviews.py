@@ -11,4 +11,17 @@ local='www.probedesigner.cn'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
 
 def MSA(request):
-    return render_to_response('msa/msa.html',context_instance=RequestContext(request))
+    return render_to_response('msa/msa.html',
+                              {'local':local,
+                               'thisyear':thisyear,
+                                  },
+                              context_instance=RequestContext(request))
+def multiseqalign(request):
+    if request.method=="POST":
+        seqlst=request.getlist('seqtxt')
+    return render_to_response('msa/msa_result.html',
+                              {'local':local,
+                               'thisyear':thisyear,
+                               'seqlst':seqlst,
+                                  },
+                              context_instance=RequestContext(request))
