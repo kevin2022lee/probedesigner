@@ -20,14 +20,14 @@ def multiseqalign(request):
     if request.method=="POST":
         seqlst=request.POST.getlist('seqtxt')
         lst=[]
-        
+        lst123=[]
         for sl in seqlst:
             lst.append(sl.replace('\r\n',''))
-            lst=list(lst)
+            lst123.append(list(lst))
             
     return render_to_response('msa/msa_result.html',
                               {'local':local,
                                'thisyear':thisyear,
-                               'lst':lst,
+                               'lst':lst123,
                                   },
                               context_instance=RequestContext(request))
