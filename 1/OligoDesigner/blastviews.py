@@ -23,7 +23,7 @@ def multiseqalign(request):
         lst123=[]
         for sl in seqlst:
             lst.append(sl.replace('\r\n',''))
-        lst123.append(list(lst))
+            lst123.append(list(lst))
             
     return render_to_response('msa/msa_result.html',
                               {'local':local,
