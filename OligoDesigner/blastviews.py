@@ -22,6 +22,7 @@ def multiseqalign(request):
         lst=[]
         for sl in seqlst:
             lst.append(sl.replace('\r\n',''))
+        lst=list(lst)
             
     return render_to_response('msa/msa_result.html',
                               {'local':local,
