@@ -58,5 +58,5 @@ urlpatterns = patterns('',
     url(r'genedatabase/(\w+)/(\d+)/',geneshow),
     url(r'loadmore/(\w+)/',loadmore),
     url(r'tools/msa/',MSA),
-    url(r'tools/msa/msaresult/',multiseqalign),
+    url(r'tools/msaresult/',multiseqalign),
 )
