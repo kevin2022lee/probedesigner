@@ -6,7 +6,7 @@
         // 添加选项
         $("#opbtn").click(function(){
             if($("#opts>li").size() < 10){// 最多添加6个选项
-                $("#opts").append("<li><label>Alignment序列</label><input /></li>");
+                $("#opts").append("<li><label>Alignment序列</label><textarea /></li>");
             }else{// 提示选项个数已经达到最大
                 $("#optips").html("选项个数已经达到最大,不能再添加!");
                 $("#optips").css({"color":"red"});
@@ -16,7 +16,7 @@
         
         // 删除选项
         $("#delbtn").click(function(){
-            if($("#opts>li").size() <= 0){
+            if($("#opts>li").size() <= 2){
                 $("#optips").html("已经没有选项可以删除了!");
                 $("#optips").css({"color":"red"});
             } else{
