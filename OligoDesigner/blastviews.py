@@ -27,6 +27,7 @@ def multiseqalign(request):
             lst123.append(lst)
         tup123=tuple(lst123)
         arrall=np.column_stack((tup123))
+        arrall.np.array(arrall)
         for aa in arrall:
             ii=""
             lstqc=[]
