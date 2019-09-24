@@ -60,9 +60,12 @@ def multiseqalign(request):
                     lq='N'
                 lstjb.append(lq)
                 msa_seq=''.join(lstjb)
+                len_ms=len(msa_seq)
         return render_to_response('msa/msa_result.html',{
             'local':local,
             'thisyear':thisyear,
             'lstall':seqlst,
+            'len_ms':len_ms,
             'msa_seq':msa_seq[:110],
+            'msa_seq1':msa_seq[111:220],
             },context_instance=RequestContext(request))
