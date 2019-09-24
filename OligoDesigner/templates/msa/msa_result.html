@@ -8,7 +8,9 @@
 </div>
 
 <div class="container" style="padding:20px;height:auto;">
-
+<div class="well-sm">
+{{msa_seq}}
+</div>
 {%for ms in msa_seq%}
 <input type="text" name="seqtxt" style="margin-top:2px;margin-bottom:2px;border:none; width:31px;background-color:transparent;" title="{{forloop.counter}}" placeholder="{{forloop.counter}}" value="{{ms}}">
 {%endfor%}
