@@ -28,7 +28,7 @@ def multiseqalign(request):
             lstall.append(lst)
         tupx=tuple(lstall)
         lstx=np.column_stack((tupx))
-        #处理原始输入
+        #---
         for la in lstall:
             lstall.append(''.join(la))
         for lx in lstx:
