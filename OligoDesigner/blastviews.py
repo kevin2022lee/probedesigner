@@ -67,5 +67,7 @@ def multiseqalign(request):
             'lstall':seqlst,
             'len_ms':len_ms,
             'msa_seq':msa_seq[:110],
-            'msa_seq1':msa_seq[111:220],
+            'msa_seq1':msa_seq[110:220],
+            'msa_seq2':msa_seq[220:330],
+            'msa_seq3':msa_seq[330:440],
             },context_instance=RequestContext(request))
