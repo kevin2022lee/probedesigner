@@ -6,7 +6,7 @@
         // 添加选项
         $("#opbtn").click(function(){
             if($("#opts>li").size() < 10){// 最多添加6个选项
-                $("#opts").append('<li><label>Alignment序列</label><textarea rows="auto" name="seqtxt" class="form-control">\n'+
+                $("#opts").append('<li><label>Alignment序列</label><textarea id="text" rows="auto" name="seqtxt" class="form-control">\n'+
                                   '</textarea>\n'+                                  
                                   '</li>');
             }else{// 提示选项个数已经达到最大
@@ -29,7 +29,7 @@
         });
         
        //表单不能为空
-       $("#textarea").blur(function(){
+       $("#text").blur(function(){
     	   if($("#textarea").val== 0){
     		   $("#optips").html("输入序列不能为空!");
                $("#optips").css({"color":"red"});
@@ -69,13 +69,13 @@
 <ol id="opts" type="1">
 <li>
 <label>Alignment序列</label>
-<textarea id="textarea" rows="auto" name="seqtxt" class="form-control" >
+<textarea id="text" rows="auto" name="seqtxt" class="form-control" >
 
 </textarea>
 </li>
 <li>
 <label>Alignment序列</label>
-<textarea id="textarea" rows="auto" name="seqtxt" class="form-control" >
+<textarea id="text" rows="auto" name="seqtxt" class="form-control" >
 
 </textarea>
 </li>
