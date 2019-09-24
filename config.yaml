@@ -5,7 +5,7 @@ libraries:
  
 - name: django
    
-version: "1.8.3"
+version: "1.5"
 
 name: numpy
    
