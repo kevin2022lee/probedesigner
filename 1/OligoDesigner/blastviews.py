@@ -16,17 +16,7 @@ def MSA(request):
                                'thisyear':thisyear,
                                   },
                               context_instance=RequestContext(request))
-def DistinctCharacter(a):
-    if(len(a)==0 | len(a)==1):
-        return a
-    b=a[0]
-    for i in a[1:]:
-        if (b.__contains__(i)):
-            pass
-        else:
-            b = b + i
-    return b
-#È¥³ýÖØ¸´µÄ×Ö·û´®
+
 def multiseqalign(request):
     if request.method=="POST":
         seqlst=request.POST.getlist('seqtxt')
