@@ -32,16 +32,18 @@
         
        //表单不能为空
        $("textarea[name='seqtxt']").each(function(){
-    	   if($.trim($("textarea[name='seqtxt']").val())==""){
-    		   $("#optips").html($("textarea[name='seqtxt']").val());
-               $("#optips").css({"color":"red"});
-               $("#sub").prop('disabled','disabled');
-    	   }else{
-    		// 删除选项,每次删除最后一个
-    		   $("#optips").html("符合要求!");
-               $("#optips").css({"color":"green"});
-               $("#sub").removeAttr("disabled");
-    	   }
+    	   $("textarea[name='seqtxt']").blur(function(){
+    		   if($.trim($("textarea[name='seqtxt']").val())==""){
+        		   $("#optips").html("序列不能空！");
+                   $("#optips").css({"color":"red"});
+                   $("#sub").prop('disabled','disabled');
+        	   }else{
+        		// 删除选项,每次删除最后一个
+        		   $("#optips").html("符合要求!");
+                   $("#optips").css({"color":"green"});
+                   $("#sub").removeAttr("disabled");
+        	   }
+    	   })
        })
         
     });
