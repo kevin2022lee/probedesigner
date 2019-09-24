@@ -66,5 +66,5 @@ def multiseqalign(request):
             'thisyear':thisyear,
             'lstall':seqlst,
             'len_ms':len_ms,
-            'msa_seq':msa_seq,
+            'msa_seq':str(msa_seq),
             },context_instance=RequestContext(request))
