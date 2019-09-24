@@ -25,16 +25,16 @@ def multiseqalign(request):
             lst=list(sl.replace('\r\n',''))
             lstall.append(lst)
         tupx=tuple(lstall)
-        listx=np.column_stack((tupx))
-        for lx in listx:
+        lstx=np.column_stack((tupx))
+        for lx in lstx:
             i2=""
-            listqc=[]
+            lstqc=[]
             for i in ''.join(lx):
                 if i not in i2:
                     i2+=i
-            listqc.append(i2)
-            for lq in listqc:
-                listjb=[]
+            lstqc.append(i2)
+            for lq in lstqc:
+                lstjb=[]
                 if ''.join(sorted(lq))=='AC':
                     lq='M'
                 if ''.join(sorted(lq))=='GT':
@@ -55,6 +55,6 @@ def multiseqalign(request):
                     lq='D'    
                 if ''.join(sorted(lq))=='ACGT':
                     lq='N'
-                listjb.append(lq)
+                lstjb.append(lq)
                 
-                return render_to_response('msa/msa_result.html',{'local':local,'thisyear':thisyear,'lst':listjb,},context_instance=RequestContext(request))
+                return render_to_response('msa/msa_result.html',{'local':local,'thisyear':thisyear,'lstjb':lstjb,},context_instance=RequestContext(request))
