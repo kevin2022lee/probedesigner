@@ -31,8 +31,8 @@
         });
         
        //表单不能为空
-       $(".form-control").each(function(){
-    	   if($.trim($(".form-control").val())==""){
+       $("textarea[name='seqtxt']").each(function(){
+    	   if($.trim($("textarea[name='seqtxt']").val())==""){
     		   $("#optips").html("输入序列不能为空!");
                $("#optips").css({"color":"red"});
                $("#sub").prop('disabled','disabled');
