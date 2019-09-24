@@ -20,25 +20,47 @@ def multiseqalign(request):
     if request.method=="POST":
         seqlst=request.POST.getlist('seqtxt')
         lst=[]
-        lst123=[]
         lstall=[]
         for sl in seqlst:
             lst=list(sl.replace('\r\n',''))
-            lst123.append(lst)
-        tup123=tuple(lst123)
-        arrall=np.column_stack((tup123))
-        for aa in arrall:
-            ii=""
-            lstqc=[]
-            for i in ''.join(aa):
-                if i not in ii:
-                    ii+=i
-            lstqc.append(ii)
+            lstall.append(lst)
+        tupx=tuple(lstall)
+        listx=np.column_stack((tupx))
+        for lx in listx:
+            i2=""
+            listqc=[]
+            for i in ''.join(lx):
+                if i not in i2:
+                    i2+=i
+                    listqc.append(i2)
+                    for lq in listqc:
+                        listjb=[]
+                        if ''.join(sorted(lq))=='AC':
+                            lq='M'
+                        if ''.join(sorted(lq))=='GT':
+                            lq='K'
+                        if ''.join(sorted(lq))=='CT':
+                            lq='Y'
+                        if ''.join(sorted(lq))=='AT':
+                            lq='W'
+                        if ''.join(sorted(lq))=='AG':
+                            lq='R'
+                        if ''.join(sorted(lq))=='ACT':
+                            lq='H'
+                        if ''.join(sorted(lq))=='CGT':
+                            lq='B' 
+                        if ''.join(sorted(lq))=='ACG':
+                            lq='V'
+                        if ''.join(sorted(lq))=='AGT':
+                            lq='D'    
+                        if ''.join(sorted(lq))=='ACGT':
+                            lq='N'
+                        listjb.append(lq)
             
             
     return render_to_response('msa/msa_result.html',
                               {'local':local,
                                'thisyear':thisyear,
-                               'lst':lstqc,
+                               'lst':lstjb,
                                   },
                               context_instance=RequestContext(request))
