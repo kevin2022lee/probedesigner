@@ -6,7 +6,7 @@
         // 添加选项
         $("#opbtn").click(function(){
             if($("#opts>li").size() < 10){// 最多添加6个选项
-                $("#opts").append('<li><label>Alignment序列</label><textarea rows="auto" name="seqtxt" class="txt">\n'+
+                $("#opts").append('<li><label>Alignment序列</label><textarea rows="auto" name="seqtxt" class="form-control">\n'+
                                   '</textarea>\n'+                                  
                                   '</li>');
             }else{// 提示选项个数已经达到最大
@@ -73,13 +73,13 @@
 <ol id="opts" type="1">
 <li>
 <label>Alignment序列</label>
-<textarea rows="auto" name="seqtxt" class="txt" >
+<textarea rows="auto" name="seqtxt" class="form-control" >
 
 </textarea>
 </li>
 <li>
 <label>Alignment序列</label>
-<textarea rows="auto" name="seqtxt" class="txt" >
+<textarea rows="auto" name="seqtxt" class="form-control" >
 
 </textarea>
 </li>
