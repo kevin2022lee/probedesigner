@@ -2,7 +2,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.http import HttpResponse,HttpResponseRedirect,response
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
-from numpy import *
+import numpy as np
 import time
 from datetime import datetime
 from django.core.context_processors import request
@@ -26,11 +26,19 @@ def multiseqalign(request):
             lst=list(sl.replace('\r\n',''))
             lst123.append(lst)
         tup123=tuple(lst123)
-        #arrall=np.column_stack((tup123))
+        arrall=np.column_stack((tup123))
+        for aa in arrall:
+            ii=""
+            lstqc=[]
+            for i in ''.join(aa):
+                if i not in ii:
+                    ii+=i
+                lstqc.append(ii)
+            
             
     return render_to_response('msa/msa_result.html',
                               {'local':local,
                                'thisyear':thisyear,
-                               'lst':tup123,
+                               'lst':lstqc,
                                   },
                               context_instance=RequestContext(request))
