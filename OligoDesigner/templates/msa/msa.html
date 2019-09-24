@@ -21,11 +21,11 @@
             if($("#opts>li").size() <= 2){
                 $("#optips").html("最低需要2个序列alignment，已经没有选项可以删除了!");
                 $("#optips").css({"color":"red"});
-                $("#sub").prop('disabled','disabled')
+               
             } else{
                 // 删除选项,每次删除最后一个
                 $("#opts>li").last().remove();
-                $("#sub").attr('disabled','')
+                
             }
             
         });
@@ -35,10 +35,12 @@
     	   if($.trim($("#text").val())==""){
     		   $("#optips").html("输入序列不能为空!");
                $("#optips").css({"color":"red"});
+               $("#sub").prop('disabled','disabled')
     	   }else{
     		// 删除选项,每次删除最后一个
     		   $("#optips").html("符合要求!");
                $("#optips").css({"color":"green"});
+               $("#sub").attr('disabled','')
     	   }
        })
         
