@@ -21,6 +21,7 @@ def multiseqalign(request):
         seqlst=request.POST.getlist('seqtxt')
         lst=[]
         lstall=[]
+        lstjb=[]
         for sl in seqlst:
             lst=list(sl.replace('\r\n',''))
             lstall.append(lst)
@@ -34,7 +35,6 @@ def multiseqalign(request):
                     i2+=i
             lstqc.append(i2)
             for lq in lstqc:
-                lstjb=[]
                 if ''.join(sorted(lq))=='AC':
                     lq='M'
                 if ''.join(sorted(lq))=='GT':
