@@ -33,7 +33,7 @@ def multiseqalign(request):
             for i in ''.join(aa):
                 if i not in ii:
                     ii+=i
-                lstqc.append(ii)
+            lstqc.append(ii)
             
             
     return render_to_response('msa/msa_result.html',
