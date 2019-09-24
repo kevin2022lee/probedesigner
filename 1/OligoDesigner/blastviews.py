@@ -69,5 +69,5 @@ def multiseqalign(request):
                 if slq=='ACGT' or 'TV' in slq or 'GH' in slq or 'CD' in slq or 'AB' in slq:
                     lq='N'
                 lstjb.append(lq)
-                msa_seq='='.join(lstjb)
+                msa_seq=' '.join(lstjb)
         return render_to_response('msa/msa_result.html',{'local':local,'thisyear':thisyear,'msa_seq':msa_seq,},context_instance=RequestContext(request))
