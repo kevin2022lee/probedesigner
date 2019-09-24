@@ -30,7 +30,7 @@
         
        //表单不能为空
        $("#text").blur(function(){
-    	   if($("#text").val== ""){
+    	   if($.trim($("#text").val())==""){
     		   $("#optips").html("输入序列不能为空!");
                $("#optips").css({"color":"red"});
     	   }else{
