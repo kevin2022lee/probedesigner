@@ -20,6 +20,7 @@ def MSA(request):
 def multiseqalign(request):
     if request.method=="POST":
         seqlst=request.POST.getlist('seqtxt')
+        tc=0
         lst=[]
         lstall=[]
         lstjb=[]
@@ -38,26 +39,37 @@ def multiseqalign(request):
                 slq=''.join(lq)
                 if slq=='AC' or 'M' in slq:
                     lq='M'
+                    tc+=1
                 if slq=='GT' or 'K' in slq:
                     lq='K'
+                    tc+=1
                 if slq=='CT' or 'Y' in slq:
                     lq='Y'
+                    tc+=1
                 if slq=='AT' or 'W' in slq:
                     lq='W'
+                    tc+=1
                 if slq=='AG' or 'R' in slq:
                     lq='R'
+                    tc+=1
                 if slq=='CG' or 'S' in slq:
                     lq='S'
+                    tc+=1
                 if slq=='ACT' or 'MT' in slq or 'CW' in slq or 'AY' in slq:
                     lq='H'
+                    tc+=1
                 if slq=='CGT' or 'ST' in slq or 'CK' in slq or 'GY' in slq:
                     lq='B' 
+                    tc+=1
                 if slq=='ACG' or 'MG' in slq or 'AS' in slq or 'CR' in slq:
                     lq='V'
+                    tc+=1
                 if slq=='AGT' or 'AK' in slq or 'RT' in slq or 'GW' in slq:
-                    lq='D'    
+                    lq='D'
+                    tc+=1    
                 if slq=='ACGT' or 'TV' in slq or 'GH' in slq or 'CD' in slq or 'AB' in slq:
                     lq='N'
+                    tc+=1
                 lstjb.append(lq)
                 msa_seq=''.join(lstjb)
                 len_ms=len(msa_seq)
@@ -66,5 +78,6 @@ def multiseqalign(request):
             'thisyear':thisyear,
             'lstall':seqlst,
             'len_ms':len_ms,
+            'tc':str(tc),
             'msa_seq':str(msa_seq),
             },context_instance=RequestContext(request))
