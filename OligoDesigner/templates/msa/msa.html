@@ -31,8 +31,8 @@
         });
         
        //表单不能为空
-       $(".txt").each(function(){
-    	   if($.trim($(".txt").val())==""){
+       $(".form-control").each(function(){
+    	   if($.trim($(".form-control").val())==""){
     		   $("#optips").html("输入序列不能为空!");
                $("#optips").css({"color":"red"});
                $("#sub").prop('disabled','disabled');
