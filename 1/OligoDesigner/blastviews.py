@@ -27,19 +27,18 @@ def multiseqalign(request):
             lst123.append(lst)
         tup123=tuple(lst123)
         arrall=np.column_stack((tup123))
-        arrall.np.array(arrall)
         for aa in arrall:
             ii=""
             lstqc=[]
             for i in ''.join(aa):
                 if i not in ii:
                     ii+=i
-            lstqc.append(ii)
+            lstqc.append(aa)
             
             
     return render_to_response('msa/msa_result.html',
                               {'local':local,
                                'thisyear':thisyear,
-                               'lst':arrall,
+                               'lst':lstqc,
                                   },
                               context_instance=RequestContext(request))
