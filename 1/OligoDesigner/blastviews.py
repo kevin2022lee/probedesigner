@@ -16,6 +16,17 @@ def MSA(request):
                                'thisyear':thisyear,
                                   },
                               context_instance=RequestContext(request))
+def DistinctCharacter(a):
+    if(len(a)==0 | len(a)==1):
+        return a
+    b=a[0]
+    for i in a[1:]:
+        if (b.__contains__(i)):
+            pass
+        else:
+            b = b + i
+    return b
+#È¥³ýÖØ¸´µÄ×Ö·û´®
 def multiseqalign(request):
     if request.method=="POST":
         seqlst=request.POST.getlist('seqtxt')
@@ -30,32 +41,30 @@ def multiseqalign(request):
         for lx in lstx:
             i2=""
             lstqc=[]
-            for i in ''.join(lx):
-                if i not in i2:
-                    i2+=i
+            i2=''.join(sorted(''.join(list(set(''.join(lx))))))
             lstqc.append(i2)
+            print(lstqc)
             for lq in lstqc:
-                if ''.join(sorted(lq))=='AC':
+                slq=''.join(lq)
+                if slq=='AC' or 'M' in slq:
                     lq='M'
-                if ''.join(sorted(lq))=='GT':
+                if slq=='GT' or 'K' in slq:
                     lq='K'
-                if ''.join(sorted(lq))=='CG':
-                    lq='S'
-                if ''.join(sorted(lq))=='CT':
+                if slq=='CT' or 'Y' in slq:
                     lq='Y'
-                if ''.join(sorted(lq))=='AT':
+                if slq=='AT' or 'W' in slq:
                     lq='W'
-                if ''.join(sorted(lq))=='AG':
+                if slq=='AG' or 'R' in slq:
                     lq='R'
-                if ''.join(sorted(lq))=='ACT':
+                if slq=='ACT':
                     lq='H'
-                if ''.join(sorted(lq))=='CGT':
+                if slq=='CGT':
                     lq='B' 
-                if ''.join(sorted(lq))=='ACG':
+                if slq=='ACG':
                     lq='V'
-                if ''.join(sorted(lq))=='AGT':
+                if slq=='AGT':
                     lq='D'    
-                if ''.join(sorted(lq))=='ACGT':
+                if slq=='ACGT':
                     lq='N'
                 lstjb.append(lq)
                 msa_seq='='.join(lstjb)
