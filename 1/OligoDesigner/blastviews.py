@@ -57,4 +57,4 @@ def multiseqalign(request):
                     lq='N'
                 lstjb.append(lq)
                 
-                return render_to_response('msa/msa_result.html',{'local':local,'thisyear':thisyear,'lstjb':lstx,},context_instance=RequestContext(request))
+            return render_to_response('msa/msa_result.html',{'local':local,'thisyear':thisyear,'lstjb':lstx,},context_instance=RequestContext(request))
