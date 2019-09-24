@@ -33,7 +33,7 @@
        //表单不能为空
        $("textarea[name='seqtxt']").each(function(){
     	   if($.trim($("textarea[name='seqtxt']").val())==""){
-    		   $("#optips").html($.trim($("textarea[name='seqtxt']").val()));
+    		   $("#optips").html($("textarea[name='seqtxt']").val());
                $("#optips").css({"color":"red"});
                $("#sub").prop('disabled','disabled');
     	   }else{
