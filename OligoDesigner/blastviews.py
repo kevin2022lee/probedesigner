@@ -58,5 +58,5 @@ def multiseqalign(request):
                 if ''.join(sorted(lq))=='ACGT':
                     lq='N'
                 lstjb.append(lq)
-                
-        return render_to_response('msa/msa_result.html',{'local':local,'thisyear':thisyear,'lstjb':lstjb,},context_instance=RequestContext(request))
+                msa_seq=''.join(lstjb)
+        return render_to_response('msa/msa_result.html',{'local':local,'thisyear':thisyear,'msa_seq':msa_seq,},context_instance=RequestContext(request))
