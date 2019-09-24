@@ -56,15 +56,17 @@ def multiseqalign(request):
                     lq='W'
                 if slq=='AG' or 'R' in slq:
                     lq='R'
-                if slq=='ACT':
+                if slq=='CG' or 'S' in slq:
+                    lq='S'
+                if slq=='ACT' or 'MT' in slq or 'CW' in slq or 'AY' in slq:
                     lq='H'
-                if slq=='CGT':
+                if slq=='CGT' or 'ST' in slq or 'CK' in slq or 'GY' in slq:
                     lq='B' 
-                if slq=='ACG':
+                if slq=='ACG' or 'MG' in slq or 'AS' in slq or 'CR' in slq:
                     lq='V'
-                if slq=='AGT':
+                if slq=='AGT' or 'AK' in slq or 'RT' in slq or 'GW' in slq:
                     lq='D'    
-                if slq=='ACGT':
+                if slq=='ACGT' or 'TV' in slq or 'GH' in slq or 'CD' in slq or 'AB' in slq:
                     lq='N'
                 lstjb.append(lq)
                 msa_seq='='.join(lstjb)
