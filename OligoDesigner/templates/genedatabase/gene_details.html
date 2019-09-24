@@ -1,0 +1,72 @@
+{% extends "base.html" %} 
+{% block content %}
+ <title>探针信息检索</title>
+<style>
+.datatable tbody tr td {
+  background-color: #F6F6F6;
+}
+
+.datatable tbody tr:nth-of-type(odd) td {
+  background-color: #EEEEEE;
+}
+
+.datatable th {
+  background-color: #FFFFFF;
+}
+
+.datatable td,
+.datatable th {
+  border: 1px solid #CCCCCC;
+  padding: 5px 8px;
+}
+
+.product-description,
+ {
+  float: left;
+  width: 600px;
+}
+
+.product-description dt,
+.product-description dd,{
+ margin-bottom: 5px;
+}
+
+dd .info{
+display:inline;
+
+}
+
+.product-description dt,
+.product-description td.heading {
+  clear: both;
+  float: left;
+  font-weight: bold;
+  width: 35%;
+}
+h2{
+    font-size:140%;
+    }
+</style>
+
+<div class="panel panel-info" >
+<div class="panel-heading">
+<b>检索基因结果信息</b>
+</div>
+
+<div class="container" style="padding:20px;height:auto;">
+{%for gene in genes%}
+<div class="panel panel-info" style="padding:10px">
+{% autoescape off %}
+{{gene.genedescription}}
+{% endautoescape %}
+</div>
+<div class="panel panel-info" style="padding:10px">
+{% autoescape off %}
+{{gene.genesectiongroup}}
+{% endautoescape %}
+</div>
+{%endfor%}
+
+</div>
+</div>
+{% endblock %}
