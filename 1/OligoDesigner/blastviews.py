@@ -63,6 +63,6 @@ def multiseqalign(request):
         return render_to_response('msa/msa_result.html',{
             'local':local,
             'thisyear':thisyear,
-            'lstall':lstall,
+            'lstall':seqlst,
             'msa_seq':msa_seq,
             },context_instance=RequestContext(request))
