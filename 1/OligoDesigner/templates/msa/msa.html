@@ -32,7 +32,18 @@
         
     });
     //textarea自适应高度
-    
+//判断表单数据是否为空
+      var t = $('form').serializeArray();
+        $.each(t,function(i,item){
+            if(item['value'] == '') {
+                console.log('信息不可为空') 
+                showMsg('信息不可为空')
+                flag = 1;
+                return false
+            } else {
+            flag = 0;
+        }
+        })
 </script>
 <style>
     *{
