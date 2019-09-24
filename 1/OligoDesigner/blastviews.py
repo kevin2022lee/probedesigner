@@ -32,7 +32,7 @@ def multiseqalign(request):
             for i in ''.join(lx):
                 if i not in i2:
                     i2+=i
-                    listqc.append(i2)
+                listqc.append(i2)
                     for lq in listqc:
                         listjb=[]
                         if ''.join(sorted(lq))=='AC':
