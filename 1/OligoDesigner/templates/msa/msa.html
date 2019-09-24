@@ -21,9 +21,11 @@
             if($("#opts>li").size() <= 2){
                 $("#optips").html("最低需要2个序列alignment，已经没有选项可以删除了!");
                 $("#optips").css({"color":"red"});
+                $("#sub").prop('disabled','disabled')
             } else{
                 // 删除选项,每次删除最后一个
                 $("#opts>li").last().remove();
+                $("#sub").attr('disabled','')
             }
             
         });
@@ -87,8 +89,8 @@
         <button id="delbtn" type="button"  class="btn btn-info"> <span class="glyphicon glyphicon-minus"></span> 删除Alignment选项</button>
 </div>
 <div style="text-align:center;margin-bottom:10px;">
-<button type="submit" class="btn btn-primary" ><span class="glyphicon glyphicon-step-forward"></span>提交比对</button>
-<button type="reset" class="btn btn-primary" ><span class="glyphicon glyphicon-trash"></span>清除比对</button>
+<button id="sub" type="submit" class="btn btn-primary" ><span class="glyphicon glyphicon-step-forward"></span>提交比对</button>
+<button id="res" type="reset" class="btn btn-primary" ><span class="glyphicon glyphicon-trash"></span>清除比对</button>
 </div>
 </form>
 <div style="margin-left:20px;">
