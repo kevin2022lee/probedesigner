@@ -33,31 +33,29 @@ def multiseqalign(request):
                 if i not in i2:
                     i2+=i
             listqc.append(i2)
-                    for lq in listqc:
-                        listjb=[]
-                        if ''.join(sorted(lq))=='AC':
-                            lq='M'
-                        if ''.join(sorted(lq))=='GT':
-                            lq='K'
-                        if ''.join(sorted(lq))=='CT':
-                            lq='Y'
-                        if ''.join(sorted(lq))=='AT':
-                            lq='W'
-                        if ''.join(sorted(lq))=='AG':
-                            lq='R'
-                        if ''.join(sorted(lq))=='ACT':
-                            lq='H'
-                        if ''.join(sorted(lq))=='CGT':
-                            lq='B' 
-                        if ''.join(sorted(lq))=='ACG':
-                            lq='V'
-                        if ''.join(sorted(lq))=='AGT':
-                            lq='D'    
-                        if ''.join(sorted(lq))=='ACGT':
-                            lq='N'
-                        listjb.append(lq)
-            
-            
+            for lq in listqc:
+                listjb=[]
+                if ''.join(sorted(lq))=='AC':
+                    lq='M'
+                if ''.join(sorted(lq))=='GT':
+                    lq='K'
+                if ''.join(sorted(lq))=='CT':
+                    lq='Y'
+                if ''.join(sorted(lq))=='AT':
+                    lq='W'
+                if ''.join(sorted(lq))=='AG':
+                    lq='R'
+                if ''.join(sorted(lq))=='ACT':
+                    lq='H'
+                if ''.join(sorted(lq))=='CGT':
+                    lq='B' 
+                if ''.join(sorted(lq))=='ACG':
+                    lq='V'
+                if ''.join(sorted(lq))=='AGT':
+                    lq='D'    
+                if ''.join(sorted(lq))=='ACGT':
+                    lq='N'
+                listjb.append(lq)           
     return render_to_response('msa/msa_result.html',
                               {'local':local,
                                'thisyear':thisyear,
