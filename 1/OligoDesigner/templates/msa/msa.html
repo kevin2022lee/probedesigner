@@ -28,22 +28,19 @@
             
         });
         
-        
+       //表单不能为空
+       $("#textarea").blur(function(){
+    	   if($("#textarea").val== 0){
+    		   $("#optips").html("输入序列不能为空!");
+               $("#optips").css({"color":"red"});
+    	   }else{
+    		// 删除选项,每次删除最后一个
+               $("#opts>li").last().remove();
+    	   }
+       })
         
     });
-    //textarea自适应高度
-//判断表单数据是否为空
-      var t = $('form').serializeArray();
-        $.each(t,function(i,item){
-            if(item['value'] == '') {
-                console.log('信息不可为空') 
-                showMsg('信息不可为空')
-                flag = 1;
-                return false
-            } else {
-            flag = 0;
-        }
-        })
+
 </script>
 <style>
     *{
