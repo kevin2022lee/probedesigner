@@ -7,6 +7,6 @@ libraries:
    
 version: "1.6"
 
-name: numpy
+-name: numpy
    
 version: "1.6.1"
