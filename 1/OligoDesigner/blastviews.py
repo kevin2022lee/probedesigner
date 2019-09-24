@@ -39,6 +39,8 @@ def multiseqalign(request):
                     lq='M'
                 if ''.join(sorted(lq))=='GT':
                     lq='K'
+                if ''.join(sorted(lq))=='CG':
+                    lq='S'
                 if ''.join(sorted(lq))=='CT':
                     lq='Y'
                 if ''.join(sorted(lq))=='AT':
