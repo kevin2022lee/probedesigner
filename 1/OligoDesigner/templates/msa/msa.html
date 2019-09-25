@@ -96,8 +96,8 @@ function textAreaChangeFn(id2){
        });
        
        //输入内容变化
-       $("#form textarea").each(function(){
-           $("#form textarea).bind('input propertychange', function() {
+       $("textarea").each(function(){
+           $("textarea).bind('input propertychange', function() {
                textAreaChangeFn($(this).attr("id"));
     });
            
