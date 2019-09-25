@@ -32,8 +32,8 @@
         
        //表单不能为空
        $("textarea[name='seqtxt']").each(function(){
-    	   $("textarea[name='seqtxt']").blur(function(){
-    		   if($.trim($("textarea[name='seqtxt']").val())==""){
+    	   $("textarea[name='seqtxt']").each.blur(function(){
+    		   if($("textarea[name='seqtxt']").trim().val()==""){
         		   $("#optips").html("序列不能空！");
                    $("#optips").css({"color":"red"});
                    $("#sub").prop('disabled','disabled');
