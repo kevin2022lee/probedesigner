@@ -80,20 +80,21 @@ function textAreaChangeFn(id2){
         });
         
        //表单不能为空
-       $("textarea[name='seqtxt']").each(function(){
-    	   $("textarea[name='seqtxt']").blur(function(){
-    		   if($.trim($("textarea[name='seqtxt']").val())==""){
-        		   $("#optips").html("序列不能空！");
+        // 添加选项测试内容
+          $("#c").click(function(){
+          $("textarea[name='seqtxt']").each(function(){
+                   if($.trim($(this).val())==""){
+                   $("#optips").html("序列不能空！");
                    $("#optips").css({"color":"red"});
                    $("#sub").prop('disabled','disabled');
-        	   }else{
-        		// 删除选项,每次删除最后一个
-        		   $("#optips").html("符合要求!");
+            }else{
+                // 删除选项,每次删除最后一个
+                   $("#optips").html("符合要求!");
                    $("#optips").css({"color":"green"});
                    $("#sub").removeAttr("disabled");
-        	   }
-    	   })
+               }
        });
+});
        
        //输入内容变化
        $("textarea[id='content']").each(function(){
@@ -152,7 +153,8 @@ function textAreaChangeFn(id2){
         <button id="delbtn" type="button"  class="btn btn-info"> <span class="glyphicon glyphicon-minus"></span> 删除Alignment选项</button>
 </div>
 <div style="text-align:center;margin-bottom:10px;">
-<button id="sub" type="submit" class="btn btn-primary" ><span class="glyphicon glyphicon-step-forward"></span>提交比对</button>
+<button id="c" type="button" class="btn btn-primary" ><span class="glyphicon glyphicon-ok"></span>检查内容</button>
+<button id="sub" type="submit" class="btn btn-primary" disable="True" ><span class="glyphicon glyphicon-step-forward"></span>提交比对</button>
 <button id="res" type="reset" class="btn btn-primary" ><span class="glyphicon glyphicon-trash"></span>清除比对</button>
 </div>
 </form>
