@@ -32,7 +32,7 @@
         
        //表单不能为空
        $("textarea[name='seqtxt']").each(function(){
-    	   $("textarea[name='seqtxt']").each().blur(function(){
+    	   $("textarea[name='seqtxt']").each(function(){
     		   if($("textarea[name='seqtxt']").val()==""){
         		   $("#optips").html("序列不能空！");
                    $("#optips").css({"color":"red"});
