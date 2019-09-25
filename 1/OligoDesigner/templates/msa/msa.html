@@ -96,7 +96,7 @@ function textAreaChangeFn(id2){
        });
        
        //输入内容变化
-       $("textarea[name='seqtxt']").bind('input propertychange', function() {
+       $("textarea[name='seqtxt']").bind().each('input propertychange', function() {
            textAreaChangeFn($(this).attr("id"));
     });
         
