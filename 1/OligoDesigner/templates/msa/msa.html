@@ -92,14 +92,18 @@ function textAreaChangeFn(id2){
                    $("#optips").html("符合要求!");
                    $("#optips").css({"color":"green"});
                    $("#sub").removeAttr("disabled");
-                     //输入内容变化
-                   $(this).bind('input propertychange', function() {
-                       textAreaChangeFn($(this).attr("id"));
+                  
                }
        });
 });
        
-     
+       //输入内容变化
+       $("textarea[id='content']").each(function(){
+           $("textarea[id='content']").bind('input propertychange', function() {
+               textAreaChangeFn($(this).attr("id"));
+    });
+           
+           });
         
     });
 
