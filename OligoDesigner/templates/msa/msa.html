@@ -97,7 +97,7 @@ function textAreaChangeFn(id2){
         	  $(this).each(function(){
         		  $(this).bind('input propertychange', function() {
                       textAreaChangeFn($(this).attr("id"));                      
-                      //alert($("span[name='stxt']").attr("id"));
+                      alert($("span[name='stxt']").attr("id"));
         	  });
         	  
           });
