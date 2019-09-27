@@ -50,7 +50,7 @@ function textAreaChangeFn(id2){
         $("#opbtn").click(function(){
             if($("#opts>li").size() < 10){// 最多添加6个选项
                 $("#opts").append('<li class=".no"><label>Alignment序列</label>\n'+
-                                  '<textarea id="content"'+$("ol li").index()+' rows="auto" name="seqtxt" class="form-control">\n'+
+                                  '<textarea id="content"'+$("#opts li").index()+' rows="auto" name="seqtxt" class="form-control">\n'+
                                   '</textarea>\n'+ 
                                   '</li>');
             }else{// 提示选项个数已经达到最大
@@ -95,13 +95,7 @@ function textAreaChangeFn(id2){
                }
        });
 });
-          $('#switch-ul li').each(function(){
-        	  $(this).click(function(){
-        	  liIndex=$(this).index();
-        	  alert(liIndex);
-
-        	  });
-        	  });
+    //
     });
     
 </script>
@@ -160,8 +154,8 @@ function textAreaChangeFn(id2){
 <ol><b>注意信息</b>
 <li>注意提交alignment的序列长度必须一致！</li>
 <li>请自动剔掉除碱基以外的字符信息，或者从genbank或FASTA文件中复制！</li>
+<li>测试中还不稳定，还请见谅！</li>
 </ol>
-<ol id="switch-ul"><li>1</li><li>2</li><li>3</li></ol>
 
 </div>
 </div>
