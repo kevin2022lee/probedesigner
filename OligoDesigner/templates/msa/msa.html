@@ -79,16 +79,16 @@ function textAreaChangeFn(id2){
           $("#c").click(function(){
           $("#opts li").each(function(){
                    if($.trim($("#opts li textarea[name='seqtxt']").val()) == ""){
-                   $("#optips").html("序列不能空！");
-                   $("#optips").css({"color":"red"});
+                   $("#txttips").html("序列不能空！");
+                   $("#txttips").css({"color":"red"});
                    $("#sub").prop('disabled','disabled');
                    $("#opts li textarea[name='seqtxt']").prop('id','Alignment'+($(this).index() + 1));
                    //alert($("textarea[name='seqtxt']").attr("id"));
                    textAreaChangeFn($("#opts li textarea[name='seqtxt']").attr("id"));
             }else{
                 // 删除选项,每次删除最后一个
-                   $("#optips").html("符合要求!");
-                   $("#optips").css({"color":"green"});
+                   $("#txtips").html("符合要求!");
+                   $("#txttips").css({"color":"green"});
                    $("#sub").removeAttr("disabled");
                    $("textarea[name='seqtxt']").bind('input propertychange', function() {
                    textAreaChangeFn($("textarea[name='seqtxt']").attr("id"));
@@ -129,18 +129,18 @@ function textAreaChangeFn(id2){
 <textarea id="Alignment0" name="seqtxt" class="form-control" >
 
 </textarea>
-<span id="txttips"></span>
+
 </li>
 <li>
 <label>Alignment序列</label>
 <textarea id="Alignment1" name="seqtxt" class="form-control" >
 
 </textarea>
-<span id="txttips"></span>
+
 </li>
 </ol>
 <br/>
- <span id="optips"></span>
+<span id="txttips"></span> <span id="optips"></span>
  <br>
         <button id="opbtn" type="button"  class="btn btn-info"> <span class="glyphicon glyphicon-plus"></span> 添加Alignment选项</button>
         <button id="delbtn" type="button"  class="btn btn-info"> <span class="glyphicon glyphicon-minus"></span> 删除Alignment选项</button>
