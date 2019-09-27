@@ -52,6 +52,7 @@ function textAreaChangeFn(id2){
             	$(this).each(function(){
             		$("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
                 	$("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
+                	alert($("span").attr("id"));
             	});
                 $("#opts").append('<li class=".no"><label>Alignment序列</label>\n'+
                                   '<textarea name="seqtxt" class="form-control">\n'+
@@ -83,7 +84,6 @@ function textAreaChangeFn(id2){
         // 添加选项测试内容
           $("#c").click(function(){
           $("#opts li").each(function(){
-        	       alert($("span").attr("id"));
                    if($.trim($("#opts li textarea[name='seqtxt']").val()) == ""){
                    $("#txttips").html("序列不能空！");
                    $("#txttips").css({"color":"red"});
