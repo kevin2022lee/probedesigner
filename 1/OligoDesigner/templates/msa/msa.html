@@ -18,11 +18,8 @@ function isEnglish(str){//判断是不是英文字母、英文标点、数字
 function textAreaChangeFn(id2){
     var id = id2;
     var maxContent;
-    if(id == "title"){
-        maxContent = 1280;
-    }else if(id == "content"){
-        maxContent = 4500;
-    }
+
+    maxContent = 4500;
 
     var strlen = 0; //初始定义长度为0
     var txtval = $("textarea[name='seqtxt']").val();
@@ -38,12 +35,12 @@ function textAreaChangeFn(id2){
     var leftSize = maxContent - strlen;
     if(leftSize<0){
         $('#txttips').css("color","red");
-        $('#txttips').text("* 已输入"+strlen+"个碱基字符，超出最长"+maxContent+"个碱基的限制");
+        $('#txttips').text("* "+id+"已输入"+strlen+"个碱基字符，超出最长"+maxContent+"个碱基的限制");
         //超出字符限制，提交按钮失效
         $('#sub').attr("disabled",true);
     }else{
         $('#txttips').css("color","#999999");
-        $('#txttips').text("* 已输入"+strlen+"个碱基字符，还能输入"+leftSize+"个碱基字符");
+        $('#txttips').text("* "+id+"已输入"+strlen+"个碱基字符，还能输入"+leftSize+"个碱基字符");
         $('#sub').attr("disabled",false);
     }
 
@@ -54,7 +51,7 @@ function textAreaChangeFn(id2){
         $("#opbtn").click(function(){
             if($("#opts>li").size() < 10){// 最多添加6个选项
                 $("#opts").append('<li><label>Alignment序列</label>'+
-                                  '<textarea rows="auto" name="seqtxt" class="form-control">\n'+
+                                  '<textarea id="content" rows="auto" name="seqtxt" class="form-control">\n'+
                                   '</textarea>\n'+   
                                   '<span id="txttips"></span>'+                               
                                   '</li>');
@@ -92,16 +89,17 @@ function textAreaChangeFn(id2){
                    $("#optips").html("符合要求!");
                    $("#optips").css({"color":"green"});
                    $("#sub").removeAttr("disabled");
-
+                   $(this).bind('input propertychange', function() {
+                       textAreaChangeFn($(this).attr("id"));
+                           });
                }
        });
 });
        
        //输入内容变化
        $("textarea[id='content']").each(function(){
-           $("textarea[id='content']").bind('input propertychange', function() {
-               textAreaChangeFn($(this).attr("id"));
-    });
+           
+
            
            });
         
