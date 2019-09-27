@@ -56,7 +56,7 @@ function textAreaChangeFn(id2){
                                   '<span name="stxt"></span>'+
                                   '</li>');
                 $("#opts li").each(function(){
-                	$("span[name='stxt']").prop('id','Alignment'+($("#opts li").index()+1)+'tips');
+                	$("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
                     alert($("span[name='stxt']").attr("id"));
                 });
                 
