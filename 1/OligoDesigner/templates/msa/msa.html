@@ -50,7 +50,7 @@ function textAreaChangeFn(id2){
         $("#opbtn").click(function(){
             if($("#opts>li").size() < 10){// 最多添加6个选项
                 $("#opts").append('<li class=".no"><label>Alignment序列</label>\n'+
-                                  '<textarea id=content'+$("#opts li").index()+' rows="auto" name="seqtxt" class="form-control">\n'+
+                                  '<textarea id="content" rows="auto" name="seqtxt" class="form-control">\n'+
                                   '</textarea>\n'+ 
                                   '</li>');
             }else{// 提示选项个数已经达到最大
