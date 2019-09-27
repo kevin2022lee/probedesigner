@@ -92,11 +92,11 @@ function textAreaChangeFn(id2){
                }
              
        });
-          $("textarea[name='seqtxt']").each(function(){
-        	  $(this).blur(function(){
+          $("textarea[name='seqtxt']").blur(function(){
+        	  $(this).each(function(){
         		  $(this).bind('input propertychange', function() {
                       textAreaChangeFn($(this).attr("id"));                      
-                      //alert($("textarea[name='seqtxt']").attr("id"));
+                      alert($("textarea[name='seqtxt']").attr("id"));
         	  });
         	  
           });
