@@ -80,7 +80,7 @@ function textAreaChangeFn(id2){
           $("#c").click(function(){
           $("#opts li").each(function(){
         	       $("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
-        	       $("spam[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
+        	       $("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
                    if($.trim($("#opts li textarea[name='seqtxt']").val()) == ""){
                    $("#txttips").html("序列不能空！");
                    $("#txttips").css({"color":"red"});
