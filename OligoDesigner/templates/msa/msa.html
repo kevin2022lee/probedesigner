@@ -47,8 +47,10 @@ function textAreaChangeFn(id2){
 
     $(function(){
         // 添加选项
+        
         $("#opbtn").click(function(){
-            if($("#opts>li").size() < 10){// 最多添加6个选项
+        	$("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
+            if($("#opts>li").size() < 10){// 最多添加10个选项
                 $("#opts").append('<li class=".no"><label>Alignment序列</label>\n'+
                                   '<textarea name="seqtxt" class="form-control">\n'+
                                   '</textarea>\n'+ 
@@ -88,11 +90,17 @@ function textAreaChangeFn(id2){
                    $("#txttips").css({"color":"green"});
                    $("#sub").removeAttr("disabled");                  
                }
-              $("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
-              //alert($("textarea[name='seqtxt']").attr("id"));
-              $("textarea[name='seqtxt']").bind('input propertychange', function() {
-                       textAreaChangeFn($(this).attr("id"));
+             
        });
+          $("textarea[name='seqtxt']").each(function(){
+        	  $(this).blur(function(){
+        		  $(this).bind('input propertychange', function() {
+                      textAreaChangeFn($(this).attr("id"));                      
+                      //alert($("textarea[name='seqtxt']").attr("id"));
+        	  });
+        	  
+          });
+          
          
     });
 });
