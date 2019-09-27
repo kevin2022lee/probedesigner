@@ -81,14 +81,12 @@ function textAreaChangeFn(id2){
                    if($.trim($("#opts li textarea[name='seqtxt']").val()) == ""){
                    $("#txttips").html("序列不能空！");
                    $("#txttips").css({"color":"red"});
-                   $("#sub").prop('disabled','disabled');
-                   
+                   $("#sub").prop('disabled','disabled');                  
             }else{
                 // 删除选项,每次删除最后一个
                    $("#txttips").html("符合要求!");
                    $("#txttips").css({"color":"green"});
-                   $("#sub").removeAttr("disabled");
-                   
+                   $("#sub").removeAttr("disabled");                  
                }
               $("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
               $("textarea[name='seqtxt']").bind('input propertychange', function() {
