@@ -50,7 +50,7 @@ function textAreaChangeFn(id2){
         $("#opbtn").click(function(){
             if($("#opts>li").size() < 10){// 最多添加6个选项
                 $("#opts").append('<li class=".no"><label>Alignment序列</label>\n'+
-                                  '<textarea rows="auto" name="seqtxt" class="form-control">\n'+
+                                  '<textarea name="seqtxt" class="form-control">\n'+
                                   '</textarea>\n'+ 
                                   '</li>');
             }else{// 提示选项个数已经达到最大
@@ -83,7 +83,7 @@ function textAreaChangeFn(id2){
                    $("#optips").html("序列不能空！");
                    $("#optips").css({"color":"red"});
                    $("#sub").prop('disabled','disabled');
-                   $("textarea[name='seqtxt']").prop('id','content'+$(this).index());
+                   $("textarea[name='seqtxt']").prop('id','Alignment'+$(this).index());
                    alert($("textarea[name='seqtxt']").attr("id"));
                    
             }else{
@@ -127,14 +127,14 @@ function textAreaChangeFn(id2){
 <ol id="opts" type="1">
 <li>
 <label>Alignment序列</label>
-<textarea id="content0" rows="auto" name="seqtxt" class="form-control" >
+<textarea id="Alignment0" name="seqtxt" class="form-control" >
 
 </textarea>
 <span id="txttips"></span>
 </li>
 <li>
 <label>Alignment序列</label>
-<textarea id="content1" rows="auto" name="seqtxt" class="form-control" >
+<textarea id="Alignment1" name="seqtxt" class="form-control" >
 
 </textarea>
 <span id="txttips"></span>
