@@ -81,7 +81,7 @@ function textAreaChangeFn(id2){
           $("#opts li").each(function(){
         	       $("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
         	       $("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
-        	       alert($("span[name='stxt']").attr("id"));
+        	       alert($("span").attr("id"));
                    if($.trim($("textarea[name='seqtxt']").val()) == ""){
                    $("#txttips").html("序列不能空！");
                    $("#txttips").css({"color":"red"});
@@ -140,14 +140,14 @@ function textAreaChangeFn(id2){
 <textarea id="Alignment1" name="seqtxt" class="form-control" >
 
 </textarea>
-<span class="seqtxt" id="Alignment1tips"></span>
+<span class="stxt" id="Alignment1tips"></span>
 </li>
 <li>
 <label>Alignment序列</label>
 <textarea id="Alignment2" name="seqtxt" class="form-control" >
 
 </textarea>
-<span class="seqtxt" id="Alignment2tips"></span>
+<span class="stxt" id="Alignment2tips"></span>
 </li>
 </ol>
 <br/>
