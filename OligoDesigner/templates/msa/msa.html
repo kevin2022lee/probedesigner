@@ -89,6 +89,7 @@ function textAreaChangeFn(id2){
                    $("#sub").removeAttr("disabled");                  
                }
               $("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
+              alert($("textarea[name='seqtxt']").attr("id"));
               $("textarea[name='seqtxt']").bind('input propertychange', function() {
                        textAreaChangeFn($(this).attr("id"));
        });
