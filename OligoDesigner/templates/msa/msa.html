@@ -83,7 +83,7 @@ function textAreaChangeFn(id2){
                    $("#optips").html("序列不能空！");
                    $("#optips").css({"color":"red"});
                    $("#sub").prop('disabled','disabled');
-                   $("#opt li").prop('id','content'+$(this).index()+');
+                   $("#opt li").prop('id','content'+$(this).index());
                    
             }else{
                 // 删除选项,每次删除最后一个
