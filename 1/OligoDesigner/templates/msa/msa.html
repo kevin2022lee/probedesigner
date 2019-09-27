@@ -33,27 +33,27 @@ function textAreaChangeFn(id2){
     }
     var leftSize = maxContent - strlen;
     if(leftSize<0){
-        $("#optips").css("color","red");
-        $("#optips").text("*"+id+" 已输入"+strlen+"个碱基字符，超出最长"+maxContent+"个碱基的限制");
+        $("#"+id+"tips").css("color","red");
+        $("#"+id+"tips").text("*"+id+" 已输入"+strlen+"个碱基字符，超出最长"+maxContent+"个碱基的限制");
         //超出字符限制，提交按钮失效
         $('#sub').attr("disabled",true);
     }else{
-        $("#optips").css("color","#999999");
-        $("#optips").text("*"+id+" 已输入"+strlen+"个碱基字符，还能输入"+leftSize+"个碱基字符");
+        $("#"+id+"tips").css("color","#999999");
+        $("#"+id+"tips").text("*"+id+" 已输入"+strlen+"个碱基字符，还能输入"+leftSize+"个碱基字符");
         $('#sub').attr("disabled",false);
     }
 
 }
 
     $(function(){
-        // 添加选项
-        
+        // 添加选项       
         $("#opbtn").click(function(){
-        	$("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
             if($("#opts>li").size() < 10){// 最多添加10个选项
+            	$("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
                 $("#opts").append('<li class=".no"><label>Alignment序列</label>\n'+
                                   '<textarea name="seqtxt" class="form-control">\n'+
                                   '</textarea>\n'+ 
+                                  '<span></span>'+
                                   '</li>');
             }else{// 提示选项个数已经达到最大
                 $("#optips").html("最多支持10个序列Alignment,不能再添加!");
@@ -137,18 +137,20 @@ function textAreaChangeFn(id2){
 <textarea id="Alignment0" name="seqtxt" class="form-control" >
 
 </textarea>
-
+<span id="Alignment0tips"></span>
 </li>
 <li>
 <label>Alignment序列</label>
 <textarea id="Alignment1" name="seqtxt" class="form-control" >
 
 </textarea>
-
+<span id="Alignment1tips"></span>
 </li>
 </ol>
 <br/>
-<span id="txttips"></span> <span id="optips"></span>
+<span id="txttips"></span> 
+ <br>
+ <span id="optips"></span> 
  <br>
         <button id="opbtn" type="button"  class="btn btn-info"> <span class="glyphicon glyphicon-plus"></span> 添加Alignment选项</button>
         <button id="delbtn" type="button"  class="btn btn-info"> <span class="glyphicon glyphicon-minus"></span> 删除Alignment选项</button>
