@@ -78,10 +78,10 @@ function textAreaChangeFn(id2){
        //表单不能为空
         // 添加选项测试内容
           $("#c").click(function(){
+        	  $("textarea[name='seqtxt']").prop('id','Alignment'+($("#opts li").index()+1));
+   	          $("span[name='stxt']").prop('id','Alignment'+($("#opts li").index()+1)+'tips');
           $("#opts li").each(function(){
-        	       //alert($("span[name='stxt']").attr("id"));
-        	       $("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
-        	       $("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
+        	       alert($("span[name='stxt']").attr("id"));
                    if($.trim($("textarea[name='seqtxt']").val()) == ""){
                    $("#txttips").html("序列不能空！");
                    $("#txttips").css({"color":"red"});
