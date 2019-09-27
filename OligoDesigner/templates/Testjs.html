@@ -1,10 +1,10 @@
 ﻿﻿<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link href="//cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="//cdn.bootcss.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <head>
 </head>
 <body>
@@ -58,8 +58,166 @@
    </div>
 </nav>
 
+<script>
+function isChinese(str) {  //判断是不是中文汉字、中文标点
+    var reCh = /[u4e00-u9fa5]/;
+    //常用中文标点符号 。 ？ ！ ， 、 ； ： “ ” ‘ ' （ ） 《 》 〈 〉 【 】 『 』 「 」 ﹃ ﹄ 〔 〕 … — ～ ﹏ ￥
+    var reChP = /[\u3002|\uff1f|\uff01|\uff0c|\u3001|\uff1b|\uff1a|\u201c|\u201d|\u2018|\u2019|\uff08|\uff09|\u300a|\u300b|\u3008|\u3009|\u3010|\u3011|\u300e|\u300f|\u300c|\u300d|\ufe43|\ufe44|\u3014|\u3015|\u2026|\u2014|\uff5e|\ufe4f|\uffe5]/;
+    return !reCh.test(str) || reChP.test(str);
+}
+function isEnglish(str){//判断是不是英文字母、英文标点、数字
+    var reEn = /[a-zA-Z0-9]/;
+    //常用英文标点符号 , . ? [ ] ; ' : " ! $ ^ ( ) 
+    var reEnP = /[\u002c|\u002e|\u003f|\u005b|\u005d|\u003b|\u0026|\u0023|\u0033|\u0039|\u003b|\u003a|\u0026|\u0071|\u0075|\u006f|\u0074|\u003b|\u0021|\u0024|\u005e|\u0028|\u0029]/;
+    return reEn.test(str) || reEnP.test(str);
+}
+//监控内容变化
+function textAreaChangeFn(id2){
+    var id = id2;
+    var idd=$("ol li").index();
+    alert(id);
+    var maxContent;
+    maxContent = 4500;
 
+    var strlen = 0; //初始定义长度为0
+    var txtval = $("textarea[name='seqtxt']").val();
+    for (var i = 0; i < txtval.length; i++) {
+        if(isEnglish(txtval.charAt(i)) == true){//英文字母、英文标点、数字
+            strlen = strlen + 1;
+        }else if(isChinese(txtval.charAt(i)) == true){//中文汉字、标点
+            strlen = strlen + 2;
+        } else {//其他字符
+            strlen = strlen + 2; 
+        }
+    }
+    var leftSize = maxContent - strlen;
+    if(leftSize<0){
+        $("#optips").css("color","red");
+        $("#optips").text("*"+id+" 已输入"+strlen+"个碱基字符，超出最长"+maxContent+"个碱基的限制");
+        //超出字符限制，提交按钮失效
+        $('#sub').attr("disabled",true);
+    }else{
+        $("#optips").css("color","#999999");
+        $("#optips").text("*"+id+" 已输入"+strlen+"个碱基字符，还能输入"+leftSize+"个碱基字符");
+        $('#sub').attr("disabled",false);
+    }
 
+}
+
+    $(function(){
+        // 添加选项
+        $("#opbtn").click(function(){
+            if($("#opts>li").size() < 10){// 最多添加6个选项
+                $("#opts").append('<li class=".no"><label>Alignment序列</label>\n'+
+                                  '<textarea rows="auto" name="seqtxt" class="form-control">\n'+
+                                  '</textarea>\n'+ 
+                                  '</li>');
+            }else{// 提示选项个数已经达到最大
+                $("#optips").html("最多支持10个序列Alignment,不能再添加!");
+                $("#optips").css({"color":"red"});
+            }
+            
+        });
+        
+        // 删除选项
+        $("#delbtn").click(function(){
+            if($("#opts>li").size() <= 2){
+                $("#optips").html("最低需要2个序列alignment，已经没有选项可以删除了!");
+                $("#optips").css({"color":"red"});
+               
+            } else{
+                // 删除选项,每次删除最后一个
+                $("#opts>li").last().remove();
+                
+            }
+            
+        });
+        
+       //表单不能为空
+        // 添加选项测试内容
+          $("#c").click(function(){
+          $("textarea[name='seqtxt']").each(function(){
+                   if($.trim($(this).val())==""){
+                   $("#optips").html("序列不能空！");
+                   $("#optips").css({"color":"red"});
+                   $("#sub").prop('disabled','disabled');
+            }else{
+                // 删除选项,每次删除最后一个
+                   $("#optips").html("符合要求!");
+                   $("#optips").css({"color":"green"});
+                   $("#sub").removeAttr("disabled");
+                   $(this).bind('input propertychange', function() {
+                   textAreaChangeFn($(this).attr("id"));
+         });
+               }
+       });
+});
+       
+       //输入内容变化
+
+        
+    });
+
+</script>
+
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    #dv{
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        margin: 0px auto 0px;
+    }
+    
+</style>
+
+<div class="panel panel-info" >
+<div class="panel-heading">
+<b>多序列比对（Multiple sequence alignment）</b>
+</div>
+
+<div class="container" style="padding:20px;height:auto;">
+
+<form action="#" method="POST" role="form">
+<ol id="opts" type="1">
+<li class=".no">
+<label>Alignment序列</label>
+<textarea id="content1" rows="auto" name="seqtxt" class="form-control" >
+
+</textarea>
+
+</li>
+<li class=".no">
+<label>Alignment序列</label>
+<textarea id="content2" rows="auto" name="seqtxt" class="form-control" >
+
+</textarea>
+
+</li>
+</ol>
+<br/>
+ <span id="optips"></span>
+ <br>
+        <button id="opbtn" type="button"  class="btn btn-info"> <span class="glyphicon glyphicon-plus"></span> 添加Alignment选项</button>
+        <button id="delbtn" type="button"  class="btn btn-info"> <span class="glyphicon glyphicon-minus"></span> 删除Alignment选项</button>
+</div>
+<div style="text-align:center;margin-bottom:10px;">
+<button id="c" type="button" class="btn btn-primary" ><span class="glyphicon glyphicon-step-forward"></span>检查内容</button>
+<button id="sub" type="submit" class="btn btn-primary" disabled="disabled"><span class="glyphicon glyphicon-step-forward"></span>提交比对</button>
+<button id="res" type="reset" class="btn btn-primary" ><span class="glyphicon glyphicon-trash"></span>清除比对</button>
+</div>
+</form>
+<div style="margin-left:20px;">
+<ol><b>注意信息</b>
+<li>注意提交alignment的序列长度必须一致！</li>
+<li>请自动剔掉除碱基以外的字符信息，或者从genbank或FASTA文件中复制！</li>
+</ol>
+</div>
+</div>
 
 <div class="panel panel-info" id="footer" style="clear:both;">
 <p align="center"><a href="http://www.miitbeian.gov.cn">豫ICP备14029863号-3 </a><span>ProbeDesigner V1.0 探针设计软件 </span></p>
