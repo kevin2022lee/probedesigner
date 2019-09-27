@@ -81,6 +81,7 @@ function textAreaChangeFn(id2){
           $("#opts li").each(function(){
         	       $("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
         	       $("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
+        	       alert($("span").attr("id"));
                    if($.trim($("#opts li textarea[name='seqtxt']").val()) == ""){
                    $("#txttips").html("序列不能空！");
                    $("#txttips").css({"color":"red"});
@@ -90,7 +91,7 @@ function textAreaChangeFn(id2){
                    $("#txttips").html("符合要求!");
                    $("#txttips").css({"color":"green"});
                    $("#sub").removeAttr("disabled"); 
-                   alert($("span").attr("id"));
+                  
                }
              
        });
