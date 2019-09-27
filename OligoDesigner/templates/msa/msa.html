@@ -84,8 +84,8 @@ function textAreaChangeFn(id2){
                    $("#optips").css({"color":"red"});
                    $("#sub").prop('disabled','disabled');
                    $("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index() + 1));
-                   alert($("textarea[name='seqtxt']").attr("id"));
-                   
+                   //alert($("textarea[name='seqtxt']").attr("id"));
+                   textAreaChangeFn($("textarea[name='seqtxt']").attr("id"));
             }else{
                 // 删除选项,每次删除最后一个
                    $("#optips").html("符合要求!");
