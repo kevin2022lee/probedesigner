@@ -55,8 +55,11 @@ function textAreaChangeFn(id2){
                                   '</textarea>\n'+ 
                                   '<span name="stxt"></span>'+
                                   '</li>');
-                $("span[name='stxt']").prop('id','Alignment'+($("#opts li").index()+1)+'tips');
-                alert($("span[name='stxt']").attr("id"));
+                $("#opts li").each(function(){
+                	$("span[name='stxt']").prop('id','Alignment'+($("#opts li").index()+1)+'tips');
+                    alert($("span[name='stxt']").attr("id"));
+                });
+                
             }else{// 提示选项个数已经达到最大
                 $("#optips").html("最多支持10个序列Alignment,不能再添加!");
                 $("#optips").css({"color":"red"});
