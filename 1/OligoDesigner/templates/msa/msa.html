@@ -46,10 +46,13 @@ function textAreaChangeFn(id2){
 }
 
     $(function(){
+    	$("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
+    	$("span[name='seqtxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
         // 添加选项       
         $("#opbtn").click(function(){
             if($("#opts>li").size() < 10){// 最多添加10个选项
             	$("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
+            	$("span[name='seqtxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
                 $("#opts").append('<li class=".no"><label>Alignment序列</label>\n'+
                                   '<textarea name="seqtxt" class="form-control">\n'+
                                   '</textarea>\n'+ 
@@ -134,17 +137,17 @@ function textAreaChangeFn(id2){
 <ol id="opts" type="1">
 <li>
 <label>Alignment序列</label>
-<textarea id="Alignment0" name="seqtxt" class="form-control" >
-
-</textarea>
-<span id="Alignment0tips"></span>
-</li>
-<li>
-<label>Alignment序列</label>
 <textarea id="Alignment1" name="seqtxt" class="form-control" >
 
 </textarea>
-<span id="Alignment1tips"></span>
+<span class="seqtxt" id="Alignment1tips"></span>
+</li>
+<li>
+<label>Alignment序列</label>
+<textarea id="Alignment2" name="seqtxt" class="form-control" >
+
+</textarea>
+<span class="seqtxt" id="Alignment2tips"></span>
 </li>
 </ol>
 <br/>
