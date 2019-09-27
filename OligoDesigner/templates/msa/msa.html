@@ -51,7 +51,7 @@ function textAreaChangeFn(id2){
             if($("#opts>li").size() < 10){// 最多添加10个选项
             	$(this).each(function(){
             		$("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
-                	$("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
+                	//$("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
             	});
                 $("#opts").append('<li class=".no"><label>Alignment序列</label>\n'+
                                   '<textarea name="seqtxt" class="form-control">\n'+
