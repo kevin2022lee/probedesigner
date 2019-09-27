@@ -81,7 +81,7 @@ function textAreaChangeFn(id2){
           $("#opts li").each(function(){
         	       $("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
         	       $("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
-        	       alert($("span").attr("id"));
+        	       alert($("textarea").attr("id"));
                    if($.trim($("#opts li textarea[name='seqtxt']").val()) == ""){
                    $("#txttips").html("序列不能空！");
                    $("#txttips").css({"color":"red"});
