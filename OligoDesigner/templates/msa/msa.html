@@ -83,8 +83,8 @@ function textAreaChangeFn(id2){
                    $("#optips").html("序列不能空！");
                    $("#optips").css({"color":"red"});
                    $("#sub").prop('disabled','disabled');
-                   $("textarea[name='seqtxt']").prop('id','Alignment'+$(this).index() + 1);
-                   //alert($("textarea[name='seqtxt']").attr("id"));
+                   $("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index() + 1));
+                   alert($("textarea[name='seqtxt']").attr("id"));
                    
             }else{
                 // 删除选项,每次删除最后一个
