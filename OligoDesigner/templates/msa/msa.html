@@ -96,7 +96,7 @@ function textAreaChangeFn(id2){
         	  $(this).each(function(){
         		  $(this).bind('input propertychange', function() {
                       textAreaChangeFn($(this).attr("id"));                      
-                      alert($("textarea[name='seqtxt']").attr("id"));
+                      //alert($("textarea[name='seqtxt']").attr("id"));
         	  });
         	  
           });
