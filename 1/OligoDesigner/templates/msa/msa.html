@@ -46,9 +46,13 @@ function textAreaChangeFn(id2){
 }
 
     $(function(){
+    	//$("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
+    	//$("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
         // 添加选项       
         $("#opbtn").click(function(){
-            if($("#opts>li").size() < 10){// 最多添加10个选项            	
+            if($("#opts>li").size() < 10){// 最多添加10个选项
+            	//$("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
+            	//$("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
                 $("#opts").append('<li class=".no"><label>Alignment序列</label>\n'+
                                   '<textarea name="seqtxt" class="form-control">\n'+
                                   '</textarea>\n'+ 
@@ -79,8 +83,6 @@ function textAreaChangeFn(id2){
         // 添加选项测试内容
           $("#c").click(function(){
           $("#opts li").each(function(){
-        	       //$("textarea[name='seqtxt']").prop('id','Alignment'+($(this).index()+1));
-          	       //$("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
                    if($.trim($("#opts li textarea[name='seqtxt']").val()) == ""){
                    $("#txttips").html("序列不能空！");
                    $("#txttips").css({"color":"red"});
