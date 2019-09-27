@@ -17,12 +17,11 @@ function isEnglish(str){//判断是不是英文字母、英文标点、数字
 //监控内容变化
 function textAreaChangeFn(id2){
     var id = id2;
-    alert(id);
     var maxContent;
     maxContent = 4500;
 
     var strlen = 0; //初始定义长度为0
-    var txtval = $("textarea[name='seqtxt']").val();
+    var txtval = $("#"+id).val();
     for (var i = 0; i < txtval.length; i++) {
         if(isEnglish(txtval.charAt(i)) == true){//英文字母、英文标点、数字
             strlen = strlen + 1;
