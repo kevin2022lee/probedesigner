@@ -78,7 +78,7 @@ function textAreaChangeFn(id2){
         // 添加选项测试内容
           $("#c").click(function(){
           $("#opts li").each(function(){
-        	       //alert($("#opts li").attr("id"));
+        	       alert($("#opts li").attr("id"));
                    if($.trim($("textarea[name='seqtxt']").val())==""){
                    $("#optips").html("序列不能空！");
                    $("#optips").css({"color":"red"});
