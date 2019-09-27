@@ -82,19 +82,17 @@ function textAreaChangeFn(id2){
                    $("#txttips").html("序列不能空！");
                    $("#txttips").css({"color":"red"});
                    $("#sub").prop('disabled','disabled');
-                   $("#opts li textarea[name='seqtxt']").prop('id','Alignment'+($(this).index() + 1));
-                   //alert($("textarea[name='seqtxt']").attr("id"));
-                   textAreaChangeFn($("#opts li textarea[name='seqtxt']").attr("id"));
+                   
             }else{
                 // 删除选项,每次删除最后一个
                    $("#txtips").html("符合要求!");
                    $("#txttips").css({"color":"green"});
                    $("#sub").removeAttr("disabled");
-                   $("textarea[name='seqtxt']").bind('input propertychange', function() {
-                   textAreaChangeFn($("textarea[name='seqtxt']").attr("id"));
-         });
                }
        });
+          $("textarea[name='seqtxt']").bind('input propertychange', function() {
+              textAreaChangeFn($(this).attr("id"));
+    });
 });
     //注释
     });
@@ -155,7 +153,7 @@ function textAreaChangeFn(id2){
 <ol><b>注意信息</b>
 <li>注意提交alignment的序列长度必须一致！</li>
 <li>请自动剔掉除碱基以外的字符信息，或者从genbank或FASTA文件中复制！</li>
-<li>测试中还不稳定，还请见谅！</li>
+<li>请先检查输入内容，在提交比对测试！</li>
 </ol>
 
 </div>
