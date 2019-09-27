@@ -59,9 +59,9 @@ function textAreaChangeFn(id2){
                 	$("span[name='stxt']").prop('id','Alignment'+($(this).index()+1)+'tips');
                     //alert($("textarea").attr("id"));
                     $("textarea[name='seqtxt']").each(function(){
-        	              $(this).blur(function(){
-        		          $(this).bind('input propertychange', function() {
-                                textAreaChangeFn($(this).attr("id"));                      
+                    	$(this).blur(function(){
+        		        $(this).bind('input propertychange', function() {
+        		        	textAreaChangeFn($(this).attr("id"));                      
         	  });
         	  
           });
