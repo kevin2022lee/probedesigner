@@ -82,7 +82,7 @@ function textAreaChangeFn(id2){
        //表单不能为空
         // 添加选项测试内容
           $("#c").click(function(){
-        	  alert($("textarea[name='seqtxt']").attr("id"));
+        	  alert($("span[name='stxt']").attr("id"));
           $("#opts li").each(function(){
                    if($.trim($("#opts li textarea[name='seqtxt']").val()) == ""){
                    $("#txttips").html("序列不能空！");
