@@ -79,7 +79,7 @@ function textAreaChangeFn(id2){
           $("#c").click(function(){
           $("textarea[name='seqtxt']").each(function(){
         	  	   //alert($("#opts li").index());
-        	  	   alert($("#opts").index(“li”));
+        	  	   alert($("#opts li").index());
                    if($.trim($(this).val())==""){
                    $("#optips").html("序列不能空！");
                    $("#optips").css({"color":"red"});
