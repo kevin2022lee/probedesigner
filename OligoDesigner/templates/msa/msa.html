@@ -48,7 +48,7 @@ function textAreaChangeFn(id2){
     $(function(){
         // 添加选项       
         $("#opbtn").click(function(){
-            if($("#opts>li").size() < 20){// 最多添加20个选项
+            if($("#opts>li").size() < 12){// 最多添加12个选项
                 $("#opts").append('<li><label>Alignment序列</label>\n'+
                                   '<textarea name="seqtxt" class="form-control">\n'+
                                   '</textarea>\n'+ 
@@ -61,7 +61,7 @@ function textAreaChangeFn(id2){
                 });
                 
             }else{// 提示选项个数已经达到最大
-                $("#optips").html("最多支持20个序列Alignment,不能再添加!");
+                $("#optips").html("最多支持12个序列Alignment,不能再添加!");
                 $("#optips").css({"color":"red"});
             }
             
