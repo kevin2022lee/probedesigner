@@ -2,6 +2,7 @@ eclipse.preferences.version=1
 encoding//OligoDesigner/SightViews.py=utf-8
 encoding//OligoDesigner/blastviews.py=UTF-8
 encoding//OligoDesigner/geneviews.py=utf-8
+encoding//OligoDesigner/orderviews.py=utf-8
 encoding//OligoDesigner/templates/Testjs.html=UTF-8
 encoding//OligoDesigner/templates/base.html=UTF-8
 encoding//OligoDesigner/templates/bigdata.html=UTF-8
