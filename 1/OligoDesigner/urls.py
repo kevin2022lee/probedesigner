@@ -1,6 +1,7 @@
 from django.conf.urls import *
 from views import *
 from geneviews import genesearch,gdbsearch,geneshow,loadmore
+from orderviews import *
 from SightViews import *
 from blastviews import *
 from django.contrib import admin
@@ -59,4 +60,5 @@ urlpatterns = patterns('',
     url(r'loadmore/(\w+)/',loadmore),
     url(r'tools/msa/',MSA),
     url(r'tools/msaresult/',multiseqalign),
+    url(r'order/',order),
 )
