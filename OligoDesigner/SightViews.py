@@ -153,7 +153,7 @@ def NNFzzprobe(req):
     if req.method=='POST':
         nonnshfilter=NonNSHFilter()
         probedict={}
-        probelist=nonnshfilter.filterSequence(req.POST['seqtxt'])
+        probelist=nonnshfilter.filterSequence(req.POST['seqtxt'],52,58)
         s=req.POST['seqtxt'].upper()
         probelist.append(len(s))
         for i in range(len(probelist)):
