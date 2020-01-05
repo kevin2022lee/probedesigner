@@ -35,7 +35,9 @@ from django.core.context_processors import request
 '''
 ##############################################注释分界线#######################################################
 
-
+'''
+更新说明：增加blastviews，功能模块化。
+'''
 local='www.probedesigner.cn'
 #local='127.0.0.1:8000'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
