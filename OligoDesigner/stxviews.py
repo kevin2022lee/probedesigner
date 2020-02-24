@@ -82,7 +82,7 @@ def fileparse(request):
         #cookie['descri']=nr.description
         #request.session['description']=nr.description
         #request.session['sequence']=nr.seq
-    response=render_to_response('parselocalfile.html',{
+    response=render_to_response('16xpd/16xpdparse_result.html',{
                                                        'local':local,
                                                        'thisyear':thisyear,
                                                        'filetype':filetype[0],
@@ -115,7 +115,7 @@ def entrezparse(request):
         time.sleep(10)
         handle.close()
         cookie=Cookie.SimpleCookie()
-        response=render_to_response('16xpdparse_result.html',{
+        response=render_to_response('16xpd/16xpdparse_result.html',{
                                                        'local':local,
                                                        'thisyear':thisyear,
                                                        'filetype':'genbank',
