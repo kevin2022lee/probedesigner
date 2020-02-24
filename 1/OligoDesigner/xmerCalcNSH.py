@@ -48,12 +48,12 @@ class CalcNSH:
         WF_CEtoLeaders=3
         WF_CEtoAMParms=20
         WF_CEtoAP=20
-        WF_LEtoPSCP=0
+        WF_CEtoPSCP=0
 ###########Server as LE Probe Weighting Factor##########################
         WF_LEtoLeaders=0
         WF_LEtoAMParms=0
         WF_LEtoAP=0
-        WF_CEtoPSCP=12
+        WF_LEtoPSCP=12
 ############################################################################
         if len(x4merlcs_Aleader) >=4:
             score_x4mer_Aleader=[]
@@ -105,8 +105,8 @@ class CalcNSH:
                 score_x4mer_PSCP.append(self.x4merScore(x4merlcs_PSCP[i:i+4]))
                 i=i+1
             data_PSCP['score_x4mer_PSCP']=score_x4mer_PSCP
-            NSH_Score_PSCP_SACE=sum(data_PSCP['score_x4mer_PSCP'])*WF_LEtoPSCP
-            NSH_Score_PSCP_SALE=sum(data_PSCP['score_x4mer_PSCP'])*WF_CEtoPSCP
+            NSH_Score_PSCP_SACE=sum(data_PSCP['score_x4mer_PSCP'])*WF_CEtoPSCP
+            NSH_Score_PSCP_SALE=sum(data_PSCP['score_x4mer_PSCP'])*WF_LEtoPSCP
         else:
             NSH_Score_PSCP_SACE=0
             NSH_Score_PSCP_SALE=0
