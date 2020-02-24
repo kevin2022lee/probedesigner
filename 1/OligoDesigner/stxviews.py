@@ -138,7 +138,7 @@ def entrezparse(request):
 def stxpd_design(request):
     if request.method=="POST":
         global local
-        return render_to_response('16xdesign.html',{
+        return render_to_response('16xpd/16xdesign.html',{
                                                       'local':local,
                                                       'thisyear':thisyear,
                                                       'sequence':list(request.POST['seq']),
