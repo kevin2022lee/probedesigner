@@ -144,5 +144,38 @@ def stxpd_design(request):
                                                       'sequence':list(request.POST['seq']),
                                                       'description':request.COOKIES.get('des',''),
                                                       },context_instance=RequestContext(request))
-        
+@csrf_protect    
+def stxprobefilter(req):
+    if req.method=='POST':
+        nonnshfilter=NonNSHFilter()
+        probedict={}
+        probedict1={}
+        probedict2={}
+        seqtxt=''.join(req.POST.getlist('seqtxt'))
+        probelist=nonnshfilter.filterSequence(seqtxt,52,58)
+        probelist1=nonnshfilter.filterSequence(seqtxt,52,55)
+        probelist2=nonnshfilter.filterSequence(seqtxt,48,52)
+        s=seqtxt.upper()
+        probelist.append(len(s))
+        probelist1.append(len(s))
+        probelist2.append(len(s))
+        for i in range(len(probelist)):
+            if probelist[i]<len(s)-20:
+#计算GC含量以及计算CE&LE 公式：
+                probedict.setdefault('p'+str(probelist[i]),[reverseOligo(s[probelist[i]:probelist[i+1]]),probelist[i]])
+        for i in range(len(probelist1)):
+            if probelist1[i]<len(s)-20:
+                probedict1.setdefault('p'+str(probelist1[i]),[reverseOligo(s[probelist1[i]:probelist1[i+1]]),probelist1[i]])
+        for i in range(len(probelist2)):
+            if probelist2[i]<len(s)-20:
+                probedict2.setdefault('p'+str(probelist2[i]),[reverseOligo(s[probelist2[i]:probelist2[i+1]]),probelist2[i]])
+        return render_to_response('showfilterprobe.html',{
+                                                     'local':local,
+                                                     'thisyear':thisyear,
+                                                     'seqtxt':seqtxt,
+                                                     'probedict':probedict,
+                                                     'probedict1':probedict1,
+                                                     'probedict2':probedict2,
+                                                     },context_instance=RequestContext(req))  
+##################################################################
 

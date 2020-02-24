@@ -66,4 +66,5 @@ urlpatterns = patterns('',
     url(r'fileparse/',fileparse),
     url(r'entrezparse/',entrezparse),
     url(r'16xpd_start/',stxpd_design),
+    url(r'stxprobefilter/',stxprobefilter),
 )
