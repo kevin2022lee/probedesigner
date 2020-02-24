@@ -62,5 +62,5 @@ urlpatterns = patterns('',
     url(r'tools/msa/',MSA),
     url(r'tools/msaresult/',multiseqalign),
     url(r'order/',order),
-    url(r'16xpd/',stxpd),
+    url(r'16xpd/',stxpd)
 )
