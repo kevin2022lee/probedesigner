@@ -100,4 +100,3 @@ def fileparse(request):
     response.set_cookie("seq",nr.seq)
     response.set_cookie("des",nr.description)
     return response
-@csrf_protect 
