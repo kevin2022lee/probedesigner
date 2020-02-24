@@ -4,6 +4,7 @@ from geneviews import genesearch,gdbsearch,geneshow,loadmore
 from orderviews import *
 from SightViews import *
 from blastviews import *
+from 16XViews import *
 from django.contrib import admin
 import settings
 admin.autodiscover()
@@ -61,5 +62,5 @@ urlpatterns = patterns('',
     url(r'tools/msa/',MSA),
     url(r'tools/msaresult/',multiseqalign),
     url(r'order/',order),
-     url(r'16xpd/',16xpd),
+    url(r'16xpd/',stxpd),
 )

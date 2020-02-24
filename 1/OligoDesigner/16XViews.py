@@ -9,7 +9,7 @@ from models import *
 import sys,urllib
 import base64
 import Cookie
-from 16XmerCalcNSH import *
+from STXmerCalcNSH import *
 from arithMetic import *
 from searchProbe import *
 from XmerCalcCELENSH import *
@@ -24,6 +24,6 @@ thisyear=time.strftime('%Y',time.localtime(time.time()))
 
 #######################实现最长公共字符查找##################################
 
-def 16xpd(request):
+def stxpd(request):
     global local
     return render_to_response('16xpd/16xpd.html',{'local':local,'thisyear':thisyear},context_instance=RequestContext(request))
