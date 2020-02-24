@@ -43,7 +43,7 @@ class STXCalcNSH:
         ########LCS#############
         Calc_Seq=Seq(Calc_Seq, IUPAC.unambiguous_dna).upper()
         x4merlcs_Aleader=self.lcs(str(uni_Aleader_seq1),str(Calc_Seq))+self.lcs(str(uni_Aleader_seq2),str(Calc_Seq))
-        x4merlcs_Aarms=(self.lcs(str(uni_Aarms_seq1),str(Calc_Seq))+self.lcs(str(uni_Aarms_seq2),str(Calc_Seq)))/2
+        x4merlcs_Aarms=self.lcs(str(uni_Aarms_seq1),str(Calc_Seq))+self.lcs(str(uni_Aarms_seq2),str(Calc_Seq))
         x4merlcs_AP=self.lcs(str(uni_AP_seq),str(Calc_Seq))
         x4merlcs_PSCP=self.lcs(str(uni_PSCP_seq),str(Calc_Seq))
 ###########Server as CE Probe Weighting Factor##########################
@@ -68,8 +68,8 @@ class STXCalcNSH:
             NSH_Score_Aleader_SACE=sum(data_Aleader['score_x4mer_Aleader'])*WF_CEtoLeaders
             NSH_Score_Aleader_SALE=sum(data_Aleader['score_x4mer_Aleader'])*WF_LEtoLeaders
         else:
-            NSH_Score_Aleader_SACE=0
-            NSH_Score_Aleader_SALE=0
+            NSH_Score_Aleader_SACE=1
+            NSH_Score_Aleader_SALE=1
 ###############Aarms xmer Score############################################
         if len(x4merlcs_Aarms) >=4:
             i=0
@@ -82,8 +82,8 @@ class STXCalcNSH:
             NSH_Score_Aarms_SACE=sum(data_Aarms['score_x4mer_Aarms'])*WF_CEtoAMParms
             NSH_Score_Aarms_SALE=sum(data_Aarms['score_x4mer_Aarms'])*WF_LEtoAMParms
         else:
-            NSH_Score_Aarms_SACE=0
-            NSH_Score_Aarms_SALE=0
+            NSH_Score_Aarms_SACE=1
+            NSH_Score_Aarms_SALE=1
 ###############APs xmer Score##############################################
         if len(x4merlcs_AP) >=4:
             i=0
@@ -96,8 +96,8 @@ class STXCalcNSH:
             NSH_Score_AP_SACE=sum(data_AP['score_x4mer_AP'])*WF_CEtoAP
             NSH_Score_AP_SALE=sum(data_AP['score_x4mer_AP'])*WF_LEtoAP
         else:
-            NSH_Score_AP_SACE=0
-            NSH_Score_AP_SALE=0
+            NSH_Score_AP_SACE=1
+            NSH_Score_AP_SALE=1
 ##############PSCP x-mer Score###############################
         if len(x4merlcs_PSCP) >=4:
             i=0
@@ -110,8 +110,8 @@ class STXCalcNSH:
             NSH_Score_PSCP_SACE=sum(data_PSCP['score_x4mer_PSCP'])*WF_LEtoPSCP
             NSH_Score_PSCP_SALE=sum(data_PSCP['score_x4mer_PSCP'])*WF_CEtoPSCP
         else:
-            NSH_Score_PSCP_SACE=0
-            NSH_Score_PSCP_SALE=0
+            NSH_Score_PSCP_SACE=1
+            NSH_Score_PSCP_SALE=1
 #######END############
         Total_NSH_SACE= NSH_Score_Aleader_SACE+NSH_Score_Aarms_SACE+NSH_Score_AP_SACE+NSH_Score_PSCP_SACE
         Total_NSH_SALE= NSH_Score_Aleader_SALE+NSH_Score_Aarms_SALE+NSH_Score_AP_SALE+NSH_Score_PSCP_SALE
