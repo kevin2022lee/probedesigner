@@ -223,7 +223,7 @@ def stxprobefilter(req):
         for i in range(len(probelist2)):
             if probelist2[i]<len(s)-20:
                 probedict2.setdefault('p'+str(probelist2[i]),[reverseOligo(s[probelist2[i]:probelist2[i+1]]),probelist2[i]])
-        return render_to_response('showstxprobe.html',{
+        return render_to_response('16xpd/showstxprobe.html',{
                                                      'local':local,
                                                      'thisyear':thisyear,
                                                      'seqtxt':seqtxt,
