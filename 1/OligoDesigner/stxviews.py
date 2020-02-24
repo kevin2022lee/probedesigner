@@ -133,3 +133,16 @@ def entrezparse(request):
         response.set_cookie("des",record.description)
         return response
 #########远程访问Entrez数据库#####################    
+
+@csrf_protect
+def startdesign(request):
+    if request.method=="POST":
+        global local
+        return render_to_response('16xdesign.html',{
+                                                      'local':local,
+                                                      'thisyear':thisyear,
+                                                      'sequence':list(request.POST['seq']),
+                                                      'description':request.COOKIES.get('des',''),
+                                                      },context_instance=RequestContext(request))
+        
+
