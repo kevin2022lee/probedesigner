@@ -43,7 +43,7 @@ class STXCalcNSH:
         ########LCS#############
         Calc_Seq=Seq(Calc_Seq, IUPAC.unambiguous_dna).upper()
         x4merlcs_Aleader=self.lcs(str(uni_Aleader_seq1),str(Calc_Seq))+self.lcs(str(uni_Aleader_seq2),str(Calc_Seq))
-        x4merlcs_Aarms=self.lcs(str(uni_Aarms_seq1),str(Calc_Seq))+self.lcs(str(uni_Aarms_seq2),str(Calc_Seq))
+        x4merlcs_Aarms=(self.lcs(str(uni_Aarms_seq1),str(Calc_Seq))+self.lcs(str(uni_Aarms_seq2),str(Calc_Seq)))/2
         x4merlcs_AP=self.lcs(str(uni_AP_seq),str(Calc_Seq))
         x4merlcs_PSCP=self.lcs(str(uni_PSCP_seq),str(Calc_Seq))
 ###########Server as CE Probe Weighting Factor##########################
