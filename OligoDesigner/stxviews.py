@@ -100,3 +100,36 @@ def fileparse(request):
     response.set_cookie("seq",nr.seq)
     response.set_cookie("des",nr.description)
     return response
+##############X-mer数值计算函数################
+@csrf_protect  
+def entrezparse(request):
+    if request.method=="POST":
+        from Bio import Entrez
+        from Bio import SeqIO
+        Entrez.email="kkds@slyyc.asia"
+        SeqId=request.POST['seqid']
+        Start=int(request.POST['start'])
+        End=int(request.POST['end'])
+        handle=Entrez.efetch(db="nucleotide",rettype="gb",retmote="text",id=SeqId)
+        record=SeqIO.read(handle,"gb")
+        time.sleep(10)
+        handle.close()
+        cookie=Cookie.SimpleCookie()
+        response=render_to_response('parselocalfile.html',{
+                                                       'local':local,
+                                                       'thisyear':thisyear,
+                                                       'filetype':'genbank',
+                                                       'accessid':record.id,
+                                                       'sequence':str(record.seq[Start-1:End]),
+                                                       'description':record.description,
+                                                       'name':record.name,
+                                                       #'dbxrefs':nr.dbxrefs[0],
+                                                       'source':record.annotations['source'],
+                                                       'organism':record.annotations['organism'],
+                                                       'taxonomy':record.annotations['taxonomy'],
+                                                       'topology':record.annotations['topology'],
+                                                           },context_instance=RequestContext(request))
+#         response.set_cookie("seq",replace_RAGTC(str(record.seq[Start-1:])))
+        response.set_cookie("des",record.description)
+        return response
+#########远程访问Entrez数据库#####################    
