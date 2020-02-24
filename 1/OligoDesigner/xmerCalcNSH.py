@@ -47,7 +47,7 @@ class CalcNSH:
 ###########Server as CE Probe Weighting Factor##########################
         WF_CEtoLeaders=3
         WF_CEtoAMParms=20
-        WF_CEtoAP=20
+        WF_CEtoAP=1
         WF_CEtoPSCP=0
 ###########Server as LE Probe Weighting Factor##########################
         WF_LEtoLeaders=0
