@@ -115,7 +115,7 @@ def entrezparse(request):
         time.sleep(10)
         handle.close()
         cookie=Cookie.SimpleCookie()
-        response=render_to_response('parselocalfile.html',{
+        response=render_to_response('16xpdparse_result.html',{
                                                        'local':local,
                                                        'thisyear':thisyear,
                                                        'filetype':'genbank',
