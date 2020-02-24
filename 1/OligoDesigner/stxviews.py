@@ -135,7 +135,7 @@ def entrezparse(request):
 #########远程访问Entrez数据库#####################    
 
 @csrf_protect
-def startdesign(request):
+def stxpd_design(request):
     if request.method=="POST":
         global local
         return render_to_response('16xdesign.html',{
