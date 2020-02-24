@@ -232,4 +232,32 @@ def stxprobefilter(req):
                                                      'probedict2':probedict2,
                                                      },context_instance=RequestContext(req))  
 ##################################################################
+def oligoGC(s):
+    if len(s)!= 0:
+        s=s.upper()
+        acount=s.count('A')
+        ccount=s.count('C')
+        gcount=s.count('G')
+        tcount=s.count('T')
+    return round(100*(gcount+ccount)/(gcount+ccount+acount+tcount))
 
+def stxprobeXmers(req):
+    if req.method=='POST':
+        dict_xmervalue=[]
+        probe_xmer_list=[]
+        probe_xmer_dict={}
+        dict_value=req.POST.getlist('probedictvalue','')
+        dict_key=req.POST.getlist('probedictkey','')
+        dict_length=req.POST.getlist('probelength','')
+        stxmerclac=STXCalcNSH()
+        for i in range(len(dict_value)):
+            dict_xmervalue.append(stxmerclac.xmerCalc(dict_value[i]))
+        for v in range(len(dict_xmervalue)):
+            probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v]),dict_value[v],oligoGC(dict_value[v])])
+        probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
+        return render_to_response('showxmerscore.html',{
+                                                                              'local':local,
+                                                                              'thisyear':thisyear,
+                                                                              'probe_xmer_list':probe_xmer_list,
+                                                                              },context_instance=RequestContext(req))
+#########################CE&LE cross#################################
