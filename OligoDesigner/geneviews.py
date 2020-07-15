@@ -314,7 +314,7 @@ def sightRNAsearch(request):
         <a href="http://www.probedesigner.cn/sightrnadatabase/AtArabidopsis/84599/"><span class="label label-info label-small">AT3G42150</span></a>
         <a href="http://www.probedesigner.cn/sightrnadatabase/Celegans/99387/"><span class="label label-info label-small">Y105C5A.1274</span></a>
         <a href="http://www.probedesigner.cn/sightrnadatabase/Celegans/99999/"><span class="label label-info label-small">scl-18</span></a>
-        <a href="http://www.probedesigner.cn/sightrnadatabase/Fruitfly/215600/"><span class="label label-info label-small">CG4259/span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Fruitfly/215600/"><span class="label label-info label-small">CG4259</span></a>
         <a href="http://www.probedesigner.cn/sightrnadatabase/Fruitfly/219600/"><span class="label label-info label-small">S2P</span></a>
         <a href="http://www.probedesigner.cn/sightrnadatabase/Bovine/11517/"><span class="label label-info label-small">YSL1</span></a>
         <a href="http://www.probedesigner.cn/sightrnadatabase/Bovine/11599/"><span class="label label-info label-small">PTH</span></a>
