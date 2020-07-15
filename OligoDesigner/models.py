@@ -194,210 +194,210 @@ class GeneInfo29(models.Model):
     createtime=models.DateTimeField()
     
 ######################SGeneinfo###################
-class SGeneInfo(models.Model):
+class SightRNA(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo1(models.Model):
+class SightRNA1(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo2(models.Model):
+class SightRNA2(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo3(models.Model):
+class SightRNA3(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()    
     
-class SGeneInfo4(models.Model):
+class SightRNA4(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo5(models.Model):
+class SightRNA5(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo6(models.Model):
+class SightRNA6(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo7(models.Model):
+class SightRNA7(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo8(models.Model):
+class SightRNA8(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo9(models.Model):
+class SightRNA9(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
 
-class SGeneInfo10(models.Model):
+class SightRNA10(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo11(models.Model):
+class SightRNA11(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo12(models.Model):
+class SightRNA12(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo13(models.Model):
+class SightRNA13(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo14(models.Model):
+class SightRNA14(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo15(models.Model):
+class SightRNA15(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo16(models.Model):
+class SightRNA16(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo17(models.Model):
+class SightRNA17(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo18(models.Model):
+class SightRNA18(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo19(models.Model):
+class SightRNA19(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo20(models.Model):
+class SightRNA20(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
 
-class SGeneInfo21(models.Model):
+class SightRNA21(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo22(models.Model):
+class SightRNA22(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo23(models.Model):
+class SightRNA23(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo24(models.Model):
+class SightRNA24(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo25(models.Model):
+class SightRNA25(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo26(models.Model):
+class SightRNA26(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo27(models.Model):
+class SightRNA27(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo28(models.Model):
+class SightRNA28(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class SGeneInfo29(models.Model):
+class SightRNA29(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
