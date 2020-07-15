@@ -84,12 +84,6 @@ class GeneInfo11(models.Model):
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
     
-class GeneInfo11(models.Model):
-    genename=models.CharField(max_length=500)
-    genedescription=models.CharField()
-    genesectiongroup=models.CharField()
-    geneprobetype=models.CharField(max_length=500)
-    createtime=models.DateTimeField()
 class GeneInfo12(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
@@ -193,6 +187,217 @@ class GeneInfo28(models.Model):
     geneprobetype=models.CharField(max_length=500)
     createtime=models.DateTimeField()
 class GeneInfo29(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+######################SGeneinfo###################
+class SGeneInfo(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo1(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo2(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo3(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()    
+    
+class SGeneInfo4(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo5(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo6(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo7(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo8(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo9(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+
+class SGeneInfo10(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo11(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo12(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo13(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo14(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo15(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo16(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo17(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo18(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo19(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo20(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+
+class SGeneInfo21(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo22(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo23(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo24(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo25(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo26(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo27(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo28(models.Model):
+    genename=models.CharField(max_length=500)
+    genedescription=models.CharField()
+    genesectiongroup=models.CharField()
+    geneprobetype=models.CharField(max_length=500)
+    createtime=models.DateTimeField()
+    
+class SGeneInfo29(models.Model):
     genename=models.CharField(max_length=500)
     genedescription=models.CharField()
     genesectiongroup=models.CharField()
