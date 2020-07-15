@@ -412,4 +412,73 @@ def sightRNAsearch(request):
                                     'hots':hots,
                                     'stype':stype
         },context_instance=RequestContext(request))
+    
+def sgeneshow(request,specy,id):
+    if specy=='Human':
+        genes=SightRNA.objects.filter(id__iexact=id)
+    if specy=='Mouse':
+        genes=SightRNA1.objects.filter(id__iexact=id)
+    if specy=='Rat':
+        genes=SightRNA2.objects.filter(id__iexact=id) 
+    if specy=='AtArabidopsis':
+        genes=SightRNA3.objects.filter(id__iexact=id)
+    if specy=='Celegans':
+        genes=SightRNA5.objects.filter(id__iexact=id)
+    if specy=='Fruitfly':
+        genes=SightRNA11.objects.filter(id__iexact=id)
+    if specy=='Bovine':
+        genes=SightRNA4.objects.filter(id__iexact=id) 
+    if specy=='Dog':
+        genes=SightRNA6.objects.filter(id__iexact=id)
+    if specy=='Chinesehamster':
+        genes=SightRNA9.objects.filter(id__iexact=id)
+    if specy=='Goat':
+        genes=SightRNA7.objects.filter(id__iexact=id)
+    ####################################################
+    if specy=='Guineapig':
+        genes=SightRNA8.objects.filter(id__iexact=id)
+    if specy=='Zebrafish':
+        genes=SightRNA10.objects.filter(id__iexact=id)
+    if specy=='Horse':
+        genes=GeneInfo12.objects.filter(id__iexact=id) 
+    if specy=='Chicken':
+        genes=GeneInfo13.objects.filter(id__iexact=id)
+    if specy=='Soybean':
+        genes=GeneInfo14.objects.filter(id__iexact=id)
+    if specy=='Nakedmolerat':
+        genes=GeneInfo15.objects.filter(id__iexact=id)
+    if specy=='CynomolgusMonkey':
+        genes=GeneInfo16.objects.filter(id__iexact=id) 
+    if specy=='Sheep':
+        genes=GeneInfo17.objects.filter(id__iexact=id)
+    if specy=='Rabbit':
+        genes=GeneInfo18.objects.filter(id__iexact=id)
+    if specy=='Rice':
+        genes=GeneInfo19.objects.filter(id__iexact=id)
+        #################################################
+    if specy=='Rhesusmonkeyhamster':
+        genes=GeneInfo20.objects.filter(id__iexact=id)
+    if specy=='Bakersyeast':
+        genes=GeneInfo21.objects.filter(id__iexact=id)
+    if specy=='Fissionyeast':
+        genes=GeneInfo22.objects.filter(id__iexact=id) 
+    if specy=='Pig':
+        genes=GeneInfo23.objects.filter(id__iexact=id)
+    if specy=='Breadwheat':
+        genes=GeneInfo24.objects.filter(id__iexact=id)
+    if specy=='Winegrape':
+        genes=GeneInfo25.objects.filter(id__iexact=id)
+    if specy=='Westernclawedfrog':
+        genes=GeneInfo26.objects.filter(id__iexact=id) 
+    if specy=='Maize':
+        genes=GeneInfo27.objects.filter(id__iexact=id)
+
+
+
+         
+    return render_to_response('genedatabase/gene_details.html',{
+        'local':local,
+        'thisyear':thisyear,
+        'genes':genes,
+        },context_instance=RequestContext(request))
         
