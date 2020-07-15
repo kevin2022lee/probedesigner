@@ -302,18 +302,30 @@ def sightRNAsearch(request):
          热门检索基因
          </div>
         <div class="panel-body">
-        <a href="http://www.probedesigner.cn/sightrnadatabase/Human/52401/"><span class="label label-info label-small">GAPDH</span></a>
-        <a href="http://www.probedesigner.cn/sightrnadatabase/Human/51470/"><span class="label label-info label-small">TERT</span></a>
-        <a href="http://www.probedesigner.cn/sightrnadatabase/Mouse/1886/"><span class="label label-info label-small">Aff3</span></a>
-        <a href="http://www.probedesigner.cn/sightrnadatabase/Mouse/19382/"><span class="label label-info label-small">LOC103690090</span></a>
-        <a href="http://www.probedesigner.cn/sightrnadatabase/AtArabidopsis/19999/"><span class="label label-info label-small">AT4G33770</span></a>
-        <a href="http://www.probedesigner.cn/sightrnadatabase/Celegans/200/"><span class="label label-info label-small">srz-32</span></a>
-        <a href="http://www.probedesigner.cn/sightrnadatabase/Human/52401/"><span class="label label-info label-small">GAPDH</span></a>
-        <a href="http://www.probedesigner.cn/sightrnadatabase/Human/51470/"><span class="label label-info label-small">TERT</span></a>
-        <a href="http://www.probedesigner.cn/sightrnadatabase/Mouse/1886/"><span class="label label-info label-small">Aff3</span></a>
-        <a href="http://www.probedesigner.cn/sightrnadatabase/Mouse/19382/"><span class="label label-info label-small">LOC103690090</span></a>
-        <a href="http://www.probedesigner.cn/sightrnadatabase/AtArabidopsis/19999/"><span class="label label-info label-small">AT4G33770</span></a>
-        <a href="http://www.probedesigner.cn/sightrnadatabase/Celegans/200/"><span class="label label-info label-small">srz-32</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Human/26434/"><span class="label label-info label-small">BRD3</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Human/26435/"><span class="label label-info label-small">MYRF</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Human/39999/"><span class="label label-info label-small">TIMM9</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Human/36435/"><span class="label label-info label-small">WDR87</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Mouse/28073/"><span class="label label-info label-small">Numb</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Mouse/30073/"><span class="label label-info label-small">Gzmf</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Rat/61259/"><span class="label label-info label-small">Gck</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Rat/61276/"><span class="label label-info label-small">Akr1b10</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/AtArabidopsis/84517/"><span class="label label-info label-small">AT3G32896</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/AtArabidopsis/84599/"><span class="label label-info label-small">AT3G42150</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Celegans/99387/"><span class="label label-info label-small">Y105C5A.1274</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Celegans/99999/"><span class="label label-info label-small">scl-18</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Fruitfly/215600/"><span class="label label-info label-small">CG4259/span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Fruitfly/219600/"><span class="label label-info label-small">S2P</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Bovine/11517/"><span class="label label-info label-small">YSL1</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Bovine/11599/"><span class="label label-info label-small">PTH</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Dog/12000/"><span class="label label-info label-small">MIRLET7G</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Dog/12306/"><span class="label label-info label-small">ZNF793</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Goat/142020/"><span class="label label-info label-small">SATL1</span></a>
+         <a href="http://www.probedesigner.cn/sightrnadatabase/Goat/146020/"><span class="label label-info label-small">LOC102184987</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Zebrafish/190481/"><span class="label label-info label-small">man1a1</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Zebrafish/199481/"><span class="label label-info label-small">atg13</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Guineapig/16300/"><span class="label label-info label-small">Man2b1</span></a>
+        <a href="http://www.probedesigner.cn/sightrnadatabase/Guineapig/16900/"><span class="label label-info label-small">Tpcn2</span></a>
 
         </div>
         </div>
