@@ -321,41 +321,41 @@ def sightRNAsearch(request):
     genes={} 
     if request.GET.get('genetype')=='Human':
         hots=''
-        genes=GeneInfo.objects.all().reverse()[:100]  
+        genes=SGeneInfo.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='Mouse':
         hots=''
-        genes=GeneInfo1.objects.all().reverse()[:100]
+        genes=SGeneInfo1.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Rat':
         hots=''
-        genes=GeneInfo2.objects.all().reverse()[:100] 
+        genes=SGeneInfo2.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='AtArabidopsis':
         hots=''
-        genes=GeneInfo3.objects.all().reverse()[:100]   
+        genes=SGeneInfo3.objects.all().reverse()[:100]   
     if request.GET.get('genetype')=='Celegans':
         hots=''
-        genes=GeneInfo4.objects.all().reverse()[:100]  
+        genes=SGeneInfo5.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='Fruitfly':
         hots=''
-        genes=GeneInfo5.objects.all().reverse()[:100]
+        genes=SGeneInfo11.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Bovine':
         hots=''
-        genes=GeneInfo6.objects.all().reverse()[:100] 
+        genes=SGeneInfo4.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Dog':
         hots=''
-        genes=GeneInfo7.objects.all().reverse()[:100] 
+        genes=SGeneInfo6.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Chinesehamster':
         hots=''
-        genes=GeneInfo8.objects.all().reverse()[:100] 
+        genes=SGeneInfo9.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Goat':
         hots=''
-        genes=GeneInfo9.objects.all().reverse()[:100] 
+        genes=SGeneInfo7.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Guineapig':
         hots=''
-        genes=GeneInfo10.objects.all().reverse()[:100] 
+        genes=SGeneInfo8.objects.all().reverse()[:100] 
     #####################################################
     if request.GET.get('genetype')=='Zebrafish':
         hots=''
-        genes=GeneInfo11.objects.all().reverse()[:100]  
+        genes=SGeneInfo10.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='Horse':
         hots=''
         genes=GeneInfo12.objects.all().reverse()[:100]
