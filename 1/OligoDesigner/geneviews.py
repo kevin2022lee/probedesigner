@@ -493,4 +493,78 @@ def sgeneshow(request,specy,id):
         'thisyear':thisyear,
         'genes':genes,
         },context_instance=RequestContext(request))
-        
+    
+    
+@csrf_protect
+def sgdbsearch(request):
+    if request.method=="POST":
+        genename=request.POST["search_text"] 
+        if genename=="*" or genename=="":
+            genes=GeneInfo.objects.filter(genename="GAPDH")
+        else:
+            table_num=request.POST["species"]
+            if table_num=="":
+                genes=GeneInfo.objects.filter(genename=genename)
+            if  table_num=="1":
+                genes=GeneInfo1.objects.filter(genename=genename)
+            if  table_num=="2":
+                genes=GeneInfo2.objects.filter(genename=genename)
+            if  table_num=="3":
+                genes=GeneInfo3.objects.filter(genename=genename)
+            if  table_num=="4":
+                genes=GeneInfo4.objects.filter(genename=genename)    
+            if  table_num=="5":
+                genes=GeneInfo5.objects.filter(genename=genename)
+            if  table_num=="6":
+                genes=GeneInfo6.objects.filter(genename=genename)
+            if  table_num=="7":
+                genes=GeneInfo7.objects.filter(genename=genename)
+            if  table_num=="8":
+                genes=GeneInfo8.objects.filter(genename=genename)
+            if  table_num=="9":
+                genes=GeneInfo9.objects.filter(genename=genename)
+                ##########################
+            if  table_num=="10":
+                genes=GeneInfo10.objects.filter(genename=genename)
+            if  table_num=="11":
+                genes=GeneInfo11.objects.filter(genename=genename)
+            if  table_num=="12":
+                genes=GeneInfo12.objects.filter(genename=genename)
+            if  table_num=="13":
+                genes=GeneInfo13.objects.filter(genename=genename)    
+            if  table_num=="14":
+                genes=GeneInfo14.objects.filter(genename=genename)
+            if  table_num=="15":
+                genes=GeneInfo15.objects.filter(genename=genename)
+            if  table_num=="16":
+                genes=GeneInfo16.objects.filter(genename=genename)
+            if  table_num=="17":
+                genes=GeneInfo17.objects.filter(genename=genename)
+            if  table_num=="18":
+                genes=GeneInfo18.objects.filter(genename=genename)
+                #######################################
+            if  table_num=="19":
+                genes=GeneInfo19.objects.filter(genename=genename)
+            if  table_num=="20":
+                genes=GeneInfo20.objects.filter(genename=genename)
+            if  table_num=="21":
+                genes=GeneInfo21.objects.filter(genename=genename)
+            if  table_num=="22":
+                genes=GeneInfo22.objects.filter(genename=genename)    
+            if  table_num=="23":
+                genes=GeneInfo23.objects.filter(genename=genename)
+            if  table_num=="24":
+                genes=GeneInfo24.objects.filter(genename=genename)
+            if  table_num=="25":
+                genes=GeneInfo25.objects.filter(genename=genename)
+            if  table_num=="26":
+                genes=GeneInfo26.objects.filter(genename=genename)
+            if  table_num=="27":
+                genes=GeneInfo27.objects.filter(genename=genename)
+                
+        return render_to_response('genedatabase/geneshow.html',{
+                 'genes':genes,
+                 'local':local,
+                 'thisyear':thisyear
+                 },context_instance=RequestContext(request))
+
