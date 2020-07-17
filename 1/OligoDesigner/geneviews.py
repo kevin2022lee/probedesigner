@@ -496,7 +496,7 @@ def sgeneshow(request,specy,id):
     
     
 @csrf_protect
-def sgdbsearch(request):
+def sightrnasearch(request):
     if request.method=="POST":
         genename=request.POST["search_text"] 
         if genename=="*" or genename=="":
