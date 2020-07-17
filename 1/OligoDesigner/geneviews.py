@@ -500,7 +500,7 @@ def sgdbsearch(request):
     if request.method=="POST":
         genename=request.POST["search_text"] 
         if genename=="*" or genename=="":
-            genes=GeneInfo.objects.filter(genename="GAPDH")
+            genes=SightRNA.objects.filter(genename="GAPDH")
         else:
             table_num=request.POST["species"]
             if table_num=="":
