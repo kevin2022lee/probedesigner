@@ -370,7 +370,7 @@ def sightRNAsearch(request):
         genes=SightRNA10.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='Horse':
         hots=''
-        genes=GeneInfo12.objects.all().reverse()[:100]
+        genes=SightRNA12.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Chicken':
         hots=''
         genes=GeneInfo13.objects.all().reverse()[:100] 
