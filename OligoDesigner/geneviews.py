@@ -452,7 +452,7 @@ def sgeneshow(request,specy,id):
     if specy=='Zebrafish':
         genes=SightRNA10.objects.filter(id__iexact=id)
     if specy=='Horse':
-        genes=GeneInfo12.objects.filter(id__iexact=id) 
+        genes=SightRNA12.objects.filter(id__iexact=id) 
     if specy=='Chicken':
         genes=GeneInfo13.objects.filter(id__iexact=id)
     if specy=='Soybean':
