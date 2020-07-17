@@ -373,10 +373,10 @@ def sightRNAsearch(request):
         genes=SightRNA12.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Chicken':
         hots=''
-        genes=GeneInfo13.objects.all().reverse()[:100] 
+        genes=SightRNA13.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Soybean':
         hots=''
-        genes=GeneInfo14.objects.all().reverse()[:100]   
+        genes=SightRNA14.objects.all().reverse()[:100]   
     if request.GET.get('genetype')=='Nakedmolerat':
         hots=''
         genes=GeneInfo15.objects.all().reverse()[:100]  
@@ -454,9 +454,9 @@ def sgeneshow(request,specy,id):
     if specy=='Horse':
         genes=SightRNA12.objects.filter(id__iexact=id) 
     if specy=='Chicken':
-        genes=GeneInfo13.objects.filter(id__iexact=id)
+        genes=SightRNA13.objects.filter(id__iexact=id)
     if specy=='Soybean':
-        genes=GeneInfo14.objects.filter(id__iexact=id)
+        genes=SightRNA14.objects.filter(id__iexact=id)
     if specy=='Nakedmolerat':
         genes=GeneInfo15.objects.filter(id__iexact=id)
     if specy=='CynomolgusMonkey':
