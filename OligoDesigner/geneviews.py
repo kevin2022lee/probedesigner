@@ -394,7 +394,7 @@ def sightRNAsearch(request):
         genes=GeneInfo19.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Rhesusmonkeyhamster':
         hots=''
-        genes=GeneInfo20.objects.all().reverse()[:100] 
+        genes=SightRNA16.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Bakersyeast':
         hots=''
         genes=GeneInfo21.objects.all().reverse()[:100] 
@@ -469,7 +469,7 @@ def sgeneshow(request,specy,id):
         genes=GeneInfo19.objects.filter(id__iexact=id)
         #################################################
     if specy=='Rhesusmonkeyhamster':
-        genes=GeneInfo20.objects.filter(id__iexact=id)
+        genes=SightRNA16.objects.filter(id__iexact=id)
     if specy=='Bakersyeast':
         genes=GeneInfo21.objects.filter(id__iexact=id)
     if specy=='Fissionyeast':
@@ -546,7 +546,7 @@ def sightrnasearch(request):
             if  table_num=="19":
                 genes=GeneInfo19.objects.filter(genename=genename)
             if  table_num=="20":
-                genes=GeneInfo20.objects.filter(genename=genename)
+                genes=SightRNA16.objects.filter(genename=genename)
             if  table_num=="21":
                 genes=GeneInfo21.objects.filter(genename=genename)
             if  table_num=="22":
