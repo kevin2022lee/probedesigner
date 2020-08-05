@@ -385,37 +385,37 @@ def sightRNAsearch(request):
         genes=SightRNA15.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Sheep':
         hots=''
-        genes=GeneInfo17.objects.all().reverse()[:100] 
+        genes=SightRNA19.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Rabbit':
         hots=''
-        genes=GeneInfo18.objects.all().reverse()[:100] 
+        genes=SightRNA17.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Rice':
         hots=''
-        genes=GeneInfo19.objects.all().reverse()[:100] 
+        genes=SightRNA18.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Rhesusmonkeyhamster':
         hots=''
         genes=SightRNA16.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Bakersyeast':
         hots=''
-        genes=GeneInfo21.objects.all().reverse()[:100] 
+        genes=SightRNA21.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Fissionyeast':
         hots=''
-        genes=GeneInfo22.objects.all().reverse()[:100]  
+        genes=SightRNA20.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='Pig':
         hots=''
-        genes=GeneInfo23.objects.all().reverse()[:100]
+        genes=SightRNA22.objects.all().reverse()[:100]
     if request.GET.get('genetype')=='Breadwheat':
         hots=''
-        genes=GeneInfo24.objects.all().reverse()[:100] 
+        genes=SightRNA23.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Winegrape':
         hots=''
-        genes=GeneInfo25.objects.all().reverse()[:100] 
+        genes=SightRNA24.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Westernclawedfrog':
-        genes=GeneInfo26.objects.all().reverse()[:100] 
+        genes=SightRNA26.objects.all().reverse()[:100] 
         hots=''
     if request.GET.get('genetype')=='Maize':
         hots=''
-        genes=GeneInfo27.objects.all().reverse()[:100]        
+        genes=SightRNA25.objects.all().reverse()[:100]        
     stype=request.GET.get("genetype",'')
     return render_to_response('sightrnadatabase/genesearch.html',{
                                     'local':local,
@@ -462,28 +462,28 @@ def sgeneshow(request,specy,id):
     if specy=='CynomolgusMonkey':
         genes=SightRNA15.objects.filter(id__iexact=id) 
     if specy=='Sheep':
-        genes=GeneInfo17.objects.filter(id__iexact=id)
+        genes=SightRNA19.objects.filter(id__iexact=id)
     if specy=='Rabbit':
-        genes=GeneInfo18.objects.filter(id__iexact=id)
+        genes=SightRNA17.objects.filter(id__iexact=id)
     if specy=='Rice':
-        genes=GeneInfo19.objects.filter(id__iexact=id)
+        genes=SightRNA18.objects.filter(id__iexact=id)
         #################################################
     if specy=='Rhesusmonkeyhamster':
         genes=SightRNA16.objects.filter(id__iexact=id)
     if specy=='Bakersyeast':
-        genes=GeneInfo21.objects.filter(id__iexact=id)
+        genes=SightRNA21.objects.filter(id__iexact=id)
     if specy=='Fissionyeast':
-        genes=GeneInfo22.objects.filter(id__iexact=id) 
+        genes=SightRNA20.objects.filter(id__iexact=id) 
     if specy=='Pig':
-        genes=GeneInfo23.objects.filter(id__iexact=id)
+        genes=SightRNA22.objects.filter(id__iexact=id)
     if specy=='Breadwheat':
-        genes=GeneInfo24.objects.filter(id__iexact=id)
+        genes=SightRNA23.objects.filter(id__iexact=id)
     if specy=='Winegrape':
-        genes=GeneInfo25.objects.filter(id__iexact=id)
+        genes=SightRNA24.objects.filter(id__iexact=id)
     if specy=='Westernclawedfrog':
-        genes=GeneInfo26.objects.filter(id__iexact=id) 
+        genes=SightRNA26.objects.filter(id__iexact=id) 
     if specy=='Maize':
-        genes=GeneInfo27.objects.filter(id__iexact=id)
+        genes=SightRNA25.objects.filter(id__iexact=id)
 
 
 
@@ -541,26 +541,26 @@ def sightrnasearch(request):
             if  table_num=="17":
                 genes=GeneInfo17.objects.filter(genename=genename)
             if  table_num=="18":
-                genes=GeneInfo18.objects.filter(genename=genename)
+                genes=SightRNA17.objects.filter(genename=genename)
                 #######################################
             if  table_num=="19":
-                genes=GeneInfo19.objects.filter(genename=genename)
+                genes=SightRNA18.objects.filter(genename=genename)
             if  table_num=="20":
                 genes=SightRNA16.objects.filter(genename=genename)
             if  table_num=="21":
-                genes=GeneInfo21.objects.filter(genename=genename)
+                genes=SightRNA21.objects.filter(genename=genename)
             if  table_num=="22":
-                genes=GeneInfo22.objects.filter(genename=genename)    
+                genes=SightRNA20.objects.filter(genename=genename)    
             if  table_num=="23":
-                genes=GeneInfo23.objects.filter(genename=genename)
+                genes=SightRNA22.objects.filter(genename=genename)
             if  table_num=="24":
-                genes=GeneInfo24.objects.filter(genename=genename)
+                genes=SightRNA23.objects.filter(genename=genename)
             if  table_num=="25":
-                genes=GeneInfo25.objects.filter(genename=genename)
+                genes=SightRNA24.objects.filter(genename=genename)
             if  table_num=="26":
-                genes=GeneInfo26.objects.filter(genename=genename)
+                genes=SightRNA26.objects.filter(genename=genename)
             if  table_num=="27":
-                genes=GeneInfo27.objects.filter(genename=genename)
+                genes=SightRNA25.objects.filter(genename=genename)
                 
         return render_to_response('genedatabase/geneshow.html',{
                  'genes':genes,
