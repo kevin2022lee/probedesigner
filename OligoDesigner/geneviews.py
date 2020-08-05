@@ -379,7 +379,7 @@ def sightRNAsearch(request):
         genes=SightRNA14.objects.all().reverse()[:100]   
     if request.GET.get('genetype')=='Nakedmolerat':
         hots=''
-        genes=GeneInfo15.objects.all().reverse()[:100]  
+        genes=SightRNA27.objects.all().reverse()[:100]  
     if request.GET.get('genetype')=='CynomolgusMonkey':
         hots=''
         genes=SightRNA15.objects.all().reverse()[:100]
@@ -458,7 +458,7 @@ def sgeneshow(request,specy,id):
     if specy=='Soybean':
         genes=SightRNA14.objects.filter(id__iexact=id)
     if specy=='Nakedmolerat':
-        genes=GeneInfo15.objects.filter(id__iexact=id)
+        genes=SightRNA27.objects.filter(id__iexact=id)
     if specy=='CynomolgusMonkey':
         genes=SightRNA15.objects.filter(id__iexact=id) 
     if specy=='Sheep':
@@ -535,7 +535,7 @@ def sightrnasearch(request):
             if  table_num=="14":
                 genes=SightRNA14.objects.filter(genename=genename)
             if  table_num=="15":
-                genes=GeneInfo15.objects.filter(genename=genename)
+                genes=SightRNA27.objects.filter(genename=genename)
             if  table_num=="16":
                 genes=SightRNA15.objects.filter(genename=genename)
             if  table_num=="17":
