@@ -31,5 +31,3 @@ def move_design(request):
                                     'thisyear':thisyear,
         },context_instance=RequestContext(request))
 def nshcalc(request):
-
-                 
