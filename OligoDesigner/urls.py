@@ -71,5 +71,6 @@ urlpatterns = patterns('',
     url(r'stxprobefilter/',stxprobefilter),
     url(r'stxprobeXmers/',stxprobeXmers),
     url(r'sightRNAsearch/$',sightRNAsearch),
-    url(r'gdbsearch/',gdbsearch)
+    url(r'gdbsearch/',gdbsearch),
+    url(r'move_design/',move_design)
 )
