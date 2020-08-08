@@ -31,8 +31,5 @@ def move_design(request):
                                     'thisyear':thisyear,
         },context_instance=RequestContext(request))
 def nshcalc(request):
-    if request.method=="POST":
-        seqs=request.POST["seqtxt"]
-        for seq in seqs:
-            if seq=58:
+
                  
