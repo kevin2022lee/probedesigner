@@ -8,11 +8,16 @@
 <div class="panel-heading">
         <b>欢迎使用移动设计程序</b>
 </div>
-
+<form action="http://{{local}}/tools/msaresult/" method="POST" role="form"> {% csrf_token %}
 <div class="panel-body">
 <textarea id="seqtxt" name="seqtxt" class="form-control" >
 
 </textarea>
+
 </div>
+<div class="panel-body">
+<button id="sub" type="submit" class="btn btn-primary" disabled="disabled"><span class="glyphicon glyphicon-step-forward"></span>提交分析</button>
+</div>
+</form>
  </div>
  {%endblock%}
