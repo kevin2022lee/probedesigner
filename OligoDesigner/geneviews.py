@@ -411,11 +411,11 @@ def sightRNAsearch(request):
         hots=''
         genes=SightRNA24.objects.all().reverse()[:100] 
     if request.GET.get('genetype')=='Westernclawedfrog':
-        genes=SightRNA25.objects.all().reverse()[:100] 
+        genes=SightRNA26.objects.all().reverse()[:100] 
         hots=''
     if request.GET.get('genetype')=='Maize':
         hots=''
-        genes=SightRNA26.objects.all().reverse()[:100]        
+        genes=SightRNA25.objects.all().reverse()[:100]        
     stype=request.GET.get("genetype",'')
     return render_to_response('sightrnadatabase/genesearch.html',{
                                     'local':local,
@@ -481,9 +481,9 @@ def sgeneshow(request,specy,id):
     if specy=='Winegrape':
         genes=SightRNA24.objects.filter(id__iexact=id)
     if specy=='Westernclawedfrog':
-        genes=SightRNA25.objects.filter(id__iexact=id) 
+        genes=SightRNA26.objects.filter(id__iexact=id) 
     if specy=='Maize':
-        genes=SightRNA26.objects.filter(id__iexact=id)
+        genes=SightRNA25.objects.filter(id__iexact=id)
 
 
 
