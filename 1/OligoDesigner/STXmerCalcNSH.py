@@ -50,8 +50,8 @@ class STXCalcNSH:
         x4merlcs_PSCP=self.lcs(str(uni_PSCP_seq),str(Calc_Seq))
 ###########Server as CE Probe Weighting Factor##########################
         WF_CEtoLeaders=3
-        WF_CEtoAMParms=20
-        WF_CEtoAP=1
+        WF_CEtoAMParms=60
+        WF_CEtoAP=40
         WF_CEtoAP_5R=5
         WF_CEtoPSCP=0
 ###########Server as LE Probe Weighting Factor##########################
