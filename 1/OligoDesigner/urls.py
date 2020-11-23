@@ -74,5 +74,6 @@ urlpatterns = patterns('',
     url(r'sightRNAsearch/$',sightRNAsearch),
     url(r'gdbsearch/',gdbsearch),
     url(r'move_design/',move_design),
+    url(r'microsearch/',microsearch),
  
 )
