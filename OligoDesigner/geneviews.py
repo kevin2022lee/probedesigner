@@ -568,3 +568,11 @@ def sightrnasearch(request):
                  'thisyear':thisyear
                  },context_instance=RequestContext(request))
 
+@csrf_protect
+def microsearch(request):
+    genes=MicroRNA.objects.all().reverse()[:100]
+    return render_to_response('mircornadatabase/microsearch.html',{
+                                    'local':local,
+                                    'genes':genes,
+        },context_instance=RequestContext(request))
+        
