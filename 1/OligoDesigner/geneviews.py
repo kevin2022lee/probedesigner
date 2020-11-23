@@ -575,4 +575,11 @@ def microsearch(request):
                                     'local':local,
                                     'genes':genes,
         },context_instance=RequestContext(request))
-        
+
+def microshow(request,id):    
+    genes=MicroRNA.objects.filter(id__iexact=id)     
+    return render_to_response('genedatabase/gene_details.html',{
+        'local':local,
+        'thisyear':thisyear,
+        'genes':genes,
+        },context_instance=RequestContext(request))

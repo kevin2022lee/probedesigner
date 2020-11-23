@@ -75,5 +75,6 @@ urlpatterns = patterns('',
     url(r'gdbsearch/',gdbsearch),
     url(r'move_design/',move_design),
     url(r'microsearch/',microsearch),
+    url(r'micrornadatabase/(\d+)/',microshow),
  
 )
