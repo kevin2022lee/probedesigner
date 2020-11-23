@@ -571,7 +571,7 @@ def sightrnasearch(request):
 @csrf_protect
 def microsearch(request):
     genes=MicroRNA.objects.all().reverse()[:100]
-    return render_to_response('mircornadatabase/microsearch.html',{
+    return render_to_response('micrornadatabase/microsearch.html',{
                                     'local':local,
                                     'genes':genes,
         },context_instance=RequestContext(request))
