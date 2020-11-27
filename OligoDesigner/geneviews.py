@@ -577,7 +577,7 @@ def microsearch(request):
         genes=MicroRNA.objects.filter(genename_contains="hsa")
     return render_to_response('micrornadatabase/microsearch.html',{
                                     'local':local,
-                                    'genes':genes,
+                                    'genes':genes
         },context_instance=RequestContext(request))
 
 def microshow(request,id):    
