@@ -570,7 +570,11 @@ def sightrnasearch(request):
 
 @csrf_protect
 def microsearch(request):
-    genes=MicroRNA.objects.all().reverse()[:100]
+    gtype=request.GET.get("genetype")
+    if gtype="":
+        genes=MicroRNA.objects.all().reverse()[:100]
+    if gtype="hsa":
+        genes=MicroRNA.objects.filter(genename_contains="hsa")
     return render_to_response('micrornadatabase/microsearch.html',{
                                     'local':local,
                                     'genes':genes,
