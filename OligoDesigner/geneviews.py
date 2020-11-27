@@ -577,11 +577,11 @@ def microsearch(request):
     if gtype=="":
         genes=MicroRNA.objects.all().reverse()[:100]
     if gtype=="hsa":
-        genes=MicroRNA.objects.filter(genename__contains="hsa")
+        genes=MicroRNA.objects.filter(genename__contains="hsa")[:100]
     if gtype=="mmu":
-        genes=MicroRNA.objects.filter(genename__contains="mmu")
+        genes=MicroRNA.objects.filter(genename__contains="mmu")[:100]
     if gtype=="rno":
-        genes=MicroRNA.objects.filter(genename__contains="rno")
+        genes=MicroRNA.objects.filter(genename__contains="rno")[:100]
         
     return render_to_response('micrornadatabase/microsearch.html',{
         'local':local,
