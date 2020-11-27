@@ -572,16 +572,14 @@ def sightrnasearch(request):
 
 def microsearch(request):
 #     global genes
-    genes={} 
+    genes=MicroRNA.objects.all().reverse()[:100]
     gtype=request.GET.get("genetype")
-    if gtype=="":
-        genes=MicroRNA.objects.all().reverse()[:100]
     if gtype=="hsa":
-        genes=MicroRNA.objects.filter(genename__contains="hsa")[:100]
+        genes=MicroRNA.objects.filter(genename__icontains="hsa")[:100]
     if gtype=="mmu":
-        genes=MicroRNA.objects.filter(genename__contains="mmu")[:100]
+        genes=MicroRNA.objects.filter(genename__icontains="mmu")[:100]
     if gtype=="rno":
-        genes=MicroRNA.objects.filter(genename__contains="rno")[:100]
+        genes=MicroRNA.objects.filter(genename__icontains="rno")[:100]
         
     return render_to_response('micrornadatabase/microsearch.html',{
         'local':local,
