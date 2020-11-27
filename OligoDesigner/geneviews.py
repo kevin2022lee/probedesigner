@@ -569,7 +569,9 @@ def sightrnasearch(request):
                  },context_instance=RequestContext(request))
 
 @csrf_protect
+
 def microsearch(request):
+    global genes
     gtype=request.GET.get("genetype")
     if gtype=="":
         genes=MicroRNA.objects.all().reverse()[:100]
