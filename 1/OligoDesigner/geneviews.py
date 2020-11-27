@@ -571,15 +571,15 @@ def sightrnasearch(request):
 @csrf_protect
 
 def microsearch(request):
-    global genes
+#     global genes
     gtype=request.GET.get("genetype")
     if gtype=="":
         genes=MicroRNA.objects.all().reverse()[:100]
     if gtype=="hsa":
         genes=MicroRNA.objects.filter(genename_contains="hsa")
     return render_to_response('micrornadatabase/microsearch.html',{
-                                    'local':local,
-                                    'genes':genes
+        'local':local,
+        'genes':genes
         },context_instance=RequestContext(request))
 
 def microshow(request,id):    
