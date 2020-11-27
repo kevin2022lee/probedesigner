@@ -572,6 +572,7 @@ def sightrnasearch(request):
 
 def microsearch(request):
 #     global genes
+    genes={} 
     gtype=request.GET.get("genetype")
     if gtype=="":
         genes=MicroRNA.objects.all().reverse()[:100]
