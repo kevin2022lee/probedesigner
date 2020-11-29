@@ -581,13 +581,226 @@ def microsearch(request):
     if gtype=="rno":
         genes=MicroRNA.objects.filter(genename__icontains="rno")[:100]
         
-    if gtype=="hsa":
-        genes=MicroRNA.objects.filter(genename__icontains="hsa")[:100]
-    if gtype=="mmu":
-        genes=MicroRNA.objects.filter(genename__icontains="mmu")[:100]
-    if gtype=="rno":
-        genes=MicroRNA.objects.filter(genename__icontains="rno")[:100]
+    if gtype=="ath":
+        genes=MicroRNA.objects.filter(genename__icontains="ath")[:100]
+    if gtype=="api":
+        genes=MicroRNA.objects.filter(genename__icontains="api")[:100]
+    if gtype=="dme":
+        genes=MicroRNA.objects.filter(genename__icontains="dme")[:100]
         
+    if gtype=="aae":
+        genes=MicroRNA.objects.filter(genename__icontains="aae")[:100]
+    if gtype=="ata":
+        genes=MicroRNA.objects.filter(genename__icontains="ata")[:100]
+    if gtype=="aae":
+        genes=MicroRNA.objects.filter(genename__icontains="aae")[:100]
+        
+    if gtype=="atr":
+        genes=MicroRNA.objects.filter(genename__icontains="atr")[:100]
+    if gtype=="aca":
+        genes=MicroRNA.objects.filter(genename__icontains="aca")[:100]
+    if gtype=="ame":
+        genes=MicroRNA.objects.filter(genename__icontains="ame")[:100]
+        
+    if gtype=="aly":
+        genes=MicroRNA.objects.filter(genename__icontains="aly")[:100]
+    if gtype=="cel":
+        genes=MicroRNA.objects.filter(genename__icontains="cel")[:100]
+    if gtype=="abu":
+        genes=MicroRNA.objects.filter(genename__icontains="abu")[:100]
+        
+    if gtype=="cbn":
+        genes=MicroRNA.objects.filter(genename__icontains="cbn")[:100]
+    if gtype=="aca":
+        genes=MicroRNA.objects.filter(genename__icontains="aca")[:100]
+    if gtype=="crm":
+        genes=MicroRNA.objects.filter(genename__icontains="crm")[:100]
+        
+    if gtype=="bmo":
+        genes=MicroRNA.objects.filter(genename__icontains="bmo")[:100]
+    if gtype=="bdi":
+        genes=MicroRNA.objects.filter(genename__icontains="bdi")[:100]
+    if gtype=="bbe":
+        genes=MicroRNA.objects.filter(genename__icontains="bbe")[:100]
+     
+    if gtype=="bfl":
+        genes=MicroRNA.objects.filter(genename__icontains="bfl")[:100]
+    if gtype=="bra":
+        genes=MicroRNA.objects.filter(genename__icontains="bra")[:100]
+    if gtype=="bma":
+        genes=MicroRNA.objects.filter(genename__icontains="bma")[:100]
+        
+    if gtype=="cgr":
+        genes=MicroRNA.objects.filter(genename__icontains="cgr")[:100]
+    if gtype=="cfa":
+        genes=MicroRNA.objects.filter(genename__icontains="cfa")[:100]
+    if gtype=="cte":
+        genes=MicroRNA.objects.filter(genename__icontains="cte")[:100]
+        
+    if gtype=="chi":
+        genes=MicroRNA.objects.filter(genename__icontains="chi")[:100]
+    if gtype=="cpo":
+        genes=MicroRNA.objects.filter(genename__icontains="cpo")[:100]
+    if gtype=="cpi":
+        genes=MicroRNA.objects.filter(genename__icontains="cpi")[:100]
+    
+    if gtype=="cin":
+        genes=MicroRNA.objects.filter(genename__icontains="cin")[:100]
+    if gtype=="cli":
+        genes=MicroRNA.objects.filter(genename__icontains="cli")[:100]
+    if gtype=="cgr":
+        genes=MicroRNA.objects.filter(genename__icontains="cgr")[:100]
+        
+    if gtype=="ccr":
+        genes=MicroRNA.objects.filter(genename__icontains="ccr")[:100]
+    if gtype=="dre":
+        genes=MicroRNA.objects.filter(genename__icontains="dre")[:100]
+    if gtype=="dno":
+        genes=MicroRNA.objects.filter(genename__icontains="dno")[:100]    
+        
+    if gtype=="dps":
+        genes=MicroRNA.objects.filter(genename__icontains="dps")[:100]
+    if gtype=="dsi":
+        genes=MicroRNA.objects.filter(genename__icontains="dsi")[:100]
+    if gtype=="dvi":
+        genes=MicroRNA.objects.filter(genename__icontains="dvi")[:100]
+        
+    if gtype=="efu":
+        genes=MicroRNA.objects.filter(genename__icontains="efu")[:100]
+    if gtype=="eca":
+        genes=MicroRNA.objects.filter(genename__icontains="eca")[:100]
+    if gtype=="fru":
+        genes=MicroRNA.objects.filter(genename__icontains="fru")[:100]
+        
+    if gtype=="gmo":
+        genes=MicroRNA.objects.filter(genename__icontains="gmo")[:100]
+    if gtype=="gga":
+        genes=MicroRNA.objects.filter(genename__icontains="gga")[:100]
+    if gtype=="gma":
+        genes=MicroRNA.objects.filter(genename__icontains="gma")[:100] 
+        
+    if gtype=="ggo":
+        genes=MicroRNA.objects.filter(genename__icontains="ggo")[:100]
+    if gtype=="gra":
+        genes=MicroRNA.objects.filter(genename__icontains="gra")[:100]
+    if gtype=="gsa":
+        genes=MicroRNA.objects.filter(genename__icontains="gsa")[:100] 
+        
+    if gtype=="hco":
+        genes=MicroRNA.objects.filter(genename__icontains="hco")[:100]
+    if gtype=="hme":
+        genes=MicroRNA.objects.filter(genename__icontains="hme")[:100]
+    if gtype=="ipu":
+        genes=MicroRNA.objects.filter(genename__icontains="ipu")[:100]   
+        
+    if gtype=="mml":
+        genes=MicroRNA.objects.filter(genename__icontains="mml")[:100]
+    if gtype=="mse":
+        genes=MicroRNA.objects.filter(genename__icontains="mse")[:100]
+    if gtype=="mtr":
+        genes=MicroRNA.objects.filter(genename__icontains="mtr")[:100]
+        
+    if gtype=="mze":
+        genes=MicroRNA.objects.filter(genename__icontains="mze")[:100]
+    if gtype=="nve":
+        genes=MicroRNA.objects.filter(genename__icontains="nve")[:100]
+    if gtype=="nbe":
+        genes=MicroRNA.objects.filter(genename__icontains="nbe")[:100]    
+        
+    if gtype=="nie":
+        genes=MicroRNA.objects.filter(genename__icontains="nie")[:100]
+    if gtype=="oha":
+        genes=MicroRNA.objects.filter(genename__icontains="oha")[:100]
+    if gtype=="one":
+        genes=MicroRNA.objects.filter(genename__icontains="one")[:100]    
+        
+    if gtype=="oan":
+        genes=MicroRNA.objects.filter(genename__icontains="oan")[:100]
+    if gtype=="ocu":
+        genes=MicroRNA.objects.filter(genename__icontains="ocu")[:100]
+    if gtype=="osa":
+        genes=MicroRNA.objects.filter(genename__icontains="osa")[:100]    
+    
+    if gtype=="ola":
+        genes=MicroRNA.objects.filter(genename__icontains="ola")[:100]
+    if gtype=="oge":
+        genes=MicroRNA.objects.filter(genename__icontains="oge")[:100]
+    if gtype=="oar":
+        genes=MicroRNA.objects.filter(genename__icontains="oar")[:100]
+        
+    if gtype=="ppy":
+        genes=MicroRNA.objects.filter(genename__icontains="ppy")[:100]
+    if gtype=="ptr":
+        genes=MicroRNA.objects.filter(genename__icontains="ptr")[:100]
+    if gtype=="prd":
+        genes=MicroRNA.objects.filter(genename__icontains="prd")[:100]    
+        
+    if gtype=="pma":
+        genes=MicroRNA.objects.filter(genename__icontains="pma")[:100]
+    if gtype=="ppt":
+        genes=MicroRNA.objects.filter(genename__icontains="ppt")[:100]
+    if gtype=="pxy":
+        genes=MicroRNA.objects.filter(genename__icontains="pxy")[:100]    
+                               
+    if gtype=="ppy":
+        genes=MicroRNA.objects.filter(genename__icontains="ppy")[:100]
+    if gtype=="ptc":
+        genes=MicroRNA.objects.filter(genename__icontains="ptc")[:100]
+    if gtype=="ppc":
+        genes=MicroRNA.objects.filter(genename__icontains="ppc")[:100]  
+        
+    if gtype=="ppe":
+        genes=MicroRNA.objects.filter(genename__icontains="ppe")[:100]
+    if gtype=="pal":
+        genes=MicroRNA.objects.filter(genename__icontains="pal")[:100]
+    if gtype=="pny":
+        genes=MicroRNA.objects.filter(genename__icontains="pny")[:100]
+    
+    if gtype=="pbv":
+        genes=MicroRNA.objects.filter(genename__icontains="pbv")[:100]
+    if gtype=="sko":
+        genes=MicroRNA.objects.filter(genename__icontains="sko")[:100]
+    if gtype=="sso":
+        genes=MicroRNA.objects.filter(genename__icontains="sso")[:100]    
+    
+    if gtype=="sma":
+        genes=MicroRNA.objects.filter(genename__icontains="sma")[:100]
+    if gtype=="sme":
+        genes=MicroRNA.objects.filter(genename__icontains="sme")[:100]
+    if gtype=="sly":
+        genes=MicroRNA.objects.filter(genename__icontains="sly")[:100]   
+        
+    if gtype=="stu":
+        genes=MicroRNA.objects.filter(genename__icontains="stu")[:100]
+    if gtype=="sbi":
+        genes=MicroRNA.objects.filter(genename__icontains="sbi")[:100]
+    if gtype=="str":
+        genes=MicroRNA.objects.filter(genename__icontains="str")[:100]
+    
+    if gtype=="ssc":
+        genes=MicroRNA.objects.filter(genename__icontains="ssc")[:100]
+    if gtype=="tgu":
+        genes=MicroRNA.objects.filter(genename__icontains="tgu")[:100]
+    if gtype=="tni":
+        genes=MicroRNA.objects.filter(genename__icontains="tni")[:100]
+        
+    if gtype=="tca":
+        genes=MicroRNA.objects.filter(genename__icontains="tca")[:100]
+    if gtype=="tae":
+        genes=MicroRNA.objects.filter(genename__icontains="tae")[:100]
+    if gtype=="tch":
+        genes=MicroRNA.objects.filter(genename__icontains="tch")[:100]    
+    
+    if gtype=="vvi":
+        genes=MicroRNA.objects.filter(genename__icontains="vvi")[:100]
+    if gtype=="xla":
+        genes=MicroRNA.objects.filter(genename__icontains="xla")[:100]
+    if gtype=="xtr":
+        genes=MicroRNA.objects.filter(genename__icontains="xtr")[:100]   
+        
+    if gtype=="zma":
+        genes=MicroRNA.objects.filter(genename__icontains="zma")[:100]                                     
+                
     return render_to_response('micrornadatabase/microsearch.html',{
         'local':local,
         'genes':genes
