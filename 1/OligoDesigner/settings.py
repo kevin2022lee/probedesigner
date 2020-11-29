@@ -58,7 +58,7 @@ MYSQL_HOST = 'kkds1314.mysql.rds.aliyuncs.com'#kkds1314.mysql.rds.aliyuncs.com
 
 MYSQL_PORT = '3306'
 
-MYSQL_USER = 'gene_query'
+MYSQL_USER = 'gene_user'
 
 MYSQL_PASS = '3@4B8976abc'
 

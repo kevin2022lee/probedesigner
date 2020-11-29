@@ -58,9 +58,9 @@ MYSQL_HOST = 'www.kunkundashen.cn'#kkds1314.mysql.rds.aliyuncs.com
 
 MYSQL_PORT = '3306'
 
-MYSQL_USER = 'gene_query'
+MYSQL_USER = 'gene_user'
 
-MYSQL_PASS = '8588027'
+MYSQL_PASS = '3@4B8976abc'
 
 MYSQL_DB   = 'gene_database'
 
