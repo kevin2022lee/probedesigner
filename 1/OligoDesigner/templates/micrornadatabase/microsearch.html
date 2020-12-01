@@ -26,7 +26,18 @@ display:inline;
   width: 35%;
 }
  </style> 
- 
+ <scripit>
+ $(function(){
+		 		$("#BtnQuery").click(function(){
+		 			//获取用户名的值
+		 			var username= $("#InputGene").val();
+		 			if(username==""){
+		 				alert('检索内容不能为空');
+		 				return ;
+		 			}
+ })
+});
+ </scripit>
  <div class="panel panel-info" >
 <div class="panel-heading">
         <b>可用探针检索信息工具（截至目前收录物种基因数据记录达436698条）</b>
@@ -152,10 +163,10 @@ display:inline;
 <div class="form-group has-success">
 
 <div class="col-sm-6">
-      <input type="text" class="form-control" id="inputSuccess" name="search_text" placeholder="输入检索基因symbol">
+      <input type="text" class="form-control" id="InputGene" name="search_text" placeholder="输入检索基因symbol">
 </div>
 <div class="col-sm-2">
-<button type="submit" class="btn btn-default">检索探针</button>
+<button type="submit" id="BtnQuery" class="btn btn-default">检索探针</button>
 </div>
 </div>
 
