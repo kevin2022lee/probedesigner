@@ -26,7 +26,18 @@ display:inline;
   width: 35%;
 }
  </style> 
- 
+  <script>
+$(function(){
+	$("#BtnQuery").click(function(){
+		var username= $("#InputGene").val();
+		if(username==""){
+			alert('检索内容不能为空');
+			$("#InputGene").focus();
+			return false;
+}
+ })
+});
+</script>
  <div class="panel panel-info" >
 <div class="panel-heading">
         <b>可用探针检索信息工具（截至目前收录物种基因数据记录达454248条）</b>
