@@ -821,7 +821,7 @@ def microRNAsearch(request):
         mnum=request.POST["search_text"] 
         gtype=request.POST["species"]
         if gtype=="hsa":
-            genes=MicroRNA.objects.get(Q(genename__icontains="hsa") & Q(genename__icontains=mnun))[:100]
+            genes=MicroRNA.objects.filter(Q(genename__icontains="hsa") & Q(genename__icontains=mnun))[:100]
         if gtype=="mmu":
             genes=MicroRNA.objects.filter(genename__icontains="mmu")[:100]
         if gtype=="rno":
