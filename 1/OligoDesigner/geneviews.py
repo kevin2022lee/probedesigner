@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_protect,csrf_exempt
 import time
 from datetime import datetime
 from models import *
+from django.db.models import Q
 from django.core.context_processors import request
 import pymysql
 
