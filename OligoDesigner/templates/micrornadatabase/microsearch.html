@@ -28,13 +28,12 @@ display:inline;
  </style> 
  <scripit>
  $(function(){
-		 		$("#BtnQuery").click(function(){
-		 			//获取用户名的值
-		 			var username= $("#InputGene").val();
-		 			if(username==""){
-		 				alert('检索内容不能为空');
-		 				return ;
-		 			}
+ $("#BtnQuery").click(function(){
+ var username= $("#InputGene").val();
+ if(username==""){
+ alert('检索内容不能为空');
+ return ;
+}
  })
 });
  </scripit>
