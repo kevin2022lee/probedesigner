@@ -825,229 +825,229 @@ def microRNAsearch(request):
         if gtype=="hsa":
             genes=MicroRNA.objects.filter(Q(genename__icontains="hsa") & Q(genename__contains=mnum))
         if gtype=="mmu":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="mmu") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="mmu") & Q(genename__contains=mnum))
         if gtype=="rno":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="rno") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="rno") & Q(genename__contains=mnum))
             
         if gtype=="ath":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ath") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ath") & Q(genename__contains=mnum))
         if gtype=="api":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="api") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="api") & Q(genename__contains=mnum))
         if gtype=="dme":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="dme") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="dme") & Q(genename__contains=mnum))
             
         if gtype=="aae":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="aae") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="aae") & Q(genename__contains=mnum))
         if gtype=="ata":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ata") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ata") & Q(genename__contains=mnum))
         if gtype=="aae":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="aae") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="aae") & Q(genename__contains=mnum))
             
         if gtype=="atr":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="atr") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="atr") & Q(genename__contains=mnum))
         if gtype=="aca":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="aca") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="aca") & Q(genename__contains=mnum))
         if gtype=="ame":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ame") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ame") & Q(genename__contains=mnum))
             
         if gtype=="aly":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="aly") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="aly") & Q(genename__contains=mnum))
         if gtype=="cel":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="cel") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="cel") & Q(genename__contains=mnum))
         if gtype=="abu":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="abu") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="abu") & Q(genename__contains=mnum))
             
         if gtype=="cbn":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="cbn") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="cbn") & Q(genename__contains=mnum))
         if gtype=="aca":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="aca") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="aca") & Q(genename__contains=mnum))
         if gtype=="crm":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="crm") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="crm") & Q(genename__contains=mnum))
             
         if gtype=="bmo":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="bmo") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="bmo") & Q(genename__contains=mnum))
         if gtype=="bdi":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="bdi") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="bdi") & Q(genename__contains=mnum))
         if gtype=="bbe":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="bbe") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="bbe") & Q(genename__contains=mnum))
          
         if gtype=="bfl":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="bfl") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="bfl") & Q(genename__contains=mnum))
         if gtype=="bra":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="bra") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="bra") & Q(genename__contains=mnum))
         if gtype=="bma":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="bma") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="bma") & Q(genename__contains=mnum))
             
         if gtype=="cgr":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="cgr") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="cgr") & Q(genename__contains=mnum))
         if gtype=="cfa":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="cfa") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="cfa") & Q(genename__contains=mnum))
         if gtype=="cte":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="cte") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="cte") & Q(genename__contains=mnum))
             
         if gtype=="chi":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="chi") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="chi") & Q(genename__contains=mnum))
         if gtype=="cpo":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="cpo") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="cpo") & Q(genename__contains=mnum))
         if gtype=="cpi":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="cpi") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="cpi") & Q(genename__contains=mnum))
         
         if gtype=="cin":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="cin") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="cin") & Q(genename__contains=mnum))
         if gtype=="cli":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="cli") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="cli") & Q(genename__contains=mnum))
         if gtype=="cgr":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="cgr") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="cgr") & Q(genename__contains=mnum))
             
         if gtype=="ccr":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ccr") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ccr") & Q(genename__contains=mnum))
         if gtype=="dre":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="dre") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="dre") & Q(genename__contains=mnum))
         if gtype=="dno":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="dno") & Q(genename__startswith=mnum))    
+            genes=MicroRNA.objects.filter(Q(genename__icontains="dno") & Q(genename__contains=mnum))    
             
         if gtype=="dps":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="dps") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="dps") & Q(genename__contains=mnum))
         if gtype=="dsi":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="dsi") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="dsi") & Q(genename__contains=mnum))
         if gtype=="dvi":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="dvi") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="dvi") & Q(genename__contains=mnum))
             
         if gtype=="efu":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="efu") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="efu") & Q(genename__contains=mnum))
         if gtype=="eca":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="eca") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="eca") & Q(genename__contains=mnum))
         if gtype=="fru":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="fru") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="fru") & Q(genename__contains=mnum))
             
         if gtype=="gmo":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="gmo") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="gmo") & Q(genename__contains=mnum))
         if gtype=="gga":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="gga") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="gga") & Q(genename__contains=mnum))
         if gtype=="gma":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="gma") & Q(genename__startswith=mnum)) 
+            genes=MicroRNA.objects.filter(Q(genename__icontains="gma") & Q(genename__contains=mnum)) 
             
         if gtype=="ggo":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ggo") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ggo") & Q(genename__contains=mnum))
         if gtype=="gra":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="gra") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="gra") & Q(genename__contains=mnum))
         if gtype=="gsa":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="gsa") & Q(genename__startswith=mnum)) 
+            genes=MicroRNA.objects.filter(Q(genename__icontains="gsa") & Q(genename__contains=mnum)) 
             
         if gtype=="hco":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="hco") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="hco") & Q(genename__contains=mnum))
         if gtype=="hme":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="hme") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="hme") & Q(genename__contains=mnum))
         if gtype=="ipu":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ipu") & Q(genename__startswith=mnum))   
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ipu") & Q(genename__contains=mnum))   
             
         if gtype=="mml":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="mml") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="mml") & Q(genename__contains=mnum))
         if gtype=="mse":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="mse") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="mse") & Q(genename__contains=mnum))
         if gtype=="mtr":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="mtr") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="mtr") & Q(genename__contains=mnum))
             
         if gtype=="mze":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="mze") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="mze") & Q(genename__contains=mnum))
         if gtype=="nve":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="nve") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="nve") & Q(genename__contains=mnum))
         if gtype=="nbe":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="nbe") & Q(genename__startswith=mnum))    
+            genes=MicroRNA.objects.filter(Q(genename__icontains="nbe") & Q(genename__contains=mnum))    
             
         if gtype=="nie":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="nie") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="nie") & Q(genename__contains=mnum))
         if gtype=="oha":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="oha") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="oha") & Q(genename__contains=mnum))
         if gtype=="one":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="one") & Q(genename__startswith=mnum))    
+            genes=MicroRNA.objects.filter(Q(genename__icontains="one") & Q(genename__contains=mnum))    
             
         if gtype=="oan":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="oan") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="oan") & Q(genename__contains=mnum))
         if gtype=="ocu":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ocu") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ocu") & Q(genename__contains=mnum))
         if gtype=="osa":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="osa") & Q(genename__startswith=mnum))    
+            genes=MicroRNA.objects.filter(Q(genename__icontains="osa") & Q(genename__contains=mnum))    
         
         if gtype=="ola":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ola") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ola") & Q(genename__contains=mnum))
         if gtype=="oge":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="oge") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="oge") & Q(genename__contains=mnum))
         if gtype=="oar":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="oar") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="oar") & Q(genename__contains=mnum))
             
         if gtype=="ppy":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ppy") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ppy") & Q(genename__contains=mnum))
         if gtype=="ptr":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ptr") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ptr") & Q(genename__contains=mnum))
         if gtype=="prd":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="prd") & Q(genename__startswith=mnum))    
+            genes=MicroRNA.objects.filter(Q(genename__icontains="prd") & Q(genename__contains=mnum))    
             
         if gtype=="pma":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="pma") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="pma") & Q(genename__contains=mnum))
         if gtype=="ppt":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ppt") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ppt") & Q(genename__contains=mnum))
         if gtype=="pxy":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="pxy") & Q(genename__startswith=mnum))    
+            genes=MicroRNA.objects.filter(Q(genename__icontains="pxy") & Q(genename__contains=mnum))    
                                    
         if gtype=="ppy":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ppy") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ppy") & Q(genename__contains=mnum))
         if gtype=="ptc":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ptc") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ptc") & Q(genename__contains=mnum))
         if gtype=="ppc":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ppc") & Q(genename__startswith=mnum))  
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ppc") & Q(genename__contains=mnum))  
             
         if gtype=="ppe":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ppe") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ppe") & Q(genename__contains=mnum))
         if gtype=="pal":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="pal") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="pal") & Q(genename__contains=mnum))
         if gtype=="pny":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="pny") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="pny") & Q(genename__contains=mnum))
         
         if gtype=="pbv":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="pbv") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="pbv") & Q(genename__contains=mnum))
         if gtype=="sko":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="sko") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="sko") & Q(genename__contains=mnum))
         if gtype=="sso":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="sso") & Q(genename__startswith=mnum))    
+            genes=MicroRNA.objects.filter(Q(genename__icontains="sso") & Q(genename__contains=mnum))    
         
         if gtype=="sma":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="sma") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="sma") & Q(genename__contains=mnum))
         if gtype=="sme":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="sme") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="sme") & Q(genename__contains=mnum))
         if gtype=="sly":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="sly") & Q(genename__startswith=mnum))   
+            genes=MicroRNA.objects.filter(Q(genename__icontains="sly") & Q(genename__contains=mnum))   
             
         if gtype=="stu":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="stu") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="stu") & Q(genename__contains=mnum))
         if gtype=="sbi":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="sbi") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="sbi") & Q(genename__contains=mnum))
         if gtype=="str":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="str") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="str") & Q(genename__contains=mnum))
         
         if gtype=="ssc":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="ssc") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="ssc") & Q(genename__contains=mnum))
         if gtype=="tgu":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="tgu") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="tgu") & Q(genename__contains=mnum))
         if gtype=="tni":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="tni") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="tni") & Q(genename__contains=mnum))
             
         if gtype=="tca":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="tca") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="tca") & Q(genename__contains=mnum))
         if gtype=="tae":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="tae") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="tae") & Q(genename__contains=mnum))
         if gtype=="tch":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="tch") & Q(genename__startswith=mnum))    
+            genes=MicroRNA.objects.filter(Q(genename__icontains="tch") & Q(genename__contains=mnum))    
         
         if gtype=="vvi":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="vvi") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="vvi") & Q(genename__contains=mnum))
         if gtype=="xla":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="xla") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="xla") & Q(genename__contains=mnum))
         if gtype=="xtr":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="xtr") & Q(genename__startswith=mnum))   
+            genes=MicroRNA.objects.filter(Q(genename__icontains="xtr") & Q(genename__contains=mnum))   
             
         if gtype=="zma":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="zma") & Q(genename__startswith=mnum)) 
+            genes=MicroRNA.objects.filter(Q(genename__icontains="zma") & Q(genename__contains=mnum)) 
                 
         return render_to_response('genedatabase/geneshow.html',{
                  'mnum':mnum,
