@@ -60,6 +60,7 @@ h2{
 </div>
 {%else%}
 {% for gene in genes %}
+<div class="well well-lg">
 <div class="well well-sm">
 <span class="glyphicon glyphicon-star"></span><b>Gene Symbol：</b>{{gene.genename}}
 </div>
@@ -78,7 +79,8 @@ h2{
 {{gene.genesectiongroup}}
 {% endautoescape %}
 </div>
-
+</div>
+<hr/>
 {%endfor%}
 {%endif%}
 </div>
