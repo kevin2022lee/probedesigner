@@ -823,7 +823,7 @@ def microRNAsearch(request):
         if mnum== "" or mnum=="*":
             genes=MicroRNA.objects.filter(Q(genename__icontains="hsa") & Q(genename__icontains="25"))
         if gtype=="hsa":
-            genes=MicroRNA.objects.filter(Q(genename__icontains="hsa") & Q(genename__startswith=mnum))
+            genes=MicroRNA.objects.filter(Q(genename__icontains="hsa") & Q(genename__exact=mnum))
         if gtype=="mmu":
             genes=MicroRNA.objects.filter(Q(genename__icontains="mmu") & Q(genename__startswith=mnum))
         if gtype=="rno":
