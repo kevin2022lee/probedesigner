@@ -61,8 +61,10 @@ h2{
 {%else%}
 {% for gene in genes %}
 
+<b><h3><mark>{{mnum}}</mark>的检索结果{{forloop.counter}}：</h3></b>
+
 <div class="well well-lg">
-<b><h2><i>{{mnum}}</i>的检索结果{{forloop.counter}}：</h2></b>
+
 <div class="well well-sm">
 <span class="glyphicon glyphicon-star"></span><b>Gene Symbol：</b>{{gene.genename}}
 </div>
