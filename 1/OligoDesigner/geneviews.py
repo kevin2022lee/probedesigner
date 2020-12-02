@@ -1050,6 +1050,7 @@ def microRNAsearch(request):
             genes=MicroRNA.objects.filter(Q(genename__icontains="zma") & Q(genename__icontains=mnum)) 
                 
         return render_to_response('genedatabase/geneshow.html',{
+                 'mnum':mnum,
                  'genes':genes,
                  'local':local,
                  'thisyear':thisyear
