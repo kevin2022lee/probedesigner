@@ -34,11 +34,12 @@ class STXCalcNSH:
         from Bio.Alphabet import IUPAC
 #########################QuantiMAT2.0 universal file#####################################################        
         uni_Aleader_seq1=Seq("AAAACGGTAACTTCTTTATGCTTTGACTCAG", IUPAC.unambiguous_dna)
-        #uni_Aleader_seq2=Seq("AGACAAGCTATTACCTGTATTTACCGAG", IUPAC.unambiguous_dna)
+        uni_Aleader_seq2=Seq("AGACAAGCTATTACCTGTATTTACCGAG", IUPAC.unambiguous_dna)
         uni_Aarms_seq1=Seq("ATCTCAGTCTCGTTAATGGATTCCT", IUPAC.unambiguous_dna)
-#        uni_Aarms_seq2=Seq("ACGCTATCTCTGTAGTTGATTCACT", IUPAC.unambiguous_dna)
-        uni_AP_seq=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
-        uni_AP_5R_seq=Seq("TTAGGGGCGTGTTTCATT", IUPAC.unambiguous_dna)
+        uni_Aarms_seq2=Seq("ACGCTATCTCTGTAGTTGATTCACT", IUPAC.unambiguous_dna)
+        uni_AP_seq1=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
+        uni_AP_seq2=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
+        #uni_AP_5R_seq=Seq("TTAGGGGCGTGTTTCATT", IUPAC.unambiguous_dna)
         uni_PSCP_seq=Seq("CTCTTGGAAAGAAAGT", IUPAC.unambiguous_dna)
         
         ########LCS#############
@@ -46,19 +47,19 @@ class STXCalcNSH:
         x4merlcs_Aleader=self.lcs(str(uni_Aleader_seq1),str(Calc_Seq))
         x4merlcs_Aarms=self.lcs(str(uni_Aarms_seq1),str(Calc_Seq))
         x4merlcs_AP=self.lcs(str(uni_AP_seq),str(Calc_Seq))
-        x4merlcs_AP_5R=self.lcs(str(uni_AP_5R_seq),str(Calc_Seq))
+        #x4merlcs_AP_5R=self.lcs(str(uni_AP_5R_seq),str(Calc_Seq))
         x4merlcs_PSCP=self.lcs(str(uni_PSCP_seq),str(Calc_Seq))
 ###########Server as CE Probe Weighting Factor##########################
         WF_CEtoLeaders=3
         WF_CEtoAMParms=60
         WF_CEtoAP=40
-        WF_CEtoAP_5R=5
+        #WF_CEtoAP_5R=5
         WF_CEtoPSCP=0
 ###########Server as LE Probe Weighting Factor##########################
         WF_LEtoLeaders=0
         WF_LEtoAMParms=0
         WF_LEtoAP=0
-        WF_LEtoAP_5R=0
+        #WF_LEtoAP_5R=0
         WF_LEtoPSCP=12
 ############################################################################
         if len(x4merlcs_Aleader) >=4:
