@@ -34,25 +34,27 @@ class STXCalcNSH:
         from Bio.Alphabet import IUPAC
 #########################QuantiMAT2.0 universal file#####################################################        
         uni_Aleader_seq1=Seq("AAAACGGTAACTTCTTTATGCTTTGACTCAG", IUPAC.unambiguous_dna)
-        uni_Aleader_seq2=Seq("AGACAAGCTATTACCTGTATTTACCGAG", IUPAC.unambiguous_dna)
+        uni_Aleader_seq3=Seq("AGACAAGCTATTACCTGTATTTACCGAG", IUPAC.unambiguous_dna)
         uni_Aarms_seq1=Seq("ATCTCAGTCTCGTTAATGGATTCCT", IUPAC.unambiguous_dna)
-        uni_Aarms_seq2=Seq("ACGCTATCTCTGTAGTTGATTCACT", IUPAC.unambiguous_dna)
+        uni_Aarms_seq3=Seq("ACGCTATCTCTGTAGTTGATTCACT", IUPAC.unambiguous_dna)
         uni_AP_seq1=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
-        uni_AP_seq2=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
+        uni_AP_seq3=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
         #uni_AP_5R_seq=Seq("TTAGGGGCGTGTTTCATT", IUPAC.unambiguous_dna)
         uni_PSCP_seq=Seq("CTCTTGGAAAGAAAGT", IUPAC.unambiguous_dna)
         
-        ########LCS#############
+##############LCS#############
         Calc_Seq=Seq(Calc_Seq, IUPAC.unambiguous_dna).upper()
-        x4merlcs_Aleader=self.lcs(str(uni_Aleader_seq1),str(Calc_Seq))+self.lcs(str(uni_Aleader_seq2),str(Calc_Seq))
-        x4merlcs_Aarms=self.lcs(str(uni_Aarms_seq1),str(Calc_Seq))+self.lcs(str(uni_Aarms_seq2),str(Calc_Seq))
-        x4merlcs_AP=self.lcs(str(uni_AP_seq1),str(Calc_Seq))+self.lcs(str(uni_AP_seq2),str(Calc_Seq))
-        #x4merlcs_AP_5R=self.lcs(str(uni_AP_5R_seq),str(Calc_Seq))
+        x4merlcs_Aleader1=self.lcs(str(uni_Aleader_seq1),str(Calc_Seq))
+        x4merlcs_Aleader3=self.lcs(str(uni_Aleader_seq3),str(Calc_Seq))
+        x4merlcs_Aarms1=self.lcs(str(uni_Aarms_seq1),str(Calc_Seq))
+        x4merlcs_Aarms3=self.lcs(str(uni_Aarms_seq3),str(Calc_Seq))
+        x4merlcs_AP1=self.lcs(str(uni_AP_seq1),str(Calc_Seq))
+        x4merlcs_AP3=self.lcs(str(uni_AP_seq3),str(Calc_Seq))
         x4merlcs_PSCP=self.lcs(str(uni_PSCP_seq),str(Calc_Seq))
 ###########Server as CE Probe Weighting Factor##########################
         WF_CEtoLeaders=3
-        WF_CEtoAMParms=40
-        WF_CEtoAP=30
+        WF_CEtoAMParms=30
+        WF_CEtoAP=20
         #WF_CEtoAP_5R=5
         WF_CEtoPSCP=0
 ###########Server as LE Probe Weighting Factor##########################
@@ -62,61 +64,90 @@ class STXCalcNSH:
         #WF_LEtoAP_5R=0
         WF_LEtoPSCP=6
 ############################################################################
-        if len(x4merlcs_Aleader) >=4:
-            score_x4mer_Aleader=[]
+        if len(x4merlcs_Aleader1) >=4:
+            score_x4mer_Aleader1=[]
             data_Aleader={}
             i=0
-            while(i<len(x4merlcs_Aleader)-3):
-                score_x4mer_Aleader.append(self.x4merScore(x4merlcs_Aleader[i:i+4]))
+            while(i<len(x4merlcs_Aleader1)-3):
+                score_x4mer_Aleader1.append(self.x4merScore(x4merlcs_Aleader1[i:i+4]))
                 i=i+1
-            data_Aleader['score_x4mer_Aleader']=score_x4mer_Aleader
-            NSH_Score_Aleader_SACE=sum(data_Aleader['score_x4mer_Aleader'])*WF_CEtoLeaders
-            NSH_Score_Aleader_SALE=sum(data_Aleader['score_x4mer_Aleader'])*WF_LEtoLeaders
+            data_Aleader['score_x4mer_Aleader1']=score_x4mer_Aleader1
+            NSH_Score_Aleader1_SACE=sum(data_Aleader['score_x4mer_Aleader1'])*WF_CEtoLeaders
+            NSH_Score_Aleader1_SALE=sum(data_Aleader['score_x4mer_Aleader1'])*WF_LEtoLeaders
         else:
-            NSH_Score_Aleader_SACE=0
-            NSH_Score_Aleader_SALE=0
+            NSH_Score_Aleader1_SACE=0
+            NSH_Score_Aleader1_SALE=0
+            
+        if len(x4merlcs_Aleader3) >=4:
+            score_x4mer_Aleader3=[]
+            data_Aleader={}
+            i=0
+            while(i<len(x4merlcs_Aleader3)-3):
+                score_x4mer_Aleader3.append(self.x4merScore(x4merlcs_Aleader3[i:i+4]))
+                i=i+1
+            data_Aleader['score_x4mer_Aleader3']=score_x4mer_Aleader3
+            NSH_Score_Aleader3_SACE=sum(data_Aleader['score_x4mer_Aleader3'])*WF_CEtoLeaders
+            NSH_Score_Aleader3_SALE=sum(data_Aleader['score_x4mer_Aleader3'])*WF_LEtoLeaders
+        else:
+            NSH_Score_Aleader3_SACE=0
+            NSH_Score_Aleader3_SALE=0    
+            
 ###############Aarms xmer Score############################################
-        if len(x4merlcs_Aarms) >=4:
+        if len(x4merlcs_Aarms1) >=4:
             i=0
-            score_x4mer_Aarms=[]
+            score_x4mer_Aarms1=[]
             data_Aarms={}
-            while(i<len(x4merlcs_Aarms)-3):
-                score_x4mer_Aarms.append(self.x4merScore(x4merlcs_Aarms[i:i+4]))
+            while(i<len(x4merlcs_Aarms1)-3):
+                score_x4mer_Aarms1.append(self.x4merScore(x4merlcs_Aarms1[i:i+4]))
                 i=i+1
-            data_Aarms['score_x4mer_Aarms']=score_x4mer_Aarms
-            NSH_Score_Aarms_SACE=sum(data_Aarms['score_x4mer_Aarms'])*WF_CEtoAMParms
-            NSH_Score_Aarms_SALE=sum(data_Aarms['score_x4mer_Aarms'])*WF_LEtoAMParms
+            data_Aarms['score_x4mer_Aarms']=score_x4mer_Aarms1
+            NSH_Score_Aarms1_SACE=sum(data_Aarms['score_x4mer_Aarms1'])*WF_CEtoAMParms
+            NSH_Score_Aarms1_SALE=sum(data_Aarms['score_x4mer_Aarms1'])*WF_LEtoAMParms
         else:
-            NSH_Score_Aarms_SACE=0
-            NSH_Score_Aarms_SALE=0
-###############APs xmer Score##############################################
-        if len(x4merlcs_AP) >=4:
+            NSH_Score_Aarms1_SACE=0
+            NSH_Score_Aarms1_SALE=0
+            
+        if len(x4merlcs_Aarms3) >=4:
             i=0
-            score_x4mer_AP=[]
-            data_AP={}
-            while(i<len(x4merlcs_AP)-3):
-                score_x4mer_AP.append(self.x4merScore(x4merlcs_AP[i:i+4]))
+            score_x4mer_Aarms3=[]
+            data_Aarms={}
+            while(i<len(x4merlcs_Aarms3)-3):
+                score_x4mer_Aarms3.append(self.x4merScore(x4merlcs_Aarms3[i:i+4]))
                 i=i+1
-            data_AP['score_x4mer_AP']=score_x4mer_AP
-            NSH_Score_AP_SACE=sum(data_AP['score_x4mer_AP'])*WF_CEtoAP
-            NSH_Score_AP_SALE=sum(data_AP['score_x4mer_AP'])*WF_LEtoAP
+            data_Aarms['score_x4mer_Aarms3']=score_x4mer_Aarms3
+            NSH_Score_Aarms3_SACE=sum(data_Aarms['score_x4mer_Aarms3'])*WF_CEtoAMParms
+            NSH_Score_Aarms3_SALE=sum(data_Aarms['score_x4mer_Aarms3'])*WF_LEtoAMParms
         else:
-            NSH_Score_AP_SACE=0
-            NSH_Score_AP_SALE=0
+            NSH_Score_Aarms3_SACE=0
+            NSH_Score_Aarms3_SALE=0    
+###############APs xmer Score##############################################
+        if len(x4merlcs_AP1) >=4:
+            i=0
+            score_x4mer_AP1=[]
+            data_AP={}
+            while(i<len(x4merlcs_AP1)-3):
+                score_x4mer_AP1.append(self.x4merScore(x4merlcs_AP1[i:i+4]))
+                i=i+1
+            data_AP['score_x4mer_AP1']=score_x4mer_AP1
+            NSH_Score_AP1_SACE=sum(data_AP['score_x4mer_AP1'])*WF_CEtoAP
+            NSH_Score_AP1_SALE=sum(data_AP['score_x4mer_AP1'])*WF_LEtoAP
+        else:
+            NSH_Score_AP1_SACE=0
+            NSH_Score_AP1_SALE=0
 ###############AP_5Rs xmer Score##############################################
-#         if len(x4merlcs_AP_5R) >=4:
-#             i=0
-#             score_x4mer_AP_5R=[]
-#             data_AP_5R={}
-#             while(i<len(x4merlcs_AP_5R)-3):
-#                 score_x4mer_AP_5R.append(self.x4merScore(x4merlcs_AP_5R[i:i+4]))
-#                 i=i+1
-#             data_AP_5R['score_x4mer_AP_5R']=score_x4mer_AP_5R
-#             NSH_Score_AP_5R_SACE=sum(data_AP_5R['score_x4mer_AP_5R'])*WF_CEtoAP_5R
-#             NSH_Score_AP_5R_SALE=sum(data_AP_5R['score_x4mer_AP_5R'])*WF_LEtoAP_5R
-#         else:
-#             NSH_Score_AP_5R_SACE=0
-#             NSH_Score_AP_5R_SALE=0
+        if len(x4merlcs_AP3) >=4:
+            i=0
+            score_x4mer_AP3=[]
+            data_AP={}
+            while(i<len(x4merlcs_AP3)-3):
+                score_x4mer_AP3.append(self.x4merScore(x4merlcs_AP3[i:i+4]))
+                i=i+1
+            data_AP['score_x4mer_AP3']=score_x4mer_AP1
+            NSH_Score_AP3_SACE=sum(data_AP['score_x4mer_AP3'])*WF_CEtoAP
+            NSH_Score_AP3_SALE=sum(data_AP['score_x4mer_AP3'])*WF_LEtoAP
+        else:
+            NSH_Score_AP3_SACE=0
+            NSH_Score_AP3_SALE=0
 ##############PSCP x-mer Score###############################
 ##############PSCP x-mer Score###############################
 
@@ -134,9 +165,11 @@ class STXCalcNSH:
             NSH_Score_PSCP_SACE=0
             NSH_Score_PSCP_SALE=0
 #######END############
-        Total_NSH_SACE= NSH_Score_Aleader_SACE+NSH_Score_Aarms_SACE+NSH_Score_AP_SACE+NSH_Score_PSCP_SACE
-        Total_NSH_SALE= NSH_Score_Aleader_SALE+NSH_Score_Aarms_SALE+NSH_Score_AP_SALE+NSH_Score_PSCP_SALE
-        return [Total_NSH_SACE,Total_NSH_SALE]
+        Total_NSH_SACE1= NSH_Score_Aleader1_SACE+NSH_Score_Aarms1_SACE+NSH_Score_AP1_SACE+NSH_Score_PSCP_SACE
+        Total_NSH_SALE1= NSH_Score_Aleader1_SALE+NSH_Score_Aarms1_SALE+NSH_Score_AP1_SALE+NSH_Score_PSCP_SALE
+        Total_NSH_SACE3= NSH_Score_Aleader3_SACE+NSH_Score_Aarms3_SACE+NSH_Score_AP3_SACE+NSH_Score_PSCP_SACE
+        Total_NSH_SALE3= NSH_Score_Aleader3_SALE+NSH_Score_Aarms3_SALE+NSH_Score_AP3_SALE+NSH_Score_PSCP_SALE
+        return [Total_NSH_SACE1+Total_NSH_SACE3,Total_NSH_SALE3+Total_NSH_SALE3]
         
     def x4merScore(self,seq):
         SumAT=seq.count("A")+seq.count("T")
