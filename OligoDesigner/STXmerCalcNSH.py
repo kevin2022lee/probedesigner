@@ -44,15 +44,15 @@ class STXCalcNSH:
         
         ########LCS#############
         Calc_Seq=Seq(Calc_Seq, IUPAC.unambiguous_dna).upper()
-        x4merlcs_Aleader=self.lcs(str(uni_Aleader_seq1),str(Calc_Seq))
-        x4merlcs_Aarms=self.lcs(str(uni_Aarms_seq1),str(Calc_Seq))
-        x4merlcs_AP=self.lcs(str(uni_AP_seq),str(Calc_Seq))
+        x4merlcs_Aleader=self.lcs(str(uni_Aleader_seq1),str(Calc_Seq))+self.lcs(str(uni_Aleader_seq2),str(Calc_Seq))
+        x4merlcs_Aarms=self.lcs(str(uni_Aarms_seq1),str(Calc_Seq))+self.lcs(str(uni_Aarms_seq2),str(Calc_Seq))
+        x4merlcs_AP=self.lcs(str(uni_AP_seq1),str(Calc_Seq))+self.lcs(str(uni_AP_seq2),str(Calc_Seq))
         #x4merlcs_AP_5R=self.lcs(str(uni_AP_5R_seq),str(Calc_Seq))
         x4merlcs_PSCP=self.lcs(str(uni_PSCP_seq),str(Calc_Seq))
 ###########Server as CE Probe Weighting Factor##########################
         WF_CEtoLeaders=3
-        WF_CEtoAMParms=60
-        WF_CEtoAP=40
+        WF_CEtoAMParms=40
+        WF_CEtoAP=30
         #WF_CEtoAP_5R=5
         WF_CEtoPSCP=0
 ###########Server as LE Probe Weighting Factor##########################
@@ -60,7 +60,7 @@ class STXCalcNSH:
         WF_LEtoAMParms=0
         WF_LEtoAP=0
         #WF_LEtoAP_5R=0
-        WF_LEtoPSCP=12
+        WF_LEtoPSCP=6
 ############################################################################
         if len(x4merlcs_Aleader) >=4:
             score_x4mer_Aleader=[]
@@ -104,19 +104,19 @@ class STXCalcNSH:
             NSH_Score_AP_SACE=0
             NSH_Score_AP_SALE=0
 ###############AP_5Rs xmer Score##############################################
-        if len(x4merlcs_AP_5R) >=4:
-            i=0
-            score_x4mer_AP_5R=[]
-            data_AP_5R={}
-            while(i<len(x4merlcs_AP_5R)-3):
-                score_x4mer_AP_5R.append(self.x4merScore(x4merlcs_AP_5R[i:i+4]))
-                i=i+1
-            data_AP_5R['score_x4mer_AP_5R']=score_x4mer_AP_5R
-            NSH_Score_AP_5R_SACE=sum(data_AP_5R['score_x4mer_AP_5R'])*WF_CEtoAP_5R
-            NSH_Score_AP_5R_SALE=sum(data_AP_5R['score_x4mer_AP_5R'])*WF_LEtoAP_5R
-        else:
-            NSH_Score_AP_5R_SACE=0
-            NSH_Score_AP_5R_SALE=0
+#         if len(x4merlcs_AP_5R) >=4:
+#             i=0
+#             score_x4mer_AP_5R=[]
+#             data_AP_5R={}
+#             while(i<len(x4merlcs_AP_5R)-3):
+#                 score_x4mer_AP_5R.append(self.x4merScore(x4merlcs_AP_5R[i:i+4]))
+#                 i=i+1
+#             data_AP_5R['score_x4mer_AP_5R']=score_x4mer_AP_5R
+#             NSH_Score_AP_5R_SACE=sum(data_AP_5R['score_x4mer_AP_5R'])*WF_CEtoAP_5R
+#             NSH_Score_AP_5R_SALE=sum(data_AP_5R['score_x4mer_AP_5R'])*WF_LEtoAP_5R
+#         else:
+#             NSH_Score_AP_5R_SACE=0
+#             NSH_Score_AP_5R_SALE=0
 ##############PSCP x-mer Score###############################
 ##############PSCP x-mer Score###############################
 
@@ -134,8 +134,8 @@ class STXCalcNSH:
             NSH_Score_PSCP_SACE=0
             NSH_Score_PSCP_SALE=0
 #######END############
-        Total_NSH_SACE= NSH_Score_Aleader_SACE+NSH_Score_Aarms_SACE+NSH_Score_AP_SACE+NSH_Score_AP_5R_SACE+NSH_Score_PSCP_SACE
-        Total_NSH_SALE= NSH_Score_Aleader_SALE+NSH_Score_Aarms_SALE+NSH_Score_AP_SALE+NSH_Score_AP_5R_SALE+NSH_Score_PSCP_SALE
+        Total_NSH_SACE= NSH_Score_Aleader_SACE+NSH_Score_Aarms_SACE+NSH_Score_AP_SACE+NSH_Score_PSCP_SACE
+        Total_NSH_SALE= NSH_Score_Aleader_SALE+NSH_Score_Aarms_SALE+NSH_Score_AP_SALE+NSH_Score_PSCP_SALE
         return [Total_NSH_SACE,Total_NSH_SALE]
         
     def x4merScore(self,seq):
