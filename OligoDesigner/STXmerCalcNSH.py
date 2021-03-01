@@ -169,7 +169,7 @@ class STXCalcNSH:
         Total_NSH_SALE1= NSH_Score_Aleader1_SALE+NSH_Score_Aarms1_SALE+NSH_Score_AP1_SALE+NSH_Score_PSCP_SALE
         Total_NSH_SACE3= NSH_Score_Aleader3_SACE+NSH_Score_Aarms3_SACE+NSH_Score_AP3_SACE+NSH_Score_PSCP_SACE
         Total_NSH_SALE3= NSH_Score_Aleader3_SALE+NSH_Score_Aarms3_SALE+NSH_Score_AP3_SALE+NSH_Score_PSCP_SALE
-        return [Total_NSH_SACE1+Total_NSH_SACE3,Total_NSH_SALE3+Total_NSH_SALE3]
+        return [Total_NSH_SACE1+Total_NSH_SACE3,Total_NSH_SALE1+Total_NSH_SALE3]
         
     def x4merScore(self,seq):
         SumAT=seq.count("A")+seq.count("T")
