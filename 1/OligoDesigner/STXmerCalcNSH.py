@@ -100,7 +100,7 @@ class STXCalcNSH:
             while(i<len(x4merlcs_Aarms1)-3):
                 score_x4mer_Aarms1.append(self.x4merScore(x4merlcs_Aarms1[i:i+4]))
                 i=i+1
-            data_Aarms['score_x4mer_Aarms']=score_x4mer_Aarms1
+            data_Aarms['score_x4mer_Aarms1']=score_x4mer_Aarms1
             NSH_Score_Aarms1_SACE=sum(data_Aarms['score_x4mer_Aarms1'])*WF_CEtoAMParms
             NSH_Score_Aarms1_SALE=sum(data_Aarms['score_x4mer_Aarms1'])*WF_LEtoAMParms
         else:
