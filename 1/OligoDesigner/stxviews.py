@@ -255,7 +255,7 @@ def stxprobeXmers(req):
         for v in range(len(dict_xmervalue)):
             probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v]),dict_value[v],oligoGC(dict_value[v])])
         probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
-        return render_to_response('showxmerscore.html',{
+        return render_to_response('16xpd/showxmerscore.html',{
                                                                               'local':local,
                                                                               'thisyear':thisyear,
                                                                               'probe_xmer_list':probe_xmer_list,
