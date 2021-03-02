@@ -629,7 +629,7 @@ def xpdGenerateProbeset(req):
         BL_final_list=[]
         for j in range(len(probesets_list)):
             if probesets_list[j][2]=="CP":
-                CE_final_list.append((probesets_list[j][0],probesets_list[j][1]+'tttttCTCTTGGAAAGAAAGT'))
+                CE_final_list.append((probesets_list[j][0],probesets_list[j][1]+'TTTTTctcttggaaagaaagt'))
             if probesets_list[j][2]=="BL":
                 BL_final_list.append((probesets_list[j][0],probesets_list[j][1]))
             if probesets_list[j][2]=="BP":
