@@ -55,13 +55,11 @@ class STXCalcNSH:
         WF_CEtoLeaders=6
         WF_CEtoAMParms=15
         WF_CEtoAP=1
-        #WF_CEtoAP_5R=5
         WF_CEtoPSCP=0
 ###########Server as LE Probe Weighting Factor##########################
         WF_LEtoLeaders=0
         WF_LEtoAMParms=0
         WF_LEtoAP=0
-        #WF_LEtoAP_5R=0
         WF_LEtoPSCP=6
 ############################################################################
         if len(x4merlcs_Aleader1) >=4:
@@ -134,7 +132,7 @@ class STXCalcNSH:
         else:
             NSH_Score_AP1_SACE=0
             NSH_Score_AP1_SALE=0
-###############AP_5Rs xmer Score##############################################
+###############AP_ xmer Score##############################################
         if len(x4merlcs_AP3) >=4:
             i=0
             score_x4mer_AP3=[]
