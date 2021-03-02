@@ -637,9 +637,9 @@ def xpdGenerateProbeset(req):
         LE_final_final_list=[]
         for k in range(len(LE_final_list)):
             if LE_final_list.index(LE_final_list[k])%2==0:
-                LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'tttttACAGAGATAGCGT'))
+                LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'tttttCTCGGTAAATACAG'))
             else:
-                LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'tttttAGTGAATCAACT'))
+                LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'tttttGTAATAGCTTGTCT'))
         return render_to_response('generateprobes.html',{
                                       'local':local,
                                       'thisyear':thisyear,
