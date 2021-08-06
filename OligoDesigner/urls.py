@@ -6,6 +6,7 @@ from SightViews import *
 from blastviews import *
 from stxviews import *
 from movedesignviews import *
+from primerviews import *
 from django.contrib import admin
 import settings
 admin.autodiscover()
