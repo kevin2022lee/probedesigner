@@ -9,7 +9,7 @@ from datetime import datetime
 from models import *
 from django.db.models import Q
 from django.core.context_processors import request
-from primer3 import * 
+import primer3 
 
 local='www.probedesigner.cn'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
