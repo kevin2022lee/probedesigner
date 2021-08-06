@@ -2,7 +2,7 @@
  {% block content %}
 <script type="text/javascript">
 $(document).ready(function(){
-  maxvalue=2048;
+  maxvalue=348;
   $("#seqid").blur(function(){
       var id=$("#seqid").val();
       if(id.length==0)
@@ -50,7 +50,7 @@ $(document).ready(function(){
 
 <div class="panel panel-success">
 <div class="panel-heading">
-        <b>选取本地<em>Genbank</em>或者<em>Fasta</em>文件开始探针设计[本地文件小于2Kb推荐]</b>
+        <b>选取本地<em>Genbank</em>或者<em>Fasta</em>文件开始探针设计[本地文件小于0.4k推荐]</b>
 </div>
     <div class="panel body" style="height:100px; padding-top:50px;">
 <form action="http://{{ local }}/seqresolve/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
@@ -65,7 +65,7 @@ $(document).ready(function(){
 </div>
 <div class="panel panel-info">
 <div class="panel-heading">
-        <b>读取Entrez远程<em>Genbank</em>或者<em>Fasta</em>文件开始探针设计[适用于大于2Kb序列文件]</b>
+        <b>读取Entrez远程<em>Genbank</em>或者<em>Fasta</em>文件开始探针设计[适用于大于0.4k序列文件]</b>
 </div>
     <div class="panel body" style="height:100px; padding-top:50px;">
 <form action="http://{{ local }}/entrezremote/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
@@ -82,7 +82,7 @@ $(document).ready(function(){
 <label for="start" >截止点</label>
 </div>
 <div class="col-sm-2">
-<input class="form-control" id="end" type="text" name="end" value=2048 placeholder="默认最大长度值">
+<input class="form-control" id="end" type="text" name="end" value=348 placeholder="默认最大长度值">
 </div>
 <div class="col-sm-2">
 <font color="red">
