@@ -79,5 +79,6 @@ urlpatterns = patterns('',
     url(r'microsearch/',microsearch),
     url(r'micrornadatabase/(\d+)/',microshow),
     url(r'microRNAsearch/$',microRNAsearch),
+    url(r'primer3/$',primer3),
  
 )
