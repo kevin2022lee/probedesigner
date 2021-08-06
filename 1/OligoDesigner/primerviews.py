@@ -14,7 +14,7 @@ import primer3
 local='www.probedesigner.cn'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
 
-def primer3(request):
+def primerdesigner(request):
     return render_to_response('primer3/primer.html',{
                                     'local':local,
                                     'thisyear':thisyear
