@@ -9,6 +9,7 @@ from movedesignviews import *
 from primerviews import *
 from django.contrib import admin
 import settings
+from OligoDesigner.primerviews import primerdesigner
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -80,6 +81,6 @@ urlpatterns = patterns('',
     url(r'microsearch/',microsearch),
     url(r'micrornadatabase/(\d+)/',microshow),
     url(r'microRNAsearch/$',microRNAsearch),
-    url(r'primer3/$',primer3),
+    url(r'primer3/$',primerdesigner),
  
 )
