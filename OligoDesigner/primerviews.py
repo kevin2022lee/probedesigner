@@ -1,15 +1,9 @@
 ﻿#coding:utf-8
+import time
+import primer3 
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.http import HttpResponse,HttpResponseRedirect,response
-from django.core.paginator import Paginator
-from django.views.decorators.csrf import csrf_protect,csrf_exempt
-import time
-from datetime import datetime
-from models import *
-from django.db.models import Q
-from django.core.context_processors import request
-import primer3 
 
 local='www.probedesigner.cn'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
