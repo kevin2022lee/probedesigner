@@ -8,7 +8,7 @@ $(document).ready(function(){
       if(id.length==0)
       {
           $("#btnentrez").attr("disabled", true); 
-          $("#enderror").html("Accession idÊäÈë²»ÄÜÎª¿Õ£¡");
+          $("#enderror").html("Accession idè¾“å…¥ä¸èƒ½ä¸ºç©ºï¼");
           $("#seqid").focus();
       }else{
           $("#btnentrez").removeAttr("disabled"); 
@@ -23,7 +23,7 @@ $(document).ready(function(){
       if(inputvalue > maxvalue)
       {
           $("#btnentrez").attr("disabled", true); 
-          $("#enderror").html("³¬¹ı×î´ó³¤¶È·¶Î§£¡");
+          $("#enderror").html("è¶…è¿‡æœ€å¤§é•¿åº¦èŒƒå›´ï¼");
           $("#end").focus();
       }else
       {
@@ -36,7 +36,7 @@ $(document).ready(function(){
       if(startvalue > maxvalue)
       {
           $("#btnentrez").attr("disabled", true); 
-          $("#enderror").html("ÆğÊ¼µã²»ÄÜ´óÓÚ½áÊøµã£¡");
+          $("#enderror").html("èµ·å§‹ç‚¹ä¸èƒ½å¤§äºç»“æŸç‚¹ï¼");
           $("#start").focus();
       }else
       {
@@ -46,11 +46,11 @@ $(document).ready(function(){
   });
 });
 </script>
- <title>PrimerDesignerÒıÎïÌ½ÕëÉè¼Æ</title>
+ <title>PrimerDesignerå¼•ç‰©æ¢é’ˆè®¾è®¡</title>
 
 <div class="panel panel-success">
 <div class="panel-heading">
-        <b>Ñ¡È¡±¾µØ<em>Genbank</em>»òÕß<em>Fasta</em>ÎÄ¼ş¿ªÊ¼Ì½ÕëÉè¼Æ[±¾µØÎÄ¼şĞ¡ÓÚ2KbÍÆ¼ö]</b>
+        <b>é€‰å–æœ¬åœ°<em>Genbank</em>æˆ–è€…<em>Fasta</em>æ–‡ä»¶å¼€å§‹æ¢é’ˆè®¾è®¡[æœ¬åœ°æ–‡ä»¶å°äº2Kbæ¨è]</b>
 </div>
     <div class="panel body" style="height:100px; padding-top:50px;">
 <form action="http://{{ local }}/seqresolve/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
@@ -58,31 +58,31 @@ $(document).ready(function(){
 <input class="form-control" type="file" name="file" accept=".gb,.fasta" >
 </div>
 <div class="col-sm-2">
-<button class="btn-primary btn" type="submit">½âÎöÎÄ¼ş</button>
+<button class="btn-primary btn" type="submit">è§£ææ–‡ä»¶</button>
 </div>    
 </form>
 </div>
 </div>
 <div class="panel panel-info">
 <div class="panel-heading">
-        <b>¶ÁÈ¡EntrezÔ¶³Ì<em>Genbank</em>»òÕß<em>Fasta</em>ÎÄ¼ş¿ªÊ¼Ì½ÕëÉè¼Æ[ÊÊÓÃÓÚ´óÓÚ2KbĞòÁĞÎÄ¼ş]</b>
+        <b>è¯»å–Entrezè¿œç¨‹<em>Genbank</em>æˆ–è€…<em>Fasta</em>æ–‡ä»¶å¼€å§‹æ¢é’ˆè®¾è®¡[é€‚ç”¨äºå¤§äº2Kbåºåˆ—æ–‡ä»¶]</b>
 </div>
     <div class="panel body" style="height:100px; padding-top:50px;">
 <form action="http://{{ local }}/entrezremote/" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
 <div class="col-sm-2">
-<input class="form-control" id="seqid" type="text" name="seqid" placeholder="ÊäÈëNCBIµÄAccession ID">
+<input class="form-control" id="seqid" type="text" name="seqid" placeholder="è¾“å…¥NCBIçš„Accession ID">
 </div>
 <div class="col-sm-1">
-<label for="start" >ÆğÊ¼µã</label>
+<label for="start" >èµ·å§‹ç‚¹</label>
 </div>
 <div class="col-sm-2">
-<input class="form-control" type="text" id="start" name="start" value=1 placeholder="Ä¬ÈÏ´Ó1¿ªÊ¼">
+<input class="form-control" type="text" id="start" name="start" value=1 placeholder="é»˜è®¤ä»1å¼€å§‹">
 </div>
 <div class="col-sm-1">
-<label for="start" >½ØÖ¹µã</label>
+<label for="start" >æˆªæ­¢ç‚¹</label>
 </div>
 <div class="col-sm-2">
-<input class="form-control" id="end" type="text" name="end" value=2048 placeholder="Ä¬ÈÏ×î´ó³¤¶ÈÖµ">
+<input class="form-control" id="end" type="text" name="end" value=2048 placeholder="é»˜è®¤æœ€å¤§é•¿åº¦å€¼">
 </div>
 <div class="col-sm-2">
 <font color="red">
@@ -90,7 +90,7 @@ $(document).ready(function(){
 </font>
 </div>
 <div class="col-sm-2">
-<button class="btn-primary btn" id="btnentrez" type="submit">¶ÁÈ¡ÎÄ¼ş</button>
+<button class="btn-primary btn" id="btnentrez" type="submit">è¯»å–æ–‡ä»¶</button>
 </div>    
 </form>
 </div>
