@@ -13,3 +13,9 @@ def primerdesigner(request):
                                     'local':local,
                                     'thisyear':thisyear
         },context_instance=RequestContext(request))
+    
+def seqinput(request):
+    return render_to_response('primer3/seqinput.html',{
+                                    'local':local,
+                                    'thisyear':thisyear
+        },context_instance=RequestContext(request))
