@@ -1,6 +1,6 @@
 ﻿#coding:utf-8
 import time
-import primer3 
+#import primer3 
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.http import HttpResponse,HttpResponseRedirect,response
