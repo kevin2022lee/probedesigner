@@ -53,14 +53,14 @@ h2{
 <b>检索基因结果信息</b>
 </div>
 
-<div class="container" style="padding:20px;height:auto;">
+<div class="container" style="height:auto;">
 {%for gene in genes%}
-<div class="panel panel-info" style="padding:10px">
+<div class="panel panel-info" >
 {% autoescape off %}
 {{gene.genedescription}}
 {% endautoescape %}
 </div>
-<div class="panel panel-info" style="padding:10px">
+<div class="panel panel-info" >
 {% autoescape off %}
 {{gene.genesectiongroup}}
 {% endautoescape %}
