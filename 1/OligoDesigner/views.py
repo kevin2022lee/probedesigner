@@ -485,9 +485,9 @@ def x4merCalc(request):
         from Bio.Seq import Seq
         from Bio.Alphabet import IUPAC
         
-        uni_Aleader_seq=Seq("AAAACGGTAACTTCTTTATGCTTTGACTCAG", IUPAC.unambiguous_dna)
-        uni_Aarms_seq=Seq("ATCTCAGTCTCGTTAATGGATTCCT", IUPAC.unambiguous_dna)
-        uni_AP_seq=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
+        uni_Aleader_seq=Seq("CGGCATAGCAGCGCGCATACTTT", IUPAC.unambiguous_dna)
+        uni_Aarms_seq=Seq("CGTTGTCCCTAGGGCCGTGGATT", IUPAC.unambiguous_dna)
+        uni_AP_seq=Seq("GCACTTGGTACGGCGCTGACTT", IUPAC.unambiguous_dna)
         uni_PSCP_seq=Seq("CTCTTGGAAAGAAAGT", IUPAC.unambiguous_dna)
 ###########Server as CE Probe Weighting Factor##########################
         WF_CEtoLeaders=3
