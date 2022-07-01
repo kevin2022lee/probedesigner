@@ -34,7 +34,7 @@ class NonNSHFilter:
         length=len(string)
         data_probe=[]
         probelist=[0]
-        while(sum(data_probe)<length-25):
+        while(sum(data_probe)<length-35):
             data=[]
             data_tm=[]
             ns=string[sum(data_probe):]
