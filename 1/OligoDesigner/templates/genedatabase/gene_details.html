@@ -55,16 +55,16 @@ h2{
 
 <div class="container" style="height:auto;">
 {%for gene in genes%}
-<div class="panel panel-info" >
+
 {% autoescape off %}
 {{gene.genedescription}}
 {% endautoescape %}
-</div>
-<div class="panel panel-info" >
+<hr/>
+
 {% autoescape off %}
 {{gene.genesectiongroup}}
 {% endautoescape %}
-</div>
+
 {%endfor%}
 
 </div>
