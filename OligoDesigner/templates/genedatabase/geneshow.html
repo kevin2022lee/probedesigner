@@ -71,17 +71,16 @@ h2{
 <span class="glyphicon glyphicon-cog"></span> <b>ProbeSets application type：</b>{{gene.geneprobetype}}
 
 </div>
-<div class="well well-sm">
+
 
 {% autoescape off %}
 {{gene.genedescription}}
 {% endautoescape %}
-</div>
-<div class="well well-sm">
+<hr/>
+
 {% autoescape off %}
 {{gene.genesectiongroup}}
 {% endautoescape %}
-</div>
 </div>
 <hr/>
 {%endfor%}
