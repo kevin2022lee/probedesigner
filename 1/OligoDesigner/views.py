@@ -1313,10 +1313,14 @@ def GenerateProbeset(req):
                     LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTctgagtcaaagcat'))
         elif req.session.get('systemtitle')=="Quantiplex2.0":
             for k in range(len(LE_final_list)):
-                if LE_final_list.index(LE_final_list[k])%2==0:
-                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTgaagttaccgtttt'))
-                else:
-                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTctgagtcaaagcat'))
+                if LE_final_list.index(LE_final_list[k])%4==0:
+                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTβ1sequence'))
+                elif LE_final_list.index(LE_final_list[k])%4==0.5:
+                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTα2sequence'))
+                elif LE_final_list.index(LE_final_list[k])%4==0.75:
+                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTβ2sequence'))
+                elif LE_final_list.index(LE_final_list[k])%4==0.25:
+                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTα1sequence'))
         return render_to_response('generateprobes.html',{
                                       'local':local,
                                       'thisyear':thisyear,
