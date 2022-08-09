@@ -1313,14 +1313,15 @@ def GenerateProbeset(req):
                     LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTctgagtcaaagcat'))
         elif req.session.get('systemtitle')=="Quantiplex2.0":
             for k in range(len(LE_final_list)):
-                if LE_final_list.index(LE_final_list[k])%4==0:
-                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'cgaccggaagt'))
-                elif LE_final_list.index(LE_final_list[k])%4==0.5:
-                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'tgctatgccgt'))
-                elif LE_final_list.index(LE_final_list[k])%4==0.75:
-                    LE_final_final_list.append(('cgaccattggg'+LE_final_list[k][0],LE_final_list[k][1]))
-                elif LE_final_list.index(LE_final_list[k])%4==0.25:
-                    LE_final_final_list.append(('ctatgcgcgc'+LE_final_list[k][0],LE_final_list[k][1]))
+                for n in range(0,int(k/4)):
+                    if LE_final_list.index(LE_final_list[k])%4==0:
+                        LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'cgaccggaagt'))
+                    elif LE_final_list.index(LE_final_list[k])%4==n+0.5:
+                        LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'tgctatgccgt'))
+                    elif LE_final_list.index(LE_final_list[k])%4==n+0.75:
+                        LE_final_final_list.append((LE_final_list[k][0],'cgaccattggg'+LE_final_list[k][1]))
+                    elif LE_final_list.index(LE_final_list[k])%4==n+0.25:
+                        LE_final_final_list.append((LE_final_list[k][0],'ctatgcgcgc'+LE_final_list[k][1]))
         elif req.session.get('systemtitle')=="Quantimat3.0":
             for k in range(len(LE_final_list)):
                 if LE_final_list.index(LE_final_list[k])%4==0:
