@@ -1,6 +1,6 @@
 ﻿#coding:utf-8
 from django.template import RequestContext
-from django.shortcuts import render_to_response
+from django.shortcuts import *
 from django.http import HttpResponse,HttpResponseRedirect,response
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 import time
@@ -695,6 +695,7 @@ def PostCalcXmer(req):
         dict_key=req.POST.getlist('probedictkey','')
         dict_length=req.POST.getlist('probelength','')
         systemtitle=req.POST["universal_seq"]
+        req.session['systemtitle']=systemtitle
         xmerclac=CalcNSH()
         for i in range(len(dict_value)):
             if systemtitle=="Quantimat2.0":
@@ -1304,11 +1305,18 @@ def GenerateProbeset(req):
             if probesets_list[j][2]=="BP":
                 LE_final_list.append((probesets_list[j][0],probesets_list[j][1]))
         LE_final_final_list=[]
-        for k in range(len(LE_final_list)):
-            if LE_final_list.index(LE_final_list[k])%2==0:
-                LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTgaagttaccgtttt'))
-            else:
-                LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTctgagtcaaagcat'))
+        if req.session.get('systemtitle')=="Quantimat2.0":
+            for k in range(len(LE_final_list)):
+                if LE_final_list.index(LE_final_list[k])%2==0:
+                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTgaagttaccgtttt'))
+                else:
+                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTctgagtcaaagcat'))
+        elif req.session.get('systemtitle')=="Quantiplex2.0":
+            for k in range(len(LE_final_list)):
+                if LE_final_list.index(LE_final_list[k])%2==0:
+                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTgaagttaccgtttt'))
+                else:
+                    LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'TTTTTctgagtcaaagcat'))
         return render_to_response('generateprobes.html',{
                                       'local':local,
                                       'thisyear':thisyear,
