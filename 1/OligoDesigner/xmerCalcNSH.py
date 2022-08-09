@@ -55,7 +55,7 @@ class CalcNSH:
         x4merlcs_PSCP=self.lcs(str(uni_PSCP_seq),str(Calc_Seq))
 ###########Server as CE Probe Weighting Factor##########################
         WF_CEtoLeaders=3
-        WF_CEtoAMParms=14s
+        WF_CEtoAMParms=14
         WF_CEtoAP=1
         WF_CEtoPSCP=0
 ###########Server as LE Probe Weighting Factor##########################
