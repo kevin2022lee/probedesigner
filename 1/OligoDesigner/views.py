@@ -1329,9 +1329,9 @@ def GenerateProbeset(req):
                 elif LE_final_list.index(LE_final_list[k])%4==0.5:
                     LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'tgftatjccgt'))
                 elif LE_final_list.index(LE_final_list[k])%4==0.75:
-                    LE_final_final_list.append(('jgacfattjgg'+LE_final_list[k][0],LE_final_list[k][1]))
+                    LE_final_final_list.append((LE_final_list[k][0],'jgacfattjgg'+LE_final_list[k][1]))
                 elif LE_final_list.index(LE_final_list[k])%4==0.25:
-                    LE_final_final_list.append(('jtatjcgcjc'+LE_final_list[k][0],LE_final_list[k][1]))
+                    LE_final_final_list.append((LE_final_list[k][0],'jtatjcgcjc'+LE_final_list[k][1]))
         return render_to_response('generateprobes.html',{
                                       'local':local,
                                       'thisyear':thisyear,
