@@ -201,7 +201,7 @@ class CalcNSH:
     
     def Quantimat3xmerCalc(self,Calc_Seq):
 #########################QuantiMAT 3.0 universal file#####################################################    
-        uni_Aleader_seq=Seq("FGGCATAJCAGCJCGCATAFTCTTCCJGTCGFCCAATGJTCF", IUPAC.unambiguous_dna)
+        uni_Aleader_seq=Seq("FGGCATAJCAGCJCGCATAFTCTTFCJGTCGFCCAATGJTCF", IUPAC.unambiguous_dna)
         uni_Aarms_seq=Seq("FGTTJTCCFTAGJGCCJTGJA", IUPAC.unambiguous_dna)
         uni_AP_seq=Seq("AJTCAGFGCCJTACFAAGTJC", IUPAC.unambiguous_dna)
         uni_PSCP_seq=Seq("CTCTTGGAAAGAAAGT", IUPAC.unambiguous_dna)
