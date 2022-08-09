@@ -697,7 +697,7 @@ def PostCalcXmer(req):
         systemtitle=req.POST["universal_seq"]
         xmerclac=CalcNSH()
         for i in range(len(dict_value)):
-            dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]),systemtitle)
+            dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]),"Quantimat2.0")
         for v in range(len(dict_xmervalue)):
             probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v]),dict_value[v],oligoGC(dict_value[v])])
         probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
