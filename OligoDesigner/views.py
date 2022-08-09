@@ -694,6 +694,7 @@ def PostCalcXmer(req):
         dict_value=req.POST.getlist('probedictvalue','')
         dict_key=req.POST.getlist('probedictkey','')
         dict_length=req.POST.getlist('probelength','')
+        systemtitle=req.POST["universal_seq"]
         xmerclac=CalcNSH()
         for i in range(len(dict_value)):
             dict_xmervalue.append(xmerclac.xmerCalc(dict_value[i]))
@@ -704,6 +705,7 @@ def PostCalcXmer(req):
                                                                               'local':local,
                                                                               'thisyear':thisyear,
                                                                               'probe_xmer_list':probe_xmer_list,
+                                                                              'systemtitle':systemtitle,
                                                                               },context_instance=RequestContext(req))
 #########################CE&LE cross#################################
 ###################################################
