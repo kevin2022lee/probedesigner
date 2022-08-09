@@ -1,6 +1,6 @@
 {% extends "base.html" %} 
  {% block content %}
- <title>4聚体的计算结果</title>
+ <title>{{systemtitle}}4聚体的计算结果</title>
 <script>
  function checkForm()  
 {  
@@ -28,7 +28,7 @@
 <form action="http://{{local}}/ProbeSetsXmer/" method="POST" id="Plist" role="form" class="form-horizontal" >{% csrf_token %}
 
 <table class="table table-condensed"  style="padding:20px;height:auto;">
-  <caption><b>探针与通用序列的4聚体计算结果</b></caption>
+  <caption><b>{{systemtitle}}探针与通用序列的4聚体计算结果</b></caption>
   <thead>
     <tr>
       <th>探针编号</th>
