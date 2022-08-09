@@ -29,30 +29,16 @@ class CalcNSH:
   
         return second[x-size+1:x+1] 
     ############################################
-    def xmerCalc(self,Calc_Seq,systemtitle):
+    def xmerCalc(self,Calc_Seq,sys):
         from Bio.Seq import Seq
         from Bio.Alphabet import IUPAC
-#########################QuantiMAT2.0 universal file#####################################################
-        if systemtile=="Quantimat2.0":     
-            uni_Aleader_seq=Seq("AAAACGGTAACTTCTTTATGCTTTGACTCAG", IUPAC.unambiguous_dna)
-            uni_Aarms_seq=Seq("ATCTCAGTCTCGTTAATGGATTCCT", IUPAC.unambiguous_dna)
-            uni_AP_seq=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
-        elif systemtile=="Quantiplex2.0":
-            uni_Aleader_seq=Seq("CGGCATAGCAGCGCGCATACTCTTCCGGTCGCCCAATGGTCC", IUPAC.unambiguous_dna)
-            uni_Aarms_seq=Seq("CGTTGTCCCTAGGGCCGTGGA", IUPAC.unambiguous_dna)
-            uni_AP_seq=Seq("AGTCAGCGCCGTACCAAGTGC", IUPAC.unambiguous_dna)
-        else:
-            uni_Aleader_seq=Seq("AAAATTTTTCCCCCGGGGGCCCCCC", IUPAC.unambiguous_dna)
-            uni_Aarms_seq=Seq("CCGGGCCGGTTAACCTTAACCTTAA", IUPAC.unambiguous_dna)
-            uni_AP_seq=Seq("CCTTAATGGTTGCCTAAACC", IUPAC.unambiguous_dna)
-        uni_PSCP_seq=Seq("CTCTTGGAAAGAAAGT", IUPAC.unambiguous_dna)
         
         ########LCS#############
         Calc_Seq=Seq(Calc_Seq, IUPAC.unambiguous_dna).upper()
-        x4merlcs_Aleader=self.lcs(str(uni_Aleader_seq),str(Calc_Seq))
-        x4merlcs_Aarms=self.lcs(str(uni_Aarms_seq),str(Calc_Seq))
-        x4merlcs_AP=self.lcs(str(uni_AP_seq),str(Calc_Seq))
-        x4merlcs_PSCP=self.lcs(str(uni_PSCP_seq),str(Calc_Seq))
+        x4merlcs_Aleader=self.lcs(str(self.universalSeq(sys)[0]),str(Calc_Seq))
+        x4merlcs_Aarms=self.lcs(str(self.universalSeq(sys)[1]),str(Calc_Seq))
+        x4merlcs_AP=self.lcs(str(self.universalSeq(sys)[2]),str(Calc_Seq))
+        x4merlcs_PSCP=self.lcs(str(self.universalSeq(sys)[3]),str(Calc_Seq))
 ###########Server as CE Probe Weighting Factor##########################
         WF_CEtoLeaders=3
         WF_CEtoAMParms=14
@@ -129,3 +115,21 @@ class CalcNSH:
         SumGC=seq.count("G")+seq.count("C")
         Score=round((0.5*SumAT+1.0*SumGC)/4,3)
         return Score
+    def universalSeq(self,sys):
+        from Bio.Seq import Seq
+        from Bio.Alphabet import IUPAC
+        #########################universal files#####################################################
+        if sys=="Quantimat2.0":     
+            uni_Aleader_seq=Seq("AAAACGGTAACTTCTTTATGCTTTGACTCAG", IUPAC.unambiguous_dna)
+            uni_Aarms_seq=Seq("ATCTCAGTCTCGTTAATGGATTCCT", IUPAC.unambiguous_dna)
+            uni_AP_seq=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
+        elif sys=="Quantiplex2.0":
+            uni_Aleader_seq=Seq("CGGCATAGCAGCGCGCATACTCTTCCGGTCGCCCAATGGTCC", IUPAC.unambiguous_dna)
+            uni_Aarms_seq=Seq("CGTTGTCCCTAGGGCCGTGGA", IUPAC.unambiguous_dna)
+            uni_AP_seq=Seq("AGTCAGCGCCGTACCAAGTGC", IUPAC.unambiguous_dna)
+        else:
+            uni_Aleader_seq=Seq("AAAATTTTTCCCCCGGGGGCCCCCC", IUPAC.unambiguous_dna)
+            uni_Aarms_seq=Seq("CCGGGCCGGTTAACCTTAACCTTAA", IUPAC.unambiguous_dna)
+            uni_AP_seq=Seq("CCTTAATGGTTGCCTAAACC", IUPAC.unambiguous_dna)
+        uni_PSCP_seq=Seq("CTCTTGGAAAGAAAGT", IUPAC.unambiguous_dna)
+        return [uni_Aleader_seq,uni_Aarms_seq,uni_AP_seq,uni_PSCP_seq]
