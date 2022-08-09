@@ -29,13 +29,22 @@ class CalcNSH:
   
         return second[x-size+1:x+1] 
     ############################################
-    def xmerCalc(self,Calc_Seq):
+    def xmerCalc(self,Calc_Seq,request):
         from Bio.Seq import Seq
         from Bio.Alphabet import IUPAC
-#########################QuantiMAT2.0 universal file#####################################################        
-        uni_Aleader_seq=Seq("AAAACGGTAACTTCTTTATGCTTTGACTCAG", IUPAC.unambiguous_dna)
-        uni_Aarms_seq=Seq("ATCTCAGTCTCGTTAATGGATTCCT", IUPAC.unambiguous_dna)
-        uni_AP_seq=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
+#########################QuantiMAT2.0 universal file#####################################################
+        if request.POST["universal_seq"]=="Quantimat2.0":     
+            uni_Aleader_seq=Seq("AAAACGGTAACTTCTTTATGCTTTGACTCAG", IUPAC.unambiguous_dna)
+            uni_Aarms_seq=Seq("ATCTCAGTCTCGTTAATGGATTCCT", IUPAC.unambiguous_dna)
+            uni_AP_seq=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
+        elif request.POST["universal_seq"]=="Quantiplex2.0":
+            uni_Aleader_seq=Seq("CGGCATAGCAGCGCGCATACTCTTCCGGTCGCCCAATGGTCC", IUPAC.unambiguous_dna)
+            uni_Aarms_seq=Seq("CGTTGTCCCTAGGGCCGTGGA", IUPAC.unambiguous_dna)
+            uni_AP_seq=Seq("AGTCAGCGCCGTACCAAGTGC", IUPAC.unambiguous_dna)
+        else:
+            uni_Aleader_seq=Seq("AAAATTTTTCCCCCGGGGGCCCCCC", IUPAC.unambiguous_dna)
+            uni_Aarms_seq=Seq("CCGGGCCGGTTAACCTTAACCTTAA", IUPAC.unambiguous_dna)
+            uni_AP_seq=Seq("CCTTAATGGTTGCCTAAACC", IUPAC.unambiguous_dna)
         uni_PSCP_seq=Seq("CTCTTGGAAAGAAAGT", IUPAC.unambiguous_dna)
         
         ########LCS#############
@@ -46,7 +55,7 @@ class CalcNSH:
         x4merlcs_PSCP=self.lcs(str(uni_PSCP_seq),str(Calc_Seq))
 ###########Server as CE Probe Weighting Factor##########################
         WF_CEtoLeaders=3
-        WF_CEtoAMParms=20
+        WF_CEtoAMParms=14s
         WF_CEtoAP=1
         WF_CEtoPSCP=0
 ###########Server as LE Probe Weighting Factor##########################
