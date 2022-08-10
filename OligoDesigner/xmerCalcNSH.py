@@ -35,8 +35,8 @@ class CalcNSH:
 #########################QuantiMAT2.0 universal file#####################################################    
         uni_Aleader_seq=Seq("AAAACGGTAACTTCTTTATGCTTTGACTCAG", IUPAC.unambiguous_dna)
         uni_Aarms_seq=Seq("ATCTCAGTCTCGTTAATGGATTCCT", IUPAC.unambiguous_dna)
-        uni_AP_seq=Seq("GATGTGGTTGTCGTACTT", IUPAC.unambiguous_dna)
-        uni_PSCP_seq=Seq("CTCTTGGAAAGAAAGT", IUPAC.unambiguous_dna)
+        uni_AP_seq=Seq("AAGTACGACAACCACATCTT", IUPAC.unambiguous_dna)
+        uni_PSCP_seq=Seq("CACTTCACTTTCTTTCCAAGAG", IUPAC.unambiguous_dna)
         
         ########LCS#############
         Calc_Seq=Seq(Calc_Seq, IUPAC.unambiguous_dna).upper()
@@ -118,9 +118,9 @@ class CalcNSH:
     def QuantiplexxmerCalc(self,Calc_Seq):
 #########################Quantiplex 2.0 universal file#####################################################    
         uni_Aleader_seq=Seq("CGGCATAGCAGCGCGCATACTCTTCCGGTCGCCCAATGGTCC", IUPAC.unambiguous_dna)
-        uni_Aarms_seq=Seq("CGTTGTCCCTAGGGCCGTGGA", IUPAC.unambiguous_dna)
-        uni_AP_seq=Seq("AGTCAGCGCCGTACCAAGTGC", IUPAC.unambiguous_dna)
-        uni_PSCP_seq=Seq("CTCTTGGAAAGAAAGT", IUPAC.unambiguous_dna)
+        uni_Aarms_seq=Seq("CGTTGTCCCTAGGGCCGTGGATTTTT", IUPAC.unambiguous_dna)
+        uni_PSCP_seq=Seq("CACTTCACTTTCTTTCCAAGAG", IUPAC.unambiguous_dna)
+        uni_AP_seq=Seq("GCACTTGGTACGGCGCTGACTTTTTTT", IUPAC.unambiguous_dna)
         
         ########LCS#############
         Calc_Seq=Seq(Calc_Seq, IUPAC.unambiguous_dna).upper()
@@ -137,7 +137,7 @@ class CalcNSH:
         WF_LEtoLeaders=0
         WF_LEtoAMParms=0
         WF_LEtoAP=0
-        WF_LEtoPSCP=12
+        WF_LEtoPSCP=6
 ############################################################################
         if len(x4merlcs_Aleader) >=4:
             score_x4mer_Aleader=[]
@@ -201,10 +201,10 @@ class CalcNSH:
     
     def Quantimat3xmerCalc(self,Calc_Seq):
 #########################QuantiMAT 3.0 universal file#####################################################    
-        uni_Aleader_seq=Seq("FGGCATAJCAGCJCGCATAFTCTTFCJGTCGFCCAATGJTCF", IUPAC.unambiguous_dna)
-        uni_Aarms_seq=Seq("FGTTJTCCFTAGJGCCJTGJA", IUPAC.unambiguous_dna)
-        uni_AP_seq=Seq("AJTCAGFGCCJTACFAAGTJC", IUPAC.unambiguous_dna)
-        uni_PSCP_seq=Seq("CTCTTGGAAAGAAAGT", IUPAC.unambiguous_dna)
+        uni_Aleader_seq=Seq("CGGFATAJCAGFGCGFATAFTFTTCFGGTFGCCFAATJGTCF", IUPAC.unambiguous_dna)
+        uni_Aarms_seq=Seq("CJTTJTCCFTAGJGFCGTJGATTTTT", IUPAC.unambiguous_dna)
+        uni_AP_seq=Seq("GFAFTTGJTACJGCGFTJACTTTTTTT", IUPAC.unambiguous_dna)
+        uni_PSCP_seq=Seq("CACTTCACTTTCTTTCCAAGAG", IUPAC.unambiguous_dna)
         
         ########LCS#############
         Calc_Seq=Seq(Calc_Seq, IUPAC.unambiguous_dna).upper()
@@ -221,7 +221,7 @@ class CalcNSH:
         WF_LEtoLeaders=0
         WF_LEtoAMParms=0
         WF_LEtoAP=0
-        WF_LEtoPSCP=12
+        WF_LEtoPSCP=6
 ############################################################################
         if len(x4merlcs_Aleader) >=4:
             score_x4mer_Aleader=[]

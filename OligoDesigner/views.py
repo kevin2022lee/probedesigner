@@ -36,10 +36,16 @@ from django.core.context_processors import request
 ##############################################注释分界线#######################################################
 
 '''
-更新说明：增加blastviews，功能模块化。
+更新说明：增加blastviews，功能模块化。2020-10-12
+'''
+'''
+2022-8-10更新说明：
+1、增加class XmerCalcNSH三个方法，分别是quantimatxercalcnsh、quantiplexxercalcnsh、quantiamat3xercalcnsh，三套系统的通用序列进行了分别设置。
+2、增加session-systemtitle，方便对不同系统接头进行匹配调用。
+3、增加对le探针的index索引归租算法，四条le为一组，index能被4整除的接头以及取余分别为1、2、3的LE的接头分别进行了设置。
+4、优化了一些长期bug代码。
 '''
 local='www.probedesigner.cn'
-#local='127.0.0.1:8000'
 thisyear=time.strftime('%Y',time.localtime(time.time()))
 
 #######################实现最长公共字符查找##################################
