@@ -693,58 +693,32 @@ def Probelist(req):
                                                      'probedict':probedict,
                                                      },context_instance=RequestContext(req))   
 def PostCalcXmer(req):
-    if req.method=='POST':
-        dict_xmervalue=[]
-        probe_xmer_list=[]
-        probe_xmer_dict={}
-        dict_value=req.POST.getlist('probedictvalue','')
-        dict_key=req.POST.getlist('probedictkey','')
-        dict_length=req.POST.getlist('probelength','')
-        systemtitle=req.POST["universal_seq"]
-        req.session['systemtitle']=systemtitle
-        xmerclac=CalcNSH()
-        for i in range(len(dict_value)):
-            if systemtitle=="Quantimat2.0":
-                dict_xmervalue.append(xmerclac.QuantimatxmerCalc(dict_value[i]))
-            elif systemtitle=="Quantiplex2.0":
-                dict_xmervalue.append(xmerclac.QuantiplexxmerCalc(dict_value[i]))
-            else:
-                dict_xmervalue.append(xmerclac.Quantimat3xmerCalc(dict_value[i]))
-        for v in range(len(dict_xmervalue)):
-            probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v]),dict_value[v],oligoGC(dict_value[v])])
-        probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
-        return render_to_response('showxmerscore.html',{
+    dict_xmervalue=[]
+    probe_xmer_list=[]
+    probe_xmer_dict={}
+    dict_value=req.POST.getlist('probedictvalue','')
+    dict_key=req.POST.getlist('probedictkey','')
+    dict_length=req.POST.getlist('probelength','')
+    systemtitle=req.POST["universal_seq"]
+    req.session['systemtitle']=systemtitle
+    xmerclac=CalcNSH()
+    for i in range(len(dict_value)):
+        if systemtitle=="Quantimat2.0":
+            dict_xmervalue.append(xmerclac.QuantimatxmerCalc(dict_value[i]))
+        elif systemtitle=="Quantiplex2.0":
+            dict_xmervalue.append(xmerclac.QuantiplexxmerCalc(dict_value[i]))
+        else:
+            dict_xmervalue.append(xmerclac.Quantimat3xmerCalc(dict_value[i]))
+    for v in range(len(dict_xmervalue)):
+        probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v]),dict_value[v],oligoGC(dict_value[v])])
+    probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
+    return render_to_response('showxmerscore.html',{
                                                                               'local':local,
                                                                               'thisyear':thisyear,
                                                                               'probe_xmer_list':probe_xmer_list,
                                                                               'systemtitle':systemtitle,
                                                                               },context_instance=RequestContext(req))
-    else:
-        dict_xmervalue=[]
-        probe_xmer_list=[]
-        probe_xmer_dict={}
-        dict_value=req.POST.getlist('probedictvalue','')
-        dict_key=req.POST.getlist('probedictkey','')
-        dict_length=req.POST.getlist('probelength','')
-        systemtitle=req.POST["universal_seq"]
-        req.session['systemtitle']=systemtitle
-        xmerclac=CalcNSH()
-        for i in range(len(dict_value)):
-            if systemtitle=="Quantimat2.0":
-                dict_xmervalue.append(xmerclac.QuantimatxmerCalc(dict_value[i]))
-            elif systemtitle=="Quantiplex2.0":
-                dict_xmervalue.append(xmerclac.QuantiplexxmerCalc(dict_value[i]))
-            else:
-                dict_xmervalue.append(xmerclac.Quantimat3xmerCalc(dict_value[i]))
-        for v in range(len(dict_xmervalue)):
-            probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v]),dict_value[v],oligoGC(dict_value[v])])
-        probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
-        return render_to_response('showxmerscore.html',{
-                                                                              'local':local,
-                                                                              'thisyear':thisyear,
-                                                                              'probe_xmer_list':probe_xmer_list,
-                                                                              'systemtitle':systemtitle,
-                                                                              },context_instance=RequestContext(req))
+    
 #########################CE&LE cross#################################
 ###################################################
 def Universalvalue(req):
