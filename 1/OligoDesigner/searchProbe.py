@@ -1,4 +1,6 @@
-﻿
+﻿'''
+probe依据TM过滤序列的classs
+'''
 class NonNSHFilter:
     
     def __init__(self):  
@@ -22,10 +24,12 @@ class NonNSHFilter:
             bcount=s.count('B')
             vcount=s.count('V') 
             ncount=s.count('N')
+            jcount=s.count('J')
+            fcount=s.count('F')
             if len(s)<14:
-                TmValue=round(2*(acount+tcount+rcount+ycount+mcount+scount+hcount+dcount+ncount)+4*(gcount+ccount+rcount+ycount+kcount+wcount+bcount+vcount+ncount))
+                TmValue=round(2*(acount+tcount+rcount+ycount+mcount+scount+hcount+dcount+ncount)+4*(jcount+fcount+gcount+ccount+rcount+ycount+kcount+wcount+bcount+vcount+ncount))
             else:
-                TmValue=round(64.9+41*((gcount+ccount+rcount+ycount+mcount+kcount+scount+bcount+vcount+ncount-16.4)/len(s)))
+                TmValue=round(64.9+41*((jcount+fcount+gcount+ccount+rcount+ycount+mcount+kcount+scount+bcount+vcount+ncount-16.4)/len(s)))
         else:
             TmValue=0
         return TmValue
