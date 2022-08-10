@@ -712,11 +712,12 @@ def PostCalcXmer(req):
     for v in range(len(dict_xmervalue)):
         probe_xmer_dict.setdefault(dict_key[v],[dict_xmervalue[v],int(dict_length[v]),dict_value[v],oligoGC(dict_value[v])])
     probe_xmer_list=sorted(probe_xmer_dict.items(),key=lambda x:x[1][1])
+    req.session['probe_xmer_list']=probe_xmer_list
     return render_to_response('showxmerscore.html',{
                                                                               'local':local,
                                                                               'thisyear':thisyear,
-                                                                              'probe_xmer_list':probe_xmer_list,
-                                                                              'systemtitle':systemtitle,
+                                                                              'probe_xmer_list':req.session.get('probe_xmer_list'),
+                                                                              'systemtitle':req.session.get('systemtitle'),
                                                                               },context_instance=RequestContext(req))
     
 #########################CE&LE cross#################################
