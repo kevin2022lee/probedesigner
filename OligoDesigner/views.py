@@ -1321,9 +1321,9 @@ def GenerateProbeset(req):
         elif req.session.get('systemtitle')=="Quantiplex2.0":
             for k in range(len(LE_final_list)):
                 if LE_final_list.index(LE_final_list[k])%4==0:
-                     LE_final_final_list.append((LE_final_list[k][0],'ggaccattcgg'+LE_final_list[k][1]))
+                     LE_final_final_list.append((LE_final_list[k][0],'ggaccattggg'+LE_final_list[k][1]))
                 elif LE_final_list.index(LE_final_list[k])%4==2:
-                    LE_final_final_list.append((LE_final_list[k][0],'ggaccattcgg'+LE_final_list[k][1]+'tgctatgccgt'))
+                    LE_final_final_list.append((LE_final_list[k][0],'ggaccattggg'+LE_final_list[k][1]+'tgctatgccgt'))
                 elif LE_final_list.index(LE_final_list[k])%4==3:
                     LE_final_final_list.append((LE_final_list[k][0],LE_final_list[k][1]+'cgaccggaagt'))
                 elif LE_final_list.index(LE_final_list[k])%4==1:
