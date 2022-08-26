@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 's5a5h6hw5cdh$1gtucachixq-_p5%2aus3hdt_1)qw4g&!g-5s'
+SECRET_KEY = '******************************************************************'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -54,15 +54,15 @@ ROOT_URLCONF = 'OligoDesigner.urls'
 WSGI_APPLICATION = 'OligoDesigner.wsgi.application'
 
 # Make `python manage.py syncdb` works happy!
-MYSQL_HOST = 'kkds1314.mysql.rds.aliyuncs.com'#kkds1314.mysql.rds.aliyuncs.com
+MYSQL_HOST = '**************************'#kkds1314.mysql.rds.aliyuncs.com
 
 MYSQL_PORT = '3306'
 
-MYSQL_USER = 'gene_user'
+MYSQL_USER = '*******'
 
-MYSQL_PASS = '3@4B8976abc'
+MYSQL_PASS = '********'
 
-MYSQL_DB   = 'gene_database'
+MYSQL_DB   = '***********'
 
 DATABASES = {
     'default': {
